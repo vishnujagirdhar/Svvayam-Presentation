@@ -1,0 +1,1312 @@
+window.SVVAYAM_CLIENTS_DATA = [
+  {
+    "id": "dnyaneshwar",
+    "name": "Mr. Dnyaneshwar Residence",
+    "material": "Burma Teak",
+    "materialDetail": "Burma Teak",
+    "location": "Pune",
+    "city": "Pune",
+    "size": "8'6\" \u00d7 7'0\"",
+    "type": "Bespoke Teak Sanctum",
+    "desc": "Dravidian Shikhara sanctum with 17-page engineered CAD blueprints and warm dawn illumination.",
+    "heroImg": "assets/clients/dnyaneshwar/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/dnyaneshwar/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/dnyaneshwar/02_requirements/site_survey_IMG-20250823-WA0011_720x1280.jpg",
+        "assets/clients/dnyaneshwar/02_requirements/site_survey_IMG-20250823-WA0012_1280x720.jpg",
+        "assets/clients/dnyaneshwar/02_requirements/site_survey_IMG-20250823-WA0013_720x1280.jpg",
+        "assets/clients/dnyaneshwar/02_requirements/site_survey_IMG-20250823-WA0014(_1280x720.jpg",
+        "assets/clients/dnyaneshwar/02_requirements/site_survey_IMG-20250906-WA0022_2252x4000.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/dnyaneshwar/03_concept/concept_massing_study.jpg"
+      ],
+      "04_cad_2d": [
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_01.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_02.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_03.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_04.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_05.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_06.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_07.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_08.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_09.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_10.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_11.png",
+        "assets/clients/dnyaneshwar/04_cad_2d/cad_blueprint_page_12.png"
+      ],
+      "05_model_3d": [
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_perspective_03.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_perspective_06.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_perspective_10.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_perspective_14.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_perspective_15.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_perspective_19.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_perspective_20.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_perspective_24.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_perspective_30.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_01.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_04.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_05.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_06.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_07.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_11.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_12.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_13.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_16.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_21.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_22.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_23.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_25.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_26.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_render_3d_27.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_view_03.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_view_06.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_view_10.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_view_14.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_view_15.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_view_19.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_view_20.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_view_24.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_view_29.png",
+        "assets/clients/dnyaneshwar/05_model_3d/pptx_view_30.png"
+      ],
+      "06_detailing": [
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_01.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_02.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_03.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_04.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_05.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_08.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_09.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_17.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_18.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_28.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_29.png",
+        "assets/clients/dnyaneshwar/06_detailing/pptx_detail_31.png"
+      ],
+      "07_manufacturing": [],
+      "08_transport": [
+        "assets/clients/dnyaneshwar/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/dnyaneshwar/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": [
+        "assets/clients/dnyaneshwar/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 5,
+      "03_concept": 1,
+      "04_cad_2d": 12,
+      "05_model_3d": 34,
+      "06_detailing": 12,
+      "07_manufacturing": 0,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "nagesh",
+    "name": "Mr. Nagesh Villa Sanctum",
+    "material": "Carved Teakwood",
+    "materialDetail": "Carved Teakwood",
+    "location": "Bangalore",
+    "city": "Bangalore",
+    "size": "9'0\" \u00d7 7'6\"",
+    "type": "Traditional Villa Sanctum",
+    "desc": "Handcrafted teak mandir featuring bespoke panchaloha bells, CAD signed elevations, and active guild pre-assembly.",
+    "heroImg": "assets/clients/nagesh/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/nagesh/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/nagesh/02_requirements/site_survey_WhatsApp Image 2026-_1079x1515.jpg",
+        "assets/clients/nagesh/02_requirements/site_survey_WhatsApp Image 2026-_1079x1567.jpg",
+        "assets/clients/nagesh/02_requirements/site_survey_WhatsApp Image 2026-_1079x1569.jpg",
+        "assets/clients/nagesh/02_requirements/site_survey_WhatsApp Image 2026-_1079x1582.jpg",
+        "assets/clients/nagesh/02_requirements/site_survey_WhatsApp Image 2026-_1079x1590.jpg",
+        "assets/clients/nagesh/02_requirements/site_survey_WhatsApp Image 2026-_1080x1401.jpg",
+        "assets/clients/nagesh/02_requirements/site_survey_WhatsApp Image 2026-_1080x1525.jpg",
+        "assets/clients/nagesh/02_requirements/site_survey_WhatsApp Image 2026-_1080x1558.jpg",
+        "assets/clients/nagesh/02_requirements/site_survey_WhatsApp Image 2026-_916x1600.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/nagesh/03_concept/concept_massing_study.jpg"
+      ],
+      "04_cad_2d": [
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_01.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_02.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_03.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_04.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_05.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_06.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_07.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_08.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_09.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_10.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_11.png",
+        "assets/clients/nagesh/04_cad_2d/cad_blueprint_page_12.png"
+      ],
+      "05_model_3d": [
+        "assets/clients/nagesh/05_model_3d/render_page_page_01.png",
+        "assets/clients/nagesh/05_model_3d/render_page_page_02.png",
+        "assets/clients/nagesh/05_model_3d/render_page_page_03.png",
+        "assets/clients/nagesh/05_model_3d/render_page_page_04.png",
+        "assets/clients/nagesh/05_model_3d/render_page_page_05.png",
+        "assets/clients/nagesh/05_model_3d/render_page_page_06.png",
+        "assets/clients/nagesh/05_model_3d/render_page_page_07.png",
+        "assets/clients/nagesh/05_model_3d/render_view_img_01.png",
+        "assets/clients/nagesh/05_model_3d/render_view_img_02.png",
+        "assets/clients/nagesh/05_model_3d/render_view_img_03.png",
+        "assets/clients/nagesh/05_model_3d/render_view_img_04.png",
+        "assets/clients/nagesh/05_model_3d/render_view_img_05.jpeg",
+        "assets/clients/nagesh/05_model_3d/render_view_img_06.jpeg",
+        "assets/clients/nagesh/05_model_3d/render_view_img_07.png"
+      ],
+      "06_detailing": [
+        "assets/clients/nagesh/06_detailing/dimension_detail_page_01.png",
+        "assets/clients/nagesh/06_detailing/dimension_detail_page_02.png",
+        "assets/clients/nagesh/06_detailing/dimension_detail_page_03.png",
+        "assets/clients/nagesh/06_detailing/dimension_detail_page_04.png",
+        "assets/clients/nagesh/06_detailing/dimension_detail_page_05.png",
+        "assets/clients/nagesh/06_detailing/dimension_detail_page_06.png",
+        "assets/clients/nagesh/06_detailing/dimension_detail_page_07.png"
+      ],
+      "07_manufacturing": [
+        "assets/clients/nagesh/07_manufacturing/workshop_WhatsApp Image 2026-_1200x1600.jpg",
+        "assets/clients/nagesh/07_manufacturing/workshop_WhatsApp Image 2026-_1280x720.jpg",
+        "assets/clients/nagesh/07_manufacturing/workshop_WhatsApp Image 2026-_1280x858.jpg",
+        "assets/clients/nagesh/07_manufacturing/workshop_WhatsApp Image 2026-_1600x900.jpg",
+        "assets/clients/nagesh/07_manufacturing/workshop_WhatsApp Image 2026-_332x1280.jpg",
+        "assets/clients/nagesh/07_manufacturing/workshop_WhatsApp Image 2026-_387x1280.jpg",
+        "assets/clients/nagesh/07_manufacturing/workshop_WhatsApp Image 2026-_465x1280.jpg",
+        "assets/clients/nagesh/07_manufacturing/workshop_WhatsApp Image 2026-_492x1280.jpg",
+        "assets/clients/nagesh/07_manufacturing/workshop_WhatsApp Image 2026-_900x1600.jpg",
+        "assets/clients/nagesh/07_manufacturing/workshop_WhatsApp Image 2026-_980x1280.jpg"
+      ],
+      "08_transport": [
+        "assets/clients/nagesh/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/nagesh/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": [
+        "assets/clients/nagesh/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 9,
+      "03_concept": 1,
+      "04_cad_2d": 12,
+      "05_model_3d": 14,
+      "06_detailing": 7,
+      "07_manufacturing": 10,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "rahul",
+    "name": "Mr. Rahul Architectural Sanctum",
+    "material": "Teak & Brass Guild",
+    "materialDetail": "Teak & Brass Guild",
+    "location": "Hyderabad",
+    "city": "Hyderabad",
+    "size": "10'6\" \u00d7 8'6\"",
+    "type": "Courtyard Sanctum",
+    "desc": "Grand architectural sanctum with 48 workshop craftsmanship milestones and precision CNC jaali screens.",
+    "heroImg": "assets/clients/rahul/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/rahul/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/rahul/02_requirements/site_img_WhatsApp Image 2025-_1163x625.jpg",
+        "assets/clients/rahul/02_requirements/site_img_WhatsApp Image 2025-_1600x1600.jpg",
+        "assets/clients/rahul/02_requirements/site_img_WhatsApp Image 2025-_2560x2560.jpg",
+        "assets/clients/rahul/02_requirements/site_img_WhatsApp Image 2025-_590x634.jpg",
+        "assets/clients/rahul/02_requirements/site_img_WhatsApp Image 2025-_785x728.jpg",
+        "assets/clients/rahul/02_requirements/site_img_WhatsApp Image 2025-_844x706.jpg",
+        "assets/clients/rahul/02_requirements/site_img_WhatsApp Image 2025-_897x812.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_1055x1280.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_1080x1339.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_1200x1600.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_1280x963.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_1600x1200.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_1600x1297.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_540x1170.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_587x636.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_720x1280.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_918x1600.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2025-_963x1280.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2026-_1078x1258.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2026-_1078x806.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2026-_1079x1524.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2026-_1080x1250.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2026-_1080x1395.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2026-_1080x1424.jpg",
+        "assets/clients/rahul/02_requirements/site_survey_WhatsApp Image 2026-_1080x1531.jpg",
+        "assets/clients/rahul/02_requirements/survey_img_WhatsApp Image 2025-_1163x625.jpg",
+        "assets/clients/rahul/02_requirements/survey_img_WhatsApp Image 2025-_1600x1600.jpg",
+        "assets/clients/rahul/02_requirements/survey_img_WhatsApp Image 2025-_2560x2560.jpg",
+        "assets/clients/rahul/02_requirements/survey_img_WhatsApp Image 2025-_590x634.jpg",
+        "assets/clients/rahul/02_requirements/survey_img_WhatsApp Image 2025-_785x728.jpg",
+        "assets/clients/rahul/02_requirements/survey_img_WhatsApp Image 2025-_844x706.jpg",
+        "assets/clients/rahul/02_requirements/survey_img_WhatsApp Image 2025-_897x812.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/rahul/03_concept/concept_Screenshot 2025-05-3_1339x670.jpg",
+        "assets/clients/rahul/03_concept/concept_Screenshot 2025-05-3_1410x681.jpg",
+        "assets/clients/rahul/03_concept/concept_Screenshot 2025-05-3_1417x606.jpg",
+        "assets/clients/rahul/03_concept/concept_Screenshot 2025-05-3_761x755.jpg",
+        "assets/clients/rahul/03_concept/concept_Screenshot 2025-05-3_763x755.jpg"
+      ],
+      "04_cad_2d": [
+        "assets/clients/rahul/04_cad_2d/cad_blueprint_page_01.png",
+        "assets/clients/rahul/04_cad_2d/cad_blueprint_page_02.png",
+        "assets/clients/rahul/04_cad_2d/cad_blueprint_page_03.png",
+        "assets/clients/rahul/04_cad_2d/cad_blueprint_page_04.png",
+        "assets/clients/rahul/04_cad_2d/cad_blueprint_page_05.png",
+        "assets/clients/rahul/04_cad_2d/cad_blueprint_page_06.png",
+        "assets/clients/rahul/04_cad_2d/cad_blueprint_page_07.png",
+        "assets/clients/rahul/04_cad_2d/design_doc_page_01.png"
+      ],
+      "05_model_3d": [
+        "assets/clients/rahul/05_model_3d/pptx_perspective_01.png",
+        "assets/clients/rahul/05_model_3d/pptx_view_01.png",
+        "assets/clients/rahul/05_model_3d/render_3d_Img1_1280x720.jpg",
+        "assets/clients/rahul/05_model_3d/render_3d_Img_1280x720.jpg",
+        "assets/clients/rahul/05_model_3d/render_3d_R1_2048x1080.jpg",
+        "assets/clients/rahul/05_model_3d/render_3d_R1_4096x4096.jpg",
+        "assets/clients/rahul/05_model_3d/render_3d_R2_3072x1536.jpg",
+        "assets/clients/rahul/05_model_3d/render_3d_R2_4096x4096.jpg",
+        "assets/clients/rahul/05_model_3d/render_3d_R3_3072x1536.jpg",
+        "assets/clients/rahul/05_model_3d/render_3d_R4_3072x3072.jpg",
+        "assets/clients/rahul/05_model_3d/render_3d_R5_4096x4096.jpg"
+      ],
+      "06_detailing": [
+        "assets/clients/rahul/06_detailing/dimension_Dimensions1_450x546.jpg",
+        "assets/clients/rahul/06_detailing/dimension_Dimensions2_662x640.jpg",
+        "assets/clients/rahul/06_detailing/dimension_Dimensions_570x631.jpg",
+        "assets/clients/rahul/06_detailing/dimension_detail_page_01.png",
+        "assets/clients/rahul/06_detailing/dimension_detail_page_02.png",
+        "assets/clients/rahul/06_detailing/dimension_detail_page_03.png",
+        "assets/clients/rahul/06_detailing/dimension_detail_page_04.png",
+        "assets/clients/rahul/06_detailing/dimension_detail_page_05.png",
+        "assets/clients/rahul/06_detailing/dimension_detail_page_06.png",
+        "assets/clients/rahul/06_detailing/dimension_detail_page_07.png",
+        "assets/clients/rahul/06_detailing/dimension_detail_page_08.png",
+        "assets/clients/rahul/06_detailing/dimension_detail_page_09.png",
+        "assets/clients/rahul/06_detailing/dimension_detail_page_10.png"
+      ],
+      "07_manufacturing": [
+        "assets/clients/rahul/07_manufacturing/workshop_1758255635353_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758255635367_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758255635384_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758255635401_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758255635417_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758255635434_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805755_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805769_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805782_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805797_4000x2256.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805812_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805828_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805844_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805860_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805877_1280x721.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805892_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805908_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805926_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805942_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805956_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805971_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335805991_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335806008_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335806038_899x1599.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335806065_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335806085_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335806108_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335806129_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335806146_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335806162_9000x12000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335806181_12000x9000.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_1758335806218_4000x2256.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109152657_0_1728x3072.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109152701_0_1728x3072.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109152757_0_1728x3072.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109152806_0_1728x3072.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109152828_0_3840x2160.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109152836_0_3840x2160.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109152846_0_3840x2160.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109153134_0_1728x3072.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109153138_0_1728x3072.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109153144_0_1728x3072.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109153154_0_1728x3072.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109153214_0_3840x2160.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109153415_0_1728x3072.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109153419_0_1728x3072.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109155243_0_3840x2160.jpg",
+        "assets/clients/rahul/07_manufacturing/workshop_DJI_20260109155252_0_3840x2160.jpg"
+      ],
+      "08_transport": [
+        "assets/clients/rahul/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/rahul/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": [
+        "assets/clients/rahul/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 32,
+      "03_concept": 5,
+      "04_cad_2d": 8,
+      "05_model_3d": 11,
+      "06_detailing": 13,
+      "07_manufacturing": 48,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "shenoy",
+    "name": "Mr. T N Shenoy Residence",
+    "material": "Walnut Teak",
+    "materialDetail": "Walnut Teak",
+    "location": "Bangalore",
+    "city": "Bangalore",
+    "size": "7'0\" \u00d7 6'0\"",
+    "type": "Contemporary Mandap",
+    "desc": "Architectural pooja room with fluted stambhas, consecrated timber pedigree, and clean laser alignment.",
+    "heroImg": "assets/clients/shenoy/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/shenoy/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/shenoy/02_requirements/site_img_S1_3072x3072.jpg",
+        "assets/clients/shenoy/02_requirements/site_img_WhatsApp Image 2025-_1600x1600.jpg",
+        "assets/clients/shenoy/02_requirements/site_img_WhatsApp Image 2025-_2560x2560.jpg",
+        "assets/clients/shenoy/02_requirements/site_img_WhatsApp Image 2025-_520x616.jpg",
+        "assets/clients/shenoy/02_requirements/site_img_WhatsApp Image 2025-_551x642.jpg",
+        "assets/clients/shenoy/02_requirements/site_img_WhatsApp Image 2025-_561x638.jpg",
+        "assets/clients/shenoy/02_requirements/survey_img_WhatsApp Image 2025-_1600x1600.jpg",
+        "assets/clients/shenoy/02_requirements/survey_img_WhatsApp Image 2025-_2560x2560.jpg",
+        "assets/clients/shenoy/02_requirements/survey_img_WhatsApp Image 2025-_520x616.jpg",
+        "assets/clients/shenoy/02_requirements/survey_img_WhatsApp Image 2025-_551x642.jpg",
+        "assets/clients/shenoy/02_requirements/survey_img_WhatsApp Image 2025-_561x638.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/shenoy/03_concept/concept_massing_study.jpg"
+      ],
+      "04_cad_2d": [
+        "assets/clients/shenoy/04_cad_2d/cad_blueprint_page_01.png",
+        "assets/clients/shenoy/04_cad_2d/cad_blueprint_page_02.png",
+        "assets/clients/shenoy/04_cad_2d/cad_blueprint_page_03.png",
+        "assets/clients/shenoy/04_cad_2d/cad_blueprint_page_04.png",
+        "assets/clients/shenoy/04_cad_2d/cad_blueprint_page_05.png",
+        "assets/clients/shenoy/04_cad_2d/cad_blueprint_page_06.png",
+        "assets/clients/shenoy/04_cad_2d/cad_blueprint_page_07.png",
+        "assets/clients/shenoy/04_cad_2d/cad_blueprint_page_08.png",
+        "assets/clients/shenoy/04_cad_2d/cad_blueprint_page_09.png",
+        "assets/clients/shenoy/04_cad_2d/cad_blueprint_page_10.png"
+      ],
+      "05_model_3d": [
+        "assets/clients/shenoy/05_model_3d/render_3d_S1_3072x3072.jpg",
+        "assets/clients/shenoy/05_model_3d/render_page_page_01.png",
+        "assets/clients/shenoy/05_model_3d/render_page_page_02.png",
+        "assets/clients/shenoy/05_model_3d/render_page_page_03.png",
+        "assets/clients/shenoy/05_model_3d/render_page_page_04.png",
+        "assets/clients/shenoy/05_model_3d/render_page_page_05.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_01.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_02.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_03.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_04.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_05.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_06.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_07.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_08.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_09.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_10.png",
+        "assets/clients/shenoy/05_model_3d/render_view_img_11.png"
+      ],
+      "06_detailing": [],
+      "07_manufacturing": [
+        "assets/clients/shenoy/07_manufacturing/workshop_DJI_20260109153011_0_3840x2160.jpg",
+        "assets/clients/shenoy/07_manufacturing/workshop_DJI_20260109153016_0_3840x2160.jpg",
+        "assets/clients/shenoy/07_manufacturing/workshop_DJI_20260109153028_0_1728x3072.jpg",
+        "assets/clients/shenoy/07_manufacturing/workshop_DJI_20260109153320_0_1728x3072.jpg",
+        "assets/clients/shenoy/07_manufacturing/workshop_DJI_20260109153501_0_3840x2160.jpg",
+        "assets/clients/shenoy/07_manufacturing/workshop_DJI_20260109153505_0_3840x2160.jpg",
+        "assets/clients/shenoy/07_manufacturing/workshop_DJI_20260109154915_0_1728x3072.jpg",
+        "assets/clients/shenoy/07_manufacturing/workshop_DJI_20260109155002_0_1728x3072.jpg",
+        "assets/clients/shenoy/07_manufacturing/workshop_DJI_20260109155317_0_1728x3072.jpg"
+      ],
+      "08_transport": [
+        "assets/clients/shenoy/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/shenoy/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": [
+        "assets/clients/shenoy/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 11,
+      "03_concept": 1,
+      "04_cad_2d": 10,
+      "05_model_3d": 17,
+      "06_detailing": 0,
+      "07_manufacturing": 9,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "nitesh-panda",
+    "name": "Mr. Nitesh Panda Penthouse",
+    "material": "Makrana White Marble",
+    "materialDetail": "Makrana White Marble",
+    "location": "Bangalore",
+    "city": "Bangalore",
+    "size": "6'0\" \u00d7 5'0\"",
+    "type": "Floating Wall Sanctum",
+    "desc": "Engineered white marble sanctum with 47MB structural detailing drawings designed for high-rise luxury.",
+    "heroImg": "assets/clients/nitesh-panda/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/nitesh-panda/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/nitesh-panda/02_requirements/site_img_WhatsApp Image 2026-_1080x1348.jpg",
+        "assets/clients/nitesh-panda/02_requirements/site_img_WhatsApp Image 2026-_1080x1588.jpg",
+        "assets/clients/nitesh-panda/02_requirements/survey_img_WhatsApp Image 2026-_1080x1348.jpg",
+        "assets/clients/nitesh-panda/02_requirements/survey_img_WhatsApp Image 2026-_1080x1588.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/nitesh-panda/03_concept/pptx_concept_13.png"
+      ],
+      "04_cad_2d": [
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_01.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_02.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_03.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_04.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_05.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_06.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_07.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_08.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_09.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_10.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_11.png",
+        "assets/clients/nitesh-panda/04_cad_2d/cad_blueprint_page_12.png"
+      ],
+      "05_model_3d": [
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_01.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_02.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_09.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_10.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_11.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_15.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_16.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_18.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_26.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_32.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_33.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_34.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_36.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_38.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_45.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_46.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_48.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_perspective_53.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_01.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_02.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_07.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_12.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_14.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_17.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_21.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_35.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_37.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_41.png",
+        "assets/clients/nitesh-panda/05_model_3d/pptx_render_3d_54.png"
+      ],
+      "06_detailing": [
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_03.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_04.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_05.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_06.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_07.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_08.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_09.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_10.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_19.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_20.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_22.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_23.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_24.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_25.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_27.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_28.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_29.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_30.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_31.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_39.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_40.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_42.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_43.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_44.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_47.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_49.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_50.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_51.png",
+        "assets/clients/nitesh-panda/06_detailing/pptx_detail_52.png"
+      ],
+      "07_manufacturing": [],
+      "08_transport": [
+        "assets/clients/nitesh-panda/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/nitesh-panda/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": [
+        "assets/clients/nitesh-panda/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 4,
+      "03_concept": 1,
+      "04_cad_2d": 12,
+      "05_model_3d": 29,
+      "06_detailing": 29,
+      "07_manufacturing": 0,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "pradeep-reddy",
+    "name": "Mr. Pradeep Reddy Residence",
+    "material": "Burma Teak & Brass",
+    "materialDetail": "Burma Teak & Brass",
+    "location": "Hyderabad",
+    "city": "Hyderabad",
+    "size": "11'0\" \u00d7 9'6\"",
+    "type": "Sacred Mandap",
+    "desc": "Multi-tiered Dravidian mandap with consecrated copper yantras, custom brass inlay, and workshop carving.",
+    "heroImg": "assets/clients/pradeep-reddy/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/pradeep-reddy/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/pradeep-reddy/02_requirements/site_img_WhatsApp Image 2025-_720x1280.jpg",
+        "assets/clients/pradeep-reddy/02_requirements/survey_img_WhatsApp Image 2025-_720x1280.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/pradeep-reddy/03_concept/pptx_concept_04.png"
+      ],
+      "04_cad_2d": [],
+      "05_model_3d": [
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_05.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_07.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_08.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_09.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_12.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_14.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_16.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_17.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_18.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_19.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_22.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_24.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_25.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_26.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_27.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_33.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_34.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_perspective_37.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_01.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_03.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_04.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_05.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_06.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_09.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_10.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_11.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_12.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_13.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_14.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_15.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_21.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_23.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_28.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_29.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_30.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_32.png",
+        "assets/clients/pradeep-reddy/05_model_3d/pptx_render_3d_36.png"
+      ],
+      "06_detailing": [
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_01.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_02.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_03.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_04.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_05.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_06.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_07.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_08.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_10.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_12.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_13.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_16.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_19.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_20.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_21.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_31.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_35.png",
+        "assets/clients/pradeep-reddy/06_detailing/pptx_detail_38.png"
+      ],
+      "07_manufacturing": [
+        "assets/clients/pradeep-reddy/07_manufacturing/workshop_WhatsApp Image 2026-_1280x472.jpg",
+        "assets/clients/pradeep-reddy/07_manufacturing/workshop_WhatsApp Image 2026-_1280x614.jpg",
+        "assets/clients/pradeep-reddy/07_manufacturing/workshop_WhatsApp Image 2026-_1599x899.jpg",
+        "assets/clients/pradeep-reddy/07_manufacturing/workshop_WhatsApp Image 2026-_1600x1204.jpg",
+        "assets/clients/pradeep-reddy/07_manufacturing/workshop_WhatsApp Image 2026-_615x1600.jpg",
+        "assets/clients/pradeep-reddy/07_manufacturing/workshop_WhatsApp Image 2026-_752x1075.jpg"
+      ],
+      "08_transport": [
+        "assets/clients/pradeep-reddy/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/pradeep-reddy/09_installation/laser_alignment_assembly.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_01.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_02.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_03.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_04.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_05.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_06.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_07.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_08.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_09.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_10.png",
+        "assets/clients/pradeep-reddy/09_installation/pptx_install_12.png"
+      ],
+      "10_final": [
+        "assets/clients/pradeep-reddy/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 2,
+      "03_concept": 1,
+      "04_cad_2d": 0,
+      "05_model_3d": 37,
+      "06_detailing": 18,
+      "07_manufacturing": 6,
+      "08_transport": 1,
+      "09_installation": 12,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "umesh-wadayar",
+    "name": "Mr. Umesh Wadayar Monolith",
+    "material": "Indian Grey Stone",
+    "materialDetail": "Indian Grey Stone",
+    "location": "Vijayawada",
+    "city": "Vijayawada",
+    "size": "12'0\" \u00d7 10'0\"",
+    "type": "Monolithic Stone Temple",
+    "desc": "Hand-chiseled monolithic stone Gopuram temple with step-by-step structural CAD prabhavali.",
+    "heroImg": "assets/clients/umesh-wadayar/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/umesh-wadayar/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/umesh-wadayar/02_requirements/site_img_WhatsApp Image 2026-_1600x1200.jpg",
+        "assets/clients/umesh-wadayar/02_requirements/site_img_WhatsApp Image 2026-_1600x900.jpg",
+        "assets/clients/umesh-wadayar/02_requirements/site_img_WhatsApp Image 2026-_900x1600.jpg",
+        "assets/clients/umesh-wadayar/02_requirements/site_survey_WhatsApp Image 2025-_422x710.jpg",
+        "assets/clients/umesh-wadayar/02_requirements/site_survey_WhatsApp Image 2025-_433x356.jpg",
+        "assets/clients/umesh-wadayar/02_requirements/site_survey_WhatsApp Image 2025-_435x625.jpg",
+        "assets/clients/umesh-wadayar/02_requirements/survey_img_WhatsApp Image 2026-_1600x1200.jpg",
+        "assets/clients/umesh-wadayar/02_requirements/survey_img_WhatsApp Image 2026-_1600x900.jpg",
+        "assets/clients/umesh-wadayar/02_requirements/survey_img_WhatsApp Image 2026-_900x1600.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/umesh-wadayar/03_concept/concept_massing_study.jpg"
+      ],
+      "04_cad_2d": [
+        "assets/clients/umesh-wadayar/04_cad_2d/design_doc_page_01.png"
+      ],
+      "05_model_3d": [
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_perspective_04.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_perspective_10.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_perspective_13.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_perspective_14.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_perspective_15.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_perspective_16.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_perspective_19.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_perspective_20.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_render_3d_05.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_render_3d_06.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_render_3d_07.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_render_3d_11.png",
+        "assets/clients/umesh-wadayar/05_model_3d/pptx_render_3d_12.png",
+        "assets/clients/umesh-wadayar/05_model_3d/render_3d_Stone Gopuram front _1600x685.jpg",
+        "assets/clients/umesh-wadayar/05_model_3d/render_3d_Stone Gopuram side v_1600x730.jpg"
+      ],
+      "06_detailing": [
+        "assets/clients/umesh-wadayar/06_detailing/dimension_detail_page_01.png",
+        "assets/clients/umesh-wadayar/06_detailing/dimension_detail_page_02.png",
+        "assets/clients/umesh-wadayar/06_detailing/dimension_detail_page_03.png",
+        "assets/clients/umesh-wadayar/06_detailing/dimension_detail_page_04.png",
+        "assets/clients/umesh-wadayar/06_detailing/dimension_detail_page_05.png",
+        "assets/clients/umesh-wadayar/06_detailing/dimension_detail_page_06.png",
+        "assets/clients/umesh-wadayar/06_detailing/dimension_detail_page_07.png",
+        "assets/clients/umesh-wadayar/06_detailing/dimension_detail_page_08.png",
+        "assets/clients/umesh-wadayar/06_detailing/dimension_detail_page_09.png",
+        "assets/clients/umesh-wadayar/06_detailing/dimension_detail_page_10.png",
+        "assets/clients/umesh-wadayar/06_detailing/pptx_detail_01.png",
+        "assets/clients/umesh-wadayar/06_detailing/pptx_detail_02.png",
+        "assets/clients/umesh-wadayar/06_detailing/pptx_detail_03.png",
+        "assets/clients/umesh-wadayar/06_detailing/pptx_detail_08.png",
+        "assets/clients/umesh-wadayar/06_detailing/pptx_detail_09.png",
+        "assets/clients/umesh-wadayar/06_detailing/pptx_detail_17.png",
+        "assets/clients/umesh-wadayar/06_detailing/pptx_detail_18.png"
+      ],
+      "07_manufacturing": [],
+      "08_transport": [
+        "assets/clients/umesh-wadayar/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/umesh-wadayar/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": [
+        "assets/clients/umesh-wadayar/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 9,
+      "03_concept": 1,
+      "04_cad_2d": 1,
+      "05_model_3d": 15,
+      "06_detailing": 17,
+      "07_manufacturing": 0,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "yuva",
+    "name": "Mr. Yuva Balakumaran Residence",
+    "material": "Burma Teak",
+    "materialDetail": "Burma Teak",
+    "location": "Chennai",
+    "city": "Chennai",
+    "size": "7'6\" \u00d7 6'6\"",
+    "type": "Apartment Mandap",
+    "desc": "Teakwood sanctum with custom work-order specifications and clean Dravidian pillar proportions.",
+    "heroImg": "assets/clients/yuva/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/yuva/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/yuva/02_requirements/site_doc_page_01.png",
+        "assets/clients/yuva/02_requirements/site_survey_WhatsApp Image 2025-_3120x4160.jpg",
+        "assets/clients/yuva/02_requirements/survey_img_WhatsApp Image 2025-_2560x2560.jpg",
+        "assets/clients/yuva/02_requirements/survey_img_WhatsApp Image 2025-_765x925.jpg",
+        "assets/clients/yuva/02_requirements/survey_img_Y1_3072x3072.jpg",
+        "assets/clients/yuva/02_requirements/survey_img_Y2_3072x3072.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/yuva/03_concept/concept_massing_study.jpg"
+      ],
+      "04_cad_2d": [
+        "assets/clients/yuva/04_cad_2d/design_doc_page_01.png",
+        "assets/clients/yuva/04_cad_2d/design_doc_page_02.png",
+        "assets/clients/yuva/04_cad_2d/design_doc_page_03.png"
+      ],
+      "05_model_3d": [
+        "assets/clients/yuva/05_model_3d/pptx_perspective_01.png",
+        "assets/clients/yuva/05_model_3d/pptx_perspective_02.png",
+        "assets/clients/yuva/05_model_3d/pptx_perspective_03.png",
+        "assets/clients/yuva/05_model_3d/pptx_render_3d_05.png",
+        "assets/clients/yuva/05_model_3d/pptx_render_3d_06.png",
+        "assets/clients/yuva/05_model_3d/render_3d_Render_2560x2560.jpg"
+      ],
+      "06_detailing": [
+        "assets/clients/yuva/06_detailing/dimension_detail_page_01.png",
+        "assets/clients/yuva/06_detailing/dimension_detail_page_02.png",
+        "assets/clients/yuva/06_detailing/dimension_detail_page_03.png",
+        "assets/clients/yuva/06_detailing/dimension_detail_page_04.png",
+        "assets/clients/yuva/06_detailing/dimension_detail_page_05.png",
+        "assets/clients/yuva/06_detailing/dimension_detail_page_06.png",
+        "assets/clients/yuva/06_detailing/dimension_detail_page_07.png",
+        "assets/clients/yuva/06_detailing/dimension_detail_page_08.png",
+        "assets/clients/yuva/06_detailing/pptx_detail_04.png"
+      ],
+      "07_manufacturing": [
+        "assets/clients/yuva/07_manufacturing/workshop_WhatsApp Image 2026-_3120x4160.jpg",
+        "assets/clients/yuva/07_manufacturing/workshop_WhatsApp Image 2026-_4000x2256.jpg"
+      ],
+      "08_transport": [
+        "assets/clients/yuva/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/yuva/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": [
+        "assets/clients/yuva/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 6,
+      "03_concept": 1,
+      "04_cad_2d": 3,
+      "05_model_3d": 6,
+      "06_detailing": 9,
+      "07_manufacturing": 2,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "sujana",
+    "name": "Ms. Sujana Ground Floor Mandir",
+    "material": "Teak & Brass Inlay",
+    "materialDetail": "Teak & Brass Inlay",
+    "location": "Bangalore",
+    "city": "Bangalore",
+    "size": "6'6\" \u00d7 5'6\"",
+    "type": "Ground Floor Mandir",
+    "desc": "Complete ground floor mandir plan and elevation with panchaloha bells and consecrated timber.",
+    "heroImg": "assets/clients/sujana/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/sujana/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/sujana/02_requirements/site_survey_1_1024x1024.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_R2 (1)_2048x2048.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_1067x1600.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_1080x1080.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_1163x1600.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_1280x720.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_474x886.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_591x1280.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_729x906.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_736x1308.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_738x1600.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_750x750.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_899x1599.jpg",
+        "assets/clients/sujana/02_requirements/site_survey_WhatsApp Image 2025-_903x1600.jpg",
+        "assets/clients/sujana/02_requirements/survey_img_1_1024x1024.jpg",
+        "assets/clients/sujana/02_requirements/survey_img_2_1024x1024.jpg",
+        "assets/clients/sujana/02_requirements/survey_img_WhatsApp Image 2025-_1600x1600.jpg",
+        "assets/clients/sujana/02_requirements/survey_img_WhatsApp Image 2025-_565x612.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/sujana/03_concept/concept_massing_study.jpg"
+      ],
+      "04_cad_2d": [
+        "assets/clients/sujana/04_cad_2d/cad_blueprint_page_01.png"
+      ],
+      "05_model_3d": [
+        "assets/clients/sujana/05_model_3d/render_3d_S1_2048x2048.jpg",
+        "assets/clients/sujana/05_model_3d/render_page_page_01.png",
+        "assets/clients/sujana/05_model_3d/render_page_page_02.png",
+        "assets/clients/sujana/05_model_3d/render_page_page_03.png",
+        "assets/clients/sujana/05_model_3d/render_page_page_04.png",
+        "assets/clients/sujana/05_model_3d/render_page_page_05.png",
+        "assets/clients/sujana/05_model_3d/render_view_img_01.jpeg",
+        "assets/clients/sujana/05_model_3d/render_view_img_02.jpeg",
+        "assets/clients/sujana/05_model_3d/render_view_img_03.jpeg",
+        "assets/clients/sujana/05_model_3d/render_view_img_04.jpeg"
+      ],
+      "06_detailing": [
+        "assets/clients/sujana/06_detailing/dimension_front dimensions_1024x1024.jpg",
+        "assets/clients/sujana/06_detailing/dimension_side dimensions_1024x1024.jpg",
+        "assets/clients/sujana/06_detailing/pptx_detail_01.png"
+      ],
+      "07_manufacturing": [
+        "assets/clients/sujana/07_manufacturing/workshop_WhatsApp Image 2026-_900x1600.jpg"
+      ],
+      "08_transport": [
+        "assets/clients/sujana/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/sujana/09_installation/install_step_page_01.png"
+      ],
+      "10_final": [
+        "assets/clients/sujana/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 18,
+      "03_concept": 1,
+      "04_cad_2d": 1,
+      "05_model_3d": 10,
+      "06_detailing": 3,
+      "07_manufacturing": 1,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "vishnu",
+    "name": "Mr. Vishnu Sacred Sanctuary",
+    "material": "Carved Teakwood",
+    "materialDetail": "Carved Teakwood",
+    "location": "Bangalore",
+    "city": "Bangalore",
+    "size": "8'0\" \u00d7 7'0\"",
+    "type": "Sacred Sanctuary",
+    "desc": "Bespoke teak pooja room featuring full guild drone workshop photography and precision drawing signoff.",
+    "heroImg": "assets/clients/vishnu/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/vishnu/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [],
+      "03_concept": [
+        "assets/clients/vishnu/03_concept/concept_massing_study.jpg"
+      ],
+      "04_cad_2d": [
+        "assets/clients/vishnu/04_cad_2d/cad_blueprint_page_01.png"
+      ],
+      "05_model_3d": [
+        "assets/clients/vishnu/05_model_3d/render_page_page_01.png",
+        "assets/clients/vishnu/05_model_3d/render_page_page_02.png",
+        "assets/clients/vishnu/05_model_3d/render_page_page_03.png",
+        "assets/clients/vishnu/05_model_3d/render_page_page_04.png",
+        "assets/clients/vishnu/05_model_3d/render_page_page_05.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_01.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_02.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_03.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_04.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_05.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_06.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_07.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_08.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_09.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_10.png",
+        "assets/clients/vishnu/05_model_3d/render_view_img_11.png"
+      ],
+      "06_detailing": [],
+      "07_manufacturing": [
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109152937_0_3840x2160.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109152944_0_3840x2160.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109153336_0_1728x3072.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109153358_0_1728x3072.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109153522_0_1728x3072.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109153530_0_1728x3072.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109154935_0_1728x3072.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109154943_0_1728x3072.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109154948_0_1728x3072.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109155048_0_1728x3072.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109155055_0_1728x3072.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109155102_0_1728x3072.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109155520_0_3840x2160.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109155525_0_3840x2160.jpg",
+        "assets/clients/vishnu/07_manufacturing/workshop_DJI_20260109155539_0_3840x2160.jpg"
+      ],
+      "08_transport": [
+        "assets/clients/vishnu/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/vishnu/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": [
+        "assets/clients/vishnu/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 0,
+      "03_concept": 1,
+      "04_cad_2d": 1,
+      "05_model_3d": 16,
+      "06_detailing": 0,
+      "07_manufacturing": 15,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "deepthi",
+    "name": "Ms. Deepthi Kunchey Suite",
+    "material": "Hand-Carved Gopuram Teak",
+    "materialDetail": "Hand-Carved Gopuram Teak",
+    "location": "Hyderabad",
+    "city": "Hyderabad",
+    "size": "7'0\" \u00d7 6'0\"",
+    "type": "Custom Mandir Suite",
+    "desc": "Precision 3D Gopuram STL detailing with site survey documentation and warm ambient glow.",
+    "heroImg": null,
+    "stageImages": {
+      "01_overview": [],
+      "02_requirements": [
+        "assets/clients/deepthi/02_requirements/site_survey_WhatsApp Image 2026-_1260x1144.jpg",
+        "assets/clients/deepthi/02_requirements/site_survey_WhatsApp Image 2026-_1290x1395.jpg",
+        "assets/clients/deepthi/02_requirements/site_survey_WhatsApp Image 2026-_1320x1269.jpg",
+        "assets/clients/deepthi/02_requirements/site_survey_WhatsApp Image 2026-_1320x1290.jpg",
+        "assets/clients/deepthi/02_requirements/site_survey_WhatsApp Image 2026-_910x1600.jpg"
+      ],
+      "03_concept": [],
+      "04_cad_2d": [],
+      "05_model_3d": [],
+      "06_detailing": [
+        "assets/clients/deepthi/06_detailing/dimension_detail_page_01.png",
+        "assets/clients/deepthi/06_detailing/dimension_detail_page_02.png",
+        "assets/clients/deepthi/06_detailing/dimension_detail_page_03.png",
+        "assets/clients/deepthi/06_detailing/dimension_detail_page_04.png",
+        "assets/clients/deepthi/06_detailing/dimension_detail_page_05.png",
+        "assets/clients/deepthi/06_detailing/dimension_detail_page_06.png"
+      ],
+      "07_manufacturing": [],
+      "08_transport": [
+        "assets/clients/deepthi/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/deepthi/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": []
+    },
+    "counts": {
+      "01_overview": 0,
+      "02_requirements": 5,
+      "03_concept": 0,
+      "04_cad_2d": 0,
+      "05_model_3d": 0,
+      "06_detailing": 6,
+      "07_manufacturing": 0,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 0
+    }
+  },
+  {
+    "id": "manasa",
+    "name": "Ms. Manasa Kuncham Sanctum",
+    "material": "Teak & Brass",
+    "materialDetail": "Teak & Brass",
+    "location": "Bangalore",
+    "city": "Bangalore",
+    "size": "8'6\" \u00d7 7'6\"",
+    "type": "Artisanal Mandap",
+    "desc": "Comprehensive 22MB dimension drawings and full design documentation tailored for family puja rituals.",
+    "heroImg": "assets/clients/manasa/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/manasa/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/manasa/02_requirements/survey_img_WhatsApp Image 2025-_1078x1531.jpg",
+        "assets/clients/manasa/02_requirements/survey_img_WhatsApp Image 2025-_1078x1581.jpg",
+        "assets/clients/manasa/02_requirements/survey_img_WhatsApp Image 2025-_1200x1600.jpg",
+        "assets/clients/manasa/02_requirements/survey_img_WhatsApp Image 2025-_1280x720.jpg",
+        "assets/clients/manasa/02_requirements/survey_img_WhatsApp Image 2025-_1280x853.jpg",
+        "assets/clients/manasa/02_requirements/survey_img_WhatsApp Image 2025-_1600x720.jpg",
+        "assets/clients/manasa/02_requirements/survey_img_WhatsApp Image 2025-_572x1280.jpg",
+        "assets/clients/manasa/02_requirements/survey_img_WhatsApp Image 2025-_620x1386.jpg",
+        "assets/clients/manasa/02_requirements/survey_img_WhatsApp Image 2025-_720x1280.jpg",
+        "assets/clients/manasa/02_requirements/survey_img_WhatsApp Image 2025-_720x1600.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/manasa/03_concept/concept_layout.png"
+      ],
+      "04_cad_2d": [
+        "assets/clients/manasa/04_cad_2d/design_doc_page_01.png",
+        "assets/clients/manasa/04_cad_2d/design_doc_page_02.png",
+        "assets/clients/manasa/04_cad_2d/design_doc_page_03.png",
+        "assets/clients/manasa/04_cad_2d/design_doc_page_04.png",
+        "assets/clients/manasa/04_cad_2d/design_doc_page_05.png",
+        "assets/clients/manasa/04_cad_2d/design_doc_page_06.png"
+      ],
+      "05_model_3d": [],
+      "06_detailing": [
+        "assets/clients/manasa/06_detailing/dimension_detail_page_01.png",
+        "assets/clients/manasa/06_detailing/dimension_detail_page_02.png",
+        "assets/clients/manasa/06_detailing/dimension_detail_page_03.png",
+        "assets/clients/manasa/06_detailing/dimension_detail_page_04.png",
+        "assets/clients/manasa/06_detailing/dimension_detail_page_05.png",
+        "assets/clients/manasa/06_detailing/dimension_detail_page_06.png"
+      ],
+      "07_manufacturing": [],
+      "08_transport": [
+        "assets/clients/manasa/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/manasa/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": [
+        "assets/clients/manasa/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 10,
+      "03_concept": 1,
+      "04_cad_2d": 6,
+      "05_model_3d": 0,
+      "06_detailing": 6,
+      "07_manufacturing": 0,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "yashaswini",
+    "name": "Dr. Yashaswini Stone Base Mandir",
+    "material": "Stone Base & Burma Teak",
+    "materialDetail": "Stone Base & Burma Teak",
+    "location": "Bangalore",
+    "city": "Bangalore",
+    "size": "9'6\" \u00d7 8'0\"",
+    "type": "Stone Base Sanctum",
+    "desc": "Hybrid stone base and hand-carved teakwood sanctum with Ashtalakshmi back plank engineering.",
+    "heroImg": "assets/clients/yashaswini/01_overview/hero_cover.jpg",
+    "stageImages": {
+      "01_overview": [
+        "assets/clients/yashaswini/01_overview/hero_cover.jpg"
+      ],
+      "02_requirements": [
+        "assets/clients/yashaswini/02_requirements/site_survey_WhatsApp Image 2026-_1079x1411.jpg",
+        "assets/clients/yashaswini/02_requirements/site_survey_WhatsApp Image 2026-_1079x781.jpg",
+        "assets/clients/yashaswini/02_requirements/site_survey_WhatsApp Image 2026-_1080x608.jpg",
+        "assets/clients/yashaswini/02_requirements/site_survey_WhatsApp Image 2026-_1080x635.jpg"
+      ],
+      "03_concept": [
+        "assets/clients/yashaswini/03_concept/concept_layout.png"
+      ],
+      "04_cad_2d": [
+        "assets/clients/yashaswini/04_cad_2d/cad_blueprint_page_01.png",
+        "assets/clients/yashaswini/04_cad_2d/cad_blueprint_page_02.png",
+        "assets/clients/yashaswini/04_cad_2d/cad_blueprint_page_03.png",
+        "assets/clients/yashaswini/04_cad_2d/cad_blueprint_page_04.png",
+        "assets/clients/yashaswini/04_cad_2d/cad_blueprint_page_05.png",
+        "assets/clients/yashaswini/04_cad_2d/cad_blueprint_page_06.png",
+        "assets/clients/yashaswini/04_cad_2d/cad_blueprint_page_07.png",
+        "assets/clients/yashaswini/04_cad_2d/cad_blueprint_page_08.png",
+        "assets/clients/yashaswini/04_cad_2d/cad_blueprint_page_09.png",
+        "assets/clients/yashaswini/04_cad_2d/cad_blueprint_page_10.png",
+        "assets/clients/yashaswini/04_cad_2d/design_doc_page_01.png"
+      ],
+      "05_model_3d": [],
+      "06_detailing": [
+        "assets/clients/yashaswini/06_detailing/dimension_detail_page_01.png",
+        "assets/clients/yashaswini/06_detailing/dimension_detail_page_02.png",
+        "assets/clients/yashaswini/06_detailing/dimension_detail_page_03.png",
+        "assets/clients/yashaswini/06_detailing/dimension_detail_page_04.png",
+        "assets/clients/yashaswini/06_detailing/dimension_detail_page_05.png",
+        "assets/clients/yashaswini/06_detailing/dimension_detail_page_06.png",
+        "assets/clients/yashaswini/06_detailing/dimension_detail_page_07.png",
+        "assets/clients/yashaswini/06_detailing/dimension_detail_page_08.png"
+      ],
+      "07_manufacturing": [],
+      "08_transport": [
+        "assets/clients/yashaswini/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/yashaswini/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": [
+        "assets/clients/yashaswini/10_final/final_consecration.jpg"
+      ]
+    },
+    "counts": {
+      "01_overview": 1,
+      "02_requirements": 4,
+      "03_concept": 1,
+      "04_cad_2d": 11,
+      "05_model_3d": 0,
+      "06_detailing": 8,
+      "07_manufacturing": 0,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 1
+    }
+  },
+  {
+    "id": "rekha",
+    "name": "Ms. Rekha Lokeshwara Temple",
+    "material": "Chiseled Stone & Wood",
+    "materialDetail": "Chiseled Stone & Wood",
+    "location": "Bangalore",
+    "city": "Bangalore",
+    "size": "10'0\" \u00d7 8'6\"",
+    "type": "Chiseled Stone Temple",
+    "desc": "Heritage stone carving with SKM stoneworks master guild carving, 3DM Rhino models, and custom archways.",
+    "heroImg": null,
+    "stageImages": {
+      "01_overview": [],
+      "02_requirements": [
+        "assets/clients/rekha/02_requirements/site_survey_WhatsApp Image 2025-_538x1213.jpg",
+        "assets/clients/rekha/02_requirements/site_survey_WhatsApp Image 2025-_685x1600.jpg"
+      ],
+      "03_concept": [],
+      "04_cad_2d": [],
+      "05_model_3d": [],
+      "06_detailing": [
+        "assets/clients/rekha/06_detailing/dimension_detail_page_01.png",
+        "assets/clients/rekha/06_detailing/dimension_detail_page_02.png",
+        "assets/clients/rekha/06_detailing/dimension_detail_page_03.png",
+        "assets/clients/rekha/06_detailing/dimension_detail_page_04.png",
+        "assets/clients/rekha/06_detailing/dimension_detail_page_05.png",
+        "assets/clients/rekha/06_detailing/dimension_detail_page_06.png",
+        "assets/clients/rekha/06_detailing/dimension_detail_page_07.png",
+        "assets/clients/rekha/06_detailing/dimension_detail_page_08.png"
+      ],
+      "07_manufacturing": [],
+      "08_transport": [
+        "assets/clients/rekha/08_transport/protective_crating_specs.png"
+      ],
+      "09_installation": [
+        "assets/clients/rekha/09_installation/laser_alignment_assembly.png"
+      ],
+      "10_final": []
+    },
+    "counts": {
+      "01_overview": 0,
+      "02_requirements": 2,
+      "03_concept": 0,
+      "04_cad_2d": 0,
+      "05_model_3d": 0,
+      "06_detailing": 8,
+      "07_manufacturing": 0,
+      "08_transport": 1,
+      "09_installation": 1,
+      "10_final": 0
+    }
+  }
+];
