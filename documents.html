@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVVAYAM — Presentation & Document Viewer</title>
+  <meta name="description" content="Clean, modern presentation and architectural document viewer for Svvayam.">
+
+  <!-- Google Fonts: Cinzel & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            svvayam: {
+              warmWhite: '#FBFAF6',
+              white: '#FFFFFF',
+              beige: '#E9DFCA',
+              softYellow: '#FFF2A8',
+              yellow: '#FFD21A',
+              charcoal: '#171717',
+              muted: '#6B6862',
+              border: '#E8E2D8',
+              surface: '#F5F2EB'
+            }
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+            serif: ['Cinzel', 'Playfair Display', 'serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Mozilla PDF.js via CDN (Canvas-based rendering, no browser PDF controls) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+  <style>
+    /* Custom Scrollbars */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #1C1C1A; }
+    ::-webkit-scrollbar-thumb { background: #383835; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #FFD21A; }
+
+    /* Smooth Slide Canvas Transitions */
+    .slide-canvas {
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* A4 Document Paper Page Styling */
+    .a4-page-card {
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .a4-page-card:hover {
+      box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 210, 26, 0.3);
+    }
+  </style>
+</head>
+<body class="h-full bg-[#121211] text-[#EBE8E1] font-sans flex flex-col antialiased overflow-hidden select-none">
+
+  <!-- ========================================================================= -->
+  <!-- 1. TOP NAVIGATION & DOCUMENT SELECTOR BAR                                 -->
+  <!-- ========================================================================= -->
+  <header class="h-16 bg-[#1A1A18] border-b border-[#2C2C29] px-4 sm:px-6 flex items-center justify-between z-30 shrink-0">
+    
+    <!-- Left: Brand Logo & Home Return -->
+    <div class="flex items-center space-x-3 sm:space-x-4">
+      <a href="index.html" title="Return to Svvayam Presentation" class="flex items-center space-x-2 text-xs font-bold text-[#A8A49B] hover:text-svvayam-yellow transition">
+        <i class="fa-solid fa-arrow-left text-xs"></i>
+        <span class="hidden md:inline">Back to Presentation</span>
+      </a>
+      <div class="h-4 w-px bg-[#333330] hidden md:block"></div>
+      <a href="index.html" class="flex items-center space-x-2">
+        <img src="assets/SVVAYAM-LOGO-4.png" alt="Svvayam" class="h-6 sm:h-7 object-contain brightness-110">
+      </a>
+    </div>
+
+    <!-- Center: 3 Distinct Document Switcher Tabs -->
+    <nav class="flex items-center bg-[#242421] p-1 rounded-xl border border-[#363632] space-x-1 max-w-xl">
+      
+      <!-- Tab 1: Presentation 1 (Landscape Deck) -->
+      <button id="tab-doc1" onclick="switchDocument('doc1')" class="doc-tab-btn active px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition flex items-center space-x-2 bg-svvayam-yellow text-svvayam-charcoal shadow-sm cursor-pointer">
+        <i class="fa-solid fa-layer-group text-[11px]"></i>
+        <span class="whitespace-nowrap">Presentation 1</span>
+        <span class="hidden lg:inline text-[10px] opacity-75 font-normal">(16:9 Deck)</span>
+      </button>
+
+      <!-- Tab 2: Presentation 2 (Landscape Deck) -->
+      <button id="tab-doc2" onclick="switchDocument('doc2')" class="doc-tab-btn px-3 sm:px-4 py-1.5 rounded-lg text-xs font-medium text-[#A8A49B] hover:text-white transition flex items-center space-x-2 cursor-pointer">
+        <i class="fa-solid fa-wand-magic-sparkles text-[11px]"></i>
+        <span class="whitespace-nowrap">Presentation 2</span>
+        <span class="hidden lg:inline text-[10px] opacity-75 font-normal">(Execution)</span>
+      </button>
+
+      <!-- Tab 3: Document / Overview (A4 Vertical) -->
+      <button id="tab-doc3" onclick="switchDocument('doc3')" class="doc-tab-btn px-3 sm:px-4 py-1.5 rounded-lg text-xs font-medium text-[#A8A49B] hover:text-white transition flex items-center space-x-2 cursor-pointer">
+        <i class="fa-solid fa-file-lines text-[11px]"></i>
+        <span class="whitespace-nowrap">Document / Overview</span>
+        <span class="hidden lg:inline text-[10px] opacity-75 font-normal">(A4 Stone)</span>
+      </button>
+
+    </nav>
+
+    <!-- Right: Viewer Controls (Zoom, Drive Source, Fullscreen) -->
+    <div class="flex items-center space-x-2">
+      
+      <!-- Source Drive Link Button -->
+      <a id="btn-drive-link" href="#" target="_blank" title="Open Source File in Google Drive" class="h-8 px-2.5 rounded-lg border border-[#333330] bg-[#222220] hover:border-svvayam-yellow text-[#A8A49B] hover:text-white flex items-center space-x-1.5 text-xs transition shadow-xs">
+        <i class="fa-brands fa-google-drive text-svvayam-yellow text-xs"></i>
+        <span class="hidden xl:inline text-[11px]">Drive Link</span>
+      </a>
+
+      <!-- Fullscreen Toggle -->
+      <button onclick="toggleViewerFullscreen()" title="Toggle Fullscreen" class="w-8 h-8 rounded-lg border border-[#333330] bg-[#222220] hover:bg-[#2C2C28] text-[#A8A49B] hover:text-white flex items-center justify-center text-xs transition shadow-xs cursor-pointer">
+        <i class="fa-solid fa-expand"></i>
+      </button>
+
+    </div>
+
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- 2. DOCUMENT SUB-BAR (Metadata, Page Progress & Zoom Controls)              -->
+  <!-- ========================================================================= -->
+  <div class="h-11 bg-[#161614] border-b border-[#282825] px-4 sm:px-6 flex items-center justify-between text-xs text-[#8F8B82] shrink-0 z-20">
+    
+    <!-- Document Title & Format Indicator -->
+    <div class="flex items-center space-x-2.5 truncate">
+      <span id="doc-badge" class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider bg-svvayam-yellow/20 text-svvayam-yellow border border-svvayam-yellow/30">
+        LANDSCAPE 16:9
+      </span>
+      <span id="doc-title-text" class="font-bold text-white text-xs truncate">
+        Presentation 1 — Render & Executed Showcase Deck
+      </span>
+    </div>
+
+    <!-- Viewer Navigation & Zoom Toolbar -->
+    <div class="flex items-center space-x-3">
+      
+      <!-- Page Navigator (Prev / Next & Counter) -->
+      <div id="deck-nav-controls" class="flex items-center space-x-1.5 bg-[#20201D] px-2 py-1 rounded-lg border border-[#333330]">
+        <button onclick="stepPage(-1)" title="Previous Page (←)" class="w-6 h-6 rounded flex items-center justify-center text-[#B0ACA2] hover:text-white hover:bg-[#2C2C28] transition cursor-pointer">
+          <i class="fa-solid fa-chevron-left text-[10px]"></i>
+        </button>
+        <span id="page-counter-label" class="text-xs font-bold text-white px-1.5 min-w-[75px] text-center">
+          Slide 1 of 19
+        </span>
+        <button onclick="stepPage(1)" title="Next Page (→)" class="w-6 h-6 rounded flex items-center justify-center text-[#B0ACA2] hover:text-white hover:bg-[#2C2C28] transition cursor-pointer">
+          <i class="fa-solid fa-chevron-right text-[10px]"></i>
+        </button>
+      </div>
+
+      <!-- Zoom Controls -->
+      <div class="flex items-center space-x-1 bg-[#20201D] px-1.5 py-1 rounded-lg border border-[#333330]">
+        <button onclick="changeZoom(-0.15)" title="Zoom Out" class="w-6 h-6 rounded flex items-center justify-center text-[#B0ACA2] hover:text-white hover:bg-[#2C2C28] transition cursor-pointer">
+          <i class="fa-solid fa-minus text-[10px]"></i>
+        </button>
+        <button onclick="resetZoom()" title="Reset to Fit (100%)" class="px-2 text-[11px] font-mono text-[#D4D0C5] hover:text-svvayam-yellow transition cursor-pointer">
+          <span id="zoom-percentage-label">100%</span>
+        </button>
+        <button onclick="changeZoom(0.15)" title="Zoom In" class="w-6 h-6 rounded flex items-center justify-center text-[#B0ACA2] hover:text-white hover:bg-[#2C2C28] transition cursor-pointer">
+          <i class="fa-solid fa-plus text-[10px]"></i>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 3. MAIN CANVAS / DOCUMENT DISPLAY VIEWPORT                                -->
+  <!-- ========================================================================= -->
+  <main id="viewer-main-canvas" class="flex-1 relative overflow-auto bg-[#0E0E0D] flex items-center justify-center p-4 sm:p-6 select-none">
+    
+    <!-- Presentation Slides Viewport (Centered 16:9 Landscape) -->
+    <div id="landscape-deck-container" class="relative max-w-full max-h-full flex items-center justify-center">
+      
+      <!-- Previous Slide Overlay Arrow -->
+      <button onclick="stepPage(-1)" title="Previous Slide" class="absolute -left-3 sm:-left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#1A1A18]/90 hover:bg-svvayam-yellow text-white hover:text-svvayam-charcoal border border-[#333330] shadow-xl flex items-center justify-center transition hover:scale-110 cursor-pointer">
+        <i class="fa-solid fa-chevron-left text-sm"></i>
+      </button>
+
+      <!-- The Active Slide Canvas / Image -->
+      <div id="slide-stage-wrapper" class="relative rounded-2xl overflow-hidden bg-black flex items-center justify-center shadow-2xl border border-[#262624]">
+        <canvas id="pdf-render-canvas" class="hidden"></canvas>
+        <img id="slide-image-display" src="" alt="Presentation Slide" class="slide-canvas max-w-full max-h-[78vh] object-contain block mx-auto">
+      </div>
+
+      <!-- Next Slide Overlay Arrow -->
+      <button onclick="stepPage(1)" title="Next Slide" class="absolute -right-3 sm:-right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#1A1A18]/90 hover:bg-svvayam-yellow text-white hover:text-svvayam-charcoal border border-[#333330] shadow-xl flex items-center justify-center transition hover:scale-110 cursor-pointer">
+        <i class="fa-solid fa-chevron-right text-sm"></i>
+      </button>
+
+    </div>
+
+    <!-- A4 Vertical Document Container (Smooth Continuous Vertical Scroll) -->
+    <div id="portrait-doc-container" class="hidden w-full h-full overflow-y-auto flex flex-col items-center py-6 space-y-6">
+      <!-- Populated dynamically with all 10 pages stacked in elegant A4 cards -->
+      <div id="a4-pages-stack" class="w-full max-w-3xl flex flex-col items-center space-y-6">
+        <!-- Rendered A4 canvas / pages inserted here -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- 4. BOTTOM THUMBNAIL RAIL (For Rapid Slide Navigation)                     -->
+  <!-- ========================================================================= -->
+  <footer id="viewer-thumbnail-rail" class="h-20 bg-[#161614] border-t border-[#262623] px-4 flex items-center justify-start sm:justify-center overflow-x-auto space-x-2.5 shrink-0 z-20">
+    <!-- Populated dynamically: clickable slide thumbnails -->
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT CONTROLLER & PDF.JS ENGINE                                     -->
+  <!-- ========================================================================= -->
+  <script>
+    // =========================================================================
+    // CONFIGURATION: 3 DOCUMENTS SPECIFICATION
+    // =========================================================================
+    // You can swap local PDF file paths or web links here at any time:
+    const DOCUMENTS_CONFIG = {
+      doc1: {
+        id: 'doc1',
+        title: 'Presentation 1',
+        subtitle: 'Render & Executed Showcase Deck',
+        type: 'landscape', // Landscape presentation deck
+        aspectRatio: '16:9',
+        pdfUrl: 'assets/docs/doc1.pdf', // Path to local PDF
+        driveLink: 'https://drive.google.com/file/d/1koaMZJizLUmIjonj-Cx3ySB8dHoUci27/view?usp=drive_link',
+        totalPages: 19,
+        pagesDir: 'assets/docs/pages/doc1' // Pre-rendered high-res canvas fallback
+      },
+      doc2: {
+        id: 'doc2',
+        title: 'Presentation 2',
+        subtitle: 'From Imagination to Installation (Side-by-Side Showcase)',
+        type: 'landscape', // Landscape presentation deck
+        aspectRatio: '16:9',
+        pdfUrl: 'assets/docs/doc2.pdf', // Path to local PDF
+        driveLink: 'https://drive.google.com/file/d/106m5Ea_81vYyPCzqBTZtD2fNRtSSE-pw/view?usp=drive_link',
+        totalPages: 30,
+        pagesDir: 'assets/docs/pages/doc2' // Pre-rendered high-res canvas fallback
+      },
+      doc3: {
+        id: 'doc3',
+        title: 'Document / Overview',
+        subtitle: 'Monolithic Stone Temple Architecture & Pedigree',
+        type: 'portrait', // A4 vertical document
+        aspectRatio: 'A4',
+        pdfUrl: 'assets/docs/doc3.pdf', // Path to local PDF
+        driveLink: 'https://docs.google.com/presentation/d/1KWyx_dtzK-lQf_xAhDJ40_0Ym9JPK7h3/edit?usp=drive_link',
+        totalPages: 10,
+        pagesDir: 'assets/docs/pages/doc3' // Pre-rendered high-res canvas fallback
+      }
+    };
+
+    // State Variables
+    let currentDocKey = 'doc1';
+    let currentPageNum = 1;
+    let currentZoomScale = 1.0;
+    let pdfDocInstance = null;
+    let isRenderingPdf = false;
+
+    // Configure PDF.js worker
+    if (typeof pdfjsLib !== 'undefined') {
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    }
+
+    // ==================== APP INITIALIZATION ====================
+    document.addEventListener('DOMContentLoaded', () => {
+      // Read initial document from URL hash if provided (e.g., #doc2)
+      const hash = window.location.hash.replace('#', '');
+      if (DOCUMENTS_CONFIG[hash]) {
+        currentDocKey = hash;
+      }
+      loadDocument(currentDocKey);
+      setupKeyboardNavigation();
+    });
+
+    // ==================== DOCUMENT SWITCHER ====================
+    function switchDocument(docKey) {
+      if (!DOCUMENTS_CONFIG[docKey] || currentDocKey === docKey) return;
+      currentDocKey = docKey;
+      currentPageNum = 1;
+      currentZoomScale = 1.0;
+      window.location.hash = docKey;
+      loadDocument(docKey);
+    }
+
+    function loadDocument(docKey) {
+      const doc = DOCUMENTS_CONFIG[docKey];
+      if (!doc) return;
+
+      // Update Navigation Tabs Active State
+      document.querySelectorAll('.doc-tab-btn').forEach(btn => {
+        btn.className = 'doc-tab-btn px-3 sm:px-4 py-1.5 rounded-lg text-xs font-medium text-[#A8A49B] hover:text-white transition flex items-center space-x-2 cursor-pointer';
+      });
+      const activeTab = document.getElementById('tab-' + docKey);
+      if (activeTab) {
+        activeTab.className = 'doc-tab-btn active px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition flex items-center space-x-2 bg-svvayam-yellow text-svvayam-charcoal shadow-sm cursor-pointer';
+      }
+
+      // Update Sub-Bar Info
+      const badge = document.getElementById('doc-badge');
+      const title = document.getElementById('doc-title-text');
+      const driveLink = document.getElementById('btn-drive-link');
+
+      if (badge) {
+        badge.textContent = (doc.type === 'landscape') ? 'LANDSCAPE 16:9 DECK' : 'A4 PORTRAIT DOCUMENT';
+      }
+      if (title) {
+        title.textContent = doc.title + ' — ' + doc.subtitle;
+      }
+      if (driveLink) {
+        driveLink.href = doc.driveLink;
+      }
+
+      // Toggle Display Container between Landscape Slide Deck and A4 Vertical Document
+      const deckContainer = document.getElementById('landscape-deck-container');
+      const portraitContainer = document.getElementById('portrait-doc-container');
+      const thumbnailRail = document.getElementById('viewer-thumbnail-rail');
+      const deckNavControls = document.getElementById('deck-nav-controls');
+
+      if (doc.type === 'landscape') {
+        deckContainer.classList.remove('hidden');
+        deckContainer.classList.add('flex');
+        portraitContainer.classList.add('hidden');
+        portraitContainer.classList.remove('flex');
+        thumbnailRail.classList.remove('hidden');
+        deckNavControls.classList.remove('hidden');
+
+        renderLandscapeSlide(currentPageNum);
+        renderThumbnailRail(doc);
+      } else {
+        // A4 Portrait Continuous Document Reader
+        deckContainer.classList.add('hidden');
+        deckContainer.classList.remove('flex');
+        portraitContainer.classList.remove('hidden');
+        portraitContainer.classList.add('flex');
+        thumbnailRail.classList.add('hidden'); // Clean document reader mode
+        deckNavControls.classList.add('hidden');
+
+        renderPortraitDocument(doc);
+      }
+
+      updatePageCounter();
+      updateZoomLabel();
+    }
+
+    // ==================== LANDSCAPE SLIDE RENDERING ====================
+    function renderLandscapeSlide(pageNumber) {
+      const doc = DOCUMENTS_CONFIG[currentDocKey];
+      if (!doc) return;
+
+      const numStr = (pageNumber < 10 ? '0' : '') + pageNumber;
+      const slideImg = document.getElementById('slide-image-display');
+      const slideWrapper = document.getElementById('slide-stage-wrapper');
+
+      if (slideImg) {
+        slideImg.src = doc.pagesDir + '/page_' + numStr + '.jpg';
+        slideImg.style.transform = 'scale(' + currentZoomScale + ')';
+      }
+
+      // Attempt PDF.js Canvas render if available and on web server
+      renderWithPdfJs(doc.pdfUrl, pageNumber);
+
+      updatePageCounter();
+      highlightActiveThumbnail(pageNumber);
+    }
+
+    function renderThumbnailRail(doc) {
+      const rail = document.getElementById('viewer-thumbnail-rail');
+      if (!rail) return;
+      rail.innerHTML = '';
+
+      for (let i = 1; i <= doc.totalPages; i++) {
+        const numStr = (i < 10 ? '0' : '') + i;
+        const thumb = document.createElement('div');
+        thumb.className = (i === currentPageNum)
+          ? 'relative h-14 aspect-video rounded-md overflow-hidden border-2 border-svvayam-yellow shadow-md cursor-pointer transition transform scale-105 shrink-0 bg-black flex items-center justify-center'
+          : 'relative h-14 aspect-video rounded-md overflow-hidden border border-[#333330] shadow-xs cursor-pointer transition hover:border-[#777] hover:scale-102 shrink-0 bg-black flex items-center justify-center opacity-70 hover:opacity-100';
+        thumb.id = 'thumb-slide-' + i;
+        thumb.onclick = () => goToPage(i);
+
+        thumb.innerHTML = `
+          <img src="${doc.pagesDir}/page_${numStr}.jpg" alt="Slide ${i}" class="w-full h-full object-cover">
+          <span class="absolute bottom-0.5 right-1 text-[9px] font-mono font-bold text-white/90 bg-black/70 px-1 rounded">${i}</span>
+        `;
+        rail.appendChild(thumb);
+      }
+    }
+
+    function highlightActiveThumbnail(pageNumber) {
+      document.querySelectorAll('#viewer-thumbnail-rail > div').forEach((t, idx) => {
+        const pNum = idx + 1;
+        if (pNum === pageNumber) {
+          t.className = 'relative h-14 aspect-video rounded-md overflow-hidden border-2 border-svvayam-yellow shadow-md cursor-pointer transition transform scale-105 shrink-0 bg-black flex items-center justify-center';
+          t.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        } else {
+          t.className = 'relative h-14 aspect-video rounded-md overflow-hidden border border-[#333330] shadow-xs cursor-pointer transition hover:border-[#777] hover:scale-102 shrink-0 bg-black flex items-center justify-center opacity-70 hover:opacity-100';
+        }
+      });
+    }
+
+    // ==================== A4 PORTRAIT CONTINUOUS DOCUMENT ====================
+    function renderPortraitDocument(doc) {
+      const stack = document.getElementById('a4-pages-stack');
+      if (!stack) return;
+      stack.innerHTML = '';
+
+      for (let i = 1; i <= doc.totalPages; i++) {
+        const numStr = (i < 10 ? '0' : '') + i;
+        const pageCard = document.createElement('div');
+        pageCard.className = 'a4-page-card w-full rounded-xl overflow-hidden bg-white shadow-2xl relative';
+        pageCard.style.maxWidth = (680 * currentZoomScale) + 'px';
+
+        pageCard.innerHTML = `
+          <div class="relative w-full">
+            <img src="${doc.pagesDir}/page_${numStr}.jpg" alt="Page ${i}" class="w-full h-auto object-contain block select-none">
+            <div class="absolute bottom-3 right-4 text-[11px] font-mono font-bold text-gray-500 bg-white/80 px-2 py-0.5 rounded shadow-xs border border-gray-200">
+              Page ${i} of ${doc.totalPages}
+            </div>
+          </div>
+        `;
+        stack.appendChild(pageCard);
+      }
+    }
+
+    // ==================== PDF.JS OPTIONAL HIGH-RES RENDER ====================
+    async function renderWithPdfJs(pdfUrl, pageNumber) {
+      if (typeof pdfjsLib === 'undefined') return;
+      try {
+        if (!pdfDocInstance || pdfDocInstance._url !== pdfUrl) {
+          const loadingTask = pdfjsLib.getDocument(pdfUrl);
+          pdfDocInstance = await loadingTask.promise;
+          pdfDocInstance._url = pdfUrl;
+        }
+
+        const page = await pdfDocInstance.getPage(pageNumber);
+        const canvas = document.getElementById('pdf-render-canvas');
+        if (!canvas) return;
+
+        const ctx = canvas.getContext('2d');
+        const viewport = page.getViewport({ scale: 1.5 });
+        canvas.height = viewport.height;
+        canvas.width = viewport.width;
+
+        const renderContext = { canvasContext: ctx, viewport: viewport };
+        await page.render(renderContext).promise;
+
+        // If rendered, canvas can supplement the image
+        const img = document.getElementById('slide-image-display');
+        if (img) img.src = canvas.toDataURL('image/jpeg', 0.92);
+      } catch (err) {
+        // High-res pre-rendered image fallback takes over automatically
+      }
+    }
+
+    // ==================== PAGE CONTROLS ====================
+    function goToPage(pageNumber) {
+      const doc = DOCUMENTS_CONFIG[currentDocKey];
+      if (!doc) return;
+      if (pageNumber >= 1 && pageNumber <= doc.totalPages) {
+        currentPageNum = pageNumber;
+        renderLandscapeSlide(pageNumber);
+      }
+    }
+
+    function stepPage(delta) {
+      const doc = DOCUMENTS_CONFIG[currentDocKey];
+      if (!doc) return;
+      const target = currentPageNum + delta;
+      if (target >= 1 && target <= doc.totalPages) {
+        goToPage(target);
+      }
+    }
+
+    function updatePageCounter() {
+      const doc = DOCUMENTS_CONFIG[currentDocKey];
+      if (!doc) return;
+      const counterLabel = document.getElementById('page-counter-label');
+      if (counterLabel) {
+        counterLabel.textContent = (doc.type === 'landscape' ? 'Slide ' : 'Page ') + currentPageNum + ' of ' + doc.totalPages;
+      }
+    }
+
+    // ==================== ZOOM CONTROLS ====================
+    function changeZoom(delta) {
+      currentZoomScale = Math.max(0.6, Math.min(2.5, currentZoomScale + delta));
+      applyZoom();
+    }
+
+    function resetZoom() {
+      currentZoomScale = 1.0;
+      applyZoom();
+    }
+
+    function applyZoom() {
+      updateZoomLabel();
+      const doc = DOCUMENTS_CONFIG[currentDocKey];
+      if (!doc) return;
+
+      if (doc.type === 'landscape') {
+        const slideImg = document.getElementById('slide-image-display');
+        if (slideImg) slideImg.style.transform = 'scale(' + currentZoomScale + ')';
+      } else {
+        document.querySelectorAll('#a4-pages-stack > div').forEach(card => {
+          card.style.maxWidth = (680 * currentZoomScale) + 'px';
+        });
+      }
+    }
+
+    function updateZoomLabel() {
+      const zoomLabel = document.getElementById('zoom-percentage-label');
+      if (zoomLabel) {
+        zoomLabel.textContent = Math.round(currentZoomScale * 100) + '%';
+      }
+    }
+
+    function toggleViewerFullscreen() {
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {});
+      } else {
+        document.exitFullscreen().catch(err => {});
+      }
+    }
+
+    // ==================== KEYBOARD CONTROLS ====================
+    function setupKeyboardNavigation() {
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+          e.preventDefault();
+          stepPage(1);
+        } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+          e.preventDefault();
+          stepPage(-1);
+        } else if (e.key === '1') {
+          switchDocument('doc1');
+        } else if (e.key === '2') {
+          switchDocument('doc2');
+        } else if (e.key === '3') {
+          switchDocument('doc3');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

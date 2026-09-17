@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SVVAYAM — Bespoke Sacred Architecture Presentation</title>
-  <meta name="description" content="Interactive sales presentation experience for Svvayam: bespoke luxury pooja rooms and sacred architecture.">
+  <meta name="description" content="Interactive presentation experience for Svvayam: bespoke luxury pooja rooms and sacred temple architecture.">
 
   <!-- Fonts: Cinzel & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,6 +41,9 @@
 
   <!-- FontAwesome 6 Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Mozilla PDF.js via CDN (Canvas-based rendering) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
   <!-- Load Clients Data Manifest -->
   <script src="assets/clients_manifest.js"></script>
@@ -79,15 +82,16 @@
       border-color: #FFD21A;
     }
     .project-card-hover:hover .card-img {
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
 
-    /* Active Stage Indicator */
-    .stage-item.active {
+    /* Active Stage Pill Indicator */
+    .stage-pill.active {
       background-color: #FFD21A !important;
       color: #171717 !important;
       font-weight: 700 !important;
       border-color: #FFD21A !important;
+      box-shadow: 0 2px 6px rgba(255, 210, 26, 0.35);
     }
 
     /* Animated Glowing Gradient Lines (White & Yellow Glow Beam) */
@@ -140,6 +144,28 @@
       0% { top: -30%; }
       100% { top: 120%; }
     }
+
+    
+    /* Smooth Slide Canvas Transitions */
+    .slide-canvas {
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* A4 Document Paper Page Styling */
+    .a4-page-card {
+      box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .a4-page-card:hover {
+      box-shadow: 0 15px 40px -5px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 210, 26, 0.3);
+    }
+
+    /* Lightbox Zoom Container */
+    .lightbox-img {
+      transition: transform 0.25s ease-out;
+      transform-origin: center center;
+    }
   </style>
 </head>
 <body class="h-full bg-svvayam-warmWhite text-svvayam-charcoal font-sans flex flex-col antialiased selection:bg-svvayam-yellow selection:text-svvayam-charcoal">
@@ -182,6 +208,9 @@
           <button id="tab-btn-curated" onclick="showCuratedView()" class="px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition">
             Curated Showcase
           </button>
+          <button id="tab-btn-docs" onclick="showDocumentsView()" class="px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition">
+            Presentations & Docs
+          </button>
         </div>
 
         <button onclick="toggleFullscreen()" title="Fullscreen" class="w-8 h-8 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-surface flex items-center justify-center text-xs text-svvayam-charcoal transition shadow-xs ml-2">
@@ -223,14 +252,18 @@
         Explore authentic architectural execution journeys — from initial site surveys and precision 2D CAD blueprints to photorealistic 3D renders and master guild craftsmanship.
       </p>
 
-      <!-- Primary Action Buttons -->
-      <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full justify-center">
-        <button onclick="openClientExplorerFromLanding()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-svvayam-yellow text-svvayam-charcoal font-bold text-xs uppercase tracking-wider hover:brightness-105 transition shadow-md flex items-center justify-center space-x-2.5">
+      <!-- Primary Action Buttons (3 Balanced Buttons) -->
+      <div class="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full justify-center max-w-2xl mx-auto">
+        <button onclick="openClientExplorerFromLanding()" class="w-full sm:w-auto px-6 sm:px-7 py-4 rounded-xl bg-svvayam-yellow text-svvayam-charcoal font-bold text-xs uppercase tracking-wider hover:brightness-105 transition shadow-md flex items-center justify-center space-x-2.5 cursor-pointer">
           <span>Open Client Explorer</span>
           <i class="fa-solid fa-arrow-right text-xs"></i>
         </button>
-        <button onclick="showCuratedView()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white border border-svvayam-border text-svvayam-charcoal font-bold text-xs uppercase tracking-wider hover:border-svvayam-charcoal transition shadow-xs flex items-center justify-center space-x-2">
+        <button onclick="showCuratedView()" class="w-full sm:w-auto px-6 sm:px-7 py-4 rounded-xl bg-white border border-svvayam-border text-svvayam-charcoal font-bold text-xs uppercase tracking-wider hover:border-svvayam-charcoal transition shadow-xs flex items-center justify-center space-x-2 cursor-pointer">
           <span>Curated Projects</span>
+        </button>
+        <button onclick="showDocumentsView()" class="w-full sm:w-auto px-6 sm:px-7 py-4 rounded-xl bg-white border border-svvayam-border text-svvayam-charcoal font-bold text-xs uppercase tracking-wider hover:border-svvayam-yellow hover:text-svvayam-charcoal transition shadow-xs flex items-center justify-center space-x-2.5 cursor-pointer">
+          <i class="fa-solid fa-layer-group text-svvayam-yellow text-xs"></i>
+          <span>Presentations & Documents</span>
         </button>
       </div>
 
@@ -251,7 +284,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 2. CLIENT EXPLORER VIEW (20 Tiles + Animated Glowing Gradient Lines)      -->
+  <!-- 2. CLIENT EXPLORER VIEW (4 Rows x 4 Columns = 16 Tabs + Glowing Lines)    -->
   <!-- ========================================================================= -->
   <section id="view-explorer" class="view-panel hidden flex-col flex-1 p-4 sm:p-8 max-w-7xl mx-auto w-full">
     
@@ -262,7 +295,7 @@
         <p class="text-xs text-svvayam-muted mt-1">Browse sacred sanctums mapped across Architectural Detail and Physical Dimensions.</p>
       </div>
       <div class="flex items-center space-x-3">
-        <span class="text-xs text-svvayam-muted">Select any project to launch its 10-stage execution journey</span>
+        <span class="text-xs text-svvayam-muted">Select any project to launch its execution journey</span>
       </div>
     </div>
 
@@ -282,7 +315,7 @@
         <div class="glow-line-x w-full"></div>
       </div>
 
-      <!-- MATRIX BODY: SIZE (Top to Bottom Glowing Line on Left) + 4x5 GRID -->
+      <!-- MATRIX BODY: SIZE (Top to Bottom Glowing Line on Left) + 4x4 GRID -->
       <div class="flex gap-4 sm:gap-6 items-stretch pt-2">
         
         <!-- LEFT AXIS: SIZE (Follows ALL 4 ROWS from Top to Bottom) -->
@@ -321,7 +354,7 @@
           <div class="text-[10px] text-svvayam-muted">&darr; Grand Scale</div>
         </div>
 
-        <!-- 4 ROWS x 5 COLUMNS TILES GRID -->
+        <!-- 4 ROWS x 4 COLUMNS TILES GRID -->
         <div id="explorer-tiles-grid" class="flex-1 flex flex-col space-y-4">
           <!-- Dynamically populated by JS from window.SVVAYAM_CLIENTS_DATA -->
         </div>
@@ -340,31 +373,31 @@
     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
       <div>
         <h2 class="font-serif text-2xl sm:text-3xl font-bold text-svvayam-charcoal">Curated Client Showcase</h2>
-        <p class="text-xs text-svvayam-muted mt-1">Signature commissions featuring complete real documentation from drawing signoffs to workshop execution.</p>
+        <p class="text-xs text-svvayam-muted mt-1">Signature commissions featuring complete documentation from drawing signoffs to workshop execution.</p>
       </div>
 
       <!-- Filter Pills -->
       <div class="flex flex-wrap items-center gap-2">
         <button onclick="filterCurated('All')" class="curated-filter-btn px-4 py-2 rounded-lg bg-svvayam-yellow text-svvayam-charcoal font-bold text-xs border border-svvayam-yellow shadow-sm" data-filter="All">All Projects</button>
-        <button onclick="filterCurated('Wood')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Wood">Teakwood Guild</button>
-        <button onclick="filterCurated('Stone')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Stone">Chiseled Stone</button>
-        <button onclick="filterCurated('Brass')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Brass">Wood + Brass Inlay</button>
+        <button onclick="filterCurated('Wood')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Wood">Teak & Wood</button>
+        <button onclick="filterCurated('Stone')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Stone">Stone & Marble</button>
+        <button onclick="filterCurated('Brass')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Brass">Brass & Guild</button>
       </div>
     </div>
 
     <!-- Curated Grid -->
-    <div id="curated-cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <div id="curated-cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
       <!-- Populated dynamically by JS -->
     </div>
 
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 4. 10-STAGE INTERACTIVE PROJECT PRESENTATION VIEW                          -->
+  <!-- 4. DYNAMIC CLIENT PRESENTATION VIEW (Active Stages Only, Non-Stretching)    -->
   <!-- ========================================================================= -->
-  <section id="view-project" class="view-panel hidden flex-col flex-1 bg-svvayam-warmWhite relative pb-40">
+  <section id="view-project" class="view-panel hidden flex-col flex-1 bg-svvayam-warmWhite relative pb-32">
     
-    <!-- SINGLE UNIFIED STICKY HEADER (Row 1: Nav & Details | Row 2: 10 Stages) -->
+    <!-- SINGLE UNIFIED STICKY HEADER (Row 1: Nav & Details | Row 2: Dynamic Stage Pills) -->
     <header id="project-unified-header" class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-svvayam-border shadow-xs">
       
       <!-- Header Row 1: Flow Controls, Logo, Title & Exit -->
@@ -387,641 +420,281 @@
             <span class="text-svvayam-muted cursor-pointer hover:text-svvayam-charcoal" onclick="showExplorerView()">Client Explorer</span>
             <span class="text-svvayam-border">/</span>
             <span id="proj-header-name" class="font-bold text-svvayam-charcoal">Client Project</span>
-            <span id="proj-header-material" class="hidden sm:inline-block text-[10px] font-bold px-2 py-0.5 rounded bg-svvayam-softYellow text-svvayam-charcoal">Burma Teak</span>
+            <span id="proj-header-material" class="hidden sm:inline-block text-[10px] font-bold px-2 py-0.5 rounded bg-svvayam-softYellow text-svvayam-charcoal"></span>
           </div>
         </div>
 
         <div class="flex items-center space-x-2.5">
-          <button onclick="goToPreviousView()" class="px-3 py-1.5 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-surface text-xs font-bold text-svvayam-charcoal transition flex items-center space-x-1.5 shadow-xs">
+          <button onclick="goToPreviousView()" class="px-3 py-1.5 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-surface text-xs font-bold text-svvayam-charcoal transition flex items-center space-x-1.5 shadow-xs cursor-pointer">
             <i class="fa-solid fa-arrow-left text-[10px]"></i>
             <span>Exit to Projects</span>
           </button>
-          <button onclick="toggleFullscreen()" title="Fullscreen" class="w-8 h-8 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-surface flex items-center justify-center text-xs text-svvayam-charcoal transition shadow-xs">
+          <button onclick="toggleFullscreen()" title="Fullscreen" class="w-8 h-8 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-surface flex items-center justify-center text-xs text-svvayam-charcoal transition shadow-xs cursor-pointer">
             <i class="fa-solid fa-expand"></i>
           </button>
         </div>
       </div>
 
-      <!-- Header Row 2: The 10 Stages Navigation Strip -->
-      <div id="fixed-stage-nav" class="px-4 sm:px-8 py-2 overflow-x-auto bg-svvayam-warmWhite/90">
-        <div class="max-w-6xl mx-auto flex items-center justify-start md:justify-center space-x-1.5 min-w-max">
-          <button onclick="goToStage(0)" data-stage="0" class="stage-item active px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-charcoal transition">01 Overview</button>
-          <button onclick="goToStage(1)" data-stage="1" class="stage-item px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition">02 Requirements</button>
-          <button onclick="goToStage(2)" data-stage="2" class="stage-item px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition">03 Concept</button>
-          <button onclick="goToStage(3)" data-stage="3" class="stage-item px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition">04 2D CAD</button>
-          <button onclick="goToStage(4)" data-stage="4" class="stage-item px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition">05 3D Model</button>
-          <button onclick="goToStage(5)" data-stage="5" class="stage-item px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition">06 Detailing</button>
-          <button onclick="goToStage(6)" data-stage="6" class="stage-item px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition">07 Manufacturing</button>
-          <button onclick="goToStage(7)" data-stage="7" class="stage-item px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition">08 Transport</button>
-          <button onclick="goToStage(8)" data-stage="8" class="stage-item px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition">09 Installation</button>
-          <button onclick="goToStage(9)" data-stage="9" class="stage-item px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition">10 Final</button>
+      <!-- Header Row 2: Dynamic Stage Pills (Only stages that exist for this client) -->
+      <div class="px-4 sm:px-8 py-2 overflow-x-auto bg-svvayam-warmWhite/90 border-b border-svvayam-border/40">
+        <div id="dynamic-stage-pills-container" class="max-w-6xl mx-auto flex items-center justify-start md:justify-center space-x-1.5 min-w-max">
+          <!-- Populated dynamically by JS -->
         </div>
       </div>
     </header>
 
-    <!-- Main Stage Content (Spacious, Well-Proportioned, Zero Overlap) -->
+    <!-- Main Dynamic Stage Canvas -->
     <main class="max-w-6xl mx-auto w-full p-4 sm:p-8 flex-1">
       
-      <!-- STAGE 0: OVERVIEW -->
-      <div id="stage-panel-0" class="stage-content-panel">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+      <!-- Stage Info Header: Title, Category Badge, Image Counter -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
+        <div>
+          <div class="flex items-center space-x-2.5 mb-1">
+            <span id="stage-badge" class="px-2.5 py-0.5 rounded text-[11px] font-extrabold uppercase tracking-wider bg-svvayam-yellow text-svvayam-charcoal">STAGE 01 OF 06</span>
+            <span id="stage-category-label" class="text-xs font-bold text-svvayam-muted uppercase tracking-wider"></span>
+          </div>
+          <h3 id="stage-heading" class="font-serif text-2xl sm:text-3xl font-bold text-svvayam-charcoal tracking-tight">Project Overview</h3>
+        </div>
+        
+        <!-- Image Counter for multi-image stages -->
+        <div id="stage-image-counter-container" class="flex items-center space-x-2 text-xs text-svvayam-muted font-medium">
+          <span id="stage-image-counter" class="bg-white px-2.5 py-1 rounded-md border border-svvayam-border shadow-2xs">Image 1 of 1</span>
+        </div>
+      </div>
+
+      <!-- Hero Media Container (100% True Aspect Ratio, Zero Stretching/Squeezing) -->
+      <div class="bg-white border border-svvayam-border rounded-2xl p-3 sm:p-5 shadow-sm flex flex-col items-center">
+        
+        <div class="relative w-full flex items-center justify-center rounded-xl bg-stone-900/5 overflow-hidden border border-svvayam-border/40 min-h-[380px] max-h-[72vh] p-2 group select-none">
           
-          <div class="lg:col-span-8 bg-white border border-svvayam-border rounded-2xl p-4 shadow-sm overflow-hidden group cursor-pointer" onclick="openLightboxFromActive()">
-            <div class="relative overflow-hidden rounded-xl bg-stone-100 aspect-video flex items-center justify-center max-h-[420px]">
-              <img id="stage-overview-hero-img" src="assets/render_1.png" alt="Completed Pooja Room" class="w-full h-full object-cover transition duration-500 group-hover:scale-103">
-              <span class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] px-2.5 py-1 rounded backdrop-blur-sm flex items-center space-x-1">
-                <i class="fa-solid fa-expand"></i>
-                <span>Click to expand</span>
-              </span>
-            </div>
-          </div>
+          <!-- Previous Image Arrow (if stage has > 1 images) -->
+          <button id="stage-img-prev-btn" onclick="prevStageImage(event)" title="Previous Image" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-svvayam-yellow shadow-md border border-svvayam-border/60 flex items-center justify-center text-svvayam-charcoal transition opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer">
+            <i class="fa-solid fa-chevron-left text-sm"></i>
+          </button>
 
-          <div class="lg:col-span-4 bg-white border border-svvayam-border rounded-2xl p-6 shadow-sm space-y-5">
-            <div>
-              <span class="text-[10px] uppercase font-bold tracking-widest text-svvayam-muted">PROJECT OVERVIEW</span>
-              <h3 id="meta-project-title" class="font-serif text-2xl font-bold text-svvayam-charcoal mt-1">Completed Pooja Room</h3>
-            </div>
+          <!-- The Image: object-contain preserves natural 16:9 or any ratio cleanly -->
+          <img id="stage-hero-img" src="" alt="Presentation Asset" class="max-h-[66vh] w-auto max-w-full object-contain rounded-lg shadow-sm transition duration-300 cursor-zoom-in" onclick="openLightbox(this.src)">
 
-            <div class="space-y-3 text-xs">
-              <div class="flex justify-between py-1.5 border-b border-svvayam-border/60">
-                <span class="text-svvayam-muted">Location</span>
-                <span class="font-bold text-svvayam-charcoal" id="meta-location">Bangalore</span>
-              </div>
-              <div class="flex justify-between py-1.5 border-b border-svvayam-border/60">
-                <span class="text-svvayam-muted">Material</span>
-                <span class="font-bold text-svvayam-charcoal" id="meta-material">Burma Teak</span>
-              </div>
-              <div class="flex justify-between py-1.5 border-b border-svvayam-border/60">
-                <span class="text-svvayam-muted">Dimensions</span>
-                <span class="font-bold text-svvayam-charcoal" id="meta-size">7'6" × 6'6"</span>
-              </div>
-              <div class="flex justify-between py-1.5 border-b border-svvayam-border/60">
-                <span class="text-svvayam-muted">Typology</span>
-                <span class="font-bold text-svvayam-charcoal" id="meta-type">Custom Pooja Sanctuary</span>
-              </div>
-            </div>
+          <!-- Next Image Arrow (if stage has > 1 images) -->
+          <button id="stage-img-next-btn" onclick="nextStageImage(event)" title="Next Image" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-svvayam-yellow shadow-md border border-svvayam-border/60 flex items-center justify-center text-svvayam-charcoal transition opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer">
+            <i class="fa-solid fa-chevron-right text-sm"></i>
+          </button>
 
-            <div class="p-4 rounded-xl bg-svvayam-softYellow/50 border border-svvayam-yellow/40 text-xs text-svvayam-charcoal leading-relaxed">
-              <strong class="font-bold block mb-1">Architecture Narrative:</strong>
-              <p id="meta-narrative">Bespoke teakwood sanctum crafted with Dravidian proportions, precision CNC jaali carvings, and integrated brass temple bells.</p>
-            </div>
-
-            <div id="overview-assets-badges" class="flex flex-wrap gap-2 pt-1">
-              <!-- Dynamically populated with counts of real CAD, 3D, and Workshop files -->
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- STAGE 1: REQUIREMENTS (Real Site Survey Photos & Survey Details) -->
-      <div id="stage-panel-1" class="stage-content-panel hidden">
-        <div class="bg-white border border-svvayam-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span class="text-[10px] uppercase font-bold tracking-widest text-svvayam-muted">STAGE 02 / 10</span>
-              <h3 class="font-serif text-2xl font-bold text-svvayam-charcoal mt-1">Client Requirements & Spatial Survey</h3>
-            </div>
-            <span class="text-xs text-svvayam-muted font-medium">Authentic On-Site Survey & Dimension Verification</span>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-            <!-- Left: Featured Site Survey Image + Clickable Thumbnails -->
-            <div class="lg:col-span-7 space-y-3">
-              <div class="rounded-xl overflow-hidden bg-stone-100 aspect-video max-h-[360px] border border-svvayam-border cursor-pointer relative group" onclick="openLightboxFromSurvey()">
-                <img id="survey-featured-img" src="assets/render_18.png" alt="Site Survey" class="w-full h-full object-cover transition duration-300 group-hover:scale-102">
-                <span class="absolute bottom-2.5 right-2.5 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">Click to expand site photo</span>
-              </div>
-              <!-- Thumbnails strip -->
-              <div id="survey-thumbnails-container" class="flex gap-2 overflow-x-auto pb-1">
-                <!-- Populated dynamically -->
-              </div>
-            </div>
-
-            <!-- Right: Requirements Brief Cards -->
-            <div class="lg:col-span-5 space-y-3.5">
-              <div class="p-4 rounded-xl bg-svvayam-warmWhite border border-svvayam-border">
-                <div class="flex items-center space-x-2 text-xs font-bold text-svvayam-charcoal mb-1">
-                  <i class="fa-solid fa-compass text-svvayam-yellow"></i>
-                  <span>Northeast (Ishanya) Orientation</span>
-                </div>
-                <p class="text-xs text-svvayam-muted leading-relaxed">Exact site orientation verified by vastu consultant to ensure sacred sunrise illumination enters the inner garbha griha.</p>
-              </div>
-
-              <div class="p-4 rounded-xl bg-svvayam-warmWhite border border-svvayam-border">
-                <div class="flex items-center space-x-2 text-xs font-bold text-svvayam-charcoal mb-1">
-                  <i class="fa-solid fa-wind text-svvayam-yellow"></i>
-                  <span>Concealed Camphor Smoke Duct</span>
-                </div>
-                <p class="text-xs text-svvayam-muted leading-relaxed">Integrated rear timber ventilation channels evacuate camphor and diya warmth without soot marks on finished walls.</p>
-              </div>
-
-              <div class="p-4 rounded-xl bg-svvayam-warmWhite border border-svvayam-border">
-                <div class="flex items-center space-x-2 text-xs font-bold text-svvayam-charcoal mb-1">
-                  <i class="fa-solid fa-hands-praying text-svvayam-yellow"></i>
-                  <span>Ergonomic Seating & Deity Elevation</span>
-                </div>
-                <p class="text-xs text-svvayam-muted leading-relaxed">Pedestal heights calibrated precisely to align family deities with devotees during meditative floor seating.</p>
-              </div>
-            </div>
+          <!-- Zoom Click Hint Overlay -->
+          <div class="absolute bottom-3 right-3 bg-black/60 backdrop-blur-xs text-white text-[11px] px-3 py-1.5 rounded-md opacity-0 group-hover:opacity-100 transition pointer-events-none flex items-center space-x-1.5">
+            <i class="fa-solid fa-magnifying-glass-plus text-xs"></i>
+            <span>Click for Fullscreen Lightbox</span>
           </div>
         </div>
-      </div>
 
-      <!-- STAGE 2: CONCEPT (Real Concept Sketches & Massing Layout) -->
-      <div id="stage-panel-2" class="stage-content-panel hidden">
-        <div class="bg-white border border-svvayam-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
-          <div>
-            <span class="text-[10px] uppercase font-bold tracking-widest text-svvayam-muted">STAGE 03 / 10</span>
-            <h3 class="font-serif text-2xl font-bold text-svvayam-charcoal mt-1">Concept Sketches & Spatial Layout</h3>
+        <!-- Interactive Thumbnail Strip (if stage has multiple images) -->
+        <div id="stage-thumbnails-strip" class="w-full flex items-center justify-center gap-2.5 sm:gap-3 mt-4 pt-3 border-t border-svvayam-border/50 overflow-x-auto py-1">
+          <!-- Populated dynamically -->
+        </div>
+
+        <!-- Stage Context & Verified Client Metadata Bar (Leaves blank if no data) -->
+        <div class="w-full mt-4 pt-3 border-t border-svvayam-border/40 flex flex-col sm:flex-row sm:items-center justify-between text-xs text-svvayam-muted gap-2">
+          <div id="stage-meta-details" class="flex flex-wrap items-center gap-x-4 gap-y-1 font-medium">
+            <!-- Dynamically populated. Blank if no data. -->
           </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div class="md:col-span-7 space-y-3">
-              <div class="rounded-xl overflow-hidden border border-svvayam-border bg-stone-100 aspect-video flex items-center justify-center cursor-pointer max-h-[380px] group" onclick="openLightboxFromConcept()">
-                <img id="concept-main-img" src="assets/render_18.png" alt="Concept Study" class="w-full h-full object-cover transition duration-300 group-hover:scale-102">
-              </div>
-              <div id="concept-thumbnails-container" class="flex gap-2 overflow-x-auto pb-1">
-                <!-- Populated dynamically -->
-              </div>
-            </div>
-
-            <div class="md:col-span-5 space-y-4 text-xs text-svvayam-charcoal leading-relaxed">
-              <h4 class="font-serif font-bold text-lg">Architectural Harmonization</h4>
-              <p class="text-svvayam-muted">Initial volumetric sketches exploring temple proportions, pillar spacing, and sacred canopy geometry tailored for the residence's specific ceiling height.</p>
-              
-              <div class="p-4 rounded-xl bg-svvayam-warmWhite border border-svvayam-border space-y-2">
-                <div class="flex items-center space-x-2 font-bold text-svvayam-charcoal">
-                  <i class="fa-solid fa-compass-drafting text-svvayam-yellow"></i>
-                  <span>Concept Milestone Sign-Off:</span>
-                </div>
-                <p class="text-svvayam-muted">Client approved the consecrated proportions, timber frame specifications, and brass lattice backwall illumination.</p>
-              </div>
-            </div>
+          <div class="text-[11px] text-svvayam-muted hidden sm:block">
+            Use <kbd class="px-1.5 py-0.5 bg-svvayam-surface rounded border border-svvayam-border text-[10px] font-mono">←</kbd> / <kbd class="px-1.5 py-0.5 bg-svvayam-surface rounded border border-svvayam-border text-[10px] font-mono">→</kbd> keys to navigate stages • <kbd class="px-1.5 py-0.5 bg-svvayam-surface rounded border border-svvayam-border text-[10px] font-mono">Esc</kbd> closes lightbox
           </div>
         </div>
-      </div>
 
-      <!-- STAGE 3: 2D CAD (Real Architectural Blueprints with Multi-Sheet Switcher) -->
-      <div id="stage-panel-3" class="stage-content-panel hidden">
-        <div class="bg-white border border-svvayam-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span class="text-[10px] uppercase font-bold tracking-widest text-svvayam-muted">STAGE 04 / 10</span>
-              <h3 class="font-serif text-2xl font-bold text-svvayam-charcoal mt-1">2D Working Drawings & Precision Dimensions</h3>
-            </div>
-            <!-- CAD Sheet Selector Strip -->
-            <div id="cad-sheets-selector" class="flex items-center gap-1.5 overflow-x-auto bg-svvayam-surface p-1 rounded-lg border border-svvayam-border">
-              <!-- Sheet buttons generated dynamically -->
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-            <!-- Left: High-Res CAD Blueprint Viewer -->
-            <div class="lg:col-span-8 bg-stone-900 rounded-xl p-3 border border-stone-800 shadow-inner flex flex-col space-y-2">
-              <div class="flex justify-between items-center px-2 pt-1 text-[11px] font-mono border-b border-stone-800 pb-2">
-                <span class="text-svvayam-yellow font-bold" id="cad-sheet-label">ARCHITECTURAL CAD BLUEPRINT</span>
-                <span class="text-stone-400">TOLERANCE: ±0.5mm</span>
-              </div>
-              
-              <div class="relative rounded-lg overflow-hidden bg-stone-950 aspect-video max-h-[420px] flex items-center justify-center cursor-pointer group" onclick="openLightboxFromCAD()">
-                <img id="cad-blueprint-img" src="assets/render_18.png" alt="CAD Blueprint" class="w-full h-full object-contain transition duration-300 group-hover:scale-102">
-                <span class="absolute bottom-3 right-3 bg-black/70 text-white text-[10px] px-2.5 py-1 rounded backdrop-blur-sm flex items-center space-x-1">
-                  <i class="fa-solid fa-magnifying-glass-plus"></i>
-                  <span>Click for Full High-Res Blueprint</span>
-                </span>
-              </div>
-            </div>
-
-            <!-- Right: Interactive Hotspot Dimensions -->
-            <div class="lg:col-span-4 space-y-3">
-              <h4 class="font-bold text-xs uppercase tracking-wider text-svvayam-muted">Interactive Hotspot Annotations:</h4>
-              <div class="space-y-2 text-xs">
-                <button onclick="showCallout('gopuram')" class="w-full text-left p-2.5 rounded-lg border border-svvayam-border hover:border-svvayam-yellow bg-svvayam-warmWhite transition flex justify-between items-center">
-                  <span class="font-bold">Gopuram Height & Talas</span>
-                  <i class="fa-solid fa-chevron-right text-xs text-svvayam-muted"></i>
-                </button>
-                <button onclick="showCallout('door')" class="w-full text-left p-2.5 rounded-lg border border-svvayam-border hover:border-svvayam-yellow bg-svvayam-warmWhite transition flex justify-between items-center">
-                  <span class="font-bold">Door Clear Width & Bells</span>
-                  <i class="fa-solid fa-chevron-right text-xs text-svvayam-muted"></i>
-                </button>
-                <button onclick="showCallout('idol')" class="w-full text-left p-2.5 rounded-lg border border-svvayam-border hover:border-svvayam-yellow bg-svvayam-warmWhite transition flex justify-between items-center">
-                  <span class="font-bold">Idol Pedestal Elevation</span>
-                  <i class="fa-solid fa-chevron-right text-xs text-svvayam-muted"></i>
-                </button>
-                <button onclick="showCallout('storage')" class="w-full text-left p-2.5 rounded-lg border border-svvayam-border hover:border-svvayam-yellow bg-svvayam-warmWhite transition flex justify-between items-center">
-                  <span class="font-bold">Concealed Oil & Scripture Storage</span>
-                  <i class="fa-solid fa-chevron-right text-xs text-svvayam-muted"></i>
-                </button>
-              </div>
-
-              <div id="callout-display" class="p-3.5 rounded-xl bg-svvayam-softYellow/60 border border-svvayam-yellow/40 text-xs text-svvayam-charcoal space-y-1">
-                <strong id="callout-title" class="block font-bold">Select any dimension annotation above</strong>
-                <span id="callout-desc" class="text-svvayam-muted text-[11px] block">Verified by sthapati to ensure Agama Shastra structural compliance.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- STAGE 4: 3D PHOTOREALISTIC RENDERS (Optimized, Clean & Non-Overlapping) -->
-      <div id="stage-panel-4" class="stage-content-panel hidden">
-        <div class="bg-white border border-svvayam-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span class="text-[10px] uppercase font-bold tracking-widest text-svvayam-muted">STAGE 05 / 10</span>
-              <h3 class="font-serif text-2xl font-bold text-svvayam-charcoal mt-1">3D Photorealistic Design Iterations</h3>
-            </div>
-            <!-- Version Switcher Buttons -->
-            <div id="render-3d-versions" class="flex items-center space-x-1.5 bg-svvayam-surface p-1 rounded-lg border border-svvayam-border">
-              <button id="ver-btn-1" onclick="switch3DVersion(1)" class="px-3 py-1.5 rounded text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition">V1: Massing</button>
-              <button id="ver-btn-2" onclick="switch3DVersion(2)" class="px-3 py-1.5 rounded text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition">V2: Refined</button>
-              <button id="ver-btn-3" onclick="switch3DVersion(3)" class="px-3 py-1.5 rounded text-xs font-bold bg-svvayam-yellow text-svvayam-charcoal shadow-xs">V3: Final</button>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
-            <!-- Left: Main 3D Render Display + Thumbnails Strip -->
-            <div class="lg:col-span-8 space-y-3">
-              <div class="rounded-xl overflow-hidden bg-stone-100 aspect-video max-h-[400px] flex items-center justify-center border border-svvayam-border cursor-pointer group relative" onclick="openLightboxFrom3D()">
-                <img id="render-3d-img" src="assets/render_1.png" alt="3D Render" class="w-full h-full object-cover transition duration-500 group-hover:scale-102">
-                <span class="absolute bottom-3 right-3 bg-black/60 text-white text-[10px] px-2.5 py-1 rounded backdrop-blur-sm flex items-center space-x-1">
-                  <i class="fa-solid fa-expand"></i>
-                  <span>Click to view in 4K resolution</span>
-                </span>
-              </div>
-              <div id="render-3d-thumbnails" class="flex gap-2 overflow-x-auto pb-1">
-                <!-- Additional 3D angle thumbnails populated dynamically -->
-              </div>
-            </div>
-
-            <!-- Right: Design Iteration Details -->
-            <div class="lg:col-span-4 space-y-4">
-              <div>
-                <h4 id="ver-title" class="font-serif font-bold text-lg text-svvayam-charcoal">V3: Final Approved Photorealistic Model</h4>
-                <p id="ver-desc" class="text-xs text-svvayam-muted leading-relaxed mt-1.5">Approved under 2700K warm dawn illumination. Sent to Tirupati & Mysore artisan guilds for timber allocation and carving.</p>
-              </div>
-
-              <div class="p-3.5 rounded-xl bg-svvayam-warmWhite border border-svvayam-border text-xs space-y-1">
-                <span class="text-svvayam-muted block text-[10px] uppercase font-bold tracking-wider">MILESTONE SIGN-OFF</span>
-                <span id="ver-status" class="font-bold text-svvayam-charcoal block">Final Milestone Sign-off • Sent to Production</span>
-              </div>
-
-              <div class="p-3.5 rounded-xl bg-svvayam-softYellow/40 border border-svvayam-yellow/30 text-xs text-svvayam-charcoal space-y-1">
-                <strong class="font-bold block">Lighting Simulation:</strong>
-                <p class="text-svvayam-muted text-[11px]">Diffused 5W hidden COB spotlights calibrated at CRI &gt; 95 to highlight deity alankaram without glare.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- STAGE 5: DETAILING & JOINERY (Clean Grid & Zero Overlapping) -->
-      <div id="stage-panel-5" class="stage-content-panel hidden">
-        <div class="bg-white border border-svvayam-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
-          <div>
-            <span class="text-[10px] uppercase font-bold tracking-widest text-svvayam-muted">STAGE 06 / 10</span>
-            <h3 class="font-serif text-2xl font-bold text-svvayam-charcoal mt-1">Material Detailing, Joinery & Hardware</h3>
-          </div>
-
-          <!-- Dynamic Detailing Cards Grid -->
-          <div id="detailing-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Populated dynamically with real detailing drawings -->
-          </div>
-        </div>
-      </div>
-
-      <!-- STAGE 6: MANUFACTURING & WORKSHOP EXECUTION (Real Workshop Carving Photos) -->
-      <div id="stage-panel-6" class="stage-content-panel hidden">
-        <div class="bg-white border border-svvayam-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <span class="text-[10px] uppercase font-bold tracking-widest text-svvayam-muted">STAGE 07 / 10</span>
-              <h3 class="font-serif text-2xl font-bold text-svvayam-charcoal mt-1">Artisanal Guild & Factory Execution Proof</h3>
-            </div>
-            <span class="text-xs font-bold text-svvayam-charcoal bg-svvayam-softYellow px-3 py-1 rounded-full">Real Workshop Work-in-Progress</span>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            <!-- Left: Workshop Photo Gallery -->
-            <div class="md:col-span-7 space-y-3">
-              <div class="rounded-xl overflow-hidden aspect-video max-h-[380px] bg-stone-100 border border-svvayam-border cursor-pointer group relative" onclick="openLightboxFromWorkshop()">
-                <img id="workshop-main-img" src="assets/render_22.png" alt="Workshop Assembly" class="w-full h-full object-cover transition duration-300 group-hover:scale-102">
-                <span class="absolute bottom-2.5 right-2.5 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">Click to expand workshop photo</span>
-              </div>
-              <div id="workshop-thumbnails-container" class="flex gap-2 overflow-x-auto pb-1">
-                <!-- Populated dynamically -->
-              </div>
-            </div>
-
-            <!-- Right: Quality Assurance Protocols -->
-            <div class="md:col-span-5 space-y-4 text-xs text-svvayam-charcoal leading-relaxed">
-              <h4 class="font-bold text-sm text-svvayam-charcoal">Additive Precision & Hereditary Guild Carving</h4>
-              <p class="text-svvayam-muted">Every Svvayam temple bridges 5th-generation hereditary master sculptors with precision 5-axis CNC machining, ensuring sacred geometry with zero structural compromise.</p>
-              
-              <div class="p-4 rounded-xl bg-svvayam-warmWhite border border-svvayam-border space-y-2">
-                <div class="font-bold text-svvayam-charcoal flex items-center space-x-2">
-                  <i class="fa-solid fa-certificate text-svvayam-yellow"></i>
-                  <span>Guild Quality Assurance Benchmarks:</span>
-                </div>
-                <ul class="space-y-1.5 text-svvayam-muted text-xs pl-4 list-disc">
-                  <li>Kiln-seasoned wood stabilized with moisture below 10%</li>
-                  <li>Full dry-run factory trial assembly testing every interlocking tenon</li>
-                  <li>Hand-rubbed natural beeswax & seed lac polish free of toxic VOCs</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- STAGE 7: TRANSPORT & PACKAGING -->
-      <div id="stage-panel-7" class="stage-content-panel hidden">
-        <div class="bg-white border border-svvayam-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
-          <div>
-            <span class="text-[10px] uppercase font-bold tracking-widest text-svvayam-muted">STAGE 08 / 10</span>
-            <h3 class="font-serif text-2xl font-bold text-svvayam-charcoal mt-1">Protective Crating & Damage-Free Transport</h3>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div class="p-5 rounded-xl bg-svvayam-warmWhite border border-svvayam-border text-xs">
-              <i class="fa-solid fa-box-open text-svvayam-yellow text-2xl mb-3 block"></i>
-              <h4 class="font-bold text-svvayam-charcoal mb-2">Shockproof Multi-Layer Packaging</h4>
-              <p class="text-svvayam-muted leading-relaxed">Closed-cell EPE foam cushions each hand-carved gopuram component against road vibrations.</p>
-            </div>
-            <div class="p-5 rounded-xl bg-svvayam-warmWhite border border-svvayam-border text-xs">
-              <i class="fa-solid fa-shield-halved text-svvayam-yellow text-2xl mb-3 block"></i>
-              <h4 class="font-bold text-svvayam-charcoal mb-2">Plywood Reinforcement Casing</h4>
-              <p class="text-svvayam-muted leading-relaxed">Heavy-duty marine ply structural crates with waterproof inner linings for safe transit across states.</p>
-            </div>
-            <div class="p-5 rounded-xl bg-svvayam-warmWhite border border-svvayam-border text-xs">
-              <i class="fa-solid fa-truck-fast text-svvayam-yellow text-2xl mb-3 block"></i>
-              <h4 class="font-bold text-svvayam-charcoal mb-2">White-Glove Direct Delivery</h4>
-              <p class="text-svvayam-muted leading-relaxed">Dedicated logistics vehicle delivery escorted by our senior installation supervisor.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- STAGE 8: ON-SITE INSTALLATION -->
-      <div id="stage-panel-8" class="stage-content-panel hidden">
-        <div class="bg-white border border-svvayam-border rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
-          <div>
-            <span class="text-[10px] uppercase font-bold tracking-widest text-svvayam-muted">STAGE 09 / 10</span>
-            <h3 class="font-serif text-2xl font-bold text-svvayam-charcoal mt-1">On-Site Assembly & Laser Alignment</h3>
-          </div>
-
-          <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <div class="md:col-span-7 rounded-xl overflow-hidden aspect-video max-h-[380px] bg-stone-100 border border-svvayam-border cursor-pointer group relative" onclick="openLightboxFromInstall()">
-              <img id="install-main-img" src="assets/render_24.png" alt="On-site Assembly" class="w-full h-full object-cover transition duration-300 group-hover:scale-102">
-              <span class="absolute bottom-2.5 right-2.5 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">Click to expand</span>
-            </div>
-
-            <div class="md:col-span-5 space-y-4 text-xs text-svvayam-charcoal leading-relaxed">
-              <h4 class="font-bold text-base text-svvayam-charcoal">Zero-Mess Clean Installation</h4>
-              <p class="text-svvayam-muted">Because every joint was pre-tested at our manufacturing facility, on-site assembly is completed in under 48 hours without sawing, heavy dust, or disturbance to finished residences.</p>
-              
-              <div class="p-4 rounded-xl bg-svvayam-warmWhite border border-svvayam-border space-y-1.5">
-                <span class="font-bold block text-svvayam-charcoal">Step-by-Step Installation Protocol:</span>
-                <div class="text-svvayam-muted text-[11px]">1. Base leveling with calibrated laser levels</div>
-                <div class="text-svvayam-muted text-[11px]">2. Modular sanctum pillar interlocking</div>
-                <div class="text-svvayam-muted text-[11px]">3. Electrical concealed connection & diffuser tuning</div>
-                <div class="text-svvayam-muted text-[11px]">4. Clean vacuum polish and sacred sanctum handover</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- STAGE 9: FINAL SANCTUARY HANDOVER (Completely Non-Overlapping & Centered) -->
-      <div id="stage-panel-9" class="stage-content-panel hidden">
-        <div class="bg-white border border-svvayam-border rounded-2xl p-6 sm:p-10 shadow-sm text-center max-w-3xl mx-auto space-y-6">
-          <div>
-            <span class="text-[10px] uppercase font-bold tracking-widest text-svvayam-muted">STAGE 10 / 10</span>
-            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-svvayam-charcoal mt-1">Consecration Readiness & Lifetime Sanctuary</h3>
-          </div>
-
-          <p class="text-xs text-svvayam-muted leading-relaxed max-w-xl mx-auto">
-            The finished sanctum is now ready for Prana Pratishtha. Svvayam delivers complete documentation, timber pedigree certificates, and a lifetime structural warranty.
-          </p>
-
-          <div class="rounded-xl overflow-hidden bg-stone-100 aspect-video max-h-[340px] max-w-lg mx-auto border border-svvayam-border cursor-pointer shadow-sm relative group" onclick="openLightboxFromFinal()">
-            <img id="stage-final-img" src="assets/render_1.png" alt="Final Result" class="w-full h-full object-cover transition duration-300 group-hover:scale-102">
-            <span class="absolute bottom-2.5 right-2.5 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">Click to expand</span>
-          </div>
-
-          <div class="pt-2 flex flex-wrap items-center justify-center gap-3">
-            <button onclick="goToPreviousView()" class="px-5 py-2.5 rounded-lg bg-white border border-svvayam-border text-svvayam-charcoal font-bold text-xs uppercase tracking-wider hover:border-svvayam-charcoal transition shadow-xs">
-              &lt; Return to Projects
-            </button>
-            <button onclick="nextProject()" class="px-5 py-2.5 rounded-lg bg-svvayam-yellow text-svvayam-charcoal font-bold text-xs uppercase tracking-wider hover:brightness-105 transition shadow-xs inline-flex items-center space-x-2">
-              <span>Next Project</span>
-              <i class="fa-solid fa-arrow-right text-xs"></i>
-            </button>
-          </div>
-        </div>
       </div>
 
     </main>
 
-    <!-- Floating Bottom Sales Controls Bar -->
-    <aside id="sales-controls-bar" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-white/95 backdrop-blur-md border border-svvayam-border rounded-full px-6 py-2.5 shadow-xl flex items-center space-x-6">
-      <button id="stage-prev-btn" onclick="prevStage()" class="text-xs font-bold text-svvayam-charcoal hover:text-svvayam-muted transition flex items-center space-x-1 disabled:opacity-30 disabled:pointer-events-none">
-        <span>&lt;- Previous</span>
-      </button>
+    <!-- FIXED BOTTOM STAGE NAVIGATION BAR -->
+    <div class="fixed bottom-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-t border-svvayam-border p-3 sm:p-4 shadow-lg">
+      <div class="max-w-6xl mx-auto flex items-center justify-between">
+        <button id="btn-prev-stage" onclick="stepStage(-1)" class="px-5 py-2.5 rounded-xl border border-svvayam-border bg-white hover:bg-svvayam-surface text-xs font-bold text-svvayam-charcoal transition flex items-center space-x-2 shadow-xs disabled:opacity-30 disabled:pointer-events-none cursor-pointer">
+          <i class="fa-solid fa-arrow-left text-xs"></i>
+          <span>Previous Stage</span>
+        </button>
 
-      <div class="flex items-center space-x-2 text-xs font-mono font-bold text-svvayam-charcoal border-x border-svvayam-border px-4">
-        <span id="deck-current-num">01</span>
-        <span class="text-svvayam-muted font-normal">/</span>
-        <span>10</span>
+        <div class="flex items-center space-x-2">
+          <span id="bottom-stage-indicator" class="text-xs font-bold text-svvayam-charcoal">Stage 1 of 6</span>
+        </div>
+
+        <button id="btn-next-stage" onclick="stepStage(1)" class="px-6 py-2.5 rounded-xl bg-svvayam-yellow text-svvayam-charcoal text-xs font-bold uppercase tracking-wider hover:brightness-105 transition flex items-center space-x-2 shadow-md cursor-pointer">
+          <span id="btn-next-stage-label">Next Stage</span>
+          <i class="fa-solid fa-arrow-right text-xs"></i>
+        </button>
       </div>
-
-      <button id="stage-next-btn" onclick="nextStage()" class="px-4 py-1.5 rounded-full bg-svvayam-yellow hover:brightness-105 text-xs font-bold text-svvayam-charcoal transition shadow-xs flex items-center space-x-1">
-        <span>Next -&gt;</span>
-      </button>
-    </aside>
+    </div>
 
   </section>
 
   <!-- ========================================================================= -->
-  <!-- LIGHTBOX MODAL                                                            -->
   <!-- ========================================================================= -->
-  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4" onclick="closeLightbox()">
-    <div class="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center" onclick="event.stopPropagation()">
-      <button onclick="closeLightbox()" class="absolute -top-10 right-0 text-white hover:text-svvayam-yellow text-2xl p-2 transition">
-        <i class="fa-solid fa-xmark"></i>
+  <!-- 5. PRESENTATIONS & DOCUMENTS VIEWER (3 Curated PDF Showcases)             -->
+  <!-- ========================================================================= -->
+  <section id="view-documents" class="view-panel hidden flex-col flex-1 bg-[#121211] text-[#EBE8E1] select-none min-h-[85vh]">
+    
+    <!-- Top Document Switcher Sub-Header -->
+    <div class="h-16 bg-[#1A1A18] border-b border-[#2C2C29] px-4 sm:px-8 flex items-center justify-between z-30 shrink-0">
+      
+      <!-- Left: Title / Return to Explorer -->
+      <div class="flex items-center space-x-3 sm:space-x-4">
+        <button onclick="goToPreviousView()" title="Return to Previous Library" class="flex items-center space-x-2 text-xs font-bold text-[#A8A49B] hover:text-svvayam-yellow transition cursor-pointer">
+          <i class="fa-solid fa-arrow-left text-xs"></i>
+          <span class="hidden md:inline">Back</span>
+        </button>
+        <div class="h-4 w-px bg-[#333330] hidden md:block"></div>
+        <div class="text-xs font-bold text-white tracking-wide uppercase flex items-center space-x-2">
+          <i class="fa-solid fa-file-pdf text-svvayam-yellow"></i>
+          <span>Architectural Decks & Portfolios</span>
+        </div>
+      </div>
+
+      <!-- Center: 3 Switcher Tabs -->
+      <nav class="flex items-center bg-[#242421] p-1 rounded-xl border border-[#363632] space-x-1 max-w-xl">
+        <!-- Tab 1 -->
+        <button id="doc-tab-doc1" onclick="switchDocTab('doc1')" class="doc-tab-btn active px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition flex items-center space-x-2 bg-svvayam-yellow text-svvayam-charcoal shadow-sm cursor-pointer">
+          <i class="fa-solid fa-layer-group text-[11px]"></i>
+          <span class="whitespace-nowrap">Presentation 1</span>
+          <span class="hidden lg:inline text-[10px] opacity-75 font-normal">(16:9 Deck)</span>
+        </button>
+        <!-- Tab 2 -->
+        <button id="doc-tab-doc2" onclick="switchDocTab('doc2')" class="doc-tab-btn px-3 sm:px-4 py-1.5 rounded-lg text-xs font-medium text-[#A8A49B] hover:text-white transition flex items-center space-x-2 cursor-pointer">
+          <i class="fa-solid fa-wand-magic-sparkles text-[11px]"></i>
+          <span class="whitespace-nowrap">Presentation 2</span>
+          <span class="hidden lg:inline text-[10px] opacity-75 font-normal">(Execution)</span>
+        </button>
+        <!-- Tab 3 -->
+        <button id="doc-tab-doc3" onclick="switchDocTab('doc3')" class="doc-tab-btn px-3 sm:px-4 py-1.5 rounded-lg text-xs font-medium text-[#A8A49B] hover:text-white transition flex items-center space-x-2 cursor-pointer">
+          <i class="fa-solid fa-file-lines text-[11px]"></i>
+          <span class="whitespace-nowrap">Document / Overview</span>
+          <span class="hidden lg:inline text-[10px] opacity-75 font-normal">(A4 Stone)</span>
+        </button>
+      </nav>
+
+      <!-- Right: Direct Drive Link & Standalone Viewer -->
+      <div class="flex items-center space-x-2">
+        <a id="main-btn-drive-link" href="#" target="_blank" title="Open Original File in Google Drive" class="h-8 px-2.5 rounded-lg border border-[#333330] bg-[#222220] hover:border-svvayam-yellow text-[#A8A49B] hover:text-white flex items-center space-x-1.5 text-xs transition shadow-xs">
+          <i class="fa-brands fa-google-drive text-svvayam-yellow text-xs"></i>
+          <span class="hidden xl:inline text-[11px]">Drive Link</span>
+        </a>
+        <a href="documents.html" target="_blank" title="Open Standalone Presentation Viewer" class="h-8 px-2.5 rounded-lg border border-[#333330] bg-[#222220] hover:border-svvayam-yellow text-[#A8A49B] hover:text-white flex items-center space-x-1.5 text-xs transition shadow-xs">
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+          <span class="hidden xl:inline text-[11px]">Standalone</span>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Sub-Bar: Info, Slide Counter & Zoom Controls -->
+    <div class="h-11 bg-[#161614] border-b border-[#282825] px-4 sm:px-8 flex items-center justify-between text-xs text-[#8F8B82] shrink-0 z-20">
+      <div class="flex items-center space-x-2.5 truncate">
+        <span id="main-doc-badge" class="px-2 py-0.5 rounded text-[10px] font-extrabold uppercase tracking-wider bg-svvayam-yellow/20 text-svvayam-yellow border border-svvayam-yellow/30">
+          LANDSCAPE 16:9
+        </span>
+        <span id="main-doc-title-text" class="font-bold text-white text-xs truncate">
+          Presentation 1 — Render & Executed Showcase Deck
+        </span>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <!-- Deck Navigator Controls -->
+        <div id="main-deck-nav-controls" class="flex items-center space-x-1.5 bg-[#20201D] px-2 py-1 rounded-lg border border-[#333330]">
+          <button onclick="stepDocPage(-1)" title="Previous Page (←)" class="w-6 h-6 rounded flex items-center justify-center text-[#B0ACA2] hover:text-white hover:bg-[#2C2C28] transition cursor-pointer">
+            <i class="fa-solid fa-chevron-left text-[10px]"></i>
+          </button>
+          <span id="main-page-counter-label" class="text-xs font-bold text-white px-1.5 min-w-[75px] text-center">
+            Slide 1 of 19
+          </span>
+          <button onclick="stepDocPage(1)" title="Next Page (→)" class="w-6 h-6 rounded flex items-center justify-center text-[#B0ACA2] hover:text-white hover:bg-[#2C2C28] transition cursor-pointer">
+            <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </button>
+        </div>
+
+        <!-- Zoom Controls -->
+        <div class="flex items-center space-x-1 bg-[#20201D] px-1.5 py-1 rounded-lg border border-[#333330]">
+          <button onclick="changeDocZoom(-0.15)" title="Zoom Out" class="w-6 h-6 rounded flex items-center justify-center text-[#B0ACA2] hover:text-white hover:bg-[#2C2C28] transition cursor-pointer">
+            <i class="fa-solid fa-minus text-[10px]"></i>
+          </button>
+          <button onclick="resetDocZoom()" title="Reset to 100%" class="px-2 text-[11px] font-mono text-[#D4D0C5] hover:text-svvayam-yellow transition cursor-pointer">
+            <span id="main-zoom-percentage-label">100%</span>
+          </button>
+          <button onclick="changeDocZoom(0.15)" title="Zoom In" class="w-6 h-6 rounded flex items-center justify-center text-[#B0ACA2] hover:text-white hover:bg-[#2C2C28] transition cursor-pointer">
+            <i class="fa-solid fa-plus text-[10px]"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Canvas / Viewport -->
+    <div id="main-viewer-viewport" class="flex-1 relative overflow-auto bg-[#0E0E0D] flex items-center justify-center p-4 sm:p-6 select-none min-h-[60vh]">
+      
+      <!-- Landscape 16:9 Stage -->
+      <div id="main-landscape-deck-container" class="relative max-w-full max-h-full flex items-center justify-center">
+        <button onclick="stepDocPage(-1)" title="Previous Slide" class="absolute -left-3 sm:-left-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#1A1A18]/90 hover:bg-svvayam-yellow text-white hover:text-svvayam-charcoal border border-[#333330] shadow-xl flex items-center justify-center transition hover:scale-110 cursor-pointer">
+          <i class="fa-solid fa-chevron-left text-sm"></i>
+        </button>
+
+        <div class="relative rounded-2xl overflow-hidden bg-black flex items-center justify-center shadow-2xl border border-[#262624]">
+          <img id="main-slide-image-display" src="" alt="Presentation Slide" class="slide-canvas max-w-full max-h-[75vh] object-contain block mx-auto">
+        </div>
+
+        <button onclick="stepDocPage(1)" title="Next Slide" class="absolute -right-3 sm:-right-6 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-[#1A1A18]/90 hover:bg-svvayam-yellow text-white hover:text-svvayam-charcoal border border-[#333330] shadow-xl flex items-center justify-center transition hover:scale-110 cursor-pointer">
+          <i class="fa-solid fa-chevron-right text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Portrait A4 Continuous Vertical Document -->
+      <div id="main-portrait-doc-container" class="hidden w-full h-full overflow-y-auto flex flex-col items-center py-6 space-y-6">
+        <div id="main-a4-pages-stack" class="w-full max-w-3xl flex flex-col items-center space-y-6"></div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Slide Thumbnails Rail -->
+    <footer id="main-viewer-thumbnail-rail" class="h-20 bg-[#161614] border-t border-[#262623] px-4 flex items-center justify-start sm:justify-center overflow-x-auto space-x-2.5 shrink-0 z-20">
+    </footer>
+
+  </section>
+
+  <!-- 5. FULLSCREEN LIGHTBOX MODAL (High-Res Zoom & Inspection)                 -->
+  <!-- ========================================================================= -->
+  <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
+    <div class="absolute top-4 right-4 z-50 flex items-center space-x-3 text-white">
+      <button onclick="zoomLightbox(0.2)" title="Zoom In" class="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition cursor-pointer">
+        <i class="fa-solid fa-magnifying-glass-plus"></i>
       </button>
-      <img id="lightbox-img" src="" alt="Enlarged view" class="max-h-[82vh] w-auto max-w-full rounded-xl object-contain shadow-2xl">
-      <p id="lightbox-caption" class="text-white text-xs mt-3 font-medium text-center"></p>
+      <button onclick="zoomLightbox(-0.2)" title="Zoom Out" class="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition cursor-pointer">
+        <i class="fa-solid fa-magnifying-glass-minus"></i>
+      </button>
+      <button onclick="resetLightboxZoom()" title="Reset Zoom" class="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition cursor-pointer">
+        <i class="fa-solid fa-rotate-left"></i>
+      </button>
+      <button onclick="closeLightbox()" title="Close (Esc)" class="w-9 h-9 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center transition cursor-pointer ml-2">
+        <i class="fa-solid fa-xmark text-lg"></i>
+      </button>
+    </div>
+    <div class="w-full h-full flex items-center justify-center overflow-hidden" onclick="closeLightboxOnBackdrop(event)">
+      <img id="lightbox-img" src="" alt="Zoomed Asset" class="lightbox-img max-w-full max-h-full object-contain select-none">
     </div>
   </div>
 
   <!-- ========================================================================= -->
-  <!-- JAVASCRIPT CONTROLLER & STATE FLOW ENGINE                                 -->
+  <!-- JAVASCRIPT CONTROLLER & PRESENTATION ENGINE                               -->
   <!-- ========================================================================= -->
   <script>
     // Fallback if external manifest is loading
-    const defaultManifest = window.SVVAYAM_CLIENTS_DATA || [];
+    const defaultClientsData = (typeof window !== 'undefined' && window.SVVAYAM_CLIENTS_DATA) ? window.SVVAYAM_CLIENTS_DATA : [];
 
-    // ==================== 20 CLIENTS FOR CLIENT EXPLORER ====================
-    // 4 Rows (Size: Compact to Grand) x 5 Columns (Detail: Minimal to Signature)
-    const explorerRowsData = [
-      {
-        sizeLabel: 'Compact',
-        tiles: [
-          { id: 'sujana', name: 'Ms. Sujana Mandir', material: 'Teak & Brass', city: 'Bangalore', img: 'assets/clients/sujana/01_overview/hero_cover.jpg', size: "6'6\" × 5'6\"", type: 'Ground Floor Mandir' },
-          { id: 'yuva', name: 'Mr. Yuva Balakumaran', material: 'Burma Teak', city: 'Chennai', img: 'assets/clients/yuva/01_overview/hero_cover.jpg', size: "7'6\" × 6'6\"", type: 'Apartment Mandap' },
-          { id: 'shenoy', name: 'Mr. T N Shenoy', material: 'Walnut Teak', city: 'Bangalore', img: 'assets/clients/shenoy/01_overview/hero_cover.jpg', size: "7'0\" × 6'0\"", type: 'Contemporary Mandap' },
-          { id: 'nitesh-panda', name: 'Mr. Nitesh Panda', material: 'Makrana Marble', city: 'Bangalore', img: 'assets/clients/nitesh-panda/01_overview/hero_cover.jpg', size: "6'0\" × 5'0\"", type: 'Floating Wall Sanctum' },
-          { id: 'deepthi', name: 'Ms. Deepthi Kunchey', material: 'Gopuram Teak', city: 'Hyderabad', img: 'assets/clients/deepthi/06_detailing/dimension_detail_page_01.png', size: "7'0\" × 6'0\"", type: 'Custom Mandir Suite' }
-        ]
-      },
-      {
-        sizeLabel: 'Medium',
-        tiles: [
-          { id: 'dnyaneshwar', name: 'Mr. Dnyaneshwar', material: 'Burma Teak', city: 'Pune', img: 'assets/clients/dnyaneshwar/01_overview/hero_cover.jpg', size: "8'6\" × 7'0\"", type: 'Bespoke Teak Sanctum' },
-          { id: 'vishnu', name: 'Mr. Vishnu Sanctuary', material: 'Carved Teakwood', city: 'Bangalore', img: 'assets/clients/vishnu/01_overview/hero_cover.jpg', size: "8'0\" × 7'0\"", type: 'Sacred Sanctuary' },
-          { id: 'manasa', name: 'Ms. Manasa Kuncham', material: 'Teak & Brass', city: 'Bangalore', img: 'assets/clients/manasa/01_overview/hero_cover.jpg', size: "8'6\" × 7'6\"", type: 'Artisanal Mandap' },
-          { id: 'nagesh', name: 'Mr. Nagesh Villa', material: 'Carved Teakwood', city: 'Bangalore', img: 'assets/clients/nagesh/01_overview/hero_cover.jpg', size: "9'0\" × 7'6\"", type: 'Traditional Villa Sanctum' },
-          { id: 'yashaswini', name: 'Dr. Yashaswini', material: 'Stone & Burma Teak', city: 'Bangalore', img: 'assets/clients/yashaswini/01_overview/hero_cover.jpg', size: "9'6\" × 8'0\"", type: 'Stone Base Sanctum' }
-        ]
-      },
-      {
-        sizeLabel: 'Large',
-        tiles: [
-          { id: 'rahul', name: 'Mr. Rahul Sanctum', material: 'Teak & Brass Guild', city: 'Hyderabad', img: 'assets/clients/rahul/01_overview/hero_cover.jpg', size: "10'6\" × 8'6\"", type: 'Courtyard Sanctum' },
-          { id: 'rekha', name: 'Ms. Rekha Lokeshwara', material: 'Chiseled Stone & Wood', city: 'Bangalore', img: 'assets/clients/rekha/06_detailing/dimension_detail_page_01.png', size: "10'0\" × 8'6\"", type: 'Chiseled Stone Temple' },
-          { id: 'pradeep-reddy', name: 'Mr. Pradeep Reddy', material: 'Burma Teak & Brass', city: 'Hyderabad', img: 'assets/clients/pradeep-reddy/01_overview/hero_cover.jpg', size: "11'0\" × 9'6\"", type: 'Sacred Mandap' },
-          { id: 'umesh-wadayar', name: 'Mr. Umesh Wadayar', material: 'Indian Grey Stone', city: 'Vijayawada', img: 'assets/clients/umesh-wadayar/01_overview/hero_cover.jpg', size: "12'0\" × 10'0\"", type: 'Monolithic Stone Temple' },
-          { id: 'bharath', name: 'Bharath Residence', material: 'Walnut Teak', city: 'Bangalore', img: 'assets/render_1.png', size: "7'6\" × 6'6\"", type: 'Custom Pooja Room' }
-        ]
-      },
-      {
-        sizeLabel: 'Grand',
-        tiles: [
-          { id: 'gayathri', name: 'Gayathri Residence', material: 'Teakwood', city: 'Chennai', img: 'assets/render_2.png', size: "8'0\" × 7'0\"", type: 'Traditional Villa Sanctum' },
-          { id: 'stone-mandir', name: 'Monolithic Mandir', material: 'Hand-Chiseled Stone', city: 'Hyderabad', img: 'assets/stone_temple.png', size: "10'0\" × 9'0\"", type: 'Monolithic Temple' },
-          { id: 'brass-study', name: 'Panchaloha Mandap', material: 'Wood + Brass', city: 'Bangalore', img: 'assets/render_12.png', size: "6'0\" × 5'6\"", type: 'Panchaloha Sanctum' },
-          { id: 'rajashekar', name: 'Rajashekar Sanctum', material: 'Teak & Brass', city: 'Anantapur', img: 'assets/render_11.png', size: "11'0\" × 9'6\"", type: 'Courtyard Sanctum' },
-          { id: 'katkar', name: 'Katkar Masterpiece', material: 'Signature Teak', city: 'Bangalore', img: 'assets/render_1.png', size: "16'0\" × 14'0\"", type: 'Masterpiece Shrine' }
-        ]
-      }
-    ];
-
-    // ==================== CURATED PROJECTS REPOSITORY ====================
-    const curatedProjectsData = [
-      {
-        id: 'nagesh',
-        name: 'Mr. Nagesh Villa Sanctum',
-        material: 'Wood',
-        materialDetail: 'Carved Teakwood Guild',
-        location: 'Bangalore',
-        size: "9'0\" × 7'6\"",
-        type: 'Traditional Villa Sanctum',
-        desc: 'Handcrafted teak mandir featuring bespoke panchaloha bells, CAD signed elevations, and 10 active workshop guild craftsmanship photos.',
-        heroImg: 'assets/clients/nagesh/01_overview/hero_cover.jpg',
-        tag: 'Wood'
-      },
-      {
-        id: 'rahul',
-        name: 'Mr. Rahul Architectural Sanctum',
-        material: 'Brass',
-        materialDetail: 'Teak & Brass Guild',
-        location: 'Hyderabad',
-        size: "10'6\" × 8'6\"",
-        type: 'Courtyard Sanctum',
-        desc: 'Grand architectural sanctum with 48 workshop craftsmanship milestones, 24MB full CAD drawings, and precision CNC jaali screens.',
-        heroImg: 'assets/clients/rahul/01_overview/hero_cover.jpg',
-        tag: 'Brass'
-      },
-      {
-        id: 'dnyaneshwar',
-        name: 'Mr. Dnyaneshwar Residence',
-        material: 'Wood',
-        materialDetail: 'Burma Teak',
-        location: 'Pune',
-        size: "8'6\" × 7'0\"",
-        type: 'Bespoke Teak Sanctum',
-        desc: 'Dravidian Shikhara sanctum with 17-page engineered CAD blueprints, 34 photorealistic renders, and warm dawn illumination.',
-        heroImg: 'assets/clients/dnyaneshwar/01_overview/hero_cover.jpg',
-        tag: 'Wood'
-      },
-      {
-        id: 'umesh-wadayar',
-        name: 'Mr. Umesh Wadayar Monolith',
-        material: 'Stone',
-        materialDetail: 'Indian Grey Stone',
-        location: 'Vijayawada',
-        size: "12'0\" × 10'0\"",
-        type: 'Monolithic Stone Temple',
-        desc: 'Hand-chiseled monolithic stone Gopuram temple with step-by-step structural CAD prabhavali and natural monolithic carving.',
-        heroImg: 'assets/clients/umesh-wadayar/01_overview/hero_cover.jpg',
-        tag: 'Stone'
-      },
-      {
-        id: 'nitesh-panda',
-        name: 'Mr. Nitesh Panda Penthouse',
-        material: 'Stone',
-        materialDetail: 'Makrana White Marble',
-        location: 'Bangalore',
-        size: "6'0\" × 5'0\"",
-        type: 'Floating Wall Sanctum',
-        desc: 'Engineered white marble sanctum with 47MB structural detailing drawings designed specifically for high-rise penthouse living.',
-        heroImg: 'assets/clients/nitesh-panda/01_overview/hero_cover.jpg',
-        tag: 'Stone'
-      },
-      {
-        id: 'shenoy',
-        name: 'Mr. T N Shenoy Residence',
-        material: 'Wood',
-        materialDetail: 'Walnut Teak',
-        location: 'Bangalore',
-        size: "7'0\" × 6'0\"",
-        type: 'Contemporary Mandap',
-        desc: 'Architectural pooja room with fluted stambhas, consecrated timber pedigree, and 9 workshop joinery execution photos.',
-        heroImg: 'assets/clients/shenoy/01_overview/hero_cover.jpg',
-        tag: 'Wood'
-      },
-      {
-        id: 'pradeep-reddy',
-        name: 'Mr. Pradeep Reddy Residence',
-        material: 'Brass',
-        materialDetail: 'Burma Teak & Brass',
-        location: 'Hyderabad',
-        size: "11'0\" × 9'6\"",
-        type: 'Sacred Mandap',
-        desc: 'Multi-tiered Dravidian mandap with consecrated copper yantras, custom brass inlay, and 12 on-site installation step records.',
-        heroImg: 'assets/clients/pradeep-reddy/01_overview/hero_cover.jpg',
-        tag: 'Brass'
-      },
-      {
-        id: 'sujana',
-        name: 'Ms. Sujana Ground Floor Mandir',
-        material: 'Wood',
-        materialDetail: 'Teak & Brass Inlay',
-        location: 'Bangalore',
-        size: "6'6\" × 5'6\"",
-        type: 'Ground Floor Mandir',
-        desc: 'Complete ground floor mandir plan and elevation with panchaloha bells, 18 site photos, and consecrated timber.',
-        heroImg: 'assets/clients/sujana/01_overview/hero_cover.jpg',
-        tag: 'Wood'
-      }
-    ];
-
-    // ==================== STATE & HISTORY FLOW ENGINE ====================
+    // State Variables
     let navHistory = [];
     let historyIndex = -1;
-    let currentProject = curatedProjectsData[0];
-    let currentStageIndex = 0;
-    const totalStages = 10;
+    let currentProject = null;
+    let activeStageIndex = 0;
+    let activeImageIndex = 0;
     let previousLibraryView = 'explorer';
+    let currentLightboxZoom = 1;
 
-    // Active Asset Pointers for dynamic stages
-    let activeCADIndex = 0;
-    let activeSurveyIndex = 0;
-    let activeConceptIndex = 0;
-    let activeWorkshopIndex = 0;
-
+    // ==================== APP INITIALIZATION ====================
     document.addEventListener('DOMContentLoaded', () => {
       renderExplorerGrid();
       renderCuratedCards('All');
@@ -1029,6 +702,7 @@
       pushState({ view: 'landing' });
     });
 
+    // ==================== STATE MANAGEMENT ====================
     function pushState(state) {
       if (historyIndex < navHistory.length - 1) {
         navHistory = navHistory.slice(0, historyIndex + 1);
@@ -1069,41 +743,74 @@
       const tabCurated = document.getElementById('tab-btn-curated');
 
       if (state.view === 'landing') {
-        globalNav.classList.add('hidden');
-        document.getElementById('view-landing').classList.remove('hidden');
-        document.getElementById('view-landing').classList.add('flex');
-      } 
+        if (globalNav) globalNav.classList.add('hidden');
+        const viewEl = document.getElementById('view-landing');
+        if (viewEl) {
+          viewEl.classList.remove('hidden');
+          viewEl.classList.add('flex');
+        }
+      }
       else if (state.view === 'explorer') {
-        globalNav.classList.remove('hidden');
-        tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-yellow text-svvayam-charcoal shadow-sm';
-        tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
-        breadcrumb.textContent = 'Client Explorer';
+        if (globalNav) globalNav.classList.remove('hidden');
+        if (tabExplorer) tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-yellow text-svvayam-charcoal shadow-sm';
+        if (tabCurated) tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
+        const tabDocs = document.getElementById('tab-btn-docs');
+        if (tabDocs) tabDocs.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
+        if (breadcrumb) breadcrumb.textContent = 'Client Explorer';
         previousLibraryView = 'explorer';
 
         const expView = document.getElementById('view-explorer');
-        expView.classList.remove('hidden');
-        expView.classList.add('flex');
-      } 
+        if (expView) {
+          expView.classList.remove('hidden');
+          expView.classList.add('flex');
+        }
+      }
       else if (state.view === 'curated') {
-        globalNav.classList.remove('hidden');
-        tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-yellow text-svvayam-charcoal shadow-sm';
-        tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
-        breadcrumb.textContent = 'Curated Projects';
+        if (globalNav) globalNav.classList.remove('hidden');
+        if (tabCurated) tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-yellow text-svvayam-charcoal shadow-sm';
+        if (tabExplorer) tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
+        const tabDocs = document.getElementById('tab-btn-docs');
+        if (tabDocs) tabDocs.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
+        if (breadcrumb) breadcrumb.textContent = 'Curated Projects';
         previousLibraryView = 'curated';
 
         const curView = document.getElementById('view-curated');
-        curView.classList.remove('hidden');
-        curView.classList.add('flex');
-      } 
-      else if (state.view === 'project') {
-        globalNav.classList.add('hidden');
+        if (curView) {
+          curView.classList.remove('hidden');
+          curView.classList.add('flex');
+        }
+      }
+      else if (state.view === 'documents') {
+        if (globalNav) globalNav.classList.remove('hidden');
+        const tabDocs = document.getElementById('tab-btn-docs');
+        if (tabDocs) tabDocs.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-yellow text-svvayam-charcoal shadow-sm';
+        if (tabExplorer) tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
+        if (tabCurated) tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
+        if (breadcrumb) breadcrumb.textContent = 'Presentations & Documents';
+        previousLibraryView = 'documents';
 
-        loadProjectData(state.project);
-        goToStage(state.stage || 0);
+        const docsView = document.getElementById('view-documents');
+        if (docsView) {
+          docsView.classList.remove('hidden');
+          docsView.classList.add('flex');
+        }
+
+        renderDocPresentation(state.doc || currentActiveDocKey, state.page || 1);
+      }
+      else if (state.view === 'project') {
+        if (globalNav) globalNav.classList.add('hidden');
+
+        currentProject = state.project;
+        activeStageIndex = state.stage || 0;
+        activeImageIndex = 0;
+
+        renderProjectPresentation();
 
         const projView = document.getElementById('view-project');
-        projView.classList.remove('hidden');
-        projView.classList.add('flex');
+        if (projView) {
+          projView.classList.remove('hidden');
+          projView.classList.add('flex');
+        }
       }
 
       window.scrollTo(0, 0);
@@ -1139,49 +846,61 @@
     }
 
     function openProjectPresentation(projObj) {
-      // Look up full manifest record if exists
-      const manifestList = window.SVVAYAM_CLIENTS_DATA || defaultManifest;
-      const fullRecord = manifestList.find(c => c.id === projObj.id);
-      currentProject = fullRecord ? Object.assign({}, projObj, fullRecord) : projObj;
-      pushState({ view: 'project', project: currentProject, stage: 0 });
+      const list = window.SVVAYAM_CLIENTS_DATA || defaultClientsData;
+      const full = list.find(c => c.id === projObj.id) || projObj;
+      pushState({ view: 'project', project: full, stage: 0 });
     }
 
-    // ==================== RENDER EXPLORER (20 TILES - UNCLUTTERED) ====================
+    // ==================== RENDER EXPLORER (4 ROWS x 4 TABS = 16 TILES) ====================
     function renderExplorerGrid() {
       const container = document.getElementById('explorer-tiles-grid');
+      if (!container) return;
       container.innerHTML = '';
 
-      explorerRowsData.forEach((row) => {
-        const rowDiv = document.createElement('div');
-        rowDiv.className = 'grid grid-cols-5 gap-3 sm:gap-3.5';
+      const list = window.SVVAYAM_CLIENTS_DATA || defaultClientsData;
 
-        row.tiles.forEach((tile) => {
+      // Group clients into the 4 rows specified by user
+      const sizeGroups = {
+        'Compact': ['sujana', 'yuva', 'shenoy', 'nitesh-panda'],
+        'Medium': ['dnyaneshwar', 'vishnu', 'manasa', 'nagesh'],
+        'Large': ['yashaswini', 'rahul', 'pradeep-reddy', 'umesh-wadayar'],
+        'Grand': ['arun-pari', 'rakesh-katkar', 'vaishali', 'atul-malhotra']
+      };
+
+      const rowKeys = ['Compact', 'Medium', 'Large', 'Grand'];
+
+      rowKeys.forEach(rowKey => {
+        const clientIds = sizeGroups[rowKey] || [];
+        const rowDiv = document.createElement('div');
+        // Each row contains ONLY four tabs
+        rowDiv.className = 'grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4';
+
+        clientIds.forEach(cid => {
+          const client = list.find(c => c.id === cid);
+          if (!client) return;
+
           const tileCard = document.createElement('div');
-          tileCard.className = 'bg-white rounded-xl border border-svvayam-border p-2 sm:p-2.5 shadow-xs project-card-hover cursor-pointer group flex flex-col justify-between';
-          tileCard.onclick = () => {
-            const manifestList = window.SVVAYAM_CLIENTS_DATA || defaultManifest;
-            const fullRecord = manifestList.find(c => c.id === tile.id);
-            const found = fullRecord ? Object.assign({}, tile, fullRecord) : (curatedProjectsData.find(p => p.id === tile.id) || {
-              id: tile.id,
-              name: tile.name,
-              material: tile.material,
-              materialDetail: tile.material,
-              location: tile.city,
-              size: tile.size,
-              type: tile.type,
-              desc: tile.name + ' bespoke sanctuary in ' + tile.city + ' crafted with ' + tile.material + '.',
-              heroImg: tile.img
-            });
-            openProjectPresentation(found);
-          };
+          tileCard.className = 'bg-white rounded-xl border border-svvayam-border p-2.5 shadow-xs project-card-hover cursor-pointer group flex flex-col justify-between';
+          tileCard.onclick = () => openProjectPresentation(client);
+
+          // Subtitle details: material and location if available, otherwise typology or blank
+          const subtitleDetails = [client.material, client.location].filter(Boolean).join(' • ') || client.type || '';
+          const sizeHtml = client.size ? '<span class="text-[10px] font-bold text-svvayam-muted bg-svvayam-surface px-1.5 py-0.5 rounded border border-svvayam-border/60">' + client.size + '</span>' : '';
 
           tileCard.innerHTML = `
-            <div class="relative rounded-lg overflow-hidden bg-stone-100 aspect-4/3 mb-2 sm:mb-2.5">
-              <img src="${tile.img}" alt="${tile.name}" class="card-img w-full h-full object-cover transition duration-300" onerror="this.src='assets/render_1.png'">
-            </div>
             <div>
-              <h4 class="font-serif font-bold text-[11px] sm:text-[13px] text-svvayam-charcoal group-hover:text-svvayam-charcoal tracking-tight truncate">${tile.name}</h4>
-              <p class="text-[10px] sm:text-[11px] text-svvayam-muted truncate mt-0.5">${tile.material} • ${tile.city}</p>
+              <div class="relative rounded-lg overflow-hidden bg-stone-100 aspect-video mb-2.5 flex items-center justify-center">
+                <img src="${client.heroImg}" alt="${client.name}" class="card-img w-full h-full object-contain transition duration-300" onerror="this.src='assets/SVVAYAM-LOGO-4.png'">
+              </div>
+              <h4 class="font-serif font-bold text-xs sm:text-sm text-svvayam-charcoal tracking-tight truncate">${client.name}</h4>
+              <p class="text-[10px] sm:text-[11px] text-svvayam-muted truncate mt-0.5">${subtitleDetails}</p>
+            </div>
+            <div class="mt-2 pt-2 border-t border-svvayam-border/50 flex items-center justify-between">
+              ${sizeHtml}
+              <span class="text-[10px] font-bold text-svvayam-charcoal flex items-center space-x-1 group-hover:translate-x-0.5 transition">
+                <span>Explore</span>
+                <i class="fa-solid fa-arrow-right text-[9px] text-svvayam-yellow"></i>
+              </span>
             </div>
           `;
 
@@ -1195,32 +914,41 @@
     // ==================== RENDER CURATED PROJECTS ====================
     function renderCuratedCards(filter) {
       const container = document.getElementById('curated-cards-container');
+      if (!container) return;
       container.innerHTML = '';
 
+      const list = window.SVVAYAM_CLIENTS_DATA || defaultClientsData;
+
       const filtered = (filter === 'All')
-        ? curatedProjectsData
-        : curatedProjectsData.filter(p => p.material.toLowerCase() === filter.toLowerCase() || (p.tag && p.tag.toLowerCase() === filter.toLowerCase()));
+        ? list
+        : list.filter(p => {
+            const mat = (p.material || '').toLowerCase();
+            const tag = (p.type || '').toLowerCase();
+            const f = filter.toLowerCase();
+            return mat.includes(f) || tag.includes(f);
+          });
 
       filtered.forEach((p) => {
         const card = document.createElement('div');
         card.className = 'bg-white rounded-2xl border border-svvayam-border p-3.5 shadow-xs project-card-hover cursor-pointer flex flex-col justify-between group';
         card.onclick = () => openProjectPresentation(p);
 
+        const badgeHtml = p.material ? `<span class="absolute top-2.5 right-2.5 bg-white/90 backdrop-blur-sm text-svvayam-charcoal font-bold text-[10px] uppercase px-2 py-0.5 rounded shadow-xs">${p.material}</span>` : '';
+        const locationText = p.location || p.size || 'Bespoke Atelier';
+
         card.innerHTML = `
           <div>
-            <div class="relative rounded-xl overflow-hidden bg-stone-100 aspect-16/10 mb-3.5">
-              <img src="${p.heroImg}" alt="${p.name}" class="card-img w-full h-full object-cover transition duration-300" onerror="this.src='assets/render_1.png'">
-              <span class="absolute top-2.5 right-2.5 bg-white/90 backdrop-blur-sm text-svvayam-charcoal font-bold text-[10px] uppercase px-2 py-0.5 rounded shadow-xs">
-                ${p.materialDetail}
-              </span>
+            <div class="relative rounded-xl overflow-hidden bg-stone-100 aspect-video mb-3 flex items-center justify-center">
+              <img src="${p.heroImg}" alt="${p.name}" class="card-img w-full h-full object-contain transition duration-300" onerror="this.src='assets/SVVAYAM-LOGO-4.png'">
+              ${badgeHtml}
             </div>
-            <h3 class="font-serif font-bold text-base text-svvayam-charcoal group-hover:text-svvayam-charcoal mb-1">${p.name}</h3>
-            <p class="text-xs text-svvayam-muted line-clamp-2 leading-relaxed mb-3">${p.desc}</p>
+            <h3 class="font-serif font-bold text-sm sm:text-base text-svvayam-charcoal mb-1">${p.name}</h3>
+            <p class="text-xs text-svvayam-muted line-clamp-2 leading-relaxed mb-3">${p.desc || p.type || ''}</p>
           </div>
           <div class="pt-3 border-t border-svvayam-border/60 flex items-center justify-between text-[11px] text-svvayam-muted font-medium">
-            <span>${p.location}</span>
+            <span>${locationText}</span>
             <span class="text-svvayam-charcoal font-bold group-hover:translate-x-1 transition transform inline-flex items-center space-x-1">
-              <span>View Presentation</span>
+              <span>View Journey</span>
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </span>
           </div>
@@ -1241,452 +969,546 @@
       renderCuratedCards(filter);
     }
 
-    // ==================== LOAD DYNAMIC PROJECT PRESENTATION ====================
-    function loadProjectData(p) {
-      currentProject = p;
-      activeCADIndex = 0;
-      activeSurveyIndex = 0;
-      activeConceptIndex = 0;
-      activeWorkshopIndex = 0;
+    // ==================== DYNAMIC PROJECT PRESENTATION ENGINE ====================
+    function renderProjectPresentation() {
+      if (!currentProject) return;
 
-      // Header Bar
-      document.getElementById('proj-header-name').textContent = p.name;
-      const matBadge = document.getElementById('proj-header-material');
-      if (matBadge) matBadge.textContent = p.materialDetail || p.material;
+      const stages = currentProject.stages || [];
+      if (stages.length === 0) return;
 
-      // Stage 0: Overview
-      document.getElementById('stage-overview-hero-img').src = p.heroImg || 'assets/render_1.png';
-      document.getElementById('meta-project-title').textContent = p.name;
-      document.getElementById('meta-location').textContent = p.location || p.city || 'India';
-      document.getElementById('meta-material').textContent = p.materialDetail || p.material;
-      document.getElementById('meta-size').textContent = p.size || 'Custom';
-      document.getElementById('meta-type').textContent = p.type || 'Custom Pooja Sanctuary';
-      document.getElementById('meta-narrative').textContent = p.desc;
+      if (activeStageIndex < 0) activeStageIndex = 0;
+      if (activeStageIndex >= stages.length) activeStageIndex = stages.length - 1;
 
-      // Overview Badges
-      const badgesCont = document.getElementById('overview-assets-badges');
-      badgesCont.innerHTML = '';
-      if (p.counts) {
-        if (p.counts['04_cad_2d']) {
-          badgesCont.innerHTML += `<span class="px-2.5 py-1 rounded bg-stone-100 border border-svvayam-border text-[10px] font-bold text-svvayam-charcoal"><i class="fa-solid fa-drafting-compass text-svvayam-yellow mr-1"></i>${p.counts['04_cad_2d']} CAD Blueprints</span>`;
-        }
-        if (p.counts['05_model_3d']) {
-          badgesCont.innerHTML += `<span class="px-2.5 py-1 rounded bg-stone-100 border border-svvayam-border text-[10px] font-bold text-svvayam-charcoal"><i class="fa-solid fa-cube text-svvayam-yellow mr-1"></i>${p.counts['05_model_3d']} 3D Renders</span>`;
-        }
-        if (p.counts['07_manufacturing']) {
-          badgesCont.innerHTML += `<span class="px-2.5 py-1 rounded bg-stone-100 border border-svvayam-border text-[10px] font-bold text-svvayam-charcoal"><i class="fa-solid fa-hammer text-svvayam-yellow mr-1"></i>${p.counts['07_manufacturing']} Workshop Photos</span>`;
-        }
-      }
-
-      // Populate Stage 1: Requirements (Site Survey)
-      loadSurveyAssets();
-
-      // Populate Stage 2: Concept
-      loadConceptAssets();
-
-      // Populate Stage 3: 2D CAD
-      loadCADAssets();
-
-      // Populate Stage 4: 3D Models
-      load3DAssets();
-
-      // Populate Stage 5: Detailing
-      loadDetailingAssets();
-
-      // Populate Stage 6: Manufacturing (Workshop)
-      loadWorkshopAssets();
-
-      // Populate Stage 8: Installation
-      loadInstallAssets();
-
-      // Stage 9: Final
-      document.getElementById('stage-final-img').src = (p.stageImages && p.stageImages['10_final'] && p.stageImages['10_final'][0]) || p.heroImg || 'assets/render_1.png';
-    }
-
-    // Helper: Stage 1 (Survey)
-    function loadSurveyAssets() {
-      const imgs = (currentProject.stageImages && currentProject.stageImages['02_requirements']) || [];
-      const featured = document.getElementById('survey-featured-img');
-      const thumbs = document.getElementById('survey-thumbnails-container');
-      thumbs.innerHTML = '';
-
-      if (imgs.length > 0) {
-        featured.src = imgs[0];
-        imgs.slice(0, 8).forEach((src, idx) => {
-          const t = document.createElement('div');
-          t.className = `w-14 h-14 rounded-lg overflow-hidden shrink-0 border cursor-pointer ${idx === 0 ? 'border-svvayam-yellow ring-2 ring-svvayam-yellow/50' : 'border-svvayam-border'}`;
-          t.onclick = () => {
-            activeSurveyIndex = idx;
-            featured.src = src;
-            document.querySelectorAll('#survey-thumbnails-container > div').forEach((d, i) => {
-              d.className = `w-14 h-14 rounded-lg overflow-hidden shrink-0 border cursor-pointer ${i === idx ? 'border-svvayam-yellow ring-2 ring-svvayam-yellow/50' : 'border-svvayam-border'}`;
-            });
-          };
-          t.innerHTML = `<img src="${src}" class="w-full h-full object-cover">`;
-          thumbs.appendChild(t);
-        });
-      } else {
-        featured.src = currentProject.heroImg || 'assets/render_18.png';
-      }
-    }
-
-    // Helper: Stage 2 (Concept)
-    function loadConceptAssets() {
-      const imgs = (currentProject.stageImages && currentProject.stageImages['03_concept']) || [];
-      const main = document.getElementById('concept-main-img');
-      const thumbs = document.getElementById('concept-thumbnails-container');
-      thumbs.innerHTML = '';
-
-      if (imgs.length > 0) {
-        main.src = imgs[0];
-        imgs.slice(0, 6).forEach((src, idx) => {
-          const t = document.createElement('div');
-          t.className = `w-14 h-14 rounded-lg overflow-hidden shrink-0 border cursor-pointer ${idx === 0 ? 'border-svvayam-yellow ring-2 ring-svvayam-yellow/50' : 'border-svvayam-border'}`;
-          t.onclick = () => {
-            activeConceptIndex = idx;
-            main.src = src;
-            document.querySelectorAll('#concept-thumbnails-container > div').forEach((d, i) => {
-              d.className = `w-14 h-14 rounded-lg overflow-hidden shrink-0 border cursor-pointer ${i === idx ? 'border-svvayam-yellow ring-2 ring-svvayam-yellow/50' : 'border-svvayam-border'}`;
-            });
-          };
-          t.innerHTML = `<img src="${src}" class="w-full h-full object-cover">`;
-          thumbs.appendChild(t);
-        });
-      } else {
-        main.src = currentProject.heroImg || 'assets/render_18.png';
-      }
-    }
-
-    // Helper: Stage 3 (CAD Blueprints)
-    function loadCADAssets() {
-      const cadList = (currentProject.stageImages && currentProject.stageImages['04_cad_2d']) || [];
-      const imgElem = document.getElementById('cad-blueprint-img');
-      const selector = document.getElementById('cad-sheets-selector');
-      selector.innerHTML = '';
-
-      if (cadList.length > 0) {
-        imgElem.src = cadList[0];
-        document.getElementById('cad-sheet-label').textContent = `CAD BLUEPRINT SHEET 01 / ${cadList.length.toString().padStart(2, '0')}`;
-
-        cadList.slice(0, 8).forEach((src, idx) => {
-          const btn = document.createElement('button');
-          btn.className = `px-2.5 py-1 rounded text-xs font-mono font-bold transition ${idx === 0 ? 'bg-svvayam-yellow text-svvayam-charcoal shadow-xs' : 'text-svvayam-muted hover:text-svvayam-charcoal'}`;
-          btn.textContent = `S0${idx + 1}`;
-          btn.onclick = () => {
-            activeCADIndex = idx;
-            imgElem.src = src;
-            document.getElementById('cad-sheet-label').textContent = `CAD BLUEPRINT SHEET ${(idx + 1).toString().padStart(2, '0')} / ${cadList.length.toString().padStart(2, '0')}`;
-            document.querySelectorAll('#cad-sheets-selector button').forEach((b, i) => {
-              b.className = `px-2.5 py-1 rounded text-xs font-mono font-bold transition ${i === idx ? 'bg-svvayam-yellow text-svvayam-charcoal shadow-xs' : 'text-svvayam-muted hover:text-svvayam-charcoal'}`;
-            });
-          };
-          selector.appendChild(btn);
-        });
-      } else {
-        imgElem.src = 'assets/render_18.png';
-        document.getElementById('cad-sheet-label').textContent = 'CAD WORKING BLUEPRINT';
-      }
-    }
-
-    // Helper: Stage 4 (3D Models)
-    function load3DAssets() {
-      const renders = (currentProject.stageImages && currentProject.stageImages['05_model_3d']) || [];
-      const renderImg = document.getElementById('render-3d-img');
-      const thumbs = document.getElementById('render-3d-thumbnails');
-      thumbs.innerHTML = '';
-
-      if (renders.length > 0) {
-        renderImg.src = renders[renders.length - 1]; // approved final
-        switch3DVersion(3);
-
-        renders.slice(0, 8).forEach((src, idx) => {
-          const t = document.createElement('div');
-          t.className = `w-14 h-14 rounded-lg overflow-hidden shrink-0 border border-svvayam-border hover:border-svvayam-yellow cursor-pointer`;
-          t.onclick = () => {
-            renderImg.src = src;
-            document.getElementById('ver-title').textContent = `Perspective Angle ${idx + 1}`;
-            document.getElementById('ver-status').textContent = 'Photorealistic Perspective Rendering';
-          };
-          t.innerHTML = `<img src="${src}" class="w-full h-full object-cover">`;
-          thumbs.appendChild(t);
-        });
-      } else {
-        renderImg.src = currentProject.heroImg || 'assets/render_1.png';
-      }
-    }
-
-    // Helper: Stage 5 (Detailing)
-    function loadDetailingAssets() {
-      const details = (currentProject.stageImages && currentProject.stageImages['06_detailing']) || [];
-      const grid = document.getElementById('detailing-cards-grid');
-      grid.innerHTML = '';
-
-      if (details.length > 0) {
-        details.slice(0, 3).forEach((src, idx) => {
-          const card = document.createElement('div');
-          card.className = 'space-y-2.5';
-          const title = idx === 0 ? 'Architectural Dimensions & Clearances' : (idx === 1 ? 'Joinery Tenon & Pillar Detailing' : 'Jaali Lattice & Hardware Specifications');
-          const desc = idx === 0 ? 'Structural height, width, and depth cross-sections engineered for millimeter tolerance.' : (idx === 1 ? 'Traditional interlocking mortise-and-tenon craftsmanship with concealed brass anchors.' : 'Parametric CNC carved lattice diffusers and hand-tuned bell hanging mounts.');
-          
-          card.innerHTML = `
-            <div class="rounded-xl overflow-hidden h-44 sm:h-48 bg-stone-100 border border-svvayam-border cursor-pointer relative group" onclick="openLightbox('${src}', '${title}')">
-              <img src="${src}" alt="${title}" class="w-full h-full object-cover group-hover:scale-103 transition duration-300">
-              <span class="absolute bottom-2 right-2 bg-black/60 text-white text-[10px] px-2 py-0.5 rounded backdrop-blur-sm">Click to expand</span>
-            </div>
-            <h4 class="font-bold text-xs text-svvayam-charcoal uppercase tracking-wider">${title}</h4>
-            <p class="text-xs text-svvayam-muted leading-relaxed">${desc}</p>
-          `;
-          grid.appendChild(card);
-        });
-      } else {
-        // Fallback standard detail cards
-        grid.innerHTML = `
-          <div class="space-y-2.5">
-            <div class="rounded-xl overflow-hidden h-44 sm:h-48 bg-stone-100 border border-svvayam-border cursor-pointer" onclick="openLightbox('assets/render_12.png', 'Brass Inlay Details')">
-              <img src="assets/render_12.png" alt="Brass Inlay" class="w-full h-full object-cover hover:scale-103 transition duration-300">
-            </div>
-            <h4 class="font-bold text-xs text-svvayam-charcoal uppercase tracking-wider">Cast Panchaloha Bells</h4>
-            <p class="text-xs text-svvayam-muted leading-relaxed">48 solid brass bells hand-tuned to musical notes, suspended from acoustic dampening brackets.</p>
-          </div>
-          <div class="space-y-2.5">
-            <div class="rounded-xl overflow-hidden h-44 sm:h-48 bg-stone-100 border border-svvayam-border cursor-pointer" onclick="openLightbox('assets/render_10.png', 'Hand Carved Shikhar')">
-              <img src="assets/render_10.png" alt="Hand Carved Shikhar" class="w-full h-full object-cover hover:scale-103 transition duration-300">
-            </div>
-            <h4 class="font-bold text-xs text-svvayam-charcoal uppercase tracking-wider">Dravidian Shikhar Carvings</h4>
-            <p class="text-xs text-svvayam-muted leading-relaxed">Multi-tiered wooden kalasham carved from a single seasoning log of selected Burma Teak.</p>
-          </div>
-          <div class="space-y-2.5">
-            <div class="rounded-xl overflow-hidden h-44 sm:h-48 bg-stone-100 border border-svvayam-border cursor-pointer" onclick="openLightbox('assets/render_14.png', 'CNC Jaali Backwall')">
-              <img src="assets/render_14.png" alt="CNC Jaali" class="w-full h-full object-cover hover:scale-103 transition duration-300">
-            </div>
-            <h4 class="font-bold text-xs text-svvayam-charcoal uppercase tracking-wider">Lotus Jaali Backlit Screen</h4>
-            <p class="text-xs text-svvayam-muted leading-relaxed">Parametric CNC carved lattice backing backlit with diffusers delivering spotless ambient radiance.</p>
-          </div>
-        `;
-      }
-    }
-
-    // Helper: Stage 6 (Workshop)
-    function loadWorkshopAssets() {
-      const workshop = (currentProject.stageImages && currentProject.stageImages['07_manufacturing']) || [];
-      const main = document.getElementById('workshop-main-img');
-      const thumbs = document.getElementById('workshop-thumbnails-container');
-      thumbs.innerHTML = '';
-
-      if (workshop.length > 0) {
-        main.src = workshop[0];
-        workshop.slice(0, 8).forEach((src, idx) => {
-          const t = document.createElement('div');
-          t.className = `w-14 h-14 rounded-lg overflow-hidden shrink-0 border cursor-pointer ${idx === 0 ? 'border-svvayam-yellow ring-2 ring-svvayam-yellow/50' : 'border-svvayam-border'}`;
-          t.onclick = () => {
-            activeWorkshopIndex = idx;
-            main.src = src;
-            document.querySelectorAll('#workshop-thumbnails-container > div').forEach((d, i) => {
-              d.className = `w-14 h-14 rounded-lg overflow-hidden shrink-0 border cursor-pointer ${i === idx ? 'border-svvayam-yellow ring-2 ring-svvayam-yellow/50' : 'border-svvayam-border'}`;
-            });
-          };
-          t.innerHTML = `<img src="${src}" class="w-full h-full object-cover">`;
-          thumbs.appendChild(t);
-        });
-      } else {
-        main.src = 'assets/render_22.png';
-      }
-    }
-
-    // Helper: Stage 8 (Installation)
-    function loadInstallAssets() {
-      const installList = (currentProject.stageImages && currentProject.stageImages['09_installation']) || [];
-      const main = document.getElementById('install-main-img');
-      if (installList.length > 0) {
-        main.src = installList[0];
-      } else {
-        main.src = 'assets/render_24.png';
-      }
-    }
-
-    function goToStage(stageIdx) {
-      currentStageIndex = stageIdx;
-
-      // Update Nav Buttons
-      document.querySelectorAll('#fixed-stage-nav .stage-item').forEach(btn => {
-        if (parseInt(btn.getAttribute('data-stage')) === stageIdx) {
-          btn.className = 'stage-item active px-3.5 py-1.5 rounded-md text-xs border border-svvayam-yellow bg-svvayam-yellow text-svvayam-charcoal font-bold shadow-xs';
+      // Update Header Title & Material
+      const headerName = document.getElementById('proj-header-name');
+      const headerMat = document.getElementById('proj-header-material');
+      if (headerName) headerName.textContent = currentProject.name;
+      if (headerMat) {
+        if (currentProject.material) {
+          headerMat.textContent = currentProject.material;
+          headerMat.classList.remove('hidden');
         } else {
-          btn.className = 'stage-item px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition';
+          headerMat.classList.add('hidden');
         }
-      });
+      }
 
-      // Show Active Panel
-      document.querySelectorAll('.stage-content-panel').forEach((panel, idx) => {
-        if (idx === stageIdx) {
-          panel.classList.remove('hidden');
+      // 1. Render Dynamic Stage Navigation Pills
+      const pillsContainer = document.getElementById('dynamic-stage-pills-container');
+      if (pillsContainer) {
+        pillsContainer.innerHTML = '';
+        stages.forEach((st, idx) => {
+          const pill = document.createElement('button');
+          const numStr = (idx + 1 < 10 ? '0' : '') + (idx + 1);
+          pill.className = (idx === activeStageIndex)
+            ? 'stage-pill active px-3.5 py-1.5 rounded-md text-xs border border-svvayam-yellow bg-svvayam-yellow text-svvayam-charcoal font-bold transition shadow-xs cursor-pointer'
+            : 'stage-pill px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition cursor-pointer';
+          pill.textContent = numStr + ' ' + st.title.split('&')[0].trim();
+          pill.onclick = () => goToStage(idx);
+          pillsContainer.appendChild(pill);
+        });
+      }
+
+      // 2. Render Stage Content & Media Canvas
+      renderCurrentStageContent();
+    }
+
+    function renderCurrentStageContent() {
+      if (!currentProject || !currentProject.stages) return;
+      const stages = currentProject.stages;
+      const stage = stages[activeStageIndex];
+      if (!stage) return;
+
+      const totalStages = stages.length;
+      const stageNumStr = (activeStageIndex + 1 < 10 ? '0' : '') + (activeStageIndex + 1);
+      const totalNumStr = (totalStages < 10 ? '0' : '') + totalStages;
+
+      // Update Badges & Headings
+      const badge = document.getElementById('stage-badge');
+      const category = document.getElementById('stage-category-label');
+      const heading = document.getElementById('stage-heading');
+      if (badge) badge.textContent = 'STAGE ' + stageNumStr + ' OF ' + totalNumStr;
+      if (category) category.textContent = stage.stage_key.replace('_', ' ');
+      if (heading) heading.textContent = stage.title;
+
+      // Ensure activeImageIndex is valid
+      const images = stage.images || [];
+      if (activeImageIndex < 0) activeImageIndex = 0;
+      if (activeImageIndex >= images.length) activeImageIndex = images.length - 1;
+
+      // Update Hero Image
+      const heroImg = document.getElementById('stage-hero-img');
+      if (heroImg && images.length > 0) {
+        heroImg.src = images[activeImageIndex];
+      }
+
+      // Update Image Counter
+      const counterContainer = document.getElementById('stage-image-counter-container');
+      const counterSpan = document.getElementById('stage-image-counter');
+      if (images.length > 1) {
+        if (counterContainer) counterContainer.classList.remove('hidden');
+        if (counterSpan) counterSpan.textContent = 'Asset ' + (activeImageIndex + 1) + ' of ' + images.length;
+      } else {
+        if (counterContainer) counterContainer.classList.add('hidden');
+      }
+
+      // Arrows on Hero Canvas
+      const prevBtn = document.getElementById('stage-img-prev-btn');
+      const nextBtn = document.getElementById('stage-img-next-btn');
+      if (images.length > 1) {
+        if (prevBtn) prevBtn.classList.remove('hidden');
+        if (nextBtn) nextBtn.classList.remove('hidden');
+      } else {
+        if (prevBtn) prevBtn.classList.add('hidden');
+        if (nextBtn) nextBtn.classList.add('hidden');
+      }
+
+      // Render Thumbnails Strip if multiple images
+      const thumbStrip = document.getElementById('stage-thumbnails-strip');
+      if (thumbStrip) {
+        thumbStrip.innerHTML = '';
+        if (images.length > 1) {
+          thumbStrip.classList.remove('hidden');
+          images.forEach((imgUrl, i) => {
+            const thumb = document.createElement('div');
+            thumb.className = (i === activeImageIndex)
+              ? 'relative h-14 sm:h-16 aspect-video rounded-lg overflow-hidden border-2 border-svvayam-yellow shadow-md cursor-pointer transition transform scale-105 shrink-0 bg-stone-100 flex items-center justify-center'
+              : 'relative h-14 sm:h-16 aspect-video rounded-lg overflow-hidden border border-svvayam-border shadow-xs cursor-pointer transition hover:border-svvayam-charcoal hover:scale-102 shrink-0 bg-stone-100 flex items-center justify-center opacity-80 hover:opacity-100';
+            thumb.onclick = () => selectStageImage(i);
+            thumb.innerHTML = `<img src="${imgUrl}" alt="Thumbnail" class="w-full h-full object-contain" onerror="this.src='assets/SVVAYAM-LOGO-4.png'">`;
+            thumbStrip.appendChild(thumb);
+          });
         } else {
-          panel.classList.add('hidden');
+          thumbStrip.classList.add('hidden');
         }
-      });
+      }
 
-      // Update Floating Deck Controls
-      document.getElementById('deck-current-num').textContent = (stageIdx + 1).toString().padStart(2, '0');
-      document.getElementById('stage-prev-btn').disabled = (stageIdx === 0);
-      document.getElementById('stage-next-btn').disabled = (stageIdx === totalStages - 1);
+      // Render Metadata Details Bar (Leave blank if missing on drive)
+      const metaContainer = document.getElementById('stage-meta-details');
+      if (metaContainer) {
+        metaContainer.innerHTML = '';
+        const metaItems = [];
+        if (currentProject.size) {
+          metaItems.push('<span><strong class="text-svvayam-charcoal">Dimensions:</strong> ' + currentProject.size + '</span>');
+        }
+        if (currentProject.material) {
+          metaItems.push('<span><strong class="text-svvayam-charcoal">Material:</strong> ' + currentProject.material + '</span>');
+        }
+        if (currentProject.location) {
+          metaItems.push('<span><strong class="text-svvayam-charcoal">Location:</strong> ' + currentProject.location + '</span>');
+        }
+        if (currentProject.type) {
+          metaItems.push('<span><strong class="text-svvayam-charcoal">Typology:</strong> ' + currentProject.type + '</span>');
+        }
+        metaContainer.innerHTML = metaItems.join('<span class="text-svvayam-border hidden sm:inline">•</span>');
+      }
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+      // Update Bottom Bar Progress and Buttons
+      const bottomIndicator = document.getElementById('bottom-stage-indicator');
+      if (bottomIndicator) {
+        bottomIndicator.textContent = 'Stage ' + (activeStageIndex + 1) + ' of ' + totalStages;
+      }
 
-    function nextStage() {
-      if (currentStageIndex < totalStages - 1) {
-        goToStage(currentStageIndex + 1);
+      const prevStageBtn = document.getElementById('btn-prev-stage');
+      const nextStageBtn = document.getElementById('btn-next-stage');
+      const nextStageLabel = document.getElementById('btn-next-stage-label');
+
+      if (prevStageBtn) prevStageBtn.disabled = (activeStageIndex === 0);
+
+      if (nextStageLabel) {
+        if (activeStageIndex === totalStages - 1) {
+          nextStageLabel.textContent = 'Return to Explorer';
+        } else {
+          nextStageLabel.textContent = 'Next Stage';
+        }
+      }
+
+      // Scroll to stage top smoothly
+      const stageHeadingEl = document.getElementById('stage-heading');
+      if (stageHeadingEl) {
+        const topY = stageHeadingEl.getBoundingClientRect().top + window.scrollY - 140;
+        window.scrollTo({ top: Math.max(0, topY), behavior: 'smooth' });
       }
     }
 
-    function prevStage() {
-      if (currentStageIndex > 0) {
-        goToStage(currentStageIndex - 1);
+    function goToStage(idx) {
+      if (!currentProject || !currentProject.stages) return;
+      if (idx >= 0 && idx < currentProject.stages.length) {
+        activeStageIndex = idx;
+        activeImageIndex = 0;
+        renderProjectPresentation();
       }
     }
 
-    function nextProject() {
-      let idx = curatedProjectsData.findIndex(p => p.id === currentProject.id);
-      if (idx === -1) idx = 0;
-      const nextIdx = (idx + 1) % curatedProjectsData.length;
-      openProjectPresentation(curatedProjectsData[nextIdx]);
+    function stepStage(delta) {
+      if (!currentProject || !currentProject.stages) return;
+      const newIdx = activeStageIndex + delta;
+      if (newIdx >= 0 && newIdx < currentProject.stages.length) {
+        goToStage(newIdx);
+      } else if (newIdx >= currentProject.stages.length) {
+        // Finished last stage -> return to Explorer
+        goToPreviousView();
+      }
     }
 
-    // ==================== 2D DESIGN CALLOUT OVERLAYS ====================
-    const callouts = {
-      gopuram: {
-        title: 'Gopuram Proportions & Sacred Tala Height',
-        desc: 'Receding tiered shikhara calculated strictly to Dravidian shilpa proportions. Consecrated kalasham pinnacle houses traditional energized yantras.'
+    function nextStageImage(e) {
+      if (e) e.stopPropagation();
+      if (!currentProject || !currentProject.stages) return;
+      const images = currentProject.stages[activeStageIndex].images || [];
+      if (images.length > 1) {
+        activeImageIndex = (activeImageIndex + 1) % images.length;
+        renderCurrentStageContent();
+      }
+    }
+
+    function prevStageImage(e) {
+      if (e) e.stopPropagation();
+      if (!currentProject || !currentProject.stages) return;
+      const images = currentProject.stages[activeStageIndex].images || [];
+      if (images.length > 1) {
+        activeImageIndex = (activeImageIndex - 1 + images.length) % images.length;
+        renderCurrentStageContent();
+      }
+    }
+
+    function selectStageImage(idx) {
+      activeImageIndex = idx;
+      renderCurrentStageContent();
+    }
+
+
+    // =========================================================================
+    // PRESENTATIONS & DOCUMENTS VIEWER CONTROLLER
+    // =========================================================================
+    const DOCUMENTS_CONFIG = {
+      doc1: {
+        id: 'doc1',
+        title: 'Presentation 1',
+        subtitle: 'Render & Executed Showcase Deck',
+        type: 'landscape',
+        aspectRatio: '16:9',
+        pdfUrl: 'assets/docs/doc1.pdf',
+        driveLink: 'https://drive.google.com/file/d/1koaMZJizLUmIjonj-Cx3ySB8dHoUci27/view?usp=drive_link',
+        totalPages: 19,
+        pagesDir: 'assets/docs/pages/doc1'
       },
-      door: {
-        title: 'Handcrafted Pivot Doors with Panchaloha Bells',
-        desc: 'Acoustically tuned solid brass bells suspended within mortise-and-tenon teak stiles, producing calming vibrational resonance upon opening.'
+      doc2: {
+        id: 'doc2',
+        title: 'Presentation 2',
+        subtitle: 'From Imagination to Installation (Side-by-Side)',
+        type: 'landscape',
+        aspectRatio: '16:9',
+        pdfUrl: 'assets/docs/doc2.pdf',
+        driveLink: 'https://drive.google.com/file/d/106m5Ea_81vYyPCzqBTZtD2fNRtSSE-pw/view?usp=drive_link',
+        totalPages: 30,
+        pagesDir: 'assets/docs/pages/doc2'
       },
-      idol: {
-        title: 'Consecrated Idol Pedestal Elevation',
-        desc: 'Elevated on a solid Makrana marble or teak pedestal so deities align harmoniously with the devotee\'s heart chakra during meditative seating.'
-      },
-      storage: {
-        title: 'Concealed Oil & Scripture Storage Drawers',
-        desc: 'Soft-close hidden compartments lined with fire-retardant brass trays for daily aarti ghee repositories, lamps, and sacred puja mantras.'
+      doc3: {
+        id: 'doc3',
+        title: 'Document / Overview',
+        subtitle: 'Monolithic Stone Temple Architecture & Pedigree',
+        type: 'portrait',
+        aspectRatio: 'A4',
+        pdfUrl: 'assets/docs/doc3.pdf',
+        driveLink: 'https://docs.google.com/presentation/d/1KWyx_dtzK-lQf_xAhDJ40_0Ym9JPK7h3/edit?usp=drive_link',
+        totalPages: 10,
+        pagesDir: 'assets/docs/pages/doc3'
       }
     };
 
-    function showCallout(key) {
-      const data = callouts[key];
-      if (!data) return;
-      document.getElementById('callout-title').textContent = data.title;
-      document.getElementById('callout-desc').textContent = data.desc;
+    let currentActiveDocKey = 'doc1';
+    let currentActiveDocPage = 1;
+    let currentActiveDocZoom = 1.0;
+
+    function showDocumentsView(docKey) {
+      const key = docKey || currentActiveDocKey || 'doc1';
+      pushState({ view: 'documents', doc: key, page: 1 });
     }
 
-    // ==================== 3D VERSION SWITCHER ====================
-    function switch3DVersion(verNum) {
-      const img = document.getElementById('render-3d-img');
-      const title = document.getElementById('ver-title');
-      const desc = document.getElementById('ver-desc');
-      const status = document.getElementById('ver-status');
+    function switchDocTab(docKey) {
+      if (!DOCUMENTS_CONFIG[docKey]) return;
+      currentActiveDocKey = docKey;
+      currentActiveDocPage = 1;
+      currentActiveDocZoom = 1.0;
+      pushState({ view: 'documents', doc: docKey, page: 1 });
+    }
 
-      document.getElementById('ver-btn-1').className = 'px-3 py-1.5 rounded text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
-      document.getElementById('ver-btn-2').className = 'px-3 py-1.5 rounded text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
-      document.getElementById('ver-btn-3').className = 'px-3 py-1.5 rounded text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
+    function renderDocPresentation(docKey, pageNumber) {
+      const doc = DOCUMENTS_CONFIG[docKey];
+      if (!doc) return;
 
-      const renders = (currentProject.stageImages && currentProject.stageImages['05_model_3d']) || [];
+      currentActiveDocKey = docKey;
+      currentActiveDocPage = pageNumber || 1;
 
-      if (verNum === 1) {
-        document.getElementById('ver-btn-1').className = 'px-3 py-1.5 rounded text-xs font-bold bg-svvayam-yellow text-svvayam-charcoal shadow-xs';
-        img.src = renders[0] || 'assets/render_18.png';
-        title.textContent = 'V1: Massing Study';
-        desc.textContent = 'Initial volumetric massing study showing pillar clearance and sanctum depth.';
-        status.textContent = 'Architectural Review • Concept Stage';
-      } else if (verNum === 2) {
-        document.getElementById('ver-btn-2').className = 'px-3 py-1.5 rounded text-xs font-bold bg-svvayam-yellow text-svvayam-charcoal shadow-xs';
-        img.src = renders[Math.floor(renders.length / 2)] || 'assets/render_14.png';
-        title.textContent = 'V2: Refined Jaali & Smoke Louvers';
-        desc.textContent = 'Updated with parametric CNC jaali backwall and concealed smoke vent channeling.';
-        status.textContent = 'Client Approved with Minor Detailing Notes';
+      // Update Tabs
+      document.querySelectorAll('#view-documents .doc-tab-btn').forEach(btn => {
+        btn.className = 'doc-tab-btn px-3 sm:px-4 py-1.5 rounded-lg text-xs font-medium text-[#A8A49B] hover:text-white transition flex items-center space-x-2 cursor-pointer';
+      });
+      const activeTab = document.getElementById('doc-tab-' + docKey);
+      if (activeTab) {
+        activeTab.className = 'doc-tab-btn active px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition flex items-center space-x-2 bg-svvayam-yellow text-svvayam-charcoal shadow-sm cursor-pointer';
+      }
+
+      // Update Sub-Bar Info
+      const badge = document.getElementById('main-doc-badge');
+      const title = document.getElementById('main-doc-title-text');
+      const driveLink = document.getElementById('main-btn-drive-link');
+
+      if (badge) {
+        badge.textContent = (doc.type === 'landscape') ? 'LANDSCAPE 16:9' : 'A4 PORTRAIT DOCUMENT';
+      }
+      if (title) {
+        title.textContent = doc.title + ' — ' + doc.subtitle;
+      }
+      if (driveLink) {
+        driveLink.href = doc.driveLink;
+      }
+
+      // Containers
+      const deckContainer = document.getElementById('main-landscape-deck-container');
+      const portraitContainer = document.getElementById('main-portrait-doc-container');
+      const thumbnailRail = document.getElementById('main-viewer-thumbnail-rail');
+      const deckNavControls = document.getElementById('main-deck-nav-controls');
+
+      if (doc.type === 'landscape') {
+        deckContainer.classList.remove('hidden');
+        deckContainer.classList.add('flex');
+        portraitContainer.classList.add('hidden');
+        portraitContainer.classList.remove('flex');
+        thumbnailRail.classList.remove('hidden');
+        deckNavControls.classList.remove('hidden');
+
+        renderDocLandscapeSlide(currentActiveDocPage);
+        renderDocThumbnailRail(doc);
       } else {
-        document.getElementById('ver-btn-3').className = 'px-3 py-1.5 rounded text-xs font-bold bg-svvayam-yellow text-svvayam-charcoal shadow-xs';
-        img.src = renders[renders.length - 1] || currentProject.heroImg || 'assets/render_1.png';
-        title.textContent = 'V3: Final Approved Photorealistic Model';
-        desc.textContent = 'Approved under 2700K warm dawn illumination. Sent to Tirupati & Mysore artisan guilds for timber allocation and carving.';
-        status.textContent = 'Final Milestone Sign-off • Sent to Production';
+        deckContainer.classList.add('hidden');
+        deckContainer.classList.remove('flex');
+        portraitContainer.classList.remove('hidden');
+        portraitContainer.classList.add('flex');
+        thumbnailRail.classList.add('hidden');
+        deckNavControls.classList.add('hidden');
+
+        renderDocPortrait(doc);
+      }
+
+      updateDocPageCounter();
+      updateDocZoomLabel();
+    }
+
+    function renderDocLandscapeSlide(pageNumber) {
+      const doc = DOCUMENTS_CONFIG[currentActiveDocKey];
+      if (!doc) return;
+
+      const numStr = (pageNumber < 10 ? '0' : '') + pageNumber;
+      const slideImg = document.getElementById('main-slide-image-display');
+      if (slideImg) {
+        slideImg.src = doc.pagesDir + '/page_' + numStr + '.jpg';
+        slideImg.style.transform = 'scale(' + currentActiveDocZoom + ')';
+      }
+
+      updateDocPageCounter();
+      highlightActiveDocThumbnail(pageNumber);
+    }
+
+    function renderDocThumbnailRail(doc) {
+      const rail = document.getElementById('main-viewer-thumbnail-rail');
+      if (!rail) return;
+      rail.innerHTML = '';
+
+      for (let i = 1; i <= doc.totalPages; i++) {
+        const numStr = (i < 10 ? '0' : '') + i;
+        const thumb = document.createElement('div');
+        thumb.className = (i === currentActiveDocPage)
+          ? 'relative h-14 aspect-video rounded-md overflow-hidden border-2 border-svvayam-yellow shadow-md cursor-pointer transition transform scale-105 shrink-0 bg-black flex items-center justify-center'
+          : 'relative h-14 aspect-video rounded-md overflow-hidden border border-[#333330] shadow-xs cursor-pointer transition hover:border-[#777] hover:scale-102 shrink-0 bg-black flex items-center justify-center opacity-70 hover:opacity-100';
+        thumb.onclick = () => goToDocPage(i);
+
+        thumb.innerHTML = '<img src="' + doc.pagesDir + '/page_' + numStr + '.jpg" alt="Slide ' + i + '" class="w-full h-full object-cover">' +
+          '<span class="absolute bottom-0.5 right-1 text-[9px] font-mono font-bold text-white/90 bg-black/70 px-1 rounded">' + i + '</span>';
+        rail.appendChild(thumb);
       }
     }
 
-    // ==================== LIGHTBOX ENGINE ====================
-    function openLightbox(imgSrc, caption) {
-      const modal = document.getElementById('lightbox-modal');
-      document.getElementById('lightbox-img').src = imgSrc;
-      document.getElementById('lightbox-caption').textContent = caption || '';
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
+    function highlightActiveDocThumbnail(pageNumber) {
+      document.querySelectorAll('#main-viewer-thumbnail-rail > div').forEach((t, idx) => {
+        const pNum = idx + 1;
+        if (pNum === pageNumber) {
+          t.className = 'relative h-14 aspect-video rounded-md overflow-hidden border-2 border-svvayam-yellow shadow-md cursor-pointer transition transform scale-105 shrink-0 bg-black flex items-center justify-center';
+          t.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        } else {
+          t.className = 'relative h-14 aspect-video rounded-md overflow-hidden border border-[#333330] shadow-xs cursor-pointer transition hover:border-[#777] hover:scale-102 shrink-0 bg-black flex items-center justify-center opacity-70 hover:opacity-100';
+        }
+      });
     }
 
-    function openLightboxFromActive() {
-      openLightbox(document.getElementById('stage-overview-hero-img').src, currentProject.name + ' — Project Overview');
+    function renderDocPortrait(doc) {
+      const stack = document.getElementById('main-a4-pages-stack');
+      if (!stack) return;
+      stack.innerHTML = '';
+
+      for (let i = 1; i <= doc.totalPages; i++) {
+        const numStr = (i < 10 ? '0' : '') + i;
+        const pageCard = document.createElement('div');
+        pageCard.className = 'a4-page-card w-full rounded-xl overflow-hidden bg-white shadow-2xl relative';
+        pageCard.style.maxWidth = (680 * currentActiveDocZoom) + 'px';
+
+        pageCard.innerHTML = '<div class="relative w-full">' +
+          '<img src="' + doc.pagesDir + '/page_' + numStr + '.jpg" alt="Page ' + i + '" class="w-full h-auto object-contain block select-none">' +
+          '<div class="absolute bottom-3 right-4 text-[11px] font-mono font-bold text-gray-500 bg-white/80 px-2 py-0.5 rounded shadow-xs border border-gray-200">' +
+          'Page ' + i + ' of ' + doc.totalPages +
+          '</div></div>';
+        stack.appendChild(pageCard);
+      }
     }
 
-    function openLightboxFromSurvey() {
-      openLightbox(document.getElementById('survey-featured-img').src, currentProject.name + ' — Site Survey Documentation');
+    function stepDocPage(delta) {
+      const doc = DOCUMENTS_CONFIG[currentActiveDocKey];
+      if (!doc) return;
+      const target = currentActiveDocPage + delta;
+      if (target >= 1 && target <= doc.totalPages) {
+        goToDocPage(target);
+      }
     }
 
-    function openLightboxFromConcept() {
-      openLightbox(document.getElementById('concept-main-img').src, currentProject.name + ' — Architectural Concept Study');
+    function goToDocPage(pageNum) {
+      const doc = DOCUMENTS_CONFIG[currentActiveDocKey];
+      if (!doc) return;
+      currentActiveDocPage = Math.max(1, Math.min(doc.totalPages, pageNum));
+      if (doc.type === 'landscape') {
+        renderDocLandscapeSlide(currentActiveDocPage);
+      }
+      updateDocPageCounter();
     }
 
-    function openLightboxFromCAD() {
-      openLightbox(document.getElementById('cad-blueprint-img').src, currentProject.name + ' — 2D Working Architectural Blueprint');
+    function updateDocPageCounter() {
+      const doc = DOCUMENTS_CONFIG[currentActiveDocKey];
+      if (!doc) return;
+      const counter = document.getElementById('main-page-counter-label');
+      if (counter) {
+        const unit = (doc.type === 'landscape') ? 'Slide' : 'Page';
+        counter.textContent = unit + ' ' + currentActiveDocPage + ' of ' + doc.totalPages;
+      }
     }
 
-    function openLightboxFrom3D() {
-      openLightbox(document.getElementById('render-3d-img').src, currentProject.name + ' — 3D Photorealistic Design Model');
+    function changeDocZoom(delta) {
+      currentActiveDocZoom = Math.max(0.6, Math.min(2.5, currentActiveDocZoom + delta));
+      applyDocZoom();
     }
 
-    function openLightboxFromWorkshop() {
-      openLightbox(document.getElementById('workshop-main-img').src, currentProject.name + ' — Artisanal Guild Workshop Execution');
+    function resetDocZoom() {
+      currentActiveDocZoom = 1.0;
+      applyDocZoom();
     }
 
-    function openLightboxFromInstall() {
-      openLightbox(document.getElementById('install-main-img').src, currentProject.name + ' — On-Site Modular Assembly');
+    function applyDocZoom() {
+      updateDocZoomLabel();
+      const doc = DOCUMENTS_CONFIG[currentActiveDocKey];
+      if (!doc) return;
+
+      if (doc.type === 'landscape') {
+        const slideImg = document.getElementById('main-slide-image-display');
+        if (slideImg) slideImg.style.transform = 'scale(' + currentActiveDocZoom + ')';
+      } else {
+        document.querySelectorAll('#main-a4-pages-stack > div').forEach(card => {
+          card.style.maxWidth = (680 * currentActiveDocZoom) + 'px';
+        });
+      }
     }
 
-    function openLightboxFromFinal() {
-      openLightbox(document.getElementById('stage-final-img').src, currentProject.name + ' — Consecrated Sacred Sanctuary');
+    function updateDocZoomLabel() {
+      const zoomLabel = document.getElementById('main-zoom-percentage-label');
+      if (zoomLabel) {
+        zoomLabel.textContent = Math.round(currentActiveDocZoom * 100) + '%';
+      }
     }
 
-    function closeLightbox() {
-      const modal = document.getElementById('lightbox-modal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    }
-
-    // ==================== KEYBOARD ARROW NAVIGATION ====================
+    // ==================== KEYBOARD NAVIGATION ====================
     function setupKeyboardNavigation() {
       document.addEventListener('keydown', (e) => {
+        const lightbox = document.getElementById('lightbox-modal');
+        const isLightboxOpen = lightbox && !lightbox.classList.contains('hidden');
+
         if (e.key === 'Escape') {
-          closeLightbox();
+          if (isLightboxOpen) closeLightbox();
           return;
         }
 
-        const projectView = document.getElementById('view-project');
-        if (!projectView.classList.contains('hidden')) {
+        // If in documents view
+        const docsView = document.getElementById('view-documents');
+        if (docsView && !docsView.classList.contains('hidden') && !isLightboxOpen) {
+          if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+            e.preventDefault();
+            stepDocPage(1);
+          } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+            e.preventDefault();
+            stepDocPage(-1);
+          } else if (e.key === '1') {
+            switchDocTab('doc1');
+          } else if (e.key === '2') {
+            switchDocTab('doc2');
+          } else if (e.key === '3') {
+            switchDocTab('doc3');
+          }
+          return;
+        }
+
+        // If in project view and lightbox is closed
+        const projView = document.getElementById('view-project');
+        if (projView && !projView.classList.contains('hidden') && !isLightboxOpen) {
           if (e.key === 'ArrowRight' || e.key === ' ') {
             e.preventDefault();
-            nextStage();
+            stepStage(1);
           } else if (e.key === 'ArrowLeft') {
             e.preventDefault();
-            prevStage();
+            stepStage(-1);
           }
         }
       });
     }
 
-    // Fullscreen Toggle
+    // ==================== LIGHTBOX MODAL ====================
+    function openLightbox(src) {
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
+      if (modal && img) {
+        img.src = src;
+        currentLightboxZoom = 1;
+        img.style.transform = 'scale(1)';
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+      }
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById('lightbox-modal');
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+      }
+    }
+
+    function closeLightboxOnBackdrop(e) {
+      if (e.target.id !== 'lightbox-img') {
+        closeLightbox();
+      }
+    }
+
+    function zoomLightbox(delta) {
+      currentLightboxZoom = Math.max(0.5, Math.min(3.5, currentLightboxZoom + delta));
+      const img = document.getElementById('lightbox-img');
+      if (img) img.style.transform = 'scale(' + currentLightboxZoom + ')';
+    }
+
+    function resetLightboxZoom() {
+      currentLightboxZoom = 1;
+      const img = document.getElementById('lightbox-img');
+      if (img) img.style.transform = 'scale(1)';
+    }
+
     function toggleFullscreen() {
       if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen().catch(err => console.warn(err));
+        document.documentElement.requestFullscreen().catch(err => {});
       } else {
-        document.exitFullscreen();
+        document.exitFullscreen().catch(err => {});
       }
     }
   </script>
