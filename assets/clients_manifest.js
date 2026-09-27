@@ -1,4 +1,3 @@
-// Generated Svvayam Clients Manifest (16 Live Client Projects)
 window.SVVAYAM_CLIENTS_DATA = [
   {
     "id": "sujana",
@@ -9,7 +8,7 @@ window.SVVAYAM_CLIENTS_DATA = [
     "material": "Teak & Brass Inlay",
     "location": "Bangalore",
     "type": "Ground Floor Mandir",
-    "desc": "Complete ground floor mandir plan and elevation with panchaloha bells, site survey photos, and consecrated timber.",
+    "desc": "Complete ground floor mandir plan and elevation with panchaloha bells, site survey photos, and hand-selected timber.",
     "heroImg": "assets/clients/sujana/OVERVIEW/5f7f206d-1ce0-42ca-9471-02e496cd2ed8.png",
     "stages": [
       {
@@ -63,7 +62,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/sujana/FINAL/e51c8f3f-b6eb-4655-b7c3-58184489b4f6.png"
@@ -146,7 +145,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/yuva/FINAL/7dd5257d-23be-4021-8228-e0b293aa92f3.png"
@@ -164,7 +163,7 @@ window.SVVAYAM_CLIENTS_DATA = [
     "material": "Walnut Teak",
     "location": "Bangalore",
     "type": "Contemporary Mandap",
-    "desc": "Architectural pooja room with fluted stambhas, consecrated timber pedigree, and workshop joinery execution.",
+    "desc": "Architectural pooja room with fluted stambhas, hand-selected timber pedigree, and workshop joinery execution.",
     "heroImg": "assets/clients/shenoy/OVERVIEW/137e8438-717c-4ff2-9a4f-1ca3241c4862.png",
     "stages": [
       {
@@ -245,7 +244,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/shenoy/FINAL/c74b68a5-e122-4aaf-b4b1-a08aaf18750e.png"
@@ -342,7 +341,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/nitesh-panda/FINAL/577e70a0-5c6a-401e-a801-f7935cefe9fc.png"
@@ -418,7 +417,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/dnyaneshwar/FINAL/FINAL.png"
@@ -510,7 +509,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/vishnu/FINAL/853c7493-e01b-44e7-b613-b8c52fec48ba.png"
@@ -693,7 +692,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/nagesh/FINAL/16578e45-bb5a-4b3b-a11d-06c7b0306e76.png"
@@ -775,7 +774,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/yashaswini/FINAL/edb2da85-892d-448b-a67e-5690b873fd9b.png"
@@ -861,7 +860,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/rahul/FINAL/b2c9718d-ee06-4478-beff-95f9a79642f3.png",
@@ -880,7 +879,7 @@ window.SVVAYAM_CLIENTS_DATA = [
     "material": "Burma Teak & Brass",
     "location": "Hyderabad",
     "type": "Sacred Mandap",
-    "desc": "Multi-tiered Dravidian mandap with consecrated copper yantras, custom brass inlay, and on-site installation step records.",
+    "desc": "Multi-tiered Dravidian mandap with sacred copper yantras, custom brass inlay, and on-site installation step records.",
     "heroImg": "assets/clients/pradeep-reddy/OVERVIEW/9ed0c932-0030-4405-bad8-1bd5a55f0ef0.png",
     "stages": [
       {
@@ -943,7 +942,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/pradeep-reddy/FINAL/97e569e9-d0d5-4860-ad5d-ec3ac6d578bb.png"
@@ -1025,7 +1024,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/umesh-wadayar/FINAL/f5867c38-8d4d-4b6e-bfd6-9431a199bb9e.png"
@@ -1118,7 +1117,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/Dr. Arun Pari/FINAL/18.png",
@@ -1141,7 +1140,7 @@ window.SVVAYAM_CLIENTS_DATA = [
     "material": "Signature Teak",
     "location": "",
     "type": "Signature Temple Shrine",
-    "desc": "Masterpiece temple shrine with custom CAD elevations, full concept massing studies, and consecrated sanctum execution.",
+    "desc": "Masterpiece temple shrine with custom CAD elevations, full concept massing studies, and final sanctum execution.",
     "heroImg": "assets/clients/Mr. Rakesh Katkar/OVERVIEW/overview.png",
     "stages": [
       {
@@ -1197,7 +1196,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/Mr. Rakesh Katkar/FINAL/55683008-da89-4edc-bfdc-9375033315de.png"
@@ -1262,7 +1261,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/Ms. vaishali/FINAL/2eb9241b-e8f0-482f-99c4-5b87c87cecad.png"
@@ -1280,7 +1279,7 @@ window.SVVAYAM_CLIENTS_DATA = [
     "material": "",
     "location": "",
     "type": "Architectural Master Sanctum",
-    "desc": "Contemporary architectural sanctuary designed with pure volumetric massing, precision joinery, and consecrated elegance.",
+    "desc": "Contemporary architectural sanctuary designed with pure volumetric massing, precision joinery, and refined elegance.",
     "heroImg": "assets/clients/Mr. Atul Mehotra/3D MODEL/OverView.png",
     "stages": [
       {
@@ -1329,7 +1328,7 @@ window.SVVAYAM_CLIENTS_DATA = [
       },
       {
         "stage_key": "final",
-        "title": "Consecration & Sacred Handover",
+        "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/Mr. Atul Mehotra/FINAL/8ee3414e-e027-473b-9b66-431c1332377b.png",
