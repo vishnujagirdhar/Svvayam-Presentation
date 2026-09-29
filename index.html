@@ -380,8 +380,22 @@
 
     <!-- Top Minimal Brand Ribbon with Top-Right Presentations & Documents Button -->
     <header class="w-full px-6 sm:px-12 py-5 flex items-center justify-between z-20">
-      <div class="text-[11px] uppercase tracking-widest font-bold text-svvayam-muted flex items-center space-x-2">
-        <span class="w-2.5 h-2.5 rounded-full bg-svvayam-yellow inline-block animate-pulse shadow-xs"></span>
+      <!-- Top-Left Corner: Visual Explore Button -->
+      <div class="flex items-center space-x-3">
+        <button onclick="openVisualExploreModal()" id="btn-visual-explore" title="Visual Explore - Experience Svvayam Craftsmanship in Video" class="px-4 py-2 rounded-xl bg-white/85 hover:bg-white backdrop-blur-md border border-svvayam-border hover:border-svvayam-yellow text-svvayam-charcoal font-bold text-xs uppercase tracking-wider transition duration-300 flex items-center space-x-2.5 shadow-xs hover:shadow-md cursor-pointer group">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-red-600"></span>
+          </span>
+          <i class="fa-solid fa-circle-play text-red-600 group-hover:scale-110 transition-transform text-xs"></i>
+          <span>Visual Explore</span>
+          <span class="px-1.5 py-0.5 rounded text-[9px] font-extrabold bg-svvayam-yellow/20 text-svvayam-charcoal border border-svvayam-yellow/40">Videos</span>
+        </button>
+      </div>
+
+      <!-- Center Brand Tagline (Responsive: visible on desktop) -->
+      <div class="hidden lg:flex text-[11px] uppercase tracking-widest font-bold text-svvayam-muted items-center space-x-2">
+        <span class="w-2 h-2 rounded-full bg-svvayam-yellow inline-block animate-pulse shadow-xs"></span>
         <span class="tracking-widest">Sacred Temple Architecture • Bespoke Client Repository</span>
       </div>
       
@@ -816,7 +830,326 @@
 
   </section>
 
-  <!-- 5. FULLSCREEN LIGHTBOX MODAL (High-Res Zoom & Inspection)                 -->
+    <!-- ========================================================================= -->
+  <!-- 6. VISUAL EXPLORE MODAL (Curated YouTube Video Archives)                   -->
+  <!-- ========================================================================= -->
+  <div id="visual-explore-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden items-center justify-center p-3 sm:p-6 overflow-y-auto" onclick="closeVisualExploreOnBackdrop(event)">
+    
+    <div class="bg-white rounded-2xl shadow-2xl border border-svvayam-border w-full max-w-6xl my-auto overflow-hidden flex flex-col max-h-[92vh] transition-all" onclick="event.stopPropagation()">
+      
+      <!-- Modal Header -->
+      <div class="px-6 py-4 border-b border-svvayam-border bg-[#FCFBF7] flex items-center justify-between flex-shrink-0">
+        <div class="flex items-center space-x-3.5">
+          <div class="w-10 h-10 rounded-xl bg-red-50 border border-red-200 flex items-center justify-center text-red-600 shadow-xs">
+            <i class="fa-solid fa-play text-sm ml-0.5"></i>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="text-[10px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-full bg-red-50 text-red-700 border border-red-200">
+                <i class="fa-solid fa-circle text-[6px] mr-1 text-red-500 animate-pulse"></i>Cinematic Guild Archive
+              </span>
+              <span class="text-[10px] uppercase tracking-wider text-svvayam-muted font-semibold hidden sm:inline">Official Footage & Demonstrations</span>
+            </div>
+            <h3 class="font-serif text-xl sm:text-2xl font-bold text-svvayam-charcoal leading-tight mt-0.5">Visual Explore</h3>
+          </div>
+        </div>
+
+        <div class="flex items-center space-x-2">
+          <button onclick="closeVisualExploreModal()" title="Close Visual Explore (Esc)" class="w-9 h-9 rounded-xl bg-white border border-svvayam-border hover:bg-svvayam-surface hover:border-svvayam-charcoal flex items-center justify-center text-svvayam-charcoal transition cursor-pointer shadow-xs">
+            <i class="fa-solid fa-xmark text-sm"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs Navigation -->
+      <div class="px-6 py-2.5 border-b border-svvayam-border bg-white flex items-center space-x-2 overflow-x-auto flex-shrink-0 text-xs no-scrollbar">
+        <button onclick="filterVisualCategory('all', this)" class="visual-filter-btn px-3.5 py-1.5 rounded-lg bg-svvayam-charcoal text-white font-bold transition flex items-center space-x-1.5 cursor-pointer flex-shrink-0 shadow-xs">
+          <i class="fa-solid fa-grip text-xs"></i>
+          <span>All Categories</span>
+          <span class="ml-1 px-1.5 py-0.2 rounded text-[10px] bg-white/20">6 Videos</span>
+        </button>
+        <button onclick="filterVisualCategory('cat-factory', this)" class="visual-filter-btn px-3.5 py-1.5 rounded-lg bg-svvayam-surface text-svvayam-charcoal hover:bg-svvayam-yellow/30 border border-svvayam-border/60 font-semibold transition flex items-center space-x-1.5 cursor-pointer flex-shrink-0">
+          <i class="fa-solid fa-industry text-xs text-svvayam-muted"></i>
+          <span>1. Factory Video</span>
+        </button>
+        <button onclick="filterVisualCategory('cat-assembling', this)" class="visual-filter-btn px-3.5 py-1.5 rounded-lg bg-svvayam-surface text-svvayam-charcoal hover:bg-svvayam-yellow/30 border border-svvayam-border/60 font-semibold transition flex items-center space-x-1.5 cursor-pointer flex-shrink-0">
+          <i class="fa-solid fa-cubes text-xs text-svvayam-muted"></i>
+          <span>2. Assembling Process</span>
+        </button>
+        <button onclick="filterVisualCategory('cat-artisans', this)" class="visual-filter-btn px-3.5 py-1.5 rounded-lg bg-svvayam-surface text-svvayam-charcoal hover:bg-svvayam-yellow/30 border border-svvayam-border/60 font-semibold transition flex items-center space-x-1.5 cursor-pointer flex-shrink-0">
+          <i class="fa-solid fa-hammer text-xs text-svvayam-muted"></i>
+          <span>3. Artisans at Svvayam</span>
+          <span class="ml-1 px-1.5 py-0.2 rounded text-[10px] bg-svvayam-yellow/40 text-svvayam-charcoal font-bold">3 Shorts</span>
+        </button>
+        <button onclick="filterVisualCategory('cat-sketch', this)" class="visual-filter-btn px-3.5 py-1.5 rounded-lg bg-svvayam-surface text-svvayam-charcoal hover:bg-svvayam-yellow/30 border border-svvayam-border/60 font-semibold transition flex items-center space-x-1.5 cursor-pointer flex-shrink-0">
+          <i class="fa-solid fa-pen-nib text-xs text-svvayam-muted"></i>
+          <span>4. Sketch to Installation</span>
+        </button>
+      </div>
+
+      <!-- Scrollable Video Content Grid -->
+      <div id="visual-explore-content" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-8 bg-[#FAF8F5]">
+        
+        <!-- 1) FACTORY VIDEO -->
+        <section id="section-factory" class="visual-category-card bg-white rounded-xl border border-svvayam-border p-5 shadow-xs transition">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-svvayam-border gap-2">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-svvayam-muted bg-svvayam-surface px-2 py-0.5 rounded">Category 01</span>
+                <span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">16:9 Widescreen</span>
+              </div>
+              <h4 class="font-serif text-lg sm:text-xl font-bold text-svvayam-charcoal mt-1">Factory Video: Workshop & Precision Stone Cutting</h4>
+            </div>
+            
+            <!-- Mute/Unmute Control Button -->
+            <div class="flex items-center space-x-3">
+              <span class="text-xs text-svvayam-muted hidden md:inline">Audio: <strong id="status-factory" class="text-svvayam-charcoal font-semibold">Muted</strong></span>
+              <button id="btn-mute-factory" onclick="toggleYtPlayerMute('yt-factory-video', this, 'status-factory')" class="yt-mute-btn px-3.5 py-1.5 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-yellow/20 text-svvayam-charcoal text-xs font-bold flex items-center space-x-2 shadow-xs transition hover:border-svvayam-yellow cursor-pointer" data-muted="true" title="Toggle audio on/off">
+                <i class="fa-solid fa-volume-xmark text-svvayam-muted text-sm"></i>
+                <span class="btn-label">Unmute Video</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+            <div class="lg:col-span-8">
+              <div class="relative w-full aspect-video bg-black rounded-xl overflow-hidden shadow-md border border-svvayam-border/60">
+                <iframe id="yt-factory-video" class="w-full h-full" src="https://www.youtube.com/embed/x7J4QCq1EVw?enablejsapi=1&mute=1&rel=0&playsinline=1" title="Svvayam Factory Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" data-muted="true"></iframe>
+              </div>
+            </div>
+            <div class="lg:col-span-4 flex flex-col justify-between space-y-4 text-xs text-svvayam-muted leading-relaxed">
+              <div class="space-y-3">
+                <h5 class="font-serif font-bold text-svvayam-charcoal text-sm">Facility & Guild Infrastructure</h5>
+                <p>Step inside Svvayam's specialized temple manufacturing facility. Watch how raw quarried granites and pink sandstones are carefully inspected, dimensioned with CNC wire-cutting precision, and prepared for master carvers.</p>
+                <div class="p-3 bg-svvayam-surface/60 rounded-lg border border-svvayam-border space-y-1.5">
+                  <div class="flex items-center text-[11px] font-bold text-svvayam-charcoal">
+                    <i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Raw Block Multi-Wire Slicing
+                  </div>
+                  <div class="flex items-center text-[11px] font-bold text-svvayam-charcoal">
+                    <i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Vastu Sizing & Tolerance Calibrations
+                  </div>
+                  <div class="flex items-center text-[11px] font-bold text-svvayam-charcoal">
+                    <i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Artisanal Chisel Station Layout
+                  </div>
+                </div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-amber-50/70 border border-amber-200/80 text-[11px] text-amber-900 flex items-center space-x-2">
+                <i class="fa-solid fa-info-circle text-amber-600"></i>
+                <span>Video is muted by default. Use the <strong>Unmute</strong> button to enable machine audio.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2) STEP-TO-STEP ASSEMBLING PROCESS -->
+        <section id="section-assembling" class="visual-category-card bg-white rounded-xl border border-svvayam-border p-5 shadow-xs transition">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-svvayam-border gap-2">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-svvayam-muted bg-svvayam-surface px-2 py-0.5 rounded">Category 02</span>
+                <span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">16:9 Widescreen</span>
+              </div>
+              <h4 class="font-serif text-lg sm:text-xl font-bold text-svvayam-charcoal mt-1">Step-to-Step Assembling Process: Dry-Fit & Joinery</h4>
+            </div>
+            
+            <!-- Mute/Unmute Control Button -->
+            <div class="flex items-center space-x-3">
+              <span class="text-xs text-svvayam-muted hidden md:inline">Audio: <strong id="status-assembling" class="text-svvayam-charcoal font-semibold">Muted</strong></span>
+              <button id="btn-mute-assembling" onclick="toggleYtPlayerMute('yt-assembling-video', this, 'status-assembling')" class="yt-mute-btn px-3.5 py-1.5 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-yellow/20 text-svvayam-charcoal text-xs font-bold flex items-center space-x-2 shadow-xs transition hover:border-svvayam-yellow cursor-pointer" data-muted="true" title="Toggle audio on/off">
+                <i class="fa-solid fa-volume-xmark text-svvayam-muted text-sm"></i>
+                <span class="btn-label">Unmute Video</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+            <div class="lg:col-span-8">
+              <div class="relative w-full aspect-video bg-black rounded-xl overflow-hidden shadow-md border border-svvayam-border/60">
+                <iframe id="yt-assembling-video" class="w-full h-full" src="https://www.youtube.com/embed/Q2f_GqCMziU?enablejsapi=1&mute=1&rel=0&playsinline=1" title="Step-to-Step Assembling Process" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" data-muted="true"></iframe>
+              </div>
+            </div>
+            <div class="lg:col-span-4 flex flex-col justify-between space-y-4 text-xs text-svvayam-muted leading-relaxed">
+              <div class="space-y-3">
+                <h5 class="font-serif font-bold text-svvayam-charcoal text-sm">Authentic Modular Dry-Fit System</h5>
+                <p>Observe the rigorous step-by-step assembly process. Before any sanctum is dispatched to a client's estate, our guild conducts complete trial dry-fit assemblies in the workshop to test every locking key, load-bearing pillar, and ceiling interlock.</p>
+                <div class="p-3 bg-svvayam-surface/60 rounded-lg border border-svvayam-border space-y-1.5">
+                  <div class="flex items-center text-[11px] font-bold text-svvayam-charcoal">
+                    <i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Upapitha (Plinth) Base Alignment
+                  </div>
+                  <div class="flex items-center text-[11px] font-bold text-svvayam-charcoal">
+                    <i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Stambha (Pillar) Mortise & Tenon Keys
+                  </div>
+                  <div class="flex items-center text-[11px] font-bold text-svvayam-charcoal">
+                    <i class="fa-solid fa-check text-emerald-600 mr-1.5"></i> Shikhara & Kalash Crowning
+                  </div>
+                </div>
+              </div>
+              <div class="p-2.5 rounded-lg bg-amber-50/70 border border-amber-200/80 text-[11px] text-amber-900 flex items-center space-x-2">
+                <i class="fa-solid fa-info-circle text-amber-600"></i>
+                <span>Plays muted by default. Click <strong>Unmute Video</strong> anytime for workshop audio.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3) ARTISANS AT SVVAYAM (3 Shorts Gallery) -->
+        <section id="section-artisans" class="visual-category-card bg-white rounded-xl border border-svvayam-border p-5 shadow-xs transition">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-svvayam-border gap-2">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-svvayam-muted bg-svvayam-surface px-2 py-0.5 rounded">Category 03</span>
+                <span class="text-[10px] font-semibold text-purple-700 bg-purple-50 px-2 py-0.5 rounded border border-purple-200">3 HD Vertical Shorts (9:16)</span>
+              </div>
+              <h4 class="font-serif text-lg sm:text-xl font-bold text-svvayam-charcoal mt-1">Artisans at Svvayam: Master Guild In Action</h4>
+            </div>
+            <p class="text-xs text-svvayam-muted max-w-sm">Generational sculptors carving intricate iconography and ornamental motifs using traditional hand tools.</p>
+          </div>
+
+          <!-- 3-Column Shorts Grid -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            <!-- Short 1 -->
+            <div class="bg-[#FAF8F5] rounded-xl p-3 border border-svvayam-border flex flex-col justify-between shadow-xs">
+              <div class="relative w-full aspect-[9/16] bg-black rounded-lg overflow-hidden shadow-inner mb-3">
+                <iframe id="yt-artisan-1" class="w-full h-full" src="https://www.youtube.com/embed/cZW_qW2Jk8Q?enablejsapi=1&mute=1&rel=0&playsinline=1" title="Artisans at Svvayam - Short 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" data-muted="true"></iframe>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-svvayam-yellow/30 text-svvayam-charcoal">Short 01</span>
+                  <span class="text-[11px] text-svvayam-muted"><strong id="status-artisan-1" class="text-svvayam-charcoal">Muted</strong></span>
+                </div>
+                <h5 class="font-serif font-bold text-xs text-svvayam-charcoal">Master Sculptor: Intricate Detailing</h5>
+                <p class="text-[11px] text-svvayam-muted line-clamp-2">High-precision hand chiseling across sacred architraves and shikhara facets.</p>
+                <button id="btn-mute-artisan-1" onclick="toggleYtPlayerMute('yt-artisan-1', this, 'status-artisan-1')" class="yt-mute-btn w-full py-1.5 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-yellow/20 text-svvayam-charcoal text-xs font-bold flex items-center justify-center space-x-1.5 shadow-xs transition hover:border-svvayam-yellow cursor-pointer" data-muted="true">
+                  <i class="fa-solid fa-volume-xmark text-svvayam-muted text-xs"></i>
+                  <span class="btn-label">Unmute</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Short 2 -->
+            <div class="bg-[#FAF8F5] rounded-xl p-3 border border-svvayam-border flex flex-col justify-between shadow-xs">
+              <div class="relative w-full aspect-[9/16] bg-black rounded-lg overflow-hidden shadow-inner mb-3">
+                <iframe id="yt-artisan-2" class="w-full h-full" src="https://www.youtube.com/embed/aJsIJLgC9Q8?enablejsapi=1&mute=1&rel=0&playsinline=1" title="Artisans at Svvayam - Short 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" data-muted="true"></iframe>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-svvayam-yellow/30 text-svvayam-charcoal">Short 02</span>
+                  <span class="text-[11px] text-svvayam-muted"><strong id="status-artisan-2" class="text-svvayam-charcoal">Muted</strong></span>
+                </div>
+                <h5 class="font-serif font-bold text-xs text-svvayam-charcoal">Sanctum Pillar Chiseling Guild</h5>
+                <p class="text-[11px] text-svvayam-muted line-clamp-2">Artisans carving fluted pillars and base lotus mouldings from monolithic stone.</p>
+                <button id="btn-mute-artisan-2" onclick="toggleYtPlayerMute('yt-artisan-2', this, 'status-artisan-2')" class="yt-mute-btn w-full py-1.5 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-yellow/20 text-svvayam-charcoal text-xs font-bold flex items-center justify-center space-x-1.5 shadow-xs transition hover:border-svvayam-yellow cursor-pointer" data-muted="true">
+                  <i class="fa-solid fa-volume-xmark text-svvayam-muted text-xs"></i>
+                  <span class="btn-label">Unmute</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Short 3 -->
+            <div class="bg-[#FAF8F5] rounded-xl p-3 border border-svvayam-border flex flex-col justify-between shadow-xs">
+              <div class="relative w-full aspect-[9/16] bg-black rounded-lg overflow-hidden shadow-inner mb-3">
+                <iframe id="yt-artisan-3" class="w-full h-full" src="https://www.youtube.com/embed/HpDK4CfMN2A?enablejsapi=1&mute=1&rel=0&playsinline=1" title="Artisans at Svvayam - Short 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" data-muted="true"></iframe>
+              </div>
+              <div class="space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-svvayam-yellow/30 text-svvayam-charcoal">Short 03</span>
+                  <span class="text-[11px] text-svvayam-muted"><strong id="status-artisan-3" class="text-svvayam-charcoal">Muted</strong></span>
+                </div>
+                <h5 class="font-serif font-bold text-xs text-svvayam-charcoal">Sacred Motifs & Stone Polishing</h5>
+                <p class="text-[11px] text-svvayam-muted line-clamp-2">Fine abrasive stone polishing revealing the natural luster and veining of the stone.</p>
+                <button id="btn-mute-artisan-3" onclick="toggleYtPlayerMute('yt-artisan-3', this, 'status-artisan-3')" class="yt-mute-btn w-full py-1.5 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-yellow/20 text-svvayam-charcoal text-xs font-bold flex items-center justify-center space-x-1.5 shadow-xs transition hover:border-svvayam-yellow cursor-pointer" data-muted="true">
+                  <i class="fa-solid fa-volume-xmark text-svvayam-muted text-xs"></i>
+                  <span class="btn-label">Unmute</span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 4) FROM SKETCH TO INSTALLATION -->
+        <section id="section-sketch" class="visual-category-card bg-white rounded-xl border border-svvayam-border p-5 shadow-xs transition">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-3 mb-4 border-b border-svvayam-border gap-2">
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="text-[10px] font-bold uppercase tracking-wider text-svvayam-muted bg-svvayam-surface px-2 py-0.5 rounded">Category 04</span>
+                <span class="text-[10px] font-semibold text-blue-700 bg-blue-50 px-2 py-0.5 rounded border border-blue-200">Vertical Short Feature (9:16)</span>
+              </div>
+              <h4 class="font-serif text-lg sm:text-xl font-bold text-svvayam-charcoal mt-1">From Sketch to Installation: The Full Journey</h4>
+            </div>
+            
+            <!-- Mute/Unmute Control Button -->
+            <div class="flex items-center space-x-3">
+              <span class="text-xs text-svvayam-muted hidden md:inline">Audio: <strong id="status-sketch" class="text-svvayam-charcoal font-semibold">Muted</strong></span>
+              <button id="btn-mute-sketch" onclick="toggleYtPlayerMute('yt-sketch-video', this, 'status-sketch')" class="yt-mute-btn px-3.5 py-1.5 rounded-lg border border-svvayam-border bg-white hover:bg-svvayam-yellow/20 text-svvayam-charcoal text-xs font-bold flex items-center space-x-2 shadow-xs transition hover:border-svvayam-yellow cursor-pointer" data-muted="true" title="Toggle audio on/off">
+                <i class="fa-solid fa-volume-xmark text-svvayam-muted text-sm"></i>
+                <span class="btn-label">Unmute Video</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-center">
+            <div class="md:col-span-5 flex justify-center">
+              <div class="relative w-full max-w-[290px] aspect-[9/16] bg-black rounded-xl overflow-hidden shadow-lg border border-svvayam-border/60">
+                <iframe id="yt-sketch-video" class="w-full h-full" src="https://www.youtube.com/embed/HiDbFn5LYNI?enablejsapi=1&mute=1&rel=0&playsinline=1" title="From Sketch to Installation" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy" data-muted="true"></iframe>
+              </div>
+            </div>
+            <div class="md:col-span-7 space-y-4 text-xs text-svvayam-muted leading-relaxed">
+              <h5 class="font-serif font-bold text-svvayam-charcoal text-base">The Sacred Architectural Metamorphosis</h5>
+              <p>Experience the entire lifecycle of a bespoke sanctum distilled into a dynamic, fast-paced showcase. Witness how initial conceptual hand drawings evolve into physical sacred realities.</p>
+              
+              <div class="space-y-3">
+                <div class="flex items-start space-x-3 p-2.5 rounded-lg bg-svvayam-surface/60 border border-svvayam-border">
+                  <span class="w-6 h-6 rounded-full bg-svvayam-yellow/40 text-svvayam-charcoal font-bold text-[11px] flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+                  <div>
+                    <strong class="text-svvayam-charcoal block">Sacred Geometry & Conceptual Sketching</strong>
+                    <span>Vastu alignment, sanctum orientation, and initial aesthetic proportional drawings.</span>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3 p-2.5 rounded-lg bg-svvayam-surface/60 border border-svvayam-border">
+                  <span class="w-6 h-6 rounded-full bg-svvayam-yellow/40 text-svvayam-charcoal font-bold text-[11px] flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+                  <div>
+                    <strong class="text-svvayam-charcoal block">Precision 2D CAD & Photorealistic 3D Renders</strong>
+                    <span>Millimeter-exact joint drawings and lighting simulations approved by the family.</span>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3 p-2.5 rounded-lg bg-svvayam-surface/60 border border-svvayam-border">
+                  <span class="w-6 h-6 rounded-full bg-svvayam-yellow/40 text-svvayam-charcoal font-bold text-[11px] flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+                  <div>
+                    <strong class="text-svvayam-charcoal block">Master Guild Hand Carving & Trial Assembly</strong>
+                    <span>Chiseling sacred iconography, trial interlocking, and surface finishing.</span>
+                  </div>
+                </div>
+                <div class="flex items-start space-x-3 p-2.5 rounded-lg bg-svvayam-surface/60 border border-svvayam-border">
+                  <span class="w-6 h-6 rounded-full bg-svvayam-yellow/40 text-svvayam-charcoal font-bold text-[11px] flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+                  <div>
+                    <strong class="text-svvayam-charcoal block">White-Glove On-Site Delivery & Consecration</strong>
+                    <span>Permanent structural installation, brass illumination fittings, and sanctum consecration.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="px-6 py-3 border-t border-svvayam-border bg-[#FCFBF7] flex flex-wrap items-center justify-between text-xs text-svvayam-muted flex-shrink-0 gap-2">
+        <div class="flex items-center space-x-2">
+          <i class="fa-solid fa-shield-halved text-svvayam-yellow text-sm"></i>
+          <span>All 6 videos stream directly with zero external ads. Audio starts muted and is fully controllable.</span>
+        </div>
+        <button onclick="closeVisualExploreModal()" class="px-5 py-2 rounded-xl bg-svvayam-charcoal text-white font-bold text-xs hover:bg-black transition cursor-pointer shadow-xs">
+          Close Visual Explore
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+<!-- 5. FULLSCREEN LIGHTBOX MODAL (High-Res Zoom & Inspection)                 -->
   <!-- ========================================================================= -->
   <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden items-center justify-center p-4">
     <div class="absolute top-4 right-4 z-50 flex items-center space-x-3 text-white">
@@ -1665,6 +1998,8 @@
 
         if (e.key === 'Escape') {
           if (isLightboxOpen) closeLightbox();
+          const visualModal = document.getElementById('visual-explore-modal');
+          if (visualModal && !visualModal.classList.contains('hidden')) closeVisualExploreModal();
           return;
         }
 
@@ -1769,6 +2104,137 @@
         document.exitFullscreen().catch(err => {});
       }
     }
+  
+    // ==================== VISUAL EXPLORE MODAL CONTROLLER ====================
+    function openVisualExploreModal() {
+      const modal = document.getElementById('visual-explore-modal');
+      if (!modal) return;
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.classList.add('overflow-hidden');
+    }
+
+    function closeVisualExploreModal() {
+      const modal = document.getElementById('visual-explore-modal');
+      if (!modal) return;
+
+      // Pause all playing videos and re-mute them
+      const iframes = modal.querySelectorAll('iframe');
+      iframes.forEach(iframe => {
+        if (iframe.contentWindow) {
+          try {
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), '*');
+            iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
+          } catch (e) {}
+          iframe.setAttribute('data-muted', 'true');
+        }
+      });
+
+      // Reset all mute buttons and status texts
+      const muteBtns = modal.querySelectorAll('.yt-mute-btn');
+      muteBtns.forEach(btn => {
+        btn.setAttribute('data-muted', 'true');
+        const label = btn.querySelector('.btn-label') || btn.querySelector('span');
+        if (label) label.textContent = 'Unmute';
+        const icon = btn.querySelector('i');
+        if (icon) {
+          icon.className = 'fa-solid fa-volume-xmark text-svvayam-muted text-sm';
+        }
+        btn.classList.remove('bg-svvayam-yellow', 'border-svvayam-yellow');
+        btn.classList.add('bg-white', 'border-svvayam-border');
+      });
+
+      const statusLabels = modal.querySelectorAll('[id^="status-"]');
+      statusLabels.forEach(lbl => {
+        lbl.textContent = 'Muted';
+        lbl.className = 'text-svvayam-charcoal font-semibold';
+      });
+
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function closeVisualExploreOnBackdrop(e) {
+      if (e.target && e.target.id === 'visual-explore-modal') {
+        closeVisualExploreModal();
+      }
+    }
+
+    function toggleYtPlayerMute(iframeId, btn, statusId) {
+      const iframe = document.getElementById(iframeId);
+      if (!iframe || !iframe.contentWindow) return;
+
+      const isCurrentlyMuted = iframe.getAttribute('data-muted') !== 'false';
+      const statusEl = statusId ? document.getElementById(statusId) : null;
+      const label = btn.querySelector('.btn-label') || btn.querySelector('span');
+      const icon = btn.querySelector('i');
+
+      if (isCurrentlyMuted) {
+        // Unmute
+        try {
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'unMute', args: [] }), '*');
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'setVolume', args: [100] }), '*');
+        } catch (e) {}
+        iframe.setAttribute('data-muted', 'false');
+        btn.setAttribute('data-muted', 'false');
+
+        if (label) label.textContent = 'Mute Sound';
+        if (icon) icon.className = 'fa-solid fa-volume-high text-svvayam-charcoal text-sm';
+        btn.classList.add('bg-svvayam-yellow', 'border-svvayam-yellow');
+        btn.classList.remove('bg-white', 'border-svvayam-border');
+
+        if (statusEl) {
+          statusEl.textContent = 'Sound On 🔊';
+          statusEl.className = 'text-emerald-700 font-bold';
+        }
+      } else {
+        // Mute
+        try {
+          iframe.contentWindow.postMessage(JSON.stringify({ event: 'command', func: 'mute', args: [] }), '*');
+        } catch (e) {}
+        iframe.setAttribute('data-muted', 'true');
+        btn.setAttribute('data-muted', 'true');
+
+        if (label) label.textContent = (iframeId.includes('artisan') ? 'Unmute' : 'Unmute Video');
+        if (icon) icon.className = 'fa-solid fa-volume-xmark text-svvayam-muted text-sm';
+        btn.classList.remove('bg-svvayam-yellow', 'border-svvayam-yellow');
+        btn.classList.add('bg-white', 'border-svvayam-border');
+
+        if (statusEl) {
+          statusEl.textContent = 'Muted';
+          statusEl.className = 'text-svvayam-charcoal font-semibold';
+        }
+      }
+    }
+
+    function filterVisualCategory(catId, btn) {
+      const buttons = document.querySelectorAll('.visual-filter-btn');
+      buttons.forEach(b => {
+        b.classList.remove('bg-svvayam-charcoal', 'text-white', 'font-bold', 'shadow-xs');
+        b.classList.add('bg-svvayam-surface', 'text-svvayam-charcoal', 'font-semibold');
+      });
+      if (btn) {
+        btn.classList.add('bg-svvayam-charcoal', 'text-white', 'font-bold', 'shadow-xs');
+        btn.classList.remove('bg-svvayam-surface', 'text-svvayam-charcoal', 'font-semibold');
+      }
+
+      const sections = document.querySelectorAll('.visual-category-card');
+      sections.forEach(sec => {
+        if (catId === 'all') {
+          sec.classList.remove('hidden');
+        } else {
+          const targetId = 'section-' + catId.replace('cat-', '');
+          if (sec.id === targetId) {
+            sec.classList.remove('hidden');
+            sec.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          } else {
+            sec.classList.add('hidden');
+          }
+        }
+      });
+    }
+
   </script>
 </body>
 </html>
