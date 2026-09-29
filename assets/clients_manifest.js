@@ -1,3 +1,4 @@
+// Svvayam Clients Data Manifest (Auto-generated from assets/clients)
 window.SVVAYAM_CLIENTS_DATA = [
   {
     "id": "sujana",
@@ -1447,14 +1448,10 @@ window.SVVAYAM_CLIENTS_DATA = [
         "title": "Final",
         "dir_name": "FINAL",
         "images": [
-          "assets/clients/Dr. Arun Pari/FINAL/18.avif",
-          "assets/clients/Dr. Arun Pari/FINAL/19.avif",
-          "assets/clients/Dr. Arun Pari/FINAL/20.avif",
-          "assets/clients/Dr. Arun Pari/FINAL/Final.avif",
           "assets/clients/Dr. Arun Pari/FINAL/arun pari 1.png",
           "assets/clients/Dr. Arun Pari/FINAL/arun pari 2.png"
         ],
-        "count": 6
+        "count": 2
       }
     ]
   },
@@ -1571,8 +1568,8 @@ window.SVVAYAM_CLIENTS_DATA = [
     "location": "Delhi NCR",
     "type": "Architectural Master Sanctum",
     "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
-    "status": "Completed",
-    "statusCode": "completed",
+    "status": "In Progress",
+    "statusCode": "in_progress",
     "hasGreenDot": false,
     "heroImg": "assets/clients/Mr. Atul Mehotra/3D MODEL/614a1c00-6e73-49dd-98ff-955533ebbac9.avif",
     "stages": [

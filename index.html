@@ -24,6 +24,8 @@
               beige: '#E9DFCA',
               softYellow: '#FFF2A8',
               yellow: '#FFD21A',
+              brown: '#4A2E18',
+              brownHover: '#3B2312',
               charcoal: '#171717',
               muted: '#6B6862',
               border: '#E8E2D8',
@@ -429,7 +431,7 @@
 
       <!-- Primary Action Buttons (2 Clean Center Buttons) -->
       <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-        <button onclick="openClientExplorerFromLanding()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-svvayam-yellow text-svvayam-charcoal font-bold text-xs uppercase tracking-wider hover:brightness-105 transition shadow-md flex items-center justify-center space-x-2.5 cursor-pointer hover:shadow-lg">
+        <button onclick="openClientExplorerFromLanding()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-svvayam-brown hover:bg-svvayam-brownHover text-svvayam-yellow font-bold text-xs uppercase tracking-wider transition shadow-md flex items-center justify-center space-x-2.5 cursor-pointer hover:shadow-lg border border-svvayam-brown">
           <span>Open Client Explorer</span>
           <i class="fa-solid fa-arrow-right text-xs"></i>
         </button>
@@ -545,7 +547,7 @@
 
       <!-- Filter Pills -->
       <div class="flex flex-wrap items-center gap-2">
-        <button onclick="filterCurated('All')" class="curated-filter-btn px-4 py-2 rounded-lg bg-svvayam-yellow text-svvayam-charcoal font-bold text-xs border border-svvayam-yellow shadow-sm" data-filter="All">All Projects</button>
+        <button onclick="filterCurated('All')" class="curated-filter-btn px-4 py-2 rounded-lg bg-svvayam-brown text-svvayam-yellow font-bold text-xs border border-svvayam-brown shadow-sm" data-filter="All">All Projects</button>
         <button onclick="filterCurated('Wood')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Wood">Teak & Wood</button>
         <button onclick="filterCurated('Stone')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Stone">Stone & Marble</button>
         <button onclick="filterCurated('Brass')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Brass">Brass & Guild</button>
@@ -641,7 +643,7 @@
         <div class="relative w-full flex items-center justify-center rounded-xl bg-stone-900/5 overflow-hidden border border-svvayam-border/40 min-h-[380px] max-h-[72vh] p-2 group select-none">
           
           <!-- Previous Image Arrow (if stage has > 1 images) -->
-          <button id="stage-img-prev-btn" onclick="prevStageImage(event)" title="Previous Image" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-svvayam-yellow shadow-md border border-svvayam-border/60 flex items-center justify-center text-svvayam-charcoal transition opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer">
+          <button id="stage-img-prev-btn" onclick="prevStageImage(event)" title="Previous Image" class="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-svvayam-brown shadow-md border border-svvayam-border/60 flex items-center justify-center text-svvayam-charcoal hover:text-svvayam-yellow transition opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer">
             <i class="fa-solid fa-chevron-left text-sm"></i>
           </button>
 
@@ -650,7 +652,7 @@
           <video id="stage-hero-video" class="hidden max-h-[66vh] w-auto max-w-full object-contain rounded-lg shadow-sm" autoplay muted loop playsinline controls></video>
 
           <!-- Next Image Arrow (if stage has > 1 images) -->
-          <button id="stage-img-next-btn" onclick="nextStageImage(event)" title="Next Image" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-svvayam-yellow shadow-md border border-svvayam-border/60 flex items-center justify-center text-svvayam-charcoal transition opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer">
+          <button id="stage-img-next-btn" onclick="nextStageImage(event)" title="Next Image" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-svvayam-brown shadow-md border border-svvayam-border/60 flex items-center justify-center text-svvayam-charcoal hover:text-svvayam-yellow transition opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer">
             <i class="fa-solid fa-chevron-right text-sm"></i>
           </button>
 
@@ -692,7 +694,7 @@
           <span id="bottom-stage-indicator" class="text-xs font-bold text-svvayam-charcoal">Stage 1 of 6</span>
         </div>
 
-        <button id="btn-next-stage" onclick="stepStage(1)" class="px-6 py-2.5 rounded-xl bg-svvayam-yellow text-svvayam-charcoal text-xs font-bold uppercase tracking-wider hover:brightness-105 transition flex items-center space-x-2 shadow-md cursor-pointer">
+        <button id="btn-next-stage" onclick="stepStage(1)" class="px-6 py-2.5 rounded-xl bg-svvayam-brown hover:bg-svvayam-brownHover text-svvayam-yellow text-xs font-bold uppercase tracking-wider transition flex items-center space-x-2 shadow-md cursor-pointer border border-svvayam-brown">
           <span id="btn-next-stage-label">Next Stage</span>
           <i class="fa-solid fa-arrow-right text-xs"></i>
         </button>
@@ -1246,7 +1248,7 @@
       }
       else if (state.view === 'explorer') {
         if (globalNav) globalNav.classList.remove('hidden');
-        if (tabExplorer) tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-yellow text-svvayam-charcoal shadow-sm';
+        if (tabExplorer) tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-brown text-svvayam-yellow shadow-sm border border-svvayam-brown';
         if (tabCurated) tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
         const tabDocs = document.getElementById('tab-btn-docs');
         if (tabDocs) tabDocs.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
@@ -1261,7 +1263,7 @@
       }
       else if (state.view === 'curated') {
         if (globalNav) globalNav.classList.remove('hidden');
-        if (tabCurated) tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-yellow text-svvayam-charcoal shadow-sm';
+        if (tabCurated) tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-brown text-svvayam-yellow shadow-sm border border-svvayam-brown';
         if (tabExplorer) tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
         const tabDocs = document.getElementById('tab-btn-docs');
         if (tabDocs) tabDocs.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
@@ -1277,7 +1279,7 @@
       else if (state.view === 'documents') {
         if (globalNav) globalNav.classList.remove('hidden');
         const tabDocs = document.getElementById('tab-btn-docs');
-        if (tabDocs) tabDocs.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-yellow text-svvayam-charcoal shadow-sm';
+        if (tabDocs) tabDocs.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-brown text-svvayam-yellow shadow-sm border border-svvayam-brown';
         if (tabExplorer) tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
         if (tabCurated) tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
         if (breadcrumb) breadcrumb.textContent = 'Presentations & Documents';
@@ -1377,24 +1379,12 @@
             ? '<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shrink-0 inline-block animate-pulse ml-1" title="Active Client Project"></span>'
             : '';
 
-          // Status Badge
-          let statusBadgeHtml = '';
-          if (client.statusCode === 'in_progress_manufacturing') {
-            statusBadgeHtml = '<span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-300">In Progress (Manufacturing)</span>';
-          } else if (client.statusCode === 'in_progress') {
-            statusBadgeHtml = '<span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">In Progress</span>';
-          } else {
-            statusBadgeHtml = '<span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">Completed</span>';
-          }
-
           const subtitleDetails = [client.material, client.location].filter(Boolean).join(' • ') || client.type || '';
-          const sizeHtml = client.size ? '<span class="text-[10px] font-bold text-svvayam-muted bg-svvayam-surface px-1.5 py-0.5 rounded border border-svvayam-border/60">' + client.size + '</span>' : '';
 
           tileCard.innerHTML = `
             <div>
               <div class="relative rounded-lg overflow-hidden bg-stone-100 aspect-video mb-2.5 flex items-center justify-center">
                 <img src="${client.heroImg}" alt="${client.name}" class="card-img w-full h-full object-contain transition duration-300" onerror="this.src='assets/SVVAYAM-LOGO-4.png'">
-                <div class="absolute top-2 right-2">${statusBadgeHtml}</div>
               </div>
               <div class="flex items-center space-x-1.5">
                 <h4 class="font-serif font-bold text-xs sm:text-sm text-svvayam-charcoal tracking-tight truncate">${client.name}</h4>
@@ -1402,11 +1392,10 @@
               </div>
               <p class="text-[10px] sm:text-[11px] text-svvayam-muted truncate mt-0.5">${subtitleDetails}</p>
             </div>
-            <div class="mt-2.5 pt-2 border-t border-svvayam-border/50 flex items-center justify-between">
-              ${sizeHtml}
+            <div class="mt-2.5 pt-2 border-t border-svvayam-border/50 flex items-center justify-end">
               <span class="text-[10px] font-bold text-svvayam-charcoal flex items-center space-x-1 group-hover:translate-x-0.5 transition">
                 <span>Explore</span>
-                <i class="fa-solid fa-arrow-right text-[9px] text-svvayam-yellow"></i>
+                <i class="fa-solid fa-arrow-right text-[9px] text-svvayam-brown"></i>
               </span>
             </div>
           `;
@@ -1468,7 +1457,7 @@
     function filterCurated(filter) {
       document.querySelectorAll('.curated-filter-btn').forEach(btn => {
         if (btn.getAttribute('data-filter') === filter) {
-          btn.className = 'curated-filter-btn px-4 py-2 rounded-lg bg-svvayam-yellow text-svvayam-charcoal font-bold text-xs border border-svvayam-yellow shadow-sm';
+          btn.className = 'curated-filter-btn px-4 py-2 rounded-lg bg-svvayam-brown text-svvayam-yellow font-bold text-xs border border-svvayam-brown shadow-sm';
         } else {
           btn.className = 'curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition';
         }
@@ -1544,7 +1533,7 @@
           const pill = document.createElement('button');
           const numStr = (idx + 1 < 10 ? '0' : '') + (idx + 1);
           pill.className = (idx === activeStageIndex)
-            ? 'stage-pill active px-3.5 py-1.5 rounded-md text-xs border border-svvayam-yellow bg-svvayam-yellow text-svvayam-charcoal font-bold transition shadow-xs cursor-pointer'
+            ? 'stage-pill active px-3.5 py-1.5 rounded-md text-xs border border-svvayam-brown bg-svvayam-brown text-svvayam-yellow font-bold transition shadow-xs cursor-pointer'
             : 'stage-pill px-3.5 py-1.5 rounded-md text-xs border border-svvayam-border bg-white text-svvayam-muted hover:text-svvayam-charcoal transition cursor-pointer';
           pill.textContent = numStr + ' ' + st.title.split('&')[0].trim();
           pill.onclick = () => goToStage(idx);
@@ -1618,10 +1607,11 @@
         if (counterContainer) counterContainer.classList.add('hidden');
       }
 
-      // Arrows on Hero Canvas
+      // Arrows on Hero Canvas (Always enabled for sequential cycling across all project stages)
       const prevBtn = document.getElementById('stage-img-prev-btn');
       const nextBtn = document.getElementById('stage-img-next-btn');
-      if (images.length > 1) {
+      const totalProjectStages = (currentProject && currentProject.stages) ? currentProject.stages.length : 0;
+      if (totalProjectStages > 1 || images.length > 1) {
         if (prevBtn) prevBtn.classList.remove('hidden');
         if (nextBtn) nextBtn.classList.remove('hidden');
       } else {
@@ -1699,11 +1689,16 @@
       }
     }
 
-    function goToStage(idx) {
+    function goToStage(idx, imgIdx = 0) {
       if (!currentProject || !currentProject.stages) return;
       if (idx >= 0 && idx < currentProject.stages.length) {
         activeStageIndex = idx;
-        activeImageIndex = 0;
+        const stageImages = currentProject.stages[idx].images || [];
+        if (imgIdx >= 0 && imgIdx < stageImages.length) {
+          activeImageIndex = imgIdx;
+        } else {
+          activeImageIndex = 0;
+        }
         renderProjectPresentation();
       }
     }
@@ -1712,30 +1707,56 @@
       if (!currentProject || !currentProject.stages) return;
       const newIdx = activeStageIndex + delta;
       if (newIdx >= 0 && newIdx < currentProject.stages.length) {
-        goToStage(newIdx);
+        goToStage(newIdx, 0);
       } else if (newIdx >= currentProject.stages.length) {
-        // Finished last stage -> return to Explorer
-        goToPreviousView();
+        // Finished last stage -> cycle back to Project Overview (stage 0)
+        goToStage(0, 0);
       }
     }
 
+    // Seamless sequential navigation across ALL project stages
     function nextStageImage(e) {
       if (e) e.stopPropagation();
-      if (!currentProject || !currentProject.stages) return;
-      const images = currentProject.stages[activeStageIndex].images || [];
-      if (images.length > 1) {
-        activeImageIndex = (activeImageIndex + 1) % images.length;
+      if (!currentProject || !currentProject.stages || currentProject.stages.length === 0) return;
+      const stage = currentProject.stages[activeStageIndex];
+      const images = stage.images || [];
+
+      if (activeImageIndex < images.length - 1) {
+        // Advance to next image within this stage
+        activeImageIndex++;
         renderCurrentStageContent();
+      } else {
+        // Reached end of current stage: cycle to the next stage sequentially
+        if (activeStageIndex < currentProject.stages.length - 1) {
+          goToStage(activeStageIndex + 1, 0);
+        } else {
+          // Reached end of Final stage: loop smoothly back to Project Overview
+          goToStage(0, 0);
+        }
       }
     }
 
     function prevStageImage(e) {
       if (e) e.stopPropagation();
-      if (!currentProject || !currentProject.stages) return;
-      const images = currentProject.stages[activeStageIndex].images || [];
-      if (images.length > 1) {
-        activeImageIndex = (activeImageIndex - 1 + images.length) % images.length;
+      if (!currentProject || !currentProject.stages || currentProject.stages.length === 0) return;
+
+      if (activeImageIndex > 0) {
+        // Move to previous image within this stage
+        activeImageIndex--;
         renderCurrentStageContent();
+      } else {
+        // At start of current stage: move to previous stage's last image
+        if (activeStageIndex > 0) {
+          const prevStage = currentProject.stages[activeStageIndex - 1];
+          const prevImages = prevStage.images || [];
+          const lastImgIdx = Math.max(0, prevImages.length - 1);
+          goToStage(activeStageIndex - 1, lastImgIdx);
+        } else {
+          // At beginning of Project Overview: cycle to Final stage's last image
+          const finalStage = currentProject.stages[currentProject.stages.length - 1];
+          const finalImages = finalStage.images || [];
+          goToStage(currentProject.stages.length - 1, Math.max(0, finalImages.length - 1));
+        }
       }
     }
 
@@ -1814,7 +1835,7 @@
       });
       const activeTab = document.getElementById('doc-tab-' + docKey);
       if (activeTab) {
-        activeTab.className = 'doc-tab-btn active px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition flex items-center space-x-2 bg-svvayam-yellow text-svvayam-charcoal shadow-sm cursor-pointer';
+        activeTab.className = 'doc-tab-btn active px-3 sm:px-4 py-1.5 rounded-lg text-xs font-bold transition flex items-center space-x-2 bg-svvayam-brown text-svvayam-yellow shadow-sm border border-svvayam-brown cursor-pointer';
       }
 
       // Update Sub-Bar Info
