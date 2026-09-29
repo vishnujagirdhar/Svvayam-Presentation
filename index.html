@@ -9,7 +9,7 @@
   <!-- Fonts: Cinzel & Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -57,13 +57,13 @@
     ::-webkit-scrollbar-thumb { background: #E9DFCA; border-radius: 4px; }
     ::-webkit-scrollbar-thumb:hover { background: #FFD21A; }
 
-        /* Animated Ambient Liquid Water Gradient Background (80% White Dominant, 20% Subtle Golden Glow) */
+        /* Animated Ambient Liquid Water Gradient Background (80% Pure White Canvas, 20% Subtle Golden Accent) */
     .liquid-water-canvas {
       position: absolute;
-      inset: -10%;
-      width: 120%;
-      height: 120%;
-      background: radial-gradient(circle at 50% 45%, #FFFFFF 65%, #FAF9F5 88%, #F5F1E8 100%);
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: #FFFFFF;
       overflow: hidden;
       pointer-events: none;
       z-index: 0;
@@ -71,47 +71,46 @@
 
     .liquid-wave-blob {
       position: absolute;
-      filter: blur(80px);
+      filter: blur(100px);
       border-radius: 43% 57% 65% 35% / 48% 46% 54% 52%;
       will-change: transform, border-radius;
-      opacity: 0.22;
-      mix-blend-mode: multiply;
+      opacity: 0.13;
     }
 
     .wave-blob-1 {
-      top: 5%;
-      left: 18%;
-      width: 50vw;
-      height: 50vw;
-      background: radial-gradient(circle, rgba(255, 225, 95, 0.32) 0%, rgba(255, 242, 175, 0.16) 42%, rgba(255, 255, 255, 0) 70%);
-      animation: waterDrift1 20s ease-in-out infinite alternate, waterMorph1 14s ease-in-out infinite alternate;
+      top: -12%;
+      left: 8%;
+      width: 45vw;
+      height: 45vw;
+      background: radial-gradient(circle, rgba(255, 215, 60, 0.38) 0%, rgba(255, 238, 150, 0.18) 40%, rgba(255, 255, 255, 0) 70%);
+      animation: waterDrift1 22s ease-in-out infinite alternate, waterMorph1 15s ease-in-out infinite alternate;
     }
 
     .wave-blob-2 {
-      bottom: 2%;
-      right: 12%;
-      width: 46vw;
-      height: 46vw;
-      background: radial-gradient(circle, rgba(255, 210, 26, 0.24) 0%, rgba(255, 238, 150, 0.12) 45%, rgba(255, 255, 255, 0) 70%);
-      animation: waterDrift2 24s ease-in-out infinite alternate-reverse, waterMorph2 16s ease-in-out infinite alternate;
+      bottom: -10%;
+      right: 6%;
+      width: 42vw;
+      height: 42vw;
+      background: radial-gradient(circle, rgba(255, 205, 25, 0.30) 0%, rgba(255, 235, 140, 0.14) 45%, rgba(255, 255, 255, 0) 70%);
+      animation: waterDrift2 26s ease-in-out infinite alternate-reverse, waterMorph2 17s ease-in-out infinite alternate;
     }
 
     .wave-blob-3 {
-      top: 38%;
-      left: -5%;
-      width: 42vw;
-      height: 42vw;
-      background: radial-gradient(circle, rgba(235, 220, 192, 0.28) 0%, rgba(255, 245, 220, 0.14) 48%, rgba(255, 255, 255, 0) 72%);
-      animation: waterDrift3 18s ease-in-out infinite alternate, waterMorph1 18s ease-in-out infinite alternate-reverse;
+      top: 45%;
+      left: -15%;
+      width: 38vw;
+      height: 38vw;
+      background: radial-gradient(circle, rgba(235, 215, 160, 0.30) 0%, rgba(255, 245, 210, 0.12) 45%, rgba(255, 255, 255, 0) 70%);
+      animation: waterDrift3 20s ease-in-out infinite alternate, waterMorph1 19s ease-in-out infinite alternate-reverse;
     }
 
     .wave-blob-4 {
-      top: 22%;
-      right: -5%;
-      width: 40vw;
-      height: 40vw;
-      background: radial-gradient(circle, rgba(255, 230, 120, 0.26) 0%, rgba(255, 246, 210, 0.10) 50%, rgba(255, 255, 255, 0) 72%);
-      animation: waterDrift1 22s ease-in-out infinite alternate-reverse, waterMorph2 15s ease-in-out infinite alternate;
+      top: 15%;
+      right: -15%;
+      width: 36vw;
+      height: 36vw;
+      background: radial-gradient(circle, rgba(255, 225, 90, 0.28) 0%, rgba(255, 245, 190, 0.10) 50%, rgba(255, 255, 255, 0) 70%);
+      animation: waterDrift1 24s ease-in-out infinite alternate-reverse, waterMorph2 16s ease-in-out infinite alternate;
     }
 
     @keyframes waterMorph1 {
@@ -175,7 +174,7 @@
       position: absolute;
       inset: -28px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 210, 26, 0.18) 0%, rgba(255, 242, 168, 0.10) 45%, transparent 70%);
+      background: radial-gradient(circle, rgba(255, 210, 26, 0.10) 0%, rgba(255, 242, 168, 0.05) 45%, transparent 70%);
       filter: blur(22px);
       animation: liquidAuraBreathe 6s ease-in-out infinite alternate;
       pointer-events: none;
@@ -421,9 +420,10 @@
         <img src="assets/SVVAYAM-LOGO-4.png" alt="Svvayam Logo" class="relative h-20 sm:h-28 md:h-32 object-contain mx-auto drop-shadow-sm transition transform duration-700 group-hover:scale-105">
       </div>
 
-      <!-- Tagline & Narrative: Reduced Weight, Refined Size, Exactly Two Lines -->
-      <h2 class="font-serif text-2xl sm:text-3xl md:text-[34px] font-medium tracking-normal max-w-2xl mx-auto leading-snug mb-4 liquid-text-shimmer">
-        Bespoke Sacred Architecture<br class="hidden sm:inline"> for Discerning Homes
+      <!-- Tagline & Narrative: Reduced Weight, Refined Size, Strictly Two Lines -->
+      <h2 class="font-serif text-lg sm:text-xl md:text-2xl lg:text-[26px] font-normal tracking-wide max-w-3xl mx-auto leading-snug mb-4 text-svvayam-charcoal">
+        <span class="block">Bespoke Sacred Architecture</span>
+        <span class="block mt-1">for Discerning Homes</span>
       </h2>
       <p class="text-xs sm:text-sm text-svvayam-muted max-w-xl mx-auto leading-relaxed mb-10 font-normal">
         Explore authentic architectural execution journeys — from initial site surveys and precision 2D CAD blueprints to photorealistic 3D renders and master guild craftsmanship.
