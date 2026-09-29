@@ -487,23 +487,19 @@
             <!-- Animated Glowing Vertical Line -->
             <div class="glow-line-y h-full"></div>
             
-            <!-- Row Dimension Labels -->
+            <!-- Row Dimension Labels (3 Rows: 5 Projects per Row) -->
             <div class="flex flex-col justify-around text-xs text-svvayam-muted font-medium">
               <div>
-                <span class="block font-bold text-svvayam-charcoal">Compact</span>
-                <span class="text-[10px] text-svvayam-muted">5′ – 7′</span>
+                <span class="block font-bold text-svvayam-charcoal">Row 01</span>
+                <span class="text-[10px] text-svvayam-muted">5 Projects</span>
               </div>
               <div>
-                <span class="block font-bold text-svvayam-charcoal">Medium</span>
-                <span class="text-[10px] text-svvayam-muted">7′ – 9′</span>
+                <span class="block font-bold text-svvayam-charcoal">Row 02</span>
+                <span class="text-[10px] text-svvayam-muted">5 Projects</span>
               </div>
               <div>
-                <span class="block font-bold text-svvayam-charcoal">Large</span>
-                <span class="text-[10px] text-svvayam-muted">9′ – 12′</span>
-              </div>
-              <div>
-                <span class="block font-bold text-svvayam-charcoal">Grand</span>
-                <span class="text-[10px] text-svvayam-muted">12′ – 16′+</span>
+                <span class="block font-bold text-svvayam-charcoal">Row 03</span>
+                <span class="text-[10px] text-svvayam-muted">5 Projects</span>
               </div>
             </div>
           </div>
@@ -603,6 +599,12 @@
     <!-- Main Dynamic Stage Canvas -->
     <main class="max-w-6xl mx-auto w-full p-4 sm:p-8 flex-1">
       
+      <!-- Project Status Notice Banner (e.g. Manufacturing phase) -->
+      <div id="proj-status-banner" class="hidden mb-4 p-3.5 rounded-xl border text-xs font-medium flex items-center space-x-2.5">
+        <i class="fa-solid fa-circle-info text-sm"></i>
+        <span id="proj-status-banner-text"></span>
+      </div>
+
       <!-- Stage Info Header: Title, Category Badge, Image Counter -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <div>
@@ -631,6 +633,7 @@
 
           <!-- The Image: object-contain preserves natural 16:9 or any ratio cleanly -->
           <img id="stage-hero-img" src="" alt="Presentation Asset" class="max-h-[66vh] w-auto max-w-full object-contain rounded-lg shadow-sm transition duration-300 cursor-zoom-in" onclick="openLightbox(this.src)">
+          <video id="stage-hero-video" class="hidden max-h-[66vh] w-auto max-w-full object-contain rounded-lg shadow-sm" autoplay muted loop playsinline controls></video>
 
           <!-- Next Image Arrow (if stage has > 1 images) -->
           <button id="stage-img-next-btn" onclick="nextStageImage(event)" title="Next Image" class="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-white/90 hover:bg-svvayam-yellow shadow-md border border-svvayam-border/60 flex items-center justify-center text-svvayam-charcoal transition opacity-0 group-hover:opacity-100 hover:scale-110 cursor-pointer">
@@ -832,6 +835,7 @@
     </div>
     <div class="w-full h-full flex items-center justify-center overflow-hidden" onclick="closeLightboxOnBackdrop(event)">
       <img id="lightbox-img" src="" alt="Zoomed Asset" class="lightbox-img max-w-full max-h-full object-contain select-none">
+      <video id="lightbox-video" class="hidden max-w-full max-h-full object-contain select-none" autoplay muted loop playsinline controls></video>
     </div>
   </div>
 
@@ -1008,7 +1012,7 @@
       pushState({ view: 'project', project: full, stage: 0 });
     }
 
-    // ==================== RENDER EXPLORER (4 ROWS x 4 TABS = 16 TILES) ====================
+    // ==================== RENDER EXPLORER (15 PROJECTS: 5 PER ROW x 3 ROWS) ====================
     function renderExplorerGrid() {
       const container = document.getElementById('explorer-tiles-grid');
       if (!container) return;
@@ -1016,31 +1020,40 @@
 
       const list = window.SVVAYAM_CLIENTS_DATA || defaultClientsData;
 
-      // Group clients into the 4 rows specified by user
-      const sizeGroups = {
-        'Compact': ['sujana', 'yuva', 'shenoy', 'nitesh-panda'],
-        'Medium': ['dnyaneshwar', 'vishnu', 'manasa', 'nagesh'],
-        'Large': ['yashaswini', 'rahul', 'pradeep-reddy', 'umesh-wadayar'],
-        'Grand': ['arun-pari', 'rakesh-katkar', 'vaishali', 'atul-malhotra']
-      };
+      // Exactly 15 projects divided into 3 rows of 5
+      const rows = [
+        ['sujana', 'yuva', 'shenoy', 'nitesh-panda', 'manasa'],
+        ['dnyaneshwar', 'vishnu', 'nagesh', 'pradeep-reddy', 'rahul'],
+        ['umesh-wadayar', 'shyam-chakravarthy', 'arun-pari', 'gayatri-pal', 'atul-malhotra']
+      ];
 
-      const rowKeys = ['Compact', 'Medium', 'Large', 'Grand'];
-
-      rowKeys.forEach(rowKey => {
-        const clientIds = sizeGroups[rowKey] || [];
+      rows.forEach((rowClientIds, rIdx) => {
         const rowDiv = document.createElement('div');
-        // Each row contains ONLY four tabs
-        rowDiv.className = 'grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4';
+        rowDiv.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3.5 sm:gap-4';
 
-        clientIds.forEach(cid => {
+        rowClientIds.forEach(cid => {
           const client = list.find(c => c.id === cid);
           if (!client) return;
 
           const tileCard = document.createElement('div');
-          tileCard.className = 'bg-white rounded-xl border border-svvayam-border p-2.5 shadow-xs project-card-hover cursor-pointer group flex flex-col justify-between';
+          tileCard.className = 'bg-white rounded-xl border border-svvayam-border p-3 shadow-xs project-card-hover cursor-pointer group flex flex-col justify-between';
           tileCard.onclick = () => openProjectPresentation(client);
 
-          // Subtitle details: material and location if available, otherwise typology or blank
+          // Green Dot Indicator right beside the client name
+          const greenDotHtml = client.hasGreenDot
+            ? '<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shrink-0 inline-block animate-pulse ml-1" title="Active Client Project"></span>'
+            : '';
+
+          // Status Badge
+          let statusBadgeHtml = '';
+          if (client.statusCode === 'in_progress_manufacturing') {
+            statusBadgeHtml = '<span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-300">In Progress (Manufacturing)</span>';
+          } else if (client.statusCode === 'in_progress') {
+            statusBadgeHtml = '<span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-blue-50 text-blue-700 border border-blue-200">In Progress</span>';
+          } else {
+            statusBadgeHtml = '<span class="text-[9px] font-extrabold uppercase px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">Completed</span>';
+          }
+
           const subtitleDetails = [client.material, client.location].filter(Boolean).join(' • ') || client.type || '';
           const sizeHtml = client.size ? '<span class="text-[10px] font-bold text-svvayam-muted bg-svvayam-surface px-1.5 py-0.5 rounded border border-svvayam-border/60">' + client.size + '</span>' : '';
 
@@ -1048,11 +1061,15 @@
             <div>
               <div class="relative rounded-lg overflow-hidden bg-stone-100 aspect-video mb-2.5 flex items-center justify-center">
                 <img src="${client.heroImg}" alt="${client.name}" class="card-img w-full h-full object-contain transition duration-300" onerror="this.src='assets/SVVAYAM-LOGO-4.png'">
+                <div class="absolute top-2 right-2">${statusBadgeHtml}</div>
               </div>
-              <h4 class="font-serif font-bold text-xs sm:text-sm text-svvayam-charcoal tracking-tight truncate">${client.name}</h4>
+              <div class="flex items-center space-x-1.5">
+                <h4 class="font-serif font-bold text-xs sm:text-sm text-svvayam-charcoal tracking-tight truncate">${client.name}</h4>
+                ${greenDotHtml}
+              </div>
               <p class="text-[10px] sm:text-[11px] text-svvayam-muted truncate mt-0.5">${subtitleDetails}</p>
             </div>
-            <div class="mt-2 pt-2 border-t border-svvayam-border/50 flex items-center justify-between">
+            <div class="mt-2.5 pt-2 border-t border-svvayam-border/50 flex items-center justify-between">
               ${sizeHtml}
               <span class="text-[10px] font-bold text-svvayam-charcoal flex items-center space-x-1 group-hover:translate-x-0.5 transition">
                 <span>Explore</span>
@@ -1136,16 +1153,53 @@
       if (activeStageIndex < 0) activeStageIndex = 0;
       if (activeStageIndex >= stages.length) activeStageIndex = stages.length - 1;
 
-      // Update Header Title & Material
+      // Update Header Title, Green Dot, Material, and Status
       const headerName = document.getElementById('proj-header-name');
+      const headerGreenDot = document.getElementById('proj-header-greendot');
       const headerMat = document.getElementById('proj-header-material');
+      const headerStatus = document.getElementById('proj-header-status');
+      const statusBanner = document.getElementById('proj-status-banner');
+      const statusBannerText = document.getElementById('proj-status-banner-text');
+
       if (headerName) headerName.textContent = currentProject.name;
+      if (headerGreenDot) {
+        if (currentProject.hasGreenDot) {
+          headerGreenDot.classList.remove('hidden');
+        } else {
+          headerGreenDot.classList.add('hidden');
+        }
+      }
       if (headerMat) {
         if (currentProject.material) {
           headerMat.textContent = currentProject.material;
           headerMat.classList.remove('hidden');
         } else {
           headerMat.classList.add('hidden');
+        }
+      }
+      if (headerStatus) {
+        if (currentProject.statusCode === 'in_progress_manufacturing') {
+          headerStatus.textContent = 'In Progress (Still in Manufacturing Phase)';
+          headerStatus.className = 'text-xs font-bold px-2.5 py-1 rounded-md border bg-amber-50 text-amber-800 border-amber-300';
+        } else if (currentProject.statusCode === 'in_progress') {
+          headerStatus.textContent = 'In Progress';
+          headerStatus.className = 'text-xs font-bold px-2.5 py-1 rounded-md border bg-blue-50 text-blue-700 border-blue-200';
+        } else {
+          headerStatus.textContent = 'Completed';
+          headerStatus.className = 'text-xs font-bold px-2.5 py-1 rounded-md border bg-emerald-50 text-emerald-700 border-emerald-200';
+        }
+      }
+      if (statusBanner && statusBannerText) {
+        if (currentProject.statusCode === 'in_progress_manufacturing') {
+          statusBanner.className = 'mb-4 p-3.5 rounded-xl border text-xs font-medium flex items-center space-x-2.5 bg-amber-50 border-amber-300 text-amber-900 shadow-2xs';
+          statusBannerText.innerHTML = '<strong>Project Notice:</strong> This sanctum is actively undergoing workshop crafting & lathe detailing: <em>In Progress (Still in Manufacturing Phase)</em>.';
+          statusBanner.classList.remove('hidden');
+        } else if (currentProject.statusCode === 'in_progress') {
+          statusBanner.className = 'mb-4 p-3.5 rounded-xl border text-xs font-medium flex items-center space-x-2.5 bg-blue-50 border-blue-200 text-blue-900 shadow-2xs';
+          statusBannerText.innerHTML = '<strong>Project Notice:</strong> Final sanctum consecration documentation is in progress.';
+          statusBanner.classList.remove('hidden');
+        } else {
+          statusBanner.classList.add('hidden');
         }
       }
 
@@ -1192,10 +1246,33 @@
       if (activeImageIndex < 0) activeImageIndex = 0;
       if (activeImageIndex >= images.length) activeImageIndex = images.length - 1;
 
-      // Update Hero Image
+      // Update Hero Media (Image or Video)
       const heroImg = document.getElementById('stage-hero-img');
-      if (heroImg && images.length > 0) {
-        heroImg.src = images[activeImageIndex];
+      const heroVideo = document.getElementById('stage-hero-video');
+      const activeAsset = images[activeImageIndex] || '';
+      const isVideo = activeAsset.endsWith('.mp4') || activeAsset.endsWith('.mov') || activeAsset.endsWith('.webm');
+
+      if (isVideo) {
+        if (heroImg) heroImg.classList.add('hidden');
+        if (heroVideo) {
+          heroVideo.classList.remove('hidden');
+          heroVideo.src = activeAsset;
+          heroVideo.muted = true;
+          if (typeof heroVideo.play === 'function') {
+            heroVideo.play().catch(() => {});
+          }
+        }
+      } else {
+        if (heroVideo) {
+          heroVideo.classList.add('hidden');
+          if (typeof heroVideo.pause === 'function') {
+            heroVideo.pause();
+          }
+        }
+        if (heroImg && images.length > 0) {
+          heroImg.classList.remove('hidden');
+          heroImg.src = activeAsset;
+        }
       }
 
       // Update Image Counter
@@ -1231,7 +1308,9 @@
               ? 'relative h-14 sm:h-16 aspect-video rounded-lg overflow-hidden border-2 border-svvayam-yellow shadow-md cursor-pointer transition transform scale-105 shrink-0 bg-stone-100 flex items-center justify-center'
               : 'relative h-14 sm:h-16 aspect-video rounded-lg overflow-hidden border border-svvayam-border shadow-xs cursor-pointer transition hover:border-svvayam-charcoal hover:scale-102 shrink-0 bg-stone-100 flex items-center justify-center opacity-80 hover:opacity-100';
             thumb.onclick = () => selectStageImage(i);
-            thumb.innerHTML = `<img src="${imgUrl}" alt="Thumbnail" class="w-full h-full object-contain" onerror="this.src='assets/SVVAYAM-LOGO-4.png'">`;
+            const isVidThumb = imgUrl.endsWith('.mp4') || imgUrl.endsWith('.mov') || imgUrl.endsWith('.webm');
+            const vidBadge = isVidThumb ? '<span class="absolute top-1 right-1 bg-black/75 text-white text-[8px] font-mono px-1 py-0.5 rounded flex items-center space-x-1"><i class="fa-solid fa-play text-[7px] text-svvayam-yellow"></i><span>VID</span></span>' : '';
+            thumb.innerHTML = `<img src="${imgUrl}" alt="Thumbnail" class="w-full h-full object-contain" onerror="this.src='assets/SVVAYAM-LOGO-4.png'">${vidBadge}`;
             thumbStrip.appendChild(thumb);
           });
         } else {
@@ -1626,10 +1705,30 @@
     function openLightbox(src) {
       const modal = document.getElementById('lightbox-modal');
       const img = document.getElementById('lightbox-img');
-      if (modal && img) {
-        img.src = src;
-        currentLightboxZoom = 1;
-        img.style.transform = 'scale(1)';
+      const video = document.getElementById('lightbox-video');
+      const isVid = src.endsWith('.mp4') || src.endsWith('.mov') || src.endsWith('.webm');
+
+      if (modal) {
+        if (isVid && video) {
+          if (img) img.classList.add('hidden');
+          video.classList.remove('hidden');
+          video.src = src;
+          video.muted = true;
+          if (typeof video.play === 'function') {
+            video.play().catch(() => {});
+          }
+        } else if (img) {
+          if (video) {
+            video.classList.add('hidden');
+            if (typeof video.pause === 'function') {
+              video.pause();
+            }
+          }
+          img.classList.remove('hidden');
+          img.src = src;
+          currentLightboxZoom = 1;
+          img.style.transform = 'scale(1)';
+        }
         modal.classList.remove('hidden');
         modal.classList.add('flex');
       }
@@ -1637,6 +1736,8 @@
 
     function closeLightbox() {
       const modal = document.getElementById('lightbox-modal');
+      const video = document.getElementById('lightbox-video');
+      if (video && typeof video.pause === 'function') video.pause();
       if (modal) {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
