@@ -1381,6 +1381,12 @@
 
           const subtitleDetails = [client.material, client.location].filter(Boolean).join(' • ') || client.type || '';
 
+          // Red comment for projects actively in manufacturing phase
+          const isMfgPhase = (client.id === 'atul-malhotra' || client.id === 'pradeep-reddy' || client.statusCode === 'in_progress_manufacturing');
+          const mfgCommentHtml = isMfgPhase
+            ? '<span class="text-[10px] font-bold text-red-600 tracking-tight block mt-1 flex items-center space-x-1"><span class="w-1.5 h-1.5 rounded-full bg-red-600 inline-block animate-pulse shrink-0"></span><span>In Progress (In Manufacturing Phase)</span></span>'
+            : '';
+
           tileCard.innerHTML = `
             <div>
               <div class="relative rounded-lg overflow-hidden bg-stone-100 aspect-video mb-2.5 flex items-center justify-center">
@@ -1391,6 +1397,7 @@
                 ${greenDotHtml}
               </div>
               <p class="text-[10px] sm:text-[11px] text-svvayam-muted truncate mt-0.5">${subtitleDetails}</p>
+              ${mfgCommentHtml}
             </div>
             <div class="mt-2.5 pt-2 border-t border-svvayam-border/50 flex items-center justify-end">
               <span class="text-[10px] font-bold text-svvayam-charcoal flex items-center space-x-1 group-hover:translate-x-0.5 transition">
@@ -1439,6 +1446,7 @@
               ${badgeHtml}
             </div>
             <h3 class="font-serif font-bold text-sm sm:text-base text-svvayam-charcoal mb-1">${p.name}</h3>
+            ${(p.id === 'atul-malhotra' || p.id === 'pradeep-reddy' || p.statusCode === 'in_progress_manufacturing') ? '<span class="text-[11px] font-bold text-red-600 tracking-tight block mb-1.5 flex items-center space-x-1"><span class="w-1.5 h-1.5 rounded-full bg-red-600 inline-block animate-pulse shrink-0"></span><span>In Progress (In Manufacturing Phase)</span></span>' : ''}
             <p class="text-xs text-svvayam-muted line-clamp-2 leading-relaxed mb-3">${p.desc || p.type || ''}</p>
           </div>
           <div class="pt-3 border-t border-svvayam-border/60 flex items-center justify-between text-[11px] text-svvayam-muted font-medium">
@@ -1500,9 +1508,9 @@
         }
       }
       if (headerStatus) {
-        if (currentProject.statusCode === 'in_progress_manufacturing') {
-          headerStatus.textContent = 'In Progress (Still in Manufacturing Phase)';
-          headerStatus.className = 'text-xs font-bold px-2.5 py-1 rounded-md border bg-amber-50 text-amber-800 border-amber-300';
+        if (currentProject.statusCode === 'in_progress_manufacturing' || currentProject.id === 'atul-malhotra' || currentProject.id === 'pradeep-reddy') {
+          headerStatus.textContent = 'In Progress (In Manufacturing Phase)';
+          headerStatus.className = 'text-xs font-bold px-2.5 py-1 rounded-md border bg-red-50 text-red-700 border-red-200';
         } else if (currentProject.statusCode === 'in_progress') {
           headerStatus.textContent = 'In Progress';
           headerStatus.className = 'text-xs font-bold px-2.5 py-1 rounded-md border bg-blue-50 text-blue-700 border-blue-200';
@@ -1512,7 +1520,7 @@
         }
       }
       if (statusBanner && statusBannerText) {
-        if (currentProject.statusCode === 'in_progress_manufacturing') {
+        if (currentProject.statusCode === 'in_progress_manufacturing' || currentProject.id === 'atul-malhotra' || currentProject.id === 'pradeep-reddy') {
           statusBanner.className = 'mb-4 p-3.5 rounded-xl border text-xs font-medium flex items-center space-x-2.5 bg-amber-50 border-amber-300 text-amber-900 shadow-2xs';
           statusBannerText.innerHTML = '<strong>Project Notice:</strong> This sanctum is actively undergoing workshop crafting & lathe detailing: <em>In Progress (Still in Manufacturing Phase)</em>.';
           statusBanner.classList.remove('hidden');

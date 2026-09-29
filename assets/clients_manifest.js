@@ -321,10 +321,10 @@ window.SVVAYAM_CLIENTS_DATA = [
     "folder": "Mr. Nitesh Panda",
     "sizeLabel": "Compact",
     "size": "6′0″ × 5′0″",
-    "material": "Makrana White Marble",
+    "material": "Teak Wood",
     "location": "Bangalore",
-    "type": "Monolithic Marble Shrine",
-    "desc": "Bespoke Makrana White Marble temple architecture and sanctum design.",
+    "type": "Bespoke Teak Wood Sanctum",
+    "desc": "Bespoke Teak Wood temple architecture and sanctum design.",
     "status": "Completed",
     "statusCode": "completed",
     "hasGreenDot": false,
@@ -1568,8 +1568,8 @@ window.SVVAYAM_CLIENTS_DATA = [
     "location": "Delhi NCR",
     "type": "Architectural Master Sanctum",
     "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
-    "status": "In Progress",
-    "statusCode": "in_progress",
+    "status": "In Progress (Still in Manufacturing Phase)",
+    "statusCode": "in_progress_manufacturing",
     "hasGreenDot": false,
     "heroImg": "assets/clients/Mr. Atul Mehotra/3D MODEL/614a1c00-6e73-49dd-98ff-955533ebbac9.avif",
     "stages": [
@@ -1623,16 +1623,6 @@ window.SVVAYAM_CLIENTS_DATA = [
           "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Video 2026-09-29 at 11.36.55 AM.mp4"
         ],
         "count": 8
-      },
-      {
-        "stage_key": "final",
-        "title": "Final",
-        "dir_name": "FINAL",
-        "images": [
-          "assets/clients/Mr. Atul Mehotra/FINAL/athul final.png",
-          "assets/clients/Mr. Atul Mehotra/FINAL/fINAL.jpeg"
-        ],
-        "count": 2
       }
     ]
   }
