@@ -503,18 +503,21 @@
             <!-- Animated Glowing Vertical Line -->
             <div class="glow-line-y h-full"></div>
             
-            <!-- Row Dimension Labels (Mapped to Physical Sanctum Dimensions) -->
+            <!-- Row Dimension Labels (Explicit Row, Category & Size Range) -->
             <div class="flex flex-col justify-around text-xs text-svvayam-muted font-medium">
               <div>
-                <span class="block font-bold text-svvayam-charcoal">Compact</span>
+                <span class="block font-bold text-svvayam-charcoal text-[11px] sm:text-xs">Row 01</span>
+                <span class="block text-[11px] font-semibold text-svvayam-charcoal">Compact</span>
                 <span class="text-[10px] text-svvayam-muted whitespace-nowrap font-medium">5ft × 7ft</span>
               </div>
               <div>
-                <span class="block font-bold text-svvayam-charcoal">Medium</span>
+                <span class="block font-bold text-svvayam-charcoal text-[11px] sm:text-xs">Row 02</span>
+                <span class="block text-[11px] font-semibold text-svvayam-charcoal">Medium</span>
                 <span class="text-[10px] text-svvayam-muted whitespace-nowrap font-medium">7ft × 10ft</span>
               </div>
               <div>
-                <span class="block font-bold text-svvayam-charcoal">Grand</span>
+                <span class="block font-bold text-svvayam-charcoal text-[11px] sm:text-xs">Row 03</span>
+                <span class="block text-[11px] font-semibold text-svvayam-charcoal">Grand</span>
                 <span class="text-[10px] text-svvayam-muted whitespace-nowrap font-medium">11ft × 15ft+</span>
               </div>
             </div>
@@ -1355,18 +1358,50 @@
 
       const list = window.SVVAYAM_CLIENTS_DATA || defaultClientsData;
 
-      // Exactly 15 projects divided into 3 rows of 5
-      const rows = [
-        ['sujana', 'yuva', 'shenoy', 'nitesh-panda', 'manasa'],
-        ['dnyaneshwar', 'vishnu', 'nagesh', 'pradeep-reddy', 'rahul'],
-        ['umesh-wadayar', 'shyam-chakravarthy', 'arun-pari', 'gayatri-pal', 'atul-malhotra']
+      // Exactly 15 projects divided into 3 rows of 5 with explicit Row Category & Size Range
+      const rowDefinitions = [
+        {
+          num: 'Row 01',
+          category: 'Compact',
+          sizeRange: '5ft × 7ft',
+          clientIds: ['sujana', 'yuva', 'shenoy', 'nitesh-panda', 'manasa']
+        },
+        {
+          num: 'Row 02',
+          category: 'Medium',
+          sizeRange: '7ft × 10ft',
+          clientIds: ['dnyaneshwar', 'vishnu', 'nagesh', 'pradeep-reddy', 'rahul']
+        },
+        {
+          num: 'Row 03',
+          category: 'Grand',
+          sizeRange: '11ft × 15ft+',
+          clientIds: ['umesh-wadayar', 'shyam-chakravarthy', 'arun-pari', 'gayatri-pal', 'atul-malhotra']
+        }
       ];
 
-      rows.forEach((rowClientIds, rIdx) => {
+      rowDefinitions.forEach((rowDef) => {
+        // Row Section Container
+        const rowSection = document.createElement('div');
+        rowSection.className = 'flex flex-col space-y-2.5';
+
+        // Explicit Row Header with Category and Size Range
+        const rowHeader = document.createElement('div');
+        rowHeader.className = 'flex items-center justify-between pb-1 border-b border-svvayam-border/60 text-xs';
+        rowHeader.innerHTML = `
+          <div class="flex items-center space-x-2">
+            <span class="font-bold text-svvayam-charcoal tracking-tight">${rowDef.num} &bull; ${rowDef.category}</span>
+            <span class="text-[10px] font-bold text-svvayam-charcoal bg-svvayam-surface px-2 py-0.5 rounded border border-svvayam-border">${rowDef.sizeRange}</span>
+          </div>
+          <span class="text-[10px] text-svvayam-muted font-medium">5 Sanctum Projects</span>
+        `;
+        rowSection.appendChild(rowHeader);
+
+        // 5 Columns Cards Grid
         const rowDiv = document.createElement('div');
         rowDiv.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3.5 sm:gap-4';
 
-        rowClientIds.forEach(cid => {
+        rowDef.clientIds.forEach(cid => {
           const client = list.find(c => c.id === cid);
           if (!client) return;
 
@@ -1379,7 +1414,8 @@
             ? '<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shrink-0 inline-block animate-pulse ml-1" title="Active Client Project"></span>'
             : '';
 
-          const subtitleDetails = [client.material, client.location].filter(Boolean).join(' • ') || client.type || '';
+          // Display material, physical size dimension, and location for total clarity
+          const subtitleDetails = [client.material, client.size, client.location].filter(Boolean).join(' • ') || client.type || '';
 
           // Red comment for projects actively in manufacturing phase
           const isMfgPhase = (client.id === 'atul-malhotra' || client.id === 'pradeep-reddy' || client.statusCode === 'in_progress_manufacturing');
@@ -1410,7 +1446,8 @@
           rowDiv.appendChild(tileCard);
         });
 
-        container.appendChild(rowDiv);
+        rowSection.appendChild(rowDiv);
+        container.appendChild(rowSection);
       });
     }
 
