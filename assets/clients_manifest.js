@@ -581,21 +581,28 @@ window.SVVAYAM_CLIENTS_DATA = [
         "count": 5
       },
       {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Dnyaneshwar/INSTALLATION/WhatsApp Image 2026-09-28 at 6.07.26 PM.jpeg",
+          "assets/clients/Mr. Dnyaneshwar/INSTALLATION/WhatsApp Image 2026-09-28 at 6.07.27 PM (1).jpeg",
+          "assets/clients/Mr. Dnyaneshwar/INSTALLATION/WhatsApp Image 2026-09-28 at 6.07.27 PM (2).jpeg",
+          "assets/clients/Mr. Dnyaneshwar/INSTALLATION/WhatsApp Image 2026-09-28 at 6.07.27 PM.jpeg",
+          "assets/clients/Mr. Dnyaneshwar/INSTALLATION/WhatsApp Image 2026-09-28 at 6.07.28 PM (1).jpeg",
+          "assets/clients/Mr. Dnyaneshwar/INSTALLATION/WhatsApp Image 2026-09-28 at 6.07.28 PM.jpeg"
+        ],
+        "count": 6
+      },
+      {
         "stage_key": "final",
         "title": "Final",
         "dir_name": "FINAL",
         "images": [
           "assets/clients/Mr. Dnyaneshwar/FINAL/1.avif",
-          "assets/clients/Mr. Dnyaneshwar/FINAL/2.avif",
-          "assets/clients/Mr. Dnyaneshwar/FINAL/Mr Dnyaneswwar FINAL.png",
-          "assets/clients/Mr. Dnyaneshwar/FINAL/WhatsApp Image 2026-09-28 at 6.07.26 PM.jpeg",
-          "assets/clients/Mr. Dnyaneshwar/FINAL/WhatsApp Image 2026-09-28 at 6.07.27 PM (1).jpeg",
-          "assets/clients/Mr. Dnyaneshwar/FINAL/WhatsApp Image 2026-09-28 at 6.07.27 PM (2).jpeg",
-          "assets/clients/Mr. Dnyaneshwar/FINAL/WhatsApp Image 2026-09-28 at 6.07.27 PM.jpeg",
-          "assets/clients/Mr. Dnyaneshwar/FINAL/WhatsApp Image 2026-09-28 at 6.07.28 PM (1).jpeg",
-          "assets/clients/Mr. Dnyaneshwar/FINAL/WhatsApp Image 2026-09-28 at 6.07.28 PM.jpeg"
+          "assets/clients/Mr. Dnyaneshwar/FINAL/2.avif"
         ],
-        "count": 9
+        "count": 2
       }
     ]
   },
