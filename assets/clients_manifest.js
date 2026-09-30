@@ -841,7 +841,7 @@ window.SVVAYAM_CLIENTS_DATA = [
   },
   {
     "id": "pradeep-reddy",
-    "name": "Mr. Pradeep Reddy Mandap",
+    "name": "Mr. Pradeep Sanctum",
     "folder": "Mr. Pradeep Reddy",
     "sizeLabel": "Large",
     "size": "11′0″ × 8′6″",
@@ -1108,7 +1108,7 @@ window.SVVAYAM_CLIENTS_DATA = [
   },
   {
     "id": "umesh-wadayar",
-    "name": "Mr. Umesh Wadayar Temple",
+    "name": "Mr. Umesh Temple",
     "folder": "Mr. Umesh Wadayar",
     "sizeLabel": "Large",
     "size": "11′6″ × 9′0″",
@@ -1219,7 +1219,7 @@ window.SVVAYAM_CLIENTS_DATA = [
   },
   {
     "id": "shyam-chakravarthy",
-    "name": "Mr. Shyam Chakravarthy Temple",
+    "name": "Mr. Shyam Temple",
     "folder": "Mr.Shyam Chakravarthy",
     "sizeLabel": "Large",
     "size": "10′0″ × 8′0″",
@@ -1350,7 +1350,7 @@ window.SVVAYAM_CLIENTS_DATA = [
   },
   {
     "id": "arun-pari",
-    "name": "Dr. Arun Pari Sanctum",
+    "name": "Dr. Arun Sanctum",
     "folder": "Dr. Arun Pari",
     "sizeLabel": "Grand",
     "size": "15′0″ × 12′0″",
@@ -1457,7 +1457,7 @@ window.SVVAYAM_CLIENTS_DATA = [
   },
   {
     "id": "gayatri-pal",
-    "name": "Ms. Gayatri Pal Sanctum",
+    "name": "Ms. Gayatri Sanctum",
     "folder": "Ms.Gayatri Pal",
     "sizeLabel": "Grand",
     "size": "14′6″ × 11′0″",
