@@ -1,7 +1,7 @@
 window.SVVAYAM_CLIENTS_DATA = [
   {
     "id": "sujana",
-    "name": "Ms. Sujana Mandir",
+    "name": "Ms. Sujana Reddy",
     "folder": "Ms. Sujana",
     "sizeLabel": "Compact",
     "size": "5′6″ × 4′6″",
@@ -98,11 +98,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 1
       }
-    ]
+    ],
+    "clientName": "Sujana reddy",
+    "sanctumTitle": "Bespoke Teakwood Mandir"
   },
   {
     "id": "yuva",
-    "name": "Mr. Yuva Temple",
+    "name": "Mr. Yuva Balakumaran",
     "folder": "Mr. Yuva Balakumaran",
     "sizeLabel": "Compact",
     "size": "7′6″ × 6′6″",
@@ -212,11 +214,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 1
       }
-    ]
+    ],
+    "clientName": "Yuva balakumaran",
+    "sanctumTitle": "Teakwood Temple Sanctum"
   },
   {
     "id": "shenoy",
-    "name": "Mr. Shenoy Sanctum",
+    "name": "Mr. T N Shenoy",
     "folder": "Mr. T N Shenoy",
     "sizeLabel": "Compact",
     "size": "6′6″ × 5′6″",
@@ -334,11 +338,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 2
       }
-    ]
+    ],
+    "clientName": "Tn Shenoy",
+    "sanctumTitle": "Heritage Teakwood Sanctum"
   },
   {
     "id": "nitesh-panda",
-    "name": "Mr. Nitesh Temple",
+    "name": "Mr. Nitesh Panda",
     "folder": "Mr. Nitesh Panda",
     "sizeLabel": "Compact",
     "size": "6′0″ × 5′0″",
@@ -436,11 +442,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Nitesh panda",
+    "sanctumTitle": "Bespoke Teak Wood Temple"
   },
   {
     "id": "manasa",
-    "name": "Ms. Manasa Sanctum",
+    "name": "Ms. Manasa Kunchum",
     "folder": "Ms. Manasa Kuncham",
     "sizeLabel": "Compact",
     "size": "6′0″ × 4′0″",
@@ -538,11 +546,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 2
       }
-    ]
+    ],
+    "clientName": "Manasa kunchum",
+    "sanctumTitle": "Teakwood Sanctum Architecture"
   },
   {
     "id": "mala-sharma",
-    "name": "Ms. Mala Sharma Sanctum",
+    "name": "Ms. Mala Sharma",
     "folder": "Ms. Mala Sharma",
     "sizeLabel": "Compact",
     "size": "5′0″ × 4′0″",
@@ -643,11 +653,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Mala Sharma",
+    "sanctumTitle": "Bespoke Teakwood Sanctum"
   },
   {
     "id": "rakesh-reddy",
-    "name": "Mr. Rakesh Reddy Mandir",
+    "name": "Mr. Rakesh Reddy",
     "folder": "Mr. Rakesh Reddy",
     "sizeLabel": "Compact",
     "size": "5′6″ × 4′0″",
@@ -743,11 +755,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 1
       }
-    ]
+    ],
+    "clientName": "Rakesh Reddy",
+    "sanctumTitle": "Teakwood Mandir Architecture"
   },
   {
     "id": "tulasi",
-    "name": "Ms. Tulasi Sanctum",
+    "name": "Ms. Tulasi",
     "folder": "Ms. Tulasi",
     "sizeLabel": "Compact",
     "size": "5′0″ × 4′6″",
@@ -848,11 +862,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Tulasi",
+    "sanctumTitle": "Sacred Teakwood Sanctum"
   },
   {
     "id": "netra",
-    "name": "Ms. Netra Mandir",
+    "name": "Ms. Netra",
     "folder": "Ms. Netra",
     "sizeLabel": "Compact",
     "size": "6′0″ × 5′0″",
@@ -953,11 +969,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Netra",
+    "sanctumTitle": "Teakwood & Gold Foil Mandir"
   },
   {
     "id": "karthik-chennai",
-    "name": "Mr. Karthik Mandir",
+    "name": "Mr. Karthik Chennai",
     "folder": "Mr. Karthik Chennai",
     "sizeLabel": "Compact",
     "size": "6′6″ × 5′0″",
@@ -1058,11 +1076,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Karthik Chennai",
+    "sanctumTitle": "Bespoke Teakwood Mandir"
   },
   {
     "id": "snehadeepti",
-    "name": "Ms. Snehadeepti Mandir",
+    "name": "Ms. Snehadeepti",
     "folder": "Ms. Snehadeepti",
     "sizeLabel": "Compact",
     "size": "5′6″ × 4′6″",
@@ -1163,11 +1183,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Snehadeepti",
+    "sanctumTitle": "Teakwood Mandir Architecture"
   },
   {
     "id": "vinutha-naik",
-    "name": "Ms. Vinutha Naik Mandir",
+    "name": "Ms. Vinutha Naik",
     "folder": "Ms. Vinutha Naik",
     "sizeLabel": "Compact",
     "size": "6′0″ × 4′6″",
@@ -1268,11 +1290,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Vinutha naik",
+    "sanctumTitle": "Teakwood Sanctum Architecture"
   },
   {
     "id": "vasantha-aditya",
-    "name": "Mr. Vasantha Aditya Mandir",
+    "name": "Mr. Vasantha Aditya",
     "folder": "Mr. Vasantha Aditya",
     "sizeLabel": "Compact",
     "size": "6′0″ × 5′0″",
@@ -1373,11 +1397,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Vasantha aditya",
+    "sanctumTitle": "Traditional Teakwood Mandir"
   },
   {
     "id": "yogalakshmi",
-    "name": "Ms. Yogalakshmi Sanctum",
+    "name": "Ms. Yogalakshmi",
     "folder": "Ms. Yogalakshmi",
     "sizeLabel": "Compact",
     "size": "6′0″ × 4′6″",
@@ -1478,11 +1504,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Yogalakshmi",
+    "sanctumTitle": "Bespoke Teakwood Sanctum"
   },
   {
     "id": "dnyaneshwar",
-    "name": "Mr. Dnyaneshwar Temple",
+    "name": "Mr. Dnyaneshwar",
     "folder": "Mr. Dnyaneshwar",
     "sizeLabel": "Medium",
     "size": "8′0″ × 6′6″",
@@ -1585,11 +1613,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 2
       }
-    ]
+    ],
+    "clientName": "Dyaneshwar",
+    "sanctumTitle": "Signature Heritage Temple"
   },
   {
     "id": "vishnu",
-    "name": "Mr. Vishnu Sanctuary",
+    "name": "Mr. Vishnu",
     "folder": "Mr. Vishnu Sanctuary",
     "sizeLabel": "Medium",
     "size": "8′6″ × 7′0″",
@@ -1692,11 +1722,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 2
       }
-    ]
+    ],
+    "clientName": "Vishnu",
+    "sanctumTitle": "Sacred Teak Sanctuary"
   },
   {
     "id": "nagesh",
-    "name": "Mr. Nagesh Temple",
+    "name": "Mr. Nagesh Chidambaramurthy",
     "folder": "Mr. Nagesh",
     "sizeLabel": "Medium",
     "size": "8′6″ × 7′0″",
@@ -1836,11 +1868,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 2
       }
-    ]
+    ],
+    "clientName": "Nagesh chidambaramurthy",
+    "sanctumTitle": "Signature Heritage Temple"
   },
   {
     "id": "pradeep-reddy",
-    "name": "Mr. Pradeep Sanctum",
+    "name": "Mr. Pradeep Reddy",
     "folder": "Mr. Pradeep Reddy",
     "sizeLabel": "Medium",
     "size": "8′0″ × 6′0″",
@@ -1934,11 +1968,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Pradeep Reddy",
+    "sanctumTitle": "Bespoke Teakwood Sanctum"
   },
   {
     "id": "rahul",
-    "name": "Mr. Rahul Sanctum",
+    "name": "Mr. Rahul",
     "folder": "Mr. Rahul Sanctum",
     "sizeLabel": "Medium",
     "size": "10′6″ × 8′0″",
@@ -2114,11 +2150,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 4
       }
-    ]
+    ],
+    "clientName": "Rahul",
+    "sanctumTitle": "Modular Teakwood Sanctum"
   },
   {
     "id": "sonia-reddy",
-    "name": "Ms. Sonia Reddy Sanctum",
+    "name": "Ms. Sonia Reddy",
     "folder": "Ms. Sonia Reddy",
     "sizeLabel": "Medium",
     "size": "8′0″ × 6′0″",
@@ -2219,11 +2257,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Sonia Reddy",
+    "sanctumTitle": "Bespoke Teakwood Sanctum"
   },
   {
     "id": "dr-sanjay",
-    "name": "Dr. Sanjay Temple",
+    "name": "Dr. Sanjay",
     "folder": "Dr. Sanjay",
     "sizeLabel": "Medium",
     "size": "9′0″ × 7′0″",
@@ -2324,11 +2364,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Dr Sanjay",
+    "sanctumTitle": "Bespoke Temple Architecture"
   },
   {
     "id": "satish-pradhan",
-    "name": "Mr. Satish Pradhan Temple",
+    "name": "Mr. Satish Pradhan",
     "folder": "Mr. Satish Pradhan",
     "sizeLabel": "Medium",
     "size": "8′6″ × 6′6″",
@@ -2429,11 +2471,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Satish pradhan",
+    "sanctumTitle": "Teakwood & Brass Temple"
   },
   {
     "id": "rajasekhar-anantapur",
-    "name": "Mr. Rajasekhar Sanctum",
+    "name": "Mr. Rajasekhar Anantapur",
     "folder": "Mr. Rajasekhar Anantapur",
     "sizeLabel": "Medium",
     "size": "9′0″ × 7′6″",
@@ -2535,11 +2579,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 1
       }
-    ]
+    ],
+    "clientName": "Rajasekhar anantapur",
+    "sanctumTitle": "Carved Stone & Teak Sanctum"
   },
   {
     "id": "ravi-reddy",
-    "name": "Mr. Ravi Reddy Temple",
+    "name": "Mr. Ravi Reddy",
     "folder": "Mr. Ravi Reddy",
     "sizeLabel": "Medium",
     "size": "8′0″ × 6′0″",
@@ -2640,11 +2686,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Ravi Reddy",
+    "sanctumTitle": "Traditional Teakwood Temple"
   },
   {
     "id": "rishab-bafna",
-    "name": "Mr. Rishab Bafna Temple",
+    "name": "Mr. Rishab Bafna",
     "folder": "Mr. Rishab Bafna",
     "sizeLabel": "Medium",
     "size": "8′6″ × 6′0″",
@@ -2745,11 +2793,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Rishab bafna",
+    "sanctumTitle": "Teakwood Temple Sanctum"
   },
   {
     "id": "umesh-jethwa",
-    "name": "Mr. Umesh Jethwa Sanctum",
+    "name": "Mr. Umesh Jethwa",
     "folder": "Mr. Umesh Jethwa",
     "sizeLabel": "Medium",
     "size": "9′0″ × 7′0″",
@@ -2850,11 +2900,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Umesh jethwa",
+    "sanctumTitle": "Bespoke Teakwood Sanctum"
   },
   {
     "id": "chetan-thane",
-    "name": "Mr. Chetan Mandir",
+    "name": "Mr. Chetan Thane",
     "folder": "Mr. Chetan Thane",
     "sizeLabel": "Medium",
     "size": "8′0″ × 6′6″",
@@ -2955,11 +3007,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Chetan thane",
+    "sanctumTitle": "Teakwood Mandir Architecture"
   },
   {
     "id": "priyanki-gupta",
-    "name": "Ms. Priyanki Gupta Sanctum",
+    "name": "Ms. Priyanki Gupta",
     "folder": "Ms. Priyanki Gupta",
     "sizeLabel": "Medium",
     "size": "8′6″ × 7′0″",
@@ -3060,11 +3114,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Priyanki Gupta",
+    "sanctumTitle": "Bespoke Teakwood Sanctum"
   },
   {
     "id": "shankarnarayan",
-    "name": "Mr. Shankarnarayan Mandir",
+    "name": "Mr. Shankarnarayan",
     "folder": "Mr. Shankarnarayan",
     "sizeLabel": "Medium",
     "size": "9′0″ × 6′6″",
@@ -3165,11 +3221,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Shankarnarayan",
+    "sanctumTitle": "Traditional Teakwood Mandir"
   },
   {
     "id": "deepthi-kunchey",
-    "name": "Ms. Deepthi Kunchey Sanctum",
+    "name": "Ms. Deepthi Kunchey",
     "folder": "Ms. Deepthi Kunchey",
     "sizeLabel": "Medium",
     "size": "8′6″ × 6′6″",
@@ -3265,11 +3323,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 1
       }
-    ]
+    ],
+    "clientName": "Deepthi kunchey",
+    "sanctumTitle": "Precision CNC Stone & Teak Sanctum"
   },
   {
     "id": "umesh-wadayar",
-    "name": "Mr. Umesh Temple",
+    "name": "Mr. Umesh Wadayar",
     "folder": "Mr. Umesh Wadayar",
     "sizeLabel": "Grand",
     "size": "15′0″ × 12′0″",
@@ -3376,11 +3436,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 2
       }
-    ]
+    ],
+    "clientName": "Umesh wadayar",
+    "sanctumTitle": "Grand Heritage Temple"
   },
   {
     "id": "shyam-chakravarthy",
-    "name": "Mr. Shyam Temple",
+    "name": "Mr. Shyam Chakraborty",
     "folder": "Mr.Shyam Chakravarthy",
     "sizeLabel": "Grand",
     "size": "11′0″ × 8′6″",
@@ -3518,11 +3580,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 1
       }
-    ]
+    ],
+    "clientName": "Shyam chakraborty",
+    "sanctumTitle": "Grand Teakwood Temple"
   },
   {
     "id": "arun-pari",
-    "name": "Dr. Arun Sanctum",
+    "name": "Dr. Arun Pari",
     "folder": "Dr. Arun Pari",
     "sizeLabel": "Grand",
     "size": "15′0″ × 12′0″",
@@ -3629,11 +3693,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 6
       }
-    ]
+    ],
+    "clientName": "Dr Arun pari",
+    "sanctumTitle": "Signature Grand Sanctum"
   },
   {
     "id": "dr-chidananda",
-    "name": "Dr. Chidananda Sanctum",
+    "name": "Dr. Chidananda",
     "folder": "Dr. Chidananda",
     "sizeLabel": "Grand",
     "size": "12′0″ × 9′0″",
@@ -3734,11 +3800,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Dr chidananda",
+    "sanctumTitle": "Grand Teakwood Sanctum"
   },
   {
     "id": "ram-m-chennai",
-    "name": "Mr. Ram M Sanctum",
+    "name": "Mr. Ram M Chennai",
     "folder": "Mr. Ram M Chennai",
     "sizeLabel": "Grand",
     "size": "12′0″ × 10′0″",
@@ -3839,11 +3907,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Ram m chennai",
+    "sanctumTitle": "Grand Stone & Teak Sanctum"
   },
   {
     "id": "rekha-lokheshwar",
-    "name": "Mrs. Rekha Lokeshwar Sanctum",
+    "name": "Mrs. Rekha Lokeshwar",
     "folder": "Mrs. Rekha Lokeshwar",
     "sizeLabel": "Grand",
     "size": "14′0″ × 10′0″",
@@ -3938,11 +4008,13 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 1
       }
-    ]
+    ],
+    "clientName": "Rekha lokheshwar",
+    "sanctumTitle": "Monolithic Carved Stone Sanctum"
   },
   {
     "id": "sudarshan-patil",
-    "name": "Mr. Sudarshan Patil Temple",
+    "name": "Mr. Sudarshan Patil",
     "folder": "Mr. Sudarshan Patil",
     "sizeLabel": "Grand",
     "size": "13′0″ × 9′6″",
@@ -4043,7 +4115,9 @@ window.SVVAYAM_CLIENTS_DATA = [
         ],
         "count": 3
       }
-    ]
+    ],
+    "clientName": "Sudarshan patil",
+    "sanctumTitle": "Grand Teakwood Temple"
   },
   {
     "id": "atul-malhotra",

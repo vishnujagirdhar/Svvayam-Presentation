@@ -48,7 +48,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
 
   <!-- Load Clients Data Manifest -->
-  <script src="assets/clients_manifest.js"></script>
+  <script src="assets/clients_manifest.js?v=20261004"></script>
 
   <style>
     /* Custom Scrollbar */
@@ -350,9 +350,6 @@
           <button id="tab-btn-explorer" onclick="showExplorerView()" class="px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-yellow text-svvayam-charcoal shadow-sm">
             Client Explorer
           </button>
-          <button id="tab-btn-curated" onclick="showCuratedView()" class="px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition">
-            Curated Showcase
-          </button>
           <button id="tab-btn-docs" onclick="showDocumentsView()" class="px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition">
             Presentations & Docs
           </button>
@@ -429,14 +426,11 @@
         Explore authentic architectural execution journeys — from initial site surveys and precision 2D CAD blueprints to photorealistic 3D renders and master guild craftsmanship.
       </p>
 
-      <!-- Primary Action Buttons (2 Clean Center Buttons) -->
-      <div class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center">
-        <button onclick="openClientExplorerFromLanding()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-svvayam-brown hover:bg-svvayam-brownHover text-svvayam-yellow font-bold text-xs uppercase tracking-wider transition shadow-md flex items-center justify-center space-x-2.5 cursor-pointer hover:shadow-lg border border-svvayam-brown">
-          <span>Open Client Explorer</span>
+      <!-- Primary Action Button -->
+      <div class="flex items-center justify-center w-full">
+        <button onclick="openClientExplorerFromLanding()" class="w-full sm:w-auto px-10 py-4 rounded-xl bg-svvayam-brown hover:bg-svvayam-brownHover text-svvayam-yellow font-bold text-xs uppercase tracking-wider transition shadow-md flex items-center justify-center space-x-2.5 cursor-pointer hover:shadow-lg border border-svvayam-brown">
+          <span>Open Client Architecture Explorer</span>
           <i class="fa-solid fa-arrow-right text-xs"></i>
-        </button>
-        <button onclick="showCuratedView()" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/90 backdrop-blur-sm border border-svvayam-border text-svvayam-charcoal font-bold text-xs uppercase tracking-wider hover:border-svvayam-charcoal transition shadow-xs flex items-center justify-center space-x-2 cursor-pointer hover:bg-white hover:shadow-sm">
-          <span>Curated Projects</span>
         </button>
       </div>
 
@@ -459,13 +453,21 @@
   <!-- ========================================================================= -->
   <!-- 2. CLIENT EXPLORER VIEW (4 Rows x 4 Columns = 16 Tabs + Glowing Lines)    -->
   <!-- ========================================================================= -->
-  <section id="view-explorer" class="view-panel hidden flex-col flex-1 p-4 sm:p-8 max-w-7xl mx-auto w-full">
+  <!-- ========================================================================= -->
+  <!-- 2. CLIENT ARCHITECTURE EXPLORER VIEW (All 37 Sacred Sanctum Projects)     -->
+  <!-- ========================================================================= -->
+  <section id="view-explorer" class="view-panel hidden flex-col flex-1 p-4 sm:p-6 lg:p-8 max-w-7xl mx-auto w-full space-y-6">
     
     <!-- Title & Presentation Controls -->
-    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 pb-4 border-b border-svvayam-border/80">
       <div>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-svvayam-charcoal">Client Architecture Explorer</h2>
-        <p class="text-xs text-svvayam-muted mt-1">Browse sacred sanctums mapped across Architectural Detail and Physical Dimensions.</p>
+        <div class="flex items-center space-x-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+          <h2 class="font-serif text-2xl sm:text-3xl font-bold text-svvayam-charcoal tracking-tight">Client Architecture Explorer</h2>
+        </div>
+        <p class="text-xs text-svvayam-muted mt-1">
+          Explore all <strong class="text-svvayam-charcoal font-bold">37 sacred sanctum projects</strong> organized by physical scale, dimensions, and architectural detailing tier.
+        </p>
       </div>
 
       <!-- Quick Scale Filters & Search -->
@@ -479,99 +481,14 @@
 
         <div class="relative">
           <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-[11px] text-svvayam-muted"></i>
-          <input id="explorer-search-input" oninput="handleExplorerSearch(this.value)" type="text" placeholder="Search 37 projects..." class="pl-8 pr-3 py-1.5 rounded-xl border border-svvayam-border text-xs bg-white text-svvayam-charcoal focus:border-svvayam-charcoal focus:outline-none shadow-2xs w-44 sm:w-56 transition">
+          <input id="explorer-search-input" oninput="handleExplorerSearch(this.value)" type="text" placeholder="Search 37 projects..." class="pl-8 pr-3 py-1.5 rounded-xl border border-svvayam-border text-xs bg-white text-svvayam-charcoal focus:border-svvayam-charcoal focus:outline-none shadow-2xs w-48 sm:w-64 transition">
         </div>
       </div>
     </div>
 
-    <!-- MAIN EXPLORER MATRIX CONTAINER -->
-    <div class="bg-white rounded-2xl border border-svvayam-border p-6 shadow-sm flex flex-col space-y-4">
-      
-      <!-- TOP AXIS: DETAIL (Left to Right with Animated Glowing Line) -->
-      <div class="pl-24 sm:pl-28 pr-2">
-        <div class="flex items-center justify-between mb-2 text-xs font-bold uppercase tracking-wider text-svvayam-charcoal">
-          <div class="flex items-center space-x-2">
-            <i class="fa-solid fa-compass-drafting text-svvayam-yellow text-sm"></i>
-            <span>ARCHITECTURAL DETAIL</span>
-          </div>
-          <span class="text-[11px] text-svvayam-muted font-normal">Minimal & Clean &rarr; Elaborate &rarr; Signature Heritage Guild</span>
-        </div>
-        <!-- Animated Glowing Beam Line from Left to Right -->
-        <div class="glow-line-x w-full"></div>
-      </div>
-
-      <!-- MATRIX BODY: SIZE (Top to Bottom Glowing Line on Left) + 4x4 GRID -->
-      <div class="flex gap-4 sm:gap-6 items-stretch pt-2">
-        
-        <!-- LEFT AXIS: SIZE (Follows ALL 4 ROWS from Top to Bottom) -->
-        <div class="w-20 sm:w-24 flex flex-col justify-between py-2 shrink-0 select-none">
-          <div class="flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-svvayam-charcoal mb-1">
-            <i class="fa-solid fa-ruler-combined text-svvayam-yellow text-sm"></i>
-            <span>SIZE</span>
-          </div>
-
-          <!-- Vertical Glowing Beam Line and Row Labels Container -->
-          <div class="flex-1 flex gap-3 items-stretch py-2">
-            <!-- Animated Glowing Vertical Line -->
-            <div class="glow-line-y h-full"></div>
-            
-            <!-- Row Dimension Labels (Explicit Row, Category & Size Range) -->
-            <div class="flex flex-col justify-around text-xs text-svvayam-muted font-medium">
-              <div>
-                <span class="block font-bold text-svvayam-charcoal text-[11px] sm:text-xs">Row 01</span>
-                <span class="block text-[11px] font-semibold text-svvayam-charcoal">Compact</span>
-                <span class="text-[10px] text-svvayam-muted whitespace-nowrap font-medium">5ft × 7ft</span>
-              </div>
-              <div>
-                <span class="block font-bold text-svvayam-charcoal text-[11px] sm:text-xs">Row 02</span>
-                <span class="block text-[11px] font-semibold text-svvayam-charcoal">Medium</span>
-                <span class="text-[10px] text-svvayam-muted whitespace-nowrap font-medium">7ft × 10ft</span>
-              </div>
-              <div>
-                <span class="block font-bold text-svvayam-charcoal text-[11px] sm:text-xs">Row 03</span>
-                <span class="block text-[11px] font-semibold text-svvayam-charcoal">Grand</span>
-                <span class="text-[10px] text-svvayam-muted whitespace-nowrap font-medium">11ft × 15ft+</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="text-[10px] text-svvayam-muted">&darr; Grand Scale</div>
-        </div>
-
-        <!-- 4 ROWS x 4 COLUMNS TILES GRID -->
-        <div id="explorer-tiles-grid" class="flex-1 flex flex-col space-y-4">
-          <!-- Dynamically populated by JS from window.SVVAYAM_CLIENTS_DATA -->
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-  <!-- ========================================================================= -->
-  <!-- 3. CURATED PROJECTS SHOWCASE VIEW                                         -->
-  <!-- ========================================================================= -->
-  <section id="view-curated" class="view-panel hidden flex-col flex-1 p-4 sm:p-8 max-w-7xl mx-auto w-full">
-    
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-      <div>
-        <h2 class="font-serif text-2xl sm:text-3xl font-bold text-svvayam-charcoal">Curated Client Showcase</h2>
-        <p class="text-xs text-svvayam-muted mt-1">Signature commissions featuring complete documentation from drawing signoffs to workshop execution.</p>
-      </div>
-
-      <!-- Filter Pills -->
-      <div class="flex flex-wrap items-center gap-2">
-        <button onclick="filterCurated('All')" class="curated-filter-btn px-4 py-2 rounded-lg bg-svvayam-brown text-svvayam-yellow font-bold text-xs border border-svvayam-brown shadow-sm" data-filter="All">All Projects</button>
-        <button onclick="filterCurated('Wood')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Wood">Teak & Wood</button>
-        <button onclick="filterCurated('Stone')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Stone">Stone & Marble</button>
-        <button onclick="filterCurated('Brass')" class="curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition" data-filter="Brass">Brass & Guild</button>
-      </div>
-    </div>
-
-    <!-- Curated Grid -->
-    <div id="curated-cards-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      <!-- Populated dynamically by JS -->
+    <!-- MAIN FULL-WIDTH TILES CONTAINER -->
+    <div id="explorer-tiles-grid" class="flex flex-col space-y-8 w-full">
+      <!-- Dynamically populated by JS from window.SVVAYAM_CLIENTS_DATA -->
     </div>
 
   </section>
@@ -1193,8 +1110,27 @@
   <!-- JAVASCRIPT CONTROLLER & PRESENTATION ENGINE                               -->
   <!-- ========================================================================= -->
   <script>
-    // Fallback if external manifest is loading
-    const defaultClientsData = (typeof window !== 'undefined' && window.SVVAYAM_CLIENTS_DATA) ? window.SVVAYAM_CLIENTS_DATA : [];
+    // Data Access with Dual Fallback (Global JS array or JSON fetch)
+    function getClientsList() {
+      if (typeof window !== 'undefined' && Array.isArray(window.SVVAYAM_CLIENTS_DATA) && window.SVVAYAM_CLIENTS_DATA.length > 0) {
+        return window.SVVAYAM_CLIENTS_DATA;
+      }
+      return [];
+    }
+
+    async function ensureClientsData() {
+      if (!window.SVVAYAM_CLIENTS_DATA || window.SVVAYAM_CLIENTS_DATA.length === 0) {
+        try {
+          const res = await fetch('assets/clients_manifest.json?v=20261004');
+          if (res.ok) {
+            window.SVVAYAM_CLIENTS_DATA = await res.json();
+            renderExplorerGrid();
+          }
+        } catch (e) {
+          console.warn('Fallback JSON fetch error:', e);
+        }
+      }
+    }
 
     // State Variables
     let navHistory = [];
@@ -1207,8 +1143,8 @@
 
     // ==================== APP INITIALIZATION ====================
     document.addEventListener('DOMContentLoaded', () => {
+      ensureClientsData();
       renderExplorerGrid();
-      renderCuratedCards('All');
       setupKeyboardNavigation();
       pushState({ view: 'landing' });
     });
@@ -1251,7 +1187,6 @@
       const globalNav = document.getElementById('global-nav-bar');
       const breadcrumb = document.getElementById('breadcrumb-current');
       const tabExplorer = document.getElementById('tab-btn-explorer');
-      const tabCurated = document.getElementById('tab-btn-curated');
 
       if (state.view === 'landing') {
         if (globalNav) globalNav.classList.add('hidden');
@@ -1264,10 +1199,9 @@
       else if (state.view === 'explorer') {
         if (globalNav) globalNav.classList.remove('hidden');
         if (tabExplorer) tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-brown text-svvayam-yellow shadow-sm border border-svvayam-brown';
-        if (tabCurated) tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
         const tabDocs = document.getElementById('tab-btn-docs');
         if (tabDocs) tabDocs.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
-        if (breadcrumb) breadcrumb.textContent = 'Client Explorer';
+        if (breadcrumb) breadcrumb.textContent = 'Client Architecture Explorer';
         previousLibraryView = 'explorer';
 
         const expView = document.getElementById('view-explorer');
@@ -1275,28 +1209,13 @@
           expView.classList.remove('hidden');
           expView.classList.add('flex');
         }
-      }
-      else if (state.view === 'curated') {
-        if (globalNav) globalNav.classList.remove('hidden');
-        if (tabCurated) tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-brown text-svvayam-yellow shadow-sm border border-svvayam-brown';
-        if (tabExplorer) tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
-        const tabDocs = document.getElementById('tab-btn-docs');
-        if (tabDocs) tabDocs.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
-        if (breadcrumb) breadcrumb.textContent = 'Curated Projects';
-        previousLibraryView = 'curated';
-
-        const curView = document.getElementById('view-curated');
-        if (curView) {
-          curView.classList.remove('hidden');
-          curView.classList.add('flex');
-        }
+        renderExplorerGrid();
       }
       else if (state.view === 'documents') {
         if (globalNav) globalNav.classList.remove('hidden');
         const tabDocs = document.getElementById('tab-btn-docs');
         if (tabDocs) tabDocs.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-bold transition bg-svvayam-brown text-svvayam-yellow shadow-sm border border-svvayam-brown';
         if (tabExplorer) tabExplorer.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
-        if (tabCurated) tabCurated.className = 'px-3 sm:px-4 py-1.5 rounded-md text-xs font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
         if (breadcrumb) breadcrumb.textContent = 'Presentations & Documents';
         previousLibraryView = 'documents';
 
@@ -1342,22 +1261,16 @@
       }
     }
 
-    function showCuratedView() {
-      if (!navHistory[historyIndex] || navHistory[historyIndex].view !== 'curated') {
-        pushState({ view: 'curated' });
-      }
-    }
-
     function goToPreviousView() {
-      if (previousLibraryView === 'curated') {
-        showCuratedView();
+      if (previousLibraryView === 'documents') {
+        showDocumentsView();
       } else {
         showExplorerView();
       }
     }
 
     function openProjectPresentation(projObj) {
-      const list = window.SVVAYAM_CLIENTS_DATA || defaultClientsData;
+      const list = getClientsList();
       const full = list.find(c => c.id === projObj.id) || projObj;
       pushState({ view: 'project', project: full, stage: 0 });
     }
@@ -1388,7 +1301,7 @@
       if (!container) return;
       container.innerHTML = '';
 
-      const list = window.SVVAYAM_CLIENTS_DATA || defaultClientsData;
+      const list = getClientsList();
 
       // Exactly 37 projects organized across 3 rows with explicit Row Category & Size Range
       const rowDefinitions = [
@@ -1441,10 +1354,12 @@
             if (!currentExplorerSearch) return true;
             const q = currentExplorerSearch;
             const matchName = (client.name || '').toLowerCase().includes(q);
+            const matchClientName = (client.clientName || '').toLowerCase().includes(q);
+            const matchSanctum = (client.sanctumTitle || '').toLowerCase().includes(q);
             const matchLoc = (client.location || '').toLowerCase().includes(q);
             const matchMat = (client.material || '').toLowerCase().includes(q);
             const matchType = (client.type || '').toLowerCase().includes(q);
-            return matchName || matchLoc || matchMat || matchType;
+            return matchName || matchClientName || matchSanctum || matchLoc || matchMat || matchType;
           });
 
         if (rowClients.length === 0 && currentExplorerSearch) {
@@ -1455,59 +1370,80 @@
 
         // Row Section Container
         const rowSection = document.createElement('div');
-        rowSection.className = 'flex flex-col space-y-2.5';
+        rowSection.className = 'bg-white rounded-2xl border border-svvayam-border p-5 sm:p-6 shadow-sm flex flex-col space-y-4';
 
         // Explicit Row Header with Category, Size Range, and Project Count
         const rowHeader = document.createElement('div');
-        rowHeader.className = 'flex items-center justify-between pb-1 border-b border-svvayam-border/60 text-xs';
+        rowHeader.className = 'flex flex-col sm:flex-row sm:items-center justify-between pb-3 border-b border-svvayam-border/60 gap-2';
         rowHeader.innerHTML = `
-          <div class="flex items-center space-x-2">
-            <span class="font-bold text-svvayam-charcoal tracking-tight">${rowDef.num} &bull; ${rowDef.category}</span>
-            <span class="text-[10px] font-bold text-svvayam-charcoal bg-svvayam-surface px-2 py-0.5 rounded border border-svvayam-border">${rowDef.sizeRange}</span>
+          <div class="flex items-center space-x-2.5">
+            <span class="w-8 h-8 rounded-lg bg-svvayam-brown text-svvayam-yellow flex items-center justify-center text-xs shadow-xs font-bold">
+              ${rowDef.num.replace('Row ', 'R')}
+            </span>
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="font-serif font-bold text-base sm:text-lg text-svvayam-charcoal tracking-tight">${rowDef.num} &bull; ${rowDef.category} Sanctums</span>
+                <span class="text-[11px] font-bold text-svvayam-charcoal bg-svvayam-surface px-2.5 py-0.5 rounded-full border border-svvayam-border">${rowDef.sizeRange}</span>
+              </div>
+            </div>
           </div>
-          <span class="text-[10px] text-svvayam-muted font-medium">${rowClients.length} Sanctum Projects</span>
+          <span class="text-xs font-bold text-svvayam-charcoal bg-svvayam-surface px-3 py-1 rounded-lg border border-svvayam-border self-start sm:self-auto shrink-0">
+            ${rowClients.length} Projects Available
+          </span>
         `;
         rowSection.appendChild(rowHeader);
 
-        // Responsive Cards Grid
+        // Responsive Cards Grid (Up to 5 columns on large screens)
         const rowDiv = document.createElement('div');
-        rowDiv.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3.5 sm:gap-4';
+        rowDiv.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4';
 
         rowClients.forEach(client => {
           const tileCard = document.createElement('div');
-          tileCard.className = 'bg-white rounded-xl border border-svvayam-border p-3 shadow-xs project-card-hover cursor-pointer group flex flex-col justify-between';
+          tileCard.className = 'bg-white rounded-xl border border-svvayam-border p-3.5 shadow-2xs project-card-hover cursor-pointer group flex flex-col justify-between hover:border-svvayam-brown/60 transition duration-300';
           tileCard.onclick = () => openProjectPresentation(client);
 
           // Green Dot Indicator
           const greenDotHtml = client.hasGreenDot
-            ? '<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shrink-0 inline-block animate-pulse ml-1" title="Active Client Project"></span>'
+            ? '<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shrink-0 inline-block animate-pulse ml-1" title="Active Signature Commission"></span>'
             : '';
-
-          // Subtitle Details
-          const subtitleDetails = [client.material, client.size, client.location].filter(Boolean).join(' • ') || client.type || '';
 
           // Red comment for projects actively in manufacturing phase
           const isMfgPhase = (client.id === 'atul-malhotra' || client.id === 'pradeep-reddy' || client.statusCode === 'in_progress_manufacturing');
           const mfgCommentHtml = isMfgPhase
-            ? '<span class="text-[10px] font-bold text-red-600 tracking-tight block mt-1 flex items-center space-x-1"><span class="w-1.5 h-1.5 rounded-full bg-red-600 inline-block animate-pulse shrink-0"></span><span>In Progress (In Manufacturing Phase)</span></span>'
+            ? '<div class="text-[10px] font-bold text-red-600 tracking-tight mt-1.5 flex items-center space-x-1 bg-red-50 px-2 py-0.5 rounded border border-red-200"><span class="w-1.5 h-1.5 rounded-full bg-red-600 inline-block animate-pulse shrink-0"></span><span>In Progress (In Manufacturing Phase)</span></div>'
             : '';
 
           tileCard.innerHTML = `
             <div>
-              <div class="relative rounded-lg overflow-hidden bg-stone-100 aspect-video mb-2.5 flex items-center justify-center">
-                <img src="${client.heroImg}" alt="${client.name}" class="card-img w-full h-full object-contain transition duration-300" onerror="this.src='assets/SVVAYAM-LOGO-4.png'">
+              <div class="relative rounded-lg overflow-hidden bg-stone-100 aspect-video mb-2.5 flex items-center justify-center p-1 border border-svvayam-border/40">
+                <img src="${client.heroImg}" alt="${client.name}" class="card-img w-full h-full object-contain transition duration-500 group-hover:scale-105" onerror="this.src='assets/SVVAYAM-LOGO-4.png'">
               </div>
-              <div class="flex items-center space-x-1.5">
-                <h4 class="font-serif font-bold text-xs sm:text-sm text-svvayam-charcoal tracking-tight truncate">${client.name}</h4>
+              
+              <div class="flex items-start justify-between gap-1">
+                <h4 class="font-serif font-bold text-sm text-svvayam-charcoal tracking-tight group-hover:text-svvayam-brown transition leading-snug">
+                  ${client.name}
+                </h4>
                 ${greenDotHtml}
               </div>
-              <p class="text-[10px] sm:text-[11px] text-svvayam-muted truncate mt-0.5">${subtitleDetails}</p>
+
+              <p class="text-[11px] font-medium text-svvayam-brown mt-0.5 leading-snug">
+                ${client.sanctumTitle || client.type || 'Sanctum Architecture'}
+              </p>
+
+              <div class="text-[10px] text-svvayam-muted flex flex-wrap items-center gap-1 mt-2">
+                <span class="bg-svvayam-surface px-1.5 py-0.5 rounded border border-svvayam-border text-svvayam-charcoal font-medium">${client.material || 'Teak Wood'}</span>
+                <span class="bg-svvayam-surface px-1.5 py-0.5 rounded border border-svvayam-border text-svvayam-charcoal font-medium">${client.size || 'Bespoke'}</span>
+                <span class="bg-svvayam-surface px-1.5 py-0.5 rounded border border-svvayam-border text-svvayam-charcoal font-medium">${client.location || 'India'}</span>
+              </div>
+
               ${mfgCommentHtml}
             </div>
-            <div class="mt-2.5 pt-2 border-t border-svvayam-border/50 flex items-center justify-end">
-              <span class="text-[10px] font-bold text-svvayam-charcoal flex items-center space-x-1 group-hover:translate-x-0.5 transition">
+
+            <div class="mt-3 pt-2 border-t border-svvayam-border/50 flex items-center justify-between text-[11px]">
+              <span class="text-[10px] text-svvayam-muted font-medium">8 Stages</span>
+              <span class="font-bold text-svvayam-charcoal flex items-center space-x-1 group-hover:translate-x-0.5 transition text-svvayam-brown">
                 <span>Explore</span>
-                <i class="fa-solid fa-arrow-right text-[9px] text-svvayam-brown"></i>
+                <i class="fa-solid fa-arrow-right text-[9px]"></i>
               </span>
             </div>
           `;
@@ -1521,71 +1457,12 @@
 
       if (!renderedAny && currentExplorerSearch) {
         container.innerHTML = `
-          <div class="py-12 text-center text-svvayam-muted text-xs">
+          <div class="py-12 text-center text-svvayam-muted text-xs bg-white rounded-2xl border border-svvayam-border p-8">
             <i class="fa-solid fa-circle-exclamation text-base mb-2 text-svvayam-yellow block"></i>
             <span>No sanctum projects matching "<strong>${currentExplorerSearch}</strong>".</span>
           </div>
         `;
       }
-    }
-
-    // ==================== RENDER CURATED PROJECTS ====================
-    function renderCuratedCards(filter) {
-      const container = document.getElementById('curated-cards-container');
-      if (!container) return;
-      container.innerHTML = '';
-
-      const list = window.SVVAYAM_CLIENTS_DATA || defaultClientsData;
-
-      const filtered = (filter === 'All')
-        ? list
-        : list.filter(p => {
-            const mat = (p.material || '').toLowerCase();
-            const tag = (p.type || '').toLowerCase();
-            const f = filter.toLowerCase();
-            return mat.includes(f) || tag.includes(f);
-          });
-
-      filtered.forEach((p) => {
-        const card = document.createElement('div');
-        card.className = 'bg-white rounded-2xl border border-svvayam-border p-3.5 shadow-xs project-card-hover cursor-pointer flex flex-col justify-between group';
-        card.onclick = () => openProjectPresentation(p);
-
-        const badgeHtml = p.material ? `<span class="absolute top-2.5 right-2.5 bg-white/90 backdrop-blur-sm text-svvayam-charcoal font-bold text-[10px] uppercase px-2 py-0.5 rounded shadow-xs">${p.material}</span>` : '';
-        const locationText = p.location || p.size || 'Bespoke Atelier';
-
-        card.innerHTML = `
-          <div>
-            <div class="relative rounded-xl overflow-hidden bg-stone-100 aspect-video mb-3 flex items-center justify-center">
-              <img src="${p.heroImg}" alt="${p.name}" class="card-img w-full h-full object-contain transition duration-300" onerror="this.src='assets/SVVAYAM-LOGO-4.png'">
-              ${badgeHtml}
-            </div>
-            <h3 class="font-serif font-bold text-sm sm:text-base text-svvayam-charcoal mb-1">${p.name}</h3>
-            ${(p.id === 'atul-malhotra' || p.id === 'pradeep-reddy' || p.statusCode === 'in_progress_manufacturing') ? '<span class="text-[11px] font-bold text-red-600 tracking-tight block mb-1.5 flex items-center space-x-1"><span class="w-1.5 h-1.5 rounded-full bg-red-600 inline-block animate-pulse shrink-0"></span><span>In Progress (In Manufacturing Phase)</span></span>' : ''}
-            <p class="text-xs text-svvayam-muted line-clamp-2 leading-relaxed mb-3">${p.desc || p.type || ''}</p>
-          </div>
-          <div class="pt-3 border-t border-svvayam-border/60 flex items-center justify-between text-[11px] text-svvayam-muted font-medium">
-            <span>${locationText}</span>
-            <span class="text-svvayam-charcoal font-bold group-hover:translate-x-1 transition transform inline-flex items-center space-x-1">
-              <span>View Journey</span>
-              <i class="fa-solid fa-arrow-right text-[10px]"></i>
-            </span>
-          </div>
-        `;
-
-        container.appendChild(card);
-      });
-    }
-
-    function filterCurated(filter) {
-      document.querySelectorAll('.curated-filter-btn').forEach(btn => {
-        if (btn.getAttribute('data-filter') === filter) {
-          btn.className = 'curated-filter-btn px-4 py-2 rounded-lg bg-svvayam-brown text-svvayam-yellow font-bold text-xs border border-svvayam-brown shadow-sm';
-        } else {
-          btn.className = 'curated-filter-btn px-4 py-2 rounded-lg bg-white text-svvayam-muted font-medium text-xs border border-svvayam-border hover:border-svvayam-charcoal transition';
-        }
-      });
-      renderCuratedCards(filter);
     }
 
     // ==================== DYNAMIC PROJECT PRESENTATION ENGINE ====================
