@@ -462,13 +462,25 @@
   <section id="view-explorer" class="view-panel hidden flex-col flex-1 p-4 sm:p-8 max-w-7xl mx-auto w-full">
     
     <!-- Title & Presentation Controls -->
-    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+    <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
       <div>
         <h2 class="font-serif text-2xl sm:text-3xl font-bold text-svvayam-charcoal">Client Architecture Explorer</h2>
         <p class="text-xs text-svvayam-muted mt-1">Browse sacred sanctums mapped across Architectural Detail and Physical Dimensions.</p>
       </div>
-      <div class="flex items-center space-x-3">
-        <span class="text-xs text-svvayam-muted">Select any project to launch its execution journey</span>
+
+      <!-- Quick Scale Filters & Search -->
+      <div class="flex flex-wrap items-center gap-2.5">
+        <div class="flex items-center space-x-1 bg-svvayam-surface p-1 rounded-xl border border-svvayam-border text-xs">
+          <button onclick="setExplorerFilter('All')" id="exp-filter-all" class="exp-filter-btn px-3 py-1.5 rounded-lg font-bold bg-svvayam-brown text-svvayam-yellow shadow-2xs transition">All (37)</button>
+          <button onclick="setExplorerFilter('Compact')" id="exp-filter-compact" class="exp-filter-btn px-3 py-1.5 rounded-lg font-medium text-svvayam-muted hover:text-svvayam-charcoal transition">Compact (14)</button>
+          <button onclick="setExplorerFilter('Medium')" id="exp-filter-medium" class="exp-filter-btn px-3 py-1.5 rounded-lg font-medium text-svvayam-muted hover:text-svvayam-charcoal transition">Medium (16)</button>
+          <button onclick="setExplorerFilter('Grand')" id="exp-filter-grand" class="exp-filter-btn px-3 py-1.5 rounded-lg font-medium text-svvayam-muted hover:text-svvayam-charcoal transition">Grand (7)</button>
+        </div>
+
+        <div class="relative">
+          <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-[11px] text-svvayam-muted"></i>
+          <input id="explorer-search-input" oninput="handleExplorerSearch(this.value)" type="text" placeholder="Search 37 projects..." class="pl-8 pr-3 py-1.5 rounded-xl border border-svvayam-border text-xs bg-white text-svvayam-charcoal focus:border-svvayam-charcoal focus:outline-none shadow-2xs w-44 sm:w-56 transition">
+        </div>
       </div>
     </div>
 
@@ -1350,7 +1362,27 @@
       pushState({ view: 'project', project: full, stage: 0 });
     }
 
-    // ==================== RENDER EXPLORER (15 PROJECTS: 5 PER ROW x 3 ROWS) ====================
+    // ==================== RENDER EXPLORER (37 PROJECTS ACROSS 3 SCALE ROWS) ====================
+    let currentExplorerCategory = 'All';
+    let currentExplorerSearch = '';
+
+    function setExplorerFilter(category) {
+      currentExplorerCategory = category;
+      document.querySelectorAll('.exp-filter-btn').forEach(btn => {
+        if (btn.id === `exp-filter-${category.toLowerCase()}`) {
+          btn.className = 'exp-filter-btn px-3 py-1.5 rounded-lg font-bold bg-svvayam-brown text-svvayam-yellow shadow-2xs transition';
+        } else {
+          btn.className = 'exp-filter-btn px-3 py-1.5 rounded-lg font-medium text-svvayam-muted hover:text-svvayam-charcoal transition';
+        }
+      });
+      renderExplorerGrid();
+    }
+
+    function handleExplorerSearch(query) {
+      currentExplorerSearch = (query || '').trim().toLowerCase();
+      renderExplorerGrid();
+    }
+
     function renderExplorerGrid() {
       const container = document.getElementById('explorer-tiles-grid');
       if (!container) return;
@@ -1358,34 +1390,74 @@
 
       const list = window.SVVAYAM_CLIENTS_DATA || defaultClientsData;
 
-      // Exactly 15 projects divided into 3 rows of 5 with explicit Row Category & Size Range
+      // Exactly 37 projects organized across 3 rows with explicit Row Category & Size Range
       const rowDefinitions = [
         {
           num: 'Row 01',
           category: 'Compact',
           sizeRange: '5ft × 7ft',
-          clientIds: ['sujana', 'yuva', 'shenoy', 'nitesh-panda', 'manasa']
+          clientIds: [
+            'sujana', 'yuva', 'shenoy', 'nitesh-panda', 'manasa',
+            'mala-sharma', 'rakesh-reddy', 'tulasi', 'netra',
+            'karthik-chennai', 'snehadeepti', 'vinutha-naik',
+            'vasantha-aditya', 'yogalakshmi'
+          ]
         },
         {
           num: 'Row 02',
           category: 'Medium',
           sizeRange: '7ft × 10ft',
-          clientIds: ['dnyaneshwar', 'vishnu', 'nagesh', 'pradeep-reddy', 'rahul']
+          clientIds: [
+            'dnyaneshwar', 'vishnu', 'nagesh', 'pradeep-reddy', 'rahul',
+            'sonia-reddy', 'dr-sanjay', 'satish-pradhan', 'rajasekhar-anantapur',
+            'ravi-reddy', 'rishab-bafna', 'umesh-jethwa', 'chetan-thane',
+            'priyanki-gupta', 'shankarnarayan', 'deepthi-kunchey'
+          ]
         },
         {
           num: 'Row 03',
           category: 'Grand',
           sizeRange: '11ft × 15ft+',
-          clientIds: ['umesh-wadayar', 'shyam-chakravarthy', 'arun-pari', 'gayatri-pal', 'atul-malhotra']
+          clientIds: [
+            'umesh-wadayar', 'shyam-chakravarthy', 'arun-pari', 'dr-chidananda',
+            'ram-m-chennai', 'rekha-lokheshwar', 'sudarshan-patil'
+          ]
         }
       ];
 
+      let renderedAny = false;
+
       rowDefinitions.forEach((rowDef) => {
+        // If category filter is active and doesn't match this row, skip
+        if (currentExplorerCategory !== 'All' && rowDef.category.toLowerCase() !== currentExplorerCategory.toLowerCase()) {
+          return;
+        }
+
+        // Filter clients based on search query
+        const rowClients = rowDef.clientIds
+          .map(cid => list.find(c => c.id === cid))
+          .filter(Boolean)
+          .filter(client => {
+            if (!currentExplorerSearch) return true;
+            const q = currentExplorerSearch;
+            const matchName = (client.name || '').toLowerCase().includes(q);
+            const matchLoc = (client.location || '').toLowerCase().includes(q);
+            const matchMat = (client.material || '').toLowerCase().includes(q);
+            const matchType = (client.type || '').toLowerCase().includes(q);
+            return matchName || matchLoc || matchMat || matchType;
+          });
+
+        if (rowClients.length === 0 && currentExplorerSearch) {
+          return;
+        }
+
+        renderedAny = true;
+
         // Row Section Container
         const rowSection = document.createElement('div');
         rowSection.className = 'flex flex-col space-y-2.5';
 
-        // Explicit Row Header with Category and Size Range
+        // Explicit Row Header with Category, Size Range, and Project Count
         const rowHeader = document.createElement('div');
         rowHeader.className = 'flex items-center justify-between pb-1 border-b border-svvayam-border/60 text-xs';
         rowHeader.innerHTML = `
@@ -1393,28 +1465,25 @@
             <span class="font-bold text-svvayam-charcoal tracking-tight">${rowDef.num} &bull; ${rowDef.category}</span>
             <span class="text-[10px] font-bold text-svvayam-charcoal bg-svvayam-surface px-2 py-0.5 rounded border border-svvayam-border">${rowDef.sizeRange}</span>
           </div>
-          <span class="text-[10px] text-svvayam-muted font-medium">5 Sanctum Projects</span>
+          <span class="text-[10px] text-svvayam-muted font-medium">${rowClients.length} Sanctum Projects</span>
         `;
         rowSection.appendChild(rowHeader);
 
-        // 5 Columns Cards Grid
+        // Responsive Cards Grid
         const rowDiv = document.createElement('div');
         rowDiv.className = 'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-3.5 sm:gap-4';
 
-        rowDef.clientIds.forEach(cid => {
-          const client = list.find(c => c.id === cid);
-          if (!client) return;
-
+        rowClients.forEach(client => {
           const tileCard = document.createElement('div');
           tileCard.className = 'bg-white rounded-xl border border-svvayam-border p-3 shadow-xs project-card-hover cursor-pointer group flex flex-col justify-between';
           tileCard.onclick = () => openProjectPresentation(client);
 
-          // Green Dot Indicator right beside the client name
+          // Green Dot Indicator
           const greenDotHtml = client.hasGreenDot
             ? '<span class="w-2.5 h-2.5 rounded-full bg-emerald-500 shadow-sm shrink-0 inline-block animate-pulse ml-1" title="Active Client Project"></span>'
             : '';
 
-          // Display material, physical size dimension, and location for total clarity
+          // Subtitle Details
           const subtitleDetails = [client.material, client.size, client.location].filter(Boolean).join(' • ') || client.type || '';
 
           // Red comment for projects actively in manufacturing phase
@@ -1449,6 +1518,15 @@
         rowSection.appendChild(rowDiv);
         container.appendChild(rowSection);
       });
+
+      if (!renderedAny && currentExplorerSearch) {
+        container.innerHTML = `
+          <div class="py-12 text-center text-svvayam-muted text-xs">
+            <i class="fa-solid fa-circle-exclamation text-base mb-2 text-svvayam-yellow block"></i>
+            <span>No sanctum projects matching "<strong>${currentExplorerSearch}</strong>".</span>
+          </div>
+        `;
+      }
     }
 
     // ==================== RENDER CURATED PROJECTS ====================

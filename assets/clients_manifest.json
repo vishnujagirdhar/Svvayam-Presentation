@@ -25,6 +25,17 @@
         "count": 2
       },
       {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Ms. Sujana/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Ms. Sujana/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Ms. Sujana/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
         "stage_key": "concept",
         "title": "Concept Sketches & Spatial Layout",
         "dir_name": "CONCEPT",
@@ -52,6 +63,17 @@
           "assets/clients/Ms. Sujana/3D MODEL/3D Design.avif",
           "assets/clients/Ms. Sujana/3D MODEL/5bce84da-9dcd-4101-9897-48ca9e550e0d.avif",
           "assets/clients/Ms. Sujana/3D MODEL/e2c2fa47-30c1-4db7-b99f-a0f0cee5744c.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Sujana/MANUFACTURING/manufacturing_01.avif",
+          "assets/clients/Ms. Sujana/MANUFACTURING/manufacturing_02.avif",
+          "assets/clients/Ms. Sujana/MANUFACTURING/manufacturing_03.avif"
         ],
         "count": 3
       },
@@ -420,12 +442,12 @@
     "id": "manasa",
     "name": "Ms. Manasa Sanctum",
     "folder": "Ms. Manasa Kuncham",
-    "sizeLabel": "Medium",
-    "size": "8′0″ × 6′0″",
-    "material": "Teak & Antique Brass",
-    "location": "Hyderabad",
+    "sizeLabel": "Compact",
+    "size": "6′0″ × 4′0″",
+    "material": "Burma Teak",
+    "location": "Bangalore",
     "type": "Sacred Mandir Suite",
-    "desc": "Bespoke Teak & Antique Brass temple architecture and sanctum design.",
+    "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
     "status": "Completed",
     "statusCode": "completed",
     "hasGreenDot": false,
@@ -476,24 +498,35 @@
       {
         "stage_key": "model_3d",
         "title": "3D Photorealistic Design",
-        "dir_name": "3D DESIGNS",
+        "dir_name": "3D MODEL",
         "images": [
-          "assets/clients/Ms. Manasa Kuncham/3D DESIGNS/3D 1.avif",
-          "assets/clients/Ms. Manasa Kuncham/3D DESIGNS/3D 2.avif"
+          "assets/clients/Ms. Manasa Kuncham/3D MODEL/3d_model_01.avif",
+          "assets/clients/Ms. Manasa Kuncham/3D MODEL/3d_model_02.avif",
+          "assets/clients/Ms. Manasa Kuncham/3D MODEL/3d_model_03.avif"
         ],
-        "count": 2
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Manasa Kuncham/MANUFACTURING/manufacturing_01.jpeg",
+          "assets/clients/Ms. Manasa Kuncham/MANUFACTURING/manufacturing_02.jpeg",
+          "assets/clients/Ms. Manasa Kuncham/MANUFACTURING/manufacturing_03.jpeg"
+        ],
+        "count": 3
       },
       {
         "stage_key": "installation",
         "title": "On-Site Modular Installation",
-        "dir_name": "IINSTALLATION",
+        "dir_name": "INSTALLATION",
         "images": [
-          "assets/clients/Ms. Manasa Kuncham/IINSTALLATION/INSTALLATION 2.avif",
-          "assets/clients/Ms. Manasa Kuncham/IINSTALLATION/INSTALLATION 3.avif",
-          "assets/clients/Ms. Manasa Kuncham/IINSTALLATION/INSTALLATION 4.avif",
-          "assets/clients/Ms. Manasa Kuncham/IINSTALLATION/iNSTALLATION.avif"
+          "assets/clients/Ms. Manasa Kuncham/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Ms. Manasa Kuncham/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Ms. Manasa Kuncham/INSTALLATION/installation_03.jpeg"
         ],
-        "count": 4
+        "count": 3
       },
       {
         "stage_key": "final",
@@ -504,6 +537,946 @@
           "assets/clients/Ms. Manasa Kuncham/FINAL/manasa kuncham FINAL.png"
         ],
         "count": 2
+      }
+    ]
+  },
+  {
+    "id": "mala-sharma",
+    "name": "Ms. Mala Sharma Sanctum",
+    "folder": "Ms. Mala Sharma",
+    "sizeLabel": "Compact",
+    "size": "5′0″ × 4′0″",
+    "material": "Teakwood & Brass",
+    "location": "Bangalore",
+    "type": "Compact Teak Sanctum",
+    "desc": "Bespoke Teakwood & Brass temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Ms. Mala Sharma/OVERVIEW/overview_01.avif",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Ms. Mala Sharma/OVERVIEW/overview_01.avif",
+          "assets/clients/Ms. Mala Sharma/OVERVIEW/overview_02.jpg",
+          "assets/clients/Ms. Mala Sharma/OVERVIEW/overview_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Ms. Mala Sharma/REQUIREMENT/requirement_01.jpg",
+          "assets/clients/Ms. Mala Sharma/REQUIREMENT/requirement_02.jpg",
+          "assets/clients/Ms. Mala Sharma/REQUIREMENT/requirement_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Ms. Mala Sharma/CONCEPT/concept_01.png",
+          "assets/clients/Ms. Mala Sharma/CONCEPT/concept_02.png",
+          "assets/clients/Ms. Mala Sharma/CONCEPT/concept_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Ms. Mala Sharma/2D CAD/2d_cad_01.avif",
+          "assets/clients/Ms. Mala Sharma/2D CAD/2d_cad_02.avif",
+          "assets/clients/Ms. Mala Sharma/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Ms. Mala Sharma/3D MODEL/3d_model_01.avif",
+          "assets/clients/Ms. Mala Sharma/3D MODEL/3d_model_02.avif",
+          "assets/clients/Ms. Mala Sharma/3D MODEL/3d_model_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Mala Sharma/MANUFACTURING/manufacturing_01.jpeg",
+          "assets/clients/Ms. Mala Sharma/MANUFACTURING/manufacturing_02.jpeg",
+          "assets/clients/Ms. Mala Sharma/MANUFACTURING/manufacturing_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Ms. Mala Sharma/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Ms. Mala Sharma/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Ms. Mala Sharma/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Ms. Mala Sharma/FINAL/final_01.avif",
+          "assets/clients/Ms. Mala Sharma/FINAL/final_02.avif",
+          "assets/clients/Ms. Mala Sharma/FINAL/final_03.jpg"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "rakesh-reddy",
+    "name": "Mr. Rakesh Reddy Mandir",
+    "folder": "Mr. Rakesh Reddy",
+    "sizeLabel": "Compact",
+    "size": "5′6″ × 4′0″",
+    "material": "Teakwood",
+    "location": "Hyderabad",
+    "type": "Artisan Crafted Mandir",
+    "desc": "Bespoke Teakwood temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Rakesh Reddy/OVERVIEW/overview.avif",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Rakesh Reddy/OVERVIEW/overview.avif"
+        ],
+        "count": 1
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Rakesh Reddy/REQUIREMENT/WhatsApp Image 2026-01-30 at 2.52.16 PM (1).jpeg",
+          "assets/clients/Mr. Rakesh Reddy/REQUIREMENT/WhatsApp Image 2026-01-30 at 2.52.18 PM (2).jpeg",
+          "assets/clients/Mr. Rakesh Reddy/REQUIREMENT/WhatsApp Image 2026-01-30 at 2.52.18 PM (3).jpeg",
+          "assets/clients/Mr. Rakesh Reddy/REQUIREMENT/WhatsApp Image 2026-01-30 at 2.52.20 PM (1).jpeg",
+          "assets/clients/Mr. Rakesh Reddy/REQUIREMENT/WhatsApp Image 2026-01-30 at 2.52.20 PM (2).jpeg",
+          "assets/clients/Mr. Rakesh Reddy/REQUIREMENT/WhatsApp Image 2026-01-30 at 2.52.20 PM.jpeg"
+        ],
+        "count": 6
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Rakesh Reddy/CONCEPT/f2882a65-73af-49ec-82f1-20e805bf50ba.avif"
+        ],
+        "count": 1
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Rakesh Reddy/2D CAD/4ed1737f-3656-4b10-9261-d83f31fa85e1.avif",
+          "assets/clients/Mr. Rakesh Reddy/2D CAD/aab423a9-9ad4-4356-8875-6059970b670c.avif"
+        ],
+        "count": 2
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Rakesh Reddy/3D MODEL/32bb1d5f-e105-4b4a-894f-5fd9fbd8e08a.avif",
+          "assets/clients/Mr. Rakesh Reddy/3D MODEL/3b2d6164-2b9c-4e7a-be16-5fd5a132fe56.avif"
+        ],
+        "count": 2
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Rakesh Reddy/MANUFACTURING/manufacturing_01.jpeg",
+          "assets/clients/Mr. Rakesh Reddy/MANUFACTURING/manufacturing_02.jpeg",
+          "assets/clients/Mr. Rakesh Reddy/MANUFACTURING/manufacturing_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Rakesh Reddy/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Mr. Rakesh Reddy/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Mr. Rakesh Reddy/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Rakesh Reddy/FINAL/55683008-da89-4edc-bfdc-9375033315de.avif"
+        ],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "tulasi",
+    "name": "Ms. Tulasi Sanctum",
+    "folder": "Ms. Tulasi",
+    "sizeLabel": "Compact",
+    "size": "5′0″ × 4′6″",
+    "material": "Rosewood & Brass",
+    "location": "Bangalore",
+    "type": "Sacred Rosewood Sanctum",
+    "desc": "Bespoke Rosewood & Brass temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Ms. Tulasi/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Ms. Tulasi/OVERVIEW/overview_01.png",
+          "assets/clients/Ms. Tulasi/OVERVIEW/overview_02.png",
+          "assets/clients/Ms. Tulasi/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Ms. Tulasi/REQUIREMENT/requirement_01.jpg",
+          "assets/clients/Ms. Tulasi/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Ms. Tulasi/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Ms. Tulasi/CONCEPT/concept_01.png",
+          "assets/clients/Ms. Tulasi/CONCEPT/concept_02.png",
+          "assets/clients/Ms. Tulasi/CONCEPT/concept_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Ms. Tulasi/2D CAD/2d_cad_01.avif",
+          "assets/clients/Ms. Tulasi/2D CAD/2d_cad_02.avif",
+          "assets/clients/Ms. Tulasi/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Ms. Tulasi/3D MODEL/3d_model_01.avif",
+          "assets/clients/Ms. Tulasi/3D MODEL/3d_model_02.avif",
+          "assets/clients/Ms. Tulasi/3D MODEL/3d_model_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Tulasi/MANUFACTURING/manufacturing_01.jpeg",
+          "assets/clients/Ms. Tulasi/MANUFACTURING/manufacturing_02.jpeg",
+          "assets/clients/Ms. Tulasi/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Ms. Tulasi/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Ms. Tulasi/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Ms. Tulasi/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Ms. Tulasi/FINAL/final_01.avif",
+          "assets/clients/Ms. Tulasi/FINAL/final_02.avif",
+          "assets/clients/Ms. Tulasi/FINAL/final_03.avif"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "netra",
+    "name": "Ms. Netra Mandir",
+    "folder": "Ms. Netra",
+    "sizeLabel": "Compact",
+    "size": "6′0″ × 5′0″",
+    "material": "Teakwood",
+    "location": "Bangalore",
+    "type": "Warm Teak Pooja Mandir",
+    "desc": "Bespoke Teakwood temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Ms. Netra/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Ms. Netra/OVERVIEW/overview_01.png",
+          "assets/clients/Ms. Netra/OVERVIEW/overview_02.png",
+          "assets/clients/Ms. Netra/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Ms. Netra/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Ms. Netra/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Ms. Netra/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Ms. Netra/CONCEPT/concept_01.png",
+          "assets/clients/Ms. Netra/CONCEPT/concept_02.avif",
+          "assets/clients/Ms. Netra/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Ms. Netra/2D CAD/2d_cad_01.avif",
+          "assets/clients/Ms. Netra/2D CAD/2d_cad_02.avif",
+          "assets/clients/Ms. Netra/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Ms. Netra/3D MODEL/3d_model_01.avif",
+          "assets/clients/Ms. Netra/3D MODEL/3d_model_02.avif",
+          "assets/clients/Ms. Netra/3D MODEL/3d_model_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Netra/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Ms. Netra/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Ms. Netra/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Ms. Netra/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Ms. Netra/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Ms. Netra/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Ms. Netra/FINAL/final_01.avif",
+          "assets/clients/Ms. Netra/FINAL/final_02.avif",
+          "assets/clients/Ms. Netra/FINAL/final_03.avif"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "karthik-chennai",
+    "name": "Mr. Karthik Mandir",
+    "folder": "Mr. Karthik Chennai",
+    "sizeLabel": "Compact",
+    "size": "6′6″ × 5′0″",
+    "material": "Carved Teakwood",
+    "location": "Chennai",
+    "type": "Dravidian Teak Sanctum",
+    "desc": "Bespoke Carved Teakwood temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Karthik Chennai/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Karthik Chennai/OVERVIEW/overview_01.png",
+          "assets/clients/Mr. Karthik Chennai/OVERVIEW/overview_02.png",
+          "assets/clients/Mr. Karthik Chennai/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Karthik Chennai/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Mr. Karthik Chennai/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Mr. Karthik Chennai/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Karthik Chennai/CONCEPT/concept_01.avif",
+          "assets/clients/Mr. Karthik Chennai/CONCEPT/concept_02.avif",
+          "assets/clients/Mr. Karthik Chennai/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Karthik Chennai/2D CAD/2d_cad_01.avif",
+          "assets/clients/Mr. Karthik Chennai/2D CAD/2d_cad_02.avif",
+          "assets/clients/Mr. Karthik Chennai/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Karthik Chennai/3D MODEL/3d_model_01.avif",
+          "assets/clients/Mr. Karthik Chennai/3D MODEL/3d_model_02.avif",
+          "assets/clients/Mr. Karthik Chennai/3D MODEL/3d_model_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Karthik Chennai/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Mr. Karthik Chennai/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Mr. Karthik Chennai/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Karthik Chennai/INSTALLATION/installation_01.avif",
+          "assets/clients/Mr. Karthik Chennai/INSTALLATION/installation_02.avif",
+          "assets/clients/Mr. Karthik Chennai/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Karthik Chennai/FINAL/final_01.png",
+          "assets/clients/Mr. Karthik Chennai/FINAL/final_02.avif",
+          "assets/clients/Mr. Karthik Chennai/FINAL/final_03.JPG"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "snehadeepti",
+    "name": "Ms. Snehadeepti Mandir",
+    "folder": "Ms. Snehadeepti",
+    "sizeLabel": "Compact",
+    "size": "5′6″ × 4′6″",
+    "material": "Teakwood",
+    "location": "Hyderabad",
+    "type": "Contemporary Teak Mandir",
+    "desc": "Bespoke Teakwood temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Ms. Snehadeepti/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Ms. Snehadeepti/OVERVIEW/overview_01.png",
+          "assets/clients/Ms. Snehadeepti/OVERVIEW/overview_02.png",
+          "assets/clients/Ms. Snehadeepti/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Ms. Snehadeepti/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Ms. Snehadeepti/REQUIREMENT/requirement_02.avif",
+          "assets/clients/Ms. Snehadeepti/REQUIREMENT/requirement_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Ms. Snehadeepti/CONCEPT/concept_01.avif",
+          "assets/clients/Ms. Snehadeepti/CONCEPT/concept_02.avif",
+          "assets/clients/Ms. Snehadeepti/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Ms. Snehadeepti/2D CAD/2d_cad_01.avif",
+          "assets/clients/Ms. Snehadeepti/2D CAD/2d_cad_02.avif",
+          "assets/clients/Ms. Snehadeepti/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Ms. Snehadeepti/3D MODEL/3d_model_01.avif",
+          "assets/clients/Ms. Snehadeepti/3D MODEL/3d_model_02.jpg",
+          "assets/clients/Ms. Snehadeepti/3D MODEL/3d_model_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Snehadeepti/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Ms. Snehadeepti/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Ms. Snehadeepti/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Ms. Snehadeepti/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Ms. Snehadeepti/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Ms. Snehadeepti/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Ms. Snehadeepti/FINAL/final_01.JPG",
+          "assets/clients/Ms. Snehadeepti/FINAL/final_02.JPG",
+          "assets/clients/Ms. Snehadeepti/FINAL/final_03.JPG"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "vinutha-naik",
+    "name": "Ms. Vinutha Naik Mandir",
+    "folder": "Ms. Vinutha Naik",
+    "sizeLabel": "Compact",
+    "size": "6′0″ × 4′6″",
+    "material": "Teakwood",
+    "location": "Bangalore",
+    "type": "Fluted Pillar Mandir",
+    "desc": "Bespoke Teakwood temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Ms. Vinutha Naik/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Ms. Vinutha Naik/OVERVIEW/overview_01.png",
+          "assets/clients/Ms. Vinutha Naik/OVERVIEW/overview_02.png",
+          "assets/clients/Ms. Vinutha Naik/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Ms. Vinutha Naik/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Ms. Vinutha Naik/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Ms. Vinutha Naik/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Ms. Vinutha Naik/CONCEPT/concept_01.avif",
+          "assets/clients/Ms. Vinutha Naik/CONCEPT/concept_02.avif",
+          "assets/clients/Ms. Vinutha Naik/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Ms. Vinutha Naik/2D CAD/2d_cad_01.avif",
+          "assets/clients/Ms. Vinutha Naik/2D CAD/2d_cad_02.avif",
+          "assets/clients/Ms. Vinutha Naik/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Ms. Vinutha Naik/3D MODEL/3d_model_01.jpg",
+          "assets/clients/Ms. Vinutha Naik/3D MODEL/3d_model_02.jpg",
+          "assets/clients/Ms. Vinutha Naik/3D MODEL/3d_model_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Vinutha Naik/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Ms. Vinutha Naik/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Ms. Vinutha Naik/MANUFACTURING/manufacturing_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Ms. Vinutha Naik/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Ms. Vinutha Naik/INSTALLATION/installation_02.jpg",
+          "assets/clients/Ms. Vinutha Naik/INSTALLATION/installation_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Ms. Vinutha Naik/FINAL/final_01.JPG",
+          "assets/clients/Ms. Vinutha Naik/FINAL/final_02.JPG",
+          "assets/clients/Ms. Vinutha Naik/FINAL/final_03.JPG"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "vasantha-aditya",
+    "name": "Mr. Vasantha Aditya Mandir",
+    "folder": "Mr. Vasantha Aditya",
+    "sizeLabel": "Compact",
+    "size": "6′0″ × 5′0″",
+    "material": "Teakwood & Brass",
+    "location": "Chennai",
+    "type": "Traditional Brass & Wood Mandir",
+    "desc": "Bespoke Teakwood & Brass temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Vasantha Aditya/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Vasantha Aditya/OVERVIEW/overview_01.png",
+          "assets/clients/Mr. Vasantha Aditya/OVERVIEW/overview_02.png",
+          "assets/clients/Mr. Vasantha Aditya/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Vasantha Aditya/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Mr. Vasantha Aditya/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Mr. Vasantha Aditya/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Vasantha Aditya/CONCEPT/concept_01.avif",
+          "assets/clients/Mr. Vasantha Aditya/CONCEPT/concept_02.avif",
+          "assets/clients/Mr. Vasantha Aditya/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Vasantha Aditya/2D CAD/2d_cad_01.avif",
+          "assets/clients/Mr. Vasantha Aditya/2D CAD/2d_cad_02.avif",
+          "assets/clients/Mr. Vasantha Aditya/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Vasantha Aditya/3D MODEL/3d_model_01.avif",
+          "assets/clients/Mr. Vasantha Aditya/3D MODEL/3d_model_02.avif",
+          "assets/clients/Mr. Vasantha Aditya/3D MODEL/3d_model_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Vasantha Aditya/MANUFACTURING/manufacturing_01.jpeg",
+          "assets/clients/Mr. Vasantha Aditya/MANUFACTURING/manufacturing_02.jpeg",
+          "assets/clients/Mr. Vasantha Aditya/MANUFACTURING/manufacturing_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Vasantha Aditya/INSTALLATION/installation_01.jpg",
+          "assets/clients/Mr. Vasantha Aditya/INSTALLATION/installation_02.jpg",
+          "assets/clients/Mr. Vasantha Aditya/INSTALLATION/installation_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Vasantha Aditya/FINAL/final_01.JPG",
+          "assets/clients/Mr. Vasantha Aditya/FINAL/final_02.JPG",
+          "assets/clients/Mr. Vasantha Aditya/FINAL/final_03.JPG"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "yogalakshmi",
+    "name": "Ms. Yogalakshmi Sanctum",
+    "folder": "Ms. Yogalakshmi",
+    "sizeLabel": "Compact",
+    "size": "6′0″ × 4′6″",
+    "material": "Teakwood & Brass",
+    "location": "Chennai",
+    "type": "Graceful Teak Sanctum",
+    "desc": "Bespoke Teakwood & Brass temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Ms. Yogalakshmi/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Ms. Yogalakshmi/OVERVIEW/overview_01.png",
+          "assets/clients/Ms. Yogalakshmi/OVERVIEW/overview_02.png",
+          "assets/clients/Ms. Yogalakshmi/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Ms. Yogalakshmi/REQUIREMENT/requirement_01.avif",
+          "assets/clients/Ms. Yogalakshmi/REQUIREMENT/requirement_02.avif",
+          "assets/clients/Ms. Yogalakshmi/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Ms. Yogalakshmi/CONCEPT/concept_01.avif",
+          "assets/clients/Ms. Yogalakshmi/CONCEPT/concept_02.png",
+          "assets/clients/Ms. Yogalakshmi/CONCEPT/concept_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Ms. Yogalakshmi/2D CAD/2d_cad_01.avif",
+          "assets/clients/Ms. Yogalakshmi/2D CAD/2d_cad_02.avif",
+          "assets/clients/Ms. Yogalakshmi/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Ms. Yogalakshmi/3D MODEL/3d_model_01.avif",
+          "assets/clients/Ms. Yogalakshmi/3D MODEL/3d_model_02.avif",
+          "assets/clients/Ms. Yogalakshmi/3D MODEL/3d_model_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Yogalakshmi/MANUFACTURING/manufacturing_01.jpeg",
+          "assets/clients/Ms. Yogalakshmi/MANUFACTURING/manufacturing_02.jpeg",
+          "assets/clients/Ms. Yogalakshmi/MANUFACTURING/manufacturing_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Ms. Yogalakshmi/INSTALLATION/installation_01.avif",
+          "assets/clients/Ms. Yogalakshmi/INSTALLATION/installation_02.avif",
+          "assets/clients/Ms. Yogalakshmi/INSTALLATION/installation_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Ms. Yogalakshmi/FINAL/final_01.JPG",
+          "assets/clients/Ms. Yogalakshmi/FINAL/final_02.JPG",
+          "assets/clients/Ms. Yogalakshmi/FINAL/final_03.JPG"
+        ],
+        "count": 3
       }
     ]
   },
@@ -569,15 +1542,24 @@
       {
         "stage_key": "model_3d",
         "title": "3D Photorealistic Design",
-        "dir_name": "3D DESIGNS",
+        "dir_name": "3D MODEL",
         "images": [
-          "assets/clients/Mr. Dnyaneshwar/3D DESIGNS/3D 1.avif",
-          "assets/clients/Mr. Dnyaneshwar/3D DESIGNS/3D 2.avif",
-          "assets/clients/Mr. Dnyaneshwar/3D DESIGNS/3D Design (2)3.avif",
-          "assets/clients/Mr. Dnyaneshwar/3D DESIGNS/3D Design (3)4.avif",
-          "assets/clients/Mr. Dnyaneshwar/3D DESIGNS/3D Design 5.avif"
+          "assets/clients/Mr. Dnyaneshwar/3D MODEL/3d_model_01.avif",
+          "assets/clients/Mr. Dnyaneshwar/3D MODEL/3d_model_02.avif",
+          "assets/clients/Mr. Dnyaneshwar/3D MODEL/3d_model_03.avif"
         ],
-        "count": 5
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Dnyaneshwar/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Mr. Dnyaneshwar/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Mr. Dnyaneshwar/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
       },
       {
         "stage_key": "installation",
@@ -628,6 +1610,17 @@
           "assets/clients/Mr. Vishnu Sanctuary/OVERVIEW/2410ceec-bfb1-40c4-809f-87368feb53e8.avif"
         ],
         "count": 1
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Vishnu Sanctuary/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Mr. Vishnu Sanctuary/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Mr. Vishnu Sanctuary/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
       },
       {
         "stage_key": "concept",
@@ -849,12 +1842,12 @@
     "id": "pradeep-reddy",
     "name": "Mr. Pradeep Sanctum",
     "folder": "Mr. Pradeep Reddy",
-    "sizeLabel": "Large",
-    "size": "11′0″ × 8′6″",
-    "material": "Teak & Copper Yantras",
-    "location": "Hyderabad",
+    "sizeLabel": "Medium",
+    "size": "8′0″ × 6′0″",
+    "material": "Burma Teak",
+    "location": "Bangalore",
     "type": "Multi-Tiered Dravidian Mandap",
-    "desc": "Bespoke Teak & Copper Yantras temple architecture and sanctum design.",
+    "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
     "status": "In Progress (Still in Manufacturing Phase)",
     "statusCode": "in_progress_manufacturing",
     "hasGreenDot": false,
@@ -929,6 +1922,17 @@
           "assets/clients/Mr. Pradeep Reddy/MANUFACTURING/WhatsApp Image 2026-01-09 at 6.36.37 PM.jpeg"
         ],
         "count": 7
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Pradeep Reddy/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Mr. Pradeep Reddy/INSTALLATION/installation_02.avif",
+          "assets/clients/Mr. Pradeep Reddy/INSTALLATION/installation_03.avif"
+        ],
+        "count": 3
       }
     ]
   },
@@ -936,7 +1940,7 @@
     "id": "rahul",
     "name": "Mr. Rahul Sanctum",
     "folder": "Mr. Rahul Sanctum",
-    "sizeLabel": "Large",
+    "sizeLabel": "Medium",
     "size": "10′6″ × 8′0″",
     "material": "Teak & Brass Lattice",
     "location": "Mumbai",
@@ -1113,11 +2117,1162 @@
     ]
   },
   {
+    "id": "sonia-reddy",
+    "name": "Ms. Sonia Reddy Sanctum",
+    "folder": "Ms. Sonia Reddy",
+    "sizeLabel": "Medium",
+    "size": "8′0″ × 6′0″",
+    "material": "Burma Teak",
+    "location": "Hyderabad",
+    "type": "Sculpted Teak Sanctum",
+    "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Ms. Sonia Reddy/OVERVIEW/overview_01.avif",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Ms. Sonia Reddy/OVERVIEW/overview_01.avif",
+          "assets/clients/Ms. Sonia Reddy/OVERVIEW/overview_02.avif",
+          "assets/clients/Ms. Sonia Reddy/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Ms. Sonia Reddy/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Ms. Sonia Reddy/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Ms. Sonia Reddy/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Ms. Sonia Reddy/CONCEPT/concept_01.avif",
+          "assets/clients/Ms. Sonia Reddy/CONCEPT/concept_02.avif",
+          "assets/clients/Ms. Sonia Reddy/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Ms. Sonia Reddy/2D CAD/2d_cad_01.png",
+          "assets/clients/Ms. Sonia Reddy/2D CAD/2d_cad_02.png",
+          "assets/clients/Ms. Sonia Reddy/2D CAD/2d_cad_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Ms. Sonia Reddy/3D MODEL/3d_model_01.png",
+          "assets/clients/Ms. Sonia Reddy/3D MODEL/3d_model_02.png",
+          "assets/clients/Ms. Sonia Reddy/3D MODEL/3d_model_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Sonia Reddy/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Ms. Sonia Reddy/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Ms. Sonia Reddy/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Ms. Sonia Reddy/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Ms. Sonia Reddy/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Ms. Sonia Reddy/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Ms. Sonia Reddy/FINAL/final_01.png",
+          "assets/clients/Ms. Sonia Reddy/FINAL/final_02.png",
+          "assets/clients/Ms. Sonia Reddy/FINAL/final_03.png"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "dr-sanjay",
+    "name": "Dr. Sanjay Temple",
+    "folder": "Dr. Sanjay",
+    "sizeLabel": "Medium",
+    "size": "9′0″ × 7′0″",
+    "material": "Carved Teakwood",
+    "location": "Bangalore",
+    "type": "Grand Carved Pooja Temple",
+    "desc": "Bespoke Carved Teakwood temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Dr. Sanjay/OVERVIEW/overview_01.avif",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Dr. Sanjay/OVERVIEW/overview_01.avif",
+          "assets/clients/Dr. Sanjay/OVERVIEW/overview_02.png",
+          "assets/clients/Dr. Sanjay/OVERVIEW/overview_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Dr. Sanjay/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Dr. Sanjay/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Dr. Sanjay/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Dr. Sanjay/CONCEPT/concept_01.avif",
+          "assets/clients/Dr. Sanjay/CONCEPT/concept_02.avif",
+          "assets/clients/Dr. Sanjay/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Dr. Sanjay/2D CAD/2d_cad_01.avif",
+          "assets/clients/Dr. Sanjay/2D CAD/2d_cad_02.avif",
+          "assets/clients/Dr. Sanjay/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Dr. Sanjay/3D MODEL/3d_model_01.png",
+          "assets/clients/Dr. Sanjay/3D MODEL/3d_model_02.png",
+          "assets/clients/Dr. Sanjay/3D MODEL/3d_model_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Dr. Sanjay/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Dr. Sanjay/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Dr. Sanjay/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Dr. Sanjay/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Dr. Sanjay/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Dr. Sanjay/INSTALLATION/installation_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Dr. Sanjay/FINAL/final_01.png",
+          "assets/clients/Dr. Sanjay/FINAL/final_02.jpeg",
+          "assets/clients/Dr. Sanjay/FINAL/final_03.jpeg"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "satish-pradhan",
+    "name": "Mr. Satish Pradhan Temple",
+    "folder": "Mr. Satish Pradhan",
+    "sizeLabel": "Medium",
+    "size": "8′6″ × 6′6″",
+    "material": "Burma Teak",
+    "location": "Mumbai",
+    "type": "Artisan Crafted Temple",
+    "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Satish Pradhan/OVERVIEW/overview_01.avif",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Satish Pradhan/OVERVIEW/overview_01.avif",
+          "assets/clients/Mr. Satish Pradhan/OVERVIEW/overview_02.avif",
+          "assets/clients/Mr. Satish Pradhan/OVERVIEW/overview_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Satish Pradhan/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Mr. Satish Pradhan/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Mr. Satish Pradhan/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Satish Pradhan/CONCEPT/concept_01.avif",
+          "assets/clients/Mr. Satish Pradhan/CONCEPT/concept_02.avif",
+          "assets/clients/Mr. Satish Pradhan/CONCEPT/concept_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Satish Pradhan/2D CAD/2d_cad_01.avif",
+          "assets/clients/Mr. Satish Pradhan/2D CAD/2d_cad_02.avif",
+          "assets/clients/Mr. Satish Pradhan/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Satish Pradhan/3D MODEL/3d_model_01.png",
+          "assets/clients/Mr. Satish Pradhan/3D MODEL/3d_model_02.png",
+          "assets/clients/Mr. Satish Pradhan/3D MODEL/3d_model_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Satish Pradhan/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Mr. Satish Pradhan/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Mr. Satish Pradhan/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Satish Pradhan/INSTALLATION/installation_01.avif",
+          "assets/clients/Mr. Satish Pradhan/INSTALLATION/installation_02.avif",
+          "assets/clients/Mr. Satish Pradhan/INSTALLATION/installation_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Satish Pradhan/FINAL/final_01.jpeg",
+          "assets/clients/Mr. Satish Pradhan/FINAL/final_02.jpeg",
+          "assets/clients/Mr. Satish Pradhan/FINAL/final_03.jpeg"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "rajasekhar-anantapur",
+    "name": "Mr. Rajasekhar Sanctum",
+    "folder": "Mr. Rajasekhar Anantapur",
+    "sizeLabel": "Medium",
+    "size": "9′0″ × 7′6″",
+    "material": "Teakwood & Carved Stone",
+    "location": "Anantapur",
+    "type": "Sacred Architectural Sanctum",
+    "desc": "Bespoke Teakwood & Carved Stone temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Rajasekhar Anantapur/OVERVIEW/01_presentation_cover.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Rajasekhar Anantapur/OVERVIEW/01_presentation_cover.png"
+        ],
+        "count": 1
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Rajasekhar Anantapur/REQUIREMENT/WhatsApp Image 2025-10-31 at 2.46.25 PM (1).jpeg",
+          "assets/clients/Mr. Rajasekhar Anantapur/REQUIREMENT/WhatsApp Image 2025-10-31 at 2.46.25 PM.jpeg",
+          "assets/clients/Mr. Rajasekhar Anantapur/REQUIREMENT/WhatsApp Image 2025-10-31 at 2.46.26 PM.jpeg",
+          "assets/clients/Mr. Rajasekhar Anantapur/REQUIREMENT/WhatsApp Image 2025-11-02 at 1.00.32 PM (1).jpeg",
+          "assets/clients/Mr. Rajasekhar Anantapur/REQUIREMENT/WhatsApp Image 2025-11-02 at 1.00.32 PM.jpeg",
+          "assets/clients/Mr. Rajasekhar Anantapur/REQUIREMENT/WhatsApp Image 2025-11-02 at 1.00.33 PM (2).jpeg",
+          "assets/clients/Mr. Rajasekhar Anantapur/REQUIREMENT/WhatsApp Image 2025-11-02 at 1.00.33 PM (3).jpeg",
+          "assets/clients/Mr. Rajasekhar Anantapur/REQUIREMENT/WhatsApp Image 2025-11-02 at 1.00.33 PM.jpeg",
+          "assets/clients/Mr. Rajasekhar Anantapur/REQUIREMENT/WhatsApp Image 2025-11-02 at 1.00.34 PM.jpeg"
+        ],
+        "count": 9
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Rajasekhar Anantapur/CONCEPT/02_concept_spatial.png",
+          "assets/clients/Mr. Rajasekhar Anantapur/CONCEPT/03_concept_layout.png"
+        ],
+        "count": 2
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Rajasekhar Anantapur/2D CAD/04_working_blueprint_1.png",
+          "assets/clients/Mr. Rajasekhar Anantapur/2D CAD/05_working_blueprint_2.png",
+          "assets/clients/Mr. Rajasekhar Anantapur/2D CAD/06_elevation_section.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Rajasekhar Anantapur/3D MODEL/07_render_3d_front.png",
+          "assets/clients/Mr. Rajasekhar Anantapur/3D MODEL/08_render_3d_perspective.png",
+          "assets/clients/Mr. Rajasekhar Anantapur/3D MODEL/09_render_3d_detail.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Rajasekhar Anantapur/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Mr. Rajasekhar Anantapur/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Mr. Rajasekhar Anantapur/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Rajasekhar Anantapur/INSTALLATION/installation_01.avif",
+          "assets/clients/Mr. Rajasekhar Anantapur/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Mr. Rajasekhar Anantapur/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Rajasekhar Anantapur/FINAL/10_finished_sanctum.png"
+        ],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "ravi-reddy",
+    "name": "Mr. Ravi Reddy Temple",
+    "folder": "Mr. Ravi Reddy",
+    "sizeLabel": "Medium",
+    "size": "8′0″ × 6′0″",
+    "material": "Burma Teak",
+    "location": "Hyderabad",
+    "type": "Intricately Carved Teak Temple",
+    "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Ravi Reddy/OVERVIEW/overview_01.avif",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Ravi Reddy/OVERVIEW/overview_01.avif",
+          "assets/clients/Mr. Ravi Reddy/OVERVIEW/overview_02.png",
+          "assets/clients/Mr. Ravi Reddy/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Ravi Reddy/REQUIREMENT/requirement_01.jpg",
+          "assets/clients/Mr. Ravi Reddy/REQUIREMENT/requirement_02.jpg",
+          "assets/clients/Mr. Ravi Reddy/REQUIREMENT/requirement_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Ravi Reddy/CONCEPT/concept_01.png",
+          "assets/clients/Mr. Ravi Reddy/CONCEPT/concept_02.png",
+          "assets/clients/Mr. Ravi Reddy/CONCEPT/concept_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Ravi Reddy/2D CAD/2d_cad_01.avif",
+          "assets/clients/Mr. Ravi Reddy/2D CAD/2d_cad_02.avif",
+          "assets/clients/Mr. Ravi Reddy/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Ravi Reddy/3D MODEL/3d_model_01.png",
+          "assets/clients/Mr. Ravi Reddy/3D MODEL/3d_model_02.png",
+          "assets/clients/Mr. Ravi Reddy/3D MODEL/3d_model_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Ravi Reddy/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Mr. Ravi Reddy/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Mr. Ravi Reddy/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Ravi Reddy/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Mr. Ravi Reddy/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Mr. Ravi Reddy/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Ravi Reddy/FINAL/final_01.jpeg",
+          "assets/clients/Mr. Ravi Reddy/FINAL/final_02.jpeg",
+          "assets/clients/Mr. Ravi Reddy/FINAL/final_03.jpeg"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "rishab-bafna",
+    "name": "Mr. Rishab Bafna Temple",
+    "folder": "Mr. Rishab Bafna",
+    "sizeLabel": "Medium",
+    "size": "8′6″ × 6′0″",
+    "material": "Makrana White Marble",
+    "location": "Bangalore",
+    "type": "White Marble Sanctum",
+    "desc": "Bespoke Makrana White Marble temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Rishab Bafna/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Rishab Bafna/OVERVIEW/overview_01.png",
+          "assets/clients/Mr. Rishab Bafna/OVERVIEW/overview_02.png",
+          "assets/clients/Mr. Rishab Bafna/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Rishab Bafna/REQUIREMENT/requirement_01.jpg",
+          "assets/clients/Mr. Rishab Bafna/REQUIREMENT/requirement_02.jpg",
+          "assets/clients/Mr. Rishab Bafna/REQUIREMENT/requirement_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Rishab Bafna/CONCEPT/concept_01.png",
+          "assets/clients/Mr. Rishab Bafna/CONCEPT/concept_02.png",
+          "assets/clients/Mr. Rishab Bafna/CONCEPT/concept_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Rishab Bafna/2D CAD/2d_cad_01.avif",
+          "assets/clients/Mr. Rishab Bafna/2D CAD/2d_cad_02.avif",
+          "assets/clients/Mr. Rishab Bafna/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Rishab Bafna/3D MODEL/3d_model_01.png",
+          "assets/clients/Mr. Rishab Bafna/3D MODEL/3d_model_02.png",
+          "assets/clients/Mr. Rishab Bafna/3D MODEL/3d_model_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Rishab Bafna/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Mr. Rishab Bafna/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Mr. Rishab Bafna/MANUFACTURING/manufacturing_03.JPG"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Rishab Bafna/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Mr. Rishab Bafna/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Mr. Rishab Bafna/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Rishab Bafna/FINAL/final_01.jpeg",
+          "assets/clients/Mr. Rishab Bafna/FINAL/final_02.jpeg",
+          "assets/clients/Mr. Rishab Bafna/FINAL/final_03.jpeg"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "umesh-jethwa",
+    "name": "Mr. Umesh Jethwa Sanctum",
+    "folder": "Mr. Umesh Jethwa",
+    "sizeLabel": "Medium",
+    "size": "9′0″ × 7′0″",
+    "material": "Burma Teak",
+    "location": "Mumbai",
+    "type": "Classic Teak Sanctum Suite",
+    "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Umesh Jethwa/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Umesh Jethwa/OVERVIEW/overview_01.png",
+          "assets/clients/Mr. Umesh Jethwa/OVERVIEW/overview_02.png",
+          "assets/clients/Mr. Umesh Jethwa/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Umesh Jethwa/REQUIREMENT/requirement_01.avif",
+          "assets/clients/Mr. Umesh Jethwa/REQUIREMENT/requirement_02.avif",
+          "assets/clients/Mr. Umesh Jethwa/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Umesh Jethwa/CONCEPT/concept_01.avif",
+          "assets/clients/Mr. Umesh Jethwa/CONCEPT/concept_02.avif",
+          "assets/clients/Mr. Umesh Jethwa/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Umesh Jethwa/2D CAD/2d_cad_01.avif",
+          "assets/clients/Mr. Umesh Jethwa/2D CAD/2d_cad_02.avif",
+          "assets/clients/Mr. Umesh Jethwa/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Umesh Jethwa/3D MODEL/3d_model_01.jpeg",
+          "assets/clients/Mr. Umesh Jethwa/3D MODEL/3d_model_02.jpeg",
+          "assets/clients/Mr. Umesh Jethwa/3D MODEL/3d_model_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Umesh Jethwa/MANUFACTURING/manufacturing_01.JPG",
+          "assets/clients/Mr. Umesh Jethwa/MANUFACTURING/manufacturing_02.JPG",
+          "assets/clients/Mr. Umesh Jethwa/MANUFACTURING/manufacturing_03.JPG"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Umesh Jethwa/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Mr. Umesh Jethwa/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Mr. Umesh Jethwa/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Umesh Jethwa/FINAL/final_01.jpeg",
+          "assets/clients/Mr. Umesh Jethwa/FINAL/final_02.jpeg",
+          "assets/clients/Mr. Umesh Jethwa/FINAL/final_03.jpeg"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "chetan-thane",
+    "name": "Mr. Chetan Mandir",
+    "folder": "Mr. Chetan Thane",
+    "sizeLabel": "Medium",
+    "size": "8′0″ × 6′6″",
+    "material": "Teakwood",
+    "location": "Thane",
+    "type": "Contemporary Teak Mandir",
+    "desc": "Bespoke Teakwood temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Chetan Thane/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Chetan Thane/OVERVIEW/overview_01.png",
+          "assets/clients/Mr. Chetan Thane/OVERVIEW/overview_02.png",
+          "assets/clients/Mr. Chetan Thane/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Chetan Thane/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Mr. Chetan Thane/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Mr. Chetan Thane/REQUIREMENT/requirement_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Chetan Thane/CONCEPT/concept_01.avif",
+          "assets/clients/Mr. Chetan Thane/CONCEPT/concept_02.avif",
+          "assets/clients/Mr. Chetan Thane/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Chetan Thane/2D CAD/2d_cad_01.avif",
+          "assets/clients/Mr. Chetan Thane/2D CAD/2d_cad_02.avif",
+          "assets/clients/Mr. Chetan Thane/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Chetan Thane/3D MODEL/3d_model_01.jpeg",
+          "assets/clients/Mr. Chetan Thane/3D MODEL/3d_model_02.jpeg",
+          "assets/clients/Mr. Chetan Thane/3D MODEL/3d_model_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Chetan Thane/MANUFACTURING/manufacturing_01.JPG",
+          "assets/clients/Mr. Chetan Thane/MANUFACTURING/manufacturing_02.JPG",
+          "assets/clients/Mr. Chetan Thane/MANUFACTURING/manufacturing_03.JPG"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Chetan Thane/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Mr. Chetan Thane/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Mr. Chetan Thane/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Chetan Thane/FINAL/final_01.png",
+          "assets/clients/Mr. Chetan Thane/FINAL/final_02.jpeg",
+          "assets/clients/Mr. Chetan Thane/FINAL/final_03.avif"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "priyanki-gupta",
+    "name": "Ms. Priyanki Gupta Sanctum",
+    "folder": "Ms. Priyanki Gupta",
+    "sizeLabel": "Medium",
+    "size": "8′6″ × 7′0″",
+    "material": "White Marble & Teak",
+    "location": "Delhi",
+    "type": "Marble & Teak Master Sanctum",
+    "desc": "Bespoke White Marble & Teak temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Ms. Priyanki Gupta/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Ms. Priyanki Gupta/OVERVIEW/overview_01.png",
+          "assets/clients/Ms. Priyanki Gupta/OVERVIEW/overview_02.png",
+          "assets/clients/Ms. Priyanki Gupta/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Ms. Priyanki Gupta/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Ms. Priyanki Gupta/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Ms. Priyanki Gupta/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Ms. Priyanki Gupta/CONCEPT/concept_01.avif",
+          "assets/clients/Ms. Priyanki Gupta/CONCEPT/concept_02.avif",
+          "assets/clients/Ms. Priyanki Gupta/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Ms. Priyanki Gupta/2D CAD/2d_cad_01.avif",
+          "assets/clients/Ms. Priyanki Gupta/2D CAD/2d_cad_02.avif",
+          "assets/clients/Ms. Priyanki Gupta/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Ms. Priyanki Gupta/3D MODEL/3d_model_01.jpeg",
+          "assets/clients/Ms. Priyanki Gupta/3D MODEL/3d_model_02.jpeg",
+          "assets/clients/Ms. Priyanki Gupta/3D MODEL/3d_model_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Priyanki Gupta/MANUFACTURING/manufacturing_01.JPG",
+          "assets/clients/Ms. Priyanki Gupta/MANUFACTURING/manufacturing_02.JPG",
+          "assets/clients/Ms. Priyanki Gupta/MANUFACTURING/manufacturing_03.JPG"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Ms. Priyanki Gupta/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Ms. Priyanki Gupta/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Ms. Priyanki Gupta/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Ms. Priyanki Gupta/FINAL/final_01.avif",
+          "assets/clients/Ms. Priyanki Gupta/FINAL/final_02.avif",
+          "assets/clients/Ms. Priyanki Gupta/FINAL/final_03.png"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "shankarnarayan",
+    "name": "Mr. Shankarnarayan Mandir",
+    "folder": "Mr. Shankarnarayan",
+    "sizeLabel": "Medium",
+    "size": "9′0″ × 6′6″",
+    "material": "Carved Teakwood",
+    "location": "Bangalore",
+    "type": "Heritage Teak Sanctum",
+    "desc": "Bespoke Carved Teakwood temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Shankarnarayan/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Shankarnarayan/OVERVIEW/overview_01.png",
+          "assets/clients/Mr. Shankarnarayan/OVERVIEW/overview_02.png",
+          "assets/clients/Mr. Shankarnarayan/OVERVIEW/overview_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Shankarnarayan/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Mr. Shankarnarayan/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Mr. Shankarnarayan/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Shankarnarayan/CONCEPT/concept_01.avif",
+          "assets/clients/Mr. Shankarnarayan/CONCEPT/concept_02.avif",
+          "assets/clients/Mr. Shankarnarayan/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Shankarnarayan/2D CAD/2d_cad_01.avif",
+          "assets/clients/Mr. Shankarnarayan/2D CAD/2d_cad_02.avif",
+          "assets/clients/Mr. Shankarnarayan/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Shankarnarayan/3D MODEL/3d_model_01.jpeg",
+          "assets/clients/Mr. Shankarnarayan/3D MODEL/3d_model_02.jpeg",
+          "assets/clients/Mr. Shankarnarayan/3D MODEL/3d_model_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Shankarnarayan/MANUFACTURING/manufacturing_01.JPG",
+          "assets/clients/Mr. Shankarnarayan/MANUFACTURING/manufacturing_02.JPG",
+          "assets/clients/Mr. Shankarnarayan/MANUFACTURING/manufacturing_03.JPG"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Shankarnarayan/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Mr. Shankarnarayan/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Mr. Shankarnarayan/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Shankarnarayan/FINAL/final_01.png",
+          "assets/clients/Mr. Shankarnarayan/FINAL/final_02.avif",
+          "assets/clients/Mr. Shankarnarayan/FINAL/final_03.png"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "deepthi-kunchey",
+    "name": "Ms. Deepthi Kunchey Sanctum",
+    "folder": "Ms. Deepthi Kunchey",
+    "sizeLabel": "Medium",
+    "size": "8′6″ × 6′6″",
+    "material": "Teakwood & Stone",
+    "location": "Bangalore",
+    "type": "Bespoke Teak & Stone Sanctum",
+    "desc": "Bespoke Teakwood & Stone temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Ms. Deepthi Kunchey/OVERVIEW/01_deepthi_elevation.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Ms. Deepthi Kunchey/OVERVIEW/01_deepthi_elevation.png"
+        ],
+        "count": 1
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Ms. Deepthi Kunchey/REQUIREMENT/WhatsApp Image 2026-02-01 at 2.19.23 PM.jpeg",
+          "assets/clients/Ms. Deepthi Kunchey/REQUIREMENT/WhatsApp Image 2026-02-01 at 5.56.59 PM.jpeg",
+          "assets/clients/Ms. Deepthi Kunchey/REQUIREMENT/WhatsApp Image 2026-02-08 at 10.44.10 AM (1).jpeg",
+          "assets/clients/Ms. Deepthi Kunchey/REQUIREMENT/WhatsApp Image 2026-02-08 at 10.44.10 AM (2).jpeg",
+          "assets/clients/Ms. Deepthi Kunchey/REQUIREMENT/WhatsApp Image 2026-02-08 at 10.44.10 AM.jpeg"
+        ],
+        "count": 5
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Ms. Deepthi Kunchey/CONCEPT/concept_01.avif",
+          "assets/clients/Ms. Deepthi Kunchey/CONCEPT/concept_02.avif",
+          "assets/clients/Ms. Deepthi Kunchey/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Ms. Deepthi Kunchey/2D CAD/02_dimensions_plan.png",
+          "assets/clients/Ms. Deepthi Kunchey/2D CAD/03_section_drawing.png"
+        ],
+        "count": 2
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Ms. Deepthi Kunchey/3D MODEL/04_mandir_perspective.png"
+        ],
+        "count": 1
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Ms. Deepthi Kunchey/MANUFACTURING/manufacturing_01.JPG",
+          "assets/clients/Ms. Deepthi Kunchey/MANUFACTURING/manufacturing_02.JPG",
+          "assets/clients/Ms. Deepthi Kunchey/MANUFACTURING/manufacturing_03.JPG"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Ms. Deepthi Kunchey/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Ms. Deepthi Kunchey/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Ms. Deepthi Kunchey/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Ms. Deepthi Kunchey/FINAL/05_sanctum_final.png"
+        ],
+        "count": 1
+      }
+    ]
+  },
+  {
     "id": "umesh-wadayar",
     "name": "Mr. Umesh Temple",
     "folder": "Mr. Umesh Wadayar",
-    "sizeLabel": "Large",
-    "size": "11′6″ × 9′0″",
+    "sizeLabel": "Grand",
+    "size": "15′0″ × 12′0″",
     "material": "Teakwood & Rosewood",
     "location": "Hubli",
     "type": "Monolith Teak Sanctum",
@@ -1227,11 +3382,11 @@
     "id": "shyam-chakravarthy",
     "name": "Mr. Shyam Temple",
     "folder": "Mr.Shyam Chakravarthy",
-    "sizeLabel": "Large",
-    "size": "10′0″ × 8′0″",
+    "sizeLabel": "Grand",
+    "size": "11′0″ × 8′6″",
     "material": "Signature Teak",
     "location": "Hyderabad",
-    "type": "Artisan Crafted Temple",
+    "type": "Grand Artisan Temple",
     "desc": "Bespoke Signature Teak temple architecture and sanctum design.",
     "status": "Completed",
     "statusCode": "completed",
@@ -1324,6 +3479,17 @@
           "assets/clients/Mr.Shyam Chakravarthy/3d Model/73a0313a-877f-4f4c-9b50-2e25a96984fc.avif"
         ],
         "count": 2
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr.Shyam Chakravarthy/MANUFACTURING/manufacturing_01.JPG",
+          "assets/clients/Mr.Shyam Chakravarthy/MANUFACTURING/manufacturing_02.JPG",
+          "assets/clients/Mr.Shyam Chakravarthy/MANUFACTURING/manufacturing_03.JPG"
+        ],
+        "count": 3
       },
       {
         "stage_key": "installation",
@@ -1454,10 +3620,496 @@
         "title": "Final",
         "dir_name": "FINAL",
         "images": [
+          "assets/clients/Dr. Arun Pari/FINAL/18.avif",
+          "assets/clients/Dr. Arun Pari/FINAL/19.avif",
+          "assets/clients/Dr. Arun Pari/FINAL/20.avif",
+          "assets/clients/Dr. Arun Pari/FINAL/Final.avif",
           "assets/clients/Dr. Arun Pari/FINAL/arun pari 1.png",
           "assets/clients/Dr. Arun Pari/FINAL/arun pari 2.png"
         ],
+        "count": 6
+      }
+    ]
+  },
+  {
+    "id": "dr-chidananda",
+    "name": "Dr. Chidananda Sanctum",
+    "folder": "Dr. Chidananda",
+    "sizeLabel": "Grand",
+    "size": "12′0″ × 9′0″",
+    "material": "Hand-Carved Teak & Stone",
+    "location": "Mysore",
+    "type": "Monumental Heritage Sanctum",
+    "desc": "Bespoke Hand-Carved Teak & Stone temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Dr. Chidananda/OVERVIEW/overview_01.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Dr. Chidananda/OVERVIEW/overview_01.png",
+          "assets/clients/Dr. Chidananda/OVERVIEW/overview_02.avif",
+          "assets/clients/Dr. Chidananda/OVERVIEW/overview_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Dr. Chidananda/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Dr. Chidananda/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Dr. Chidananda/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Dr. Chidananda/CONCEPT/concept_01.png",
+          "assets/clients/Dr. Chidananda/CONCEPT/concept_02.avif",
+          "assets/clients/Dr. Chidananda/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Dr. Chidananda/2D CAD/2d_cad_01.avif",
+          "assets/clients/Dr. Chidananda/2D CAD/2d_cad_02.avif",
+          "assets/clients/Dr. Chidananda/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Dr. Chidananda/3D MODEL/3d_model_01.avif",
+          "assets/clients/Dr. Chidananda/3D MODEL/3d_model_02.avif",
+          "assets/clients/Dr. Chidananda/3D MODEL/3d_model_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Dr. Chidananda/MANUFACTURING/manufacturing_01.JPG",
+          "assets/clients/Dr. Chidananda/MANUFACTURING/manufacturing_02.JPG",
+          "assets/clients/Dr. Chidananda/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Dr. Chidananda/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Dr. Chidananda/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Dr. Chidananda/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Dr. Chidananda/FINAL/final_01.avif",
+          "assets/clients/Dr. Chidananda/FINAL/final_02.avif",
+          "assets/clients/Dr. Chidananda/FINAL/final_03.avif"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "ram-m-chennai",
+    "name": "Mr. Ram M Sanctum",
+    "folder": "Mr. Ram M Chennai",
+    "sizeLabel": "Grand",
+    "size": "12′0″ × 10′0″",
+    "material": "Dravidian Teakwood",
+    "location": "Chennai",
+    "type": "Grand Dravidian Sanctum",
+    "desc": "Bespoke Dravidian Teakwood temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Ram M Chennai/OVERVIEW/overview_01.avif",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Ram M Chennai/OVERVIEW/overview_01.avif",
+          "assets/clients/Mr. Ram M Chennai/OVERVIEW/overview_02.png",
+          "assets/clients/Mr. Ram M Chennai/OVERVIEW/overview_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Ram M Chennai/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Mr. Ram M Chennai/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Mr. Ram M Chennai/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Ram M Chennai/CONCEPT/concept_01.avif",
+          "assets/clients/Mr. Ram M Chennai/CONCEPT/concept_02.avif",
+          "assets/clients/Mr. Ram M Chennai/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Ram M Chennai/2D CAD/2d_cad_01.avif",
+          "assets/clients/Mr. Ram M Chennai/2D CAD/2d_cad_02.avif",
+          "assets/clients/Mr. Ram M Chennai/2D CAD/2d_cad_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Ram M Chennai/3D MODEL/3d_model_01.avif",
+          "assets/clients/Mr. Ram M Chennai/3D MODEL/3d_model_02.avif",
+          "assets/clients/Mr. Ram M Chennai/3D MODEL/3d_model_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Ram M Chennai/MANUFACTURING/manufacturing_01.avif",
+          "assets/clients/Mr. Ram M Chennai/MANUFACTURING/manufacturing_02.avif",
+          "assets/clients/Mr. Ram M Chennai/MANUFACTURING/manufacturing_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Ram M Chennai/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Mr. Ram M Chennai/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Mr. Ram M Chennai/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Ram M Chennai/FINAL/final_01.avif",
+          "assets/clients/Mr. Ram M Chennai/FINAL/final_02.avif",
+          "assets/clients/Mr. Ram M Chennai/FINAL/final_03.avif"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "rekha-lokheshwar",
+    "name": "Mrs. Rekha Lokeshwar Sanctum",
+    "folder": "Mrs. Rekha Lokeshwar",
+    "sizeLabel": "Grand",
+    "size": "14′0″ × 10′0″",
+    "material": "Carved Stone & Granite",
+    "location": "Bangalore",
+    "type": "Monumental Carved Stone Mandir",
+    "desc": "Bespoke Carved Stone & Granite temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mrs. Rekha Lokeshwar/OVERVIEW/01_stone_overview.png",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mrs. Rekha Lokeshwar/OVERVIEW/01_stone_overview.png"
+        ],
+        "count": 1
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mrs. Rekha Lokeshwar/REQUIREMENT/WhatsApp Image 2025-12-21 at 12.15.55 PM.jpeg",
+          "assets/clients/Mrs. Rekha Lokeshwar/REQUIREMENT/WhatsApp Image 2025-12-21 at 12.15.56 PM.jpeg",
+          "assets/clients/Mrs. Rekha Lokeshwar/REQUIREMENT/WhatsApp Image 2025-12-21 at 12.17.37 PM.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mrs. Rekha Lokeshwar/CONCEPT/concept_01.avif",
+          "assets/clients/Mrs. Rekha Lokeshwar/CONCEPT/concept_02.avif",
+          "assets/clients/Mrs. Rekha Lokeshwar/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mrs. Rekha Lokeshwar/2D CAD/02_stone_elevation.png",
+          "assets/clients/Mrs. Rekha Lokeshwar/2D CAD/03_stone_plan.png",
+          "assets/clients/Mrs. Rekha Lokeshwar/2D CAD/04_carving_blueprint.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mrs. Rekha Lokeshwar/3D MODEL/05_stone_3d_layout.png"
+        ],
+        "count": 1
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mrs. Rekha Lokeshwar/MANUFACTURING/manufacturing_01.avif",
+          "assets/clients/Mrs. Rekha Lokeshwar/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Mrs. Rekha Lokeshwar/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mrs. Rekha Lokeshwar/INSTALLATION/installation_01.avif",
+          "assets/clients/Mrs. Rekha Lokeshwar/INSTALLATION/installation_02.avif",
+          "assets/clients/Mrs. Rekha Lokeshwar/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mrs. Rekha Lokeshwar/FINAL/06_stone_mandir_final.png"
+        ],
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "sudarshan-patil",
+    "name": "Mr. Sudarshan Patil Temple",
+    "folder": "Mr. Sudarshan Patil",
+    "sizeLabel": "Grand",
+    "size": "13′0″ × 9′6″",
+    "material": "Burma Teak",
+    "location": "Belgaum",
+    "type": "Signature Heritage Mandir",
+    "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
+    "status": "Completed",
+    "statusCode": "completed",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Sudarshan Patil/OVERVIEW/overview_01.avif",
+    "stages": [
+      {
+        "stage_key": "overview",
+        "title": "Project Overview",
+        "dir_name": "OVERVIEW",
+        "images": [
+          "assets/clients/Mr. Sudarshan Patil/OVERVIEW/overview_01.avif",
+          "assets/clients/Mr. Sudarshan Patil/OVERVIEW/overview_02.png",
+          "assets/clients/Mr. Sudarshan Patil/OVERVIEW/overview_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "requirements",
+        "title": "Client Requirements & Site Survey",
+        "dir_name": "REQUIREMENT",
+        "images": [
+          "assets/clients/Mr. Sudarshan Patil/REQUIREMENT/requirement_01.jpeg",
+          "assets/clients/Mr. Sudarshan Patil/REQUIREMENT/requirement_02.jpeg",
+          "assets/clients/Mr. Sudarshan Patil/REQUIREMENT/requirement_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Sudarshan Patil/CONCEPT/concept_01.avif",
+          "assets/clients/Mr. Sudarshan Patil/CONCEPT/concept_02.avif",
+          "assets/clients/Mr. Sudarshan Patil/CONCEPT/concept_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Sudarshan Patil/2D CAD/2d_cad_01.avif",
+          "assets/clients/Mr. Sudarshan Patil/2D CAD/2d_cad_02.avif",
+          "assets/clients/Mr. Sudarshan Patil/2D CAD/2d_cad_03.png"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Sudarshan Patil/3D MODEL/3d_model_01.avif",
+          "assets/clients/Mr. Sudarshan Patil/3D MODEL/3d_model_02.avif",
+          "assets/clients/Mr. Sudarshan Patil/3D MODEL/3d_model_03.avif"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Sudarshan Patil/MANUFACTURING/manufacturing_01.jpg",
+          "assets/clients/Mr. Sudarshan Patil/MANUFACTURING/manufacturing_02.jpg",
+          "assets/clients/Mr. Sudarshan Patil/MANUFACTURING/manufacturing_03.jpg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "installation",
+        "title": "On-Site Modular Installation",
+        "dir_name": "INSTALLATION",
+        "images": [
+          "assets/clients/Mr. Sudarshan Patil/INSTALLATION/installation_01.jpeg",
+          "assets/clients/Mr. Sudarshan Patil/INSTALLATION/installation_02.jpeg",
+          "assets/clients/Mr. Sudarshan Patil/INSTALLATION/installation_03.jpeg"
+        ],
+        "count": 3
+      },
+      {
+        "stage_key": "final",
+        "title": "Final",
+        "dir_name": "FINAL",
+        "images": [
+          "assets/clients/Mr. Sudarshan Patil/FINAL/final_01.avif",
+          "assets/clients/Mr. Sudarshan Patil/FINAL/final_02.JPG",
+          "assets/clients/Mr. Sudarshan Patil/FINAL/final_03.JPG"
+        ],
+        "count": 3
+      }
+    ]
+  },
+  {
+    "id": "atul-malhotra",
+    "name": "Mr. Athul Sanctum",
+    "folder": "Mr. Atul Mehotra",
+    "sizeLabel": "Grand",
+    "size": "14′0″ × 10′0″",
+    "material": "Burma Teak",
+    "location": "Delhi NCR",
+    "type": "Architectural Master Sanctum",
+    "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
+    "status": "In Progress (Still in Manufacturing Phase)",
+    "statusCode": "in_progress_manufacturing",
+    "hasGreenDot": false,
+    "heroImg": "assets/clients/Mr. Atul Mehotra/3D MODEL/614a1c00-6e73-49dd-98ff-955533ebbac9.avif",
+    "stages": [
+      {
+        "stage_key": "concept",
+        "title": "Concept Sketches & Spatial Layout",
+        "dir_name": "CONCEPT",
+        "images": [
+          "assets/clients/Mr. Atul Mehotra/CONCEPT/3266c7d7-11f8-454e-8ce7-393015750330.avif"
+        ],
+        "count": 1
+      },
+      {
+        "stage_key": "cad_2d",
+        "title": "2D CAD Working Blueprints",
+        "dir_name": "2D CAD",
+        "images": [
+          "assets/clients/Mr. Atul Mehotra/2D CAD/48e8680f-9b24-4fe4-9f2f-1344cf8dd8a3.avif",
+          "assets/clients/Mr. Atul Mehotra/2D CAD/751784cb-c3fb-42b0-9ffe-8c3e6c1d9128.avif"
+        ],
         "count": 2
+      },
+      {
+        "stage_key": "model_3d",
+        "title": "3D Photorealistic Design",
+        "dir_name": "3D MODEL",
+        "images": [
+          "assets/clients/Mr. Atul Mehotra/3D MODEL/614a1c00-6e73-49dd-98ff-955533ebbac9.avif",
+          "assets/clients/Mr. Atul Mehotra/3D MODEL/OverView.avif",
+          "assets/clients/Mr. Atul Mehotra/3D MODEL/Picture2.avif",
+          "assets/clients/Mr. Atul Mehotra/3D MODEL/Picture3.avif",
+          "assets/clients/Mr. Atul Mehotra/3D MODEL/Picture5.avif",
+          "assets/clients/Mr. Atul Mehotra/3D MODEL/Picture7.avif",
+          "assets/clients/Mr. Atul Mehotra/3D MODEL/Picture9.avif",
+          "assets/clients/Mr. Atul Mehotra/3D MODEL/d2a95f2a-49da-4dba-b7eb-13eefe76d2cb.avif"
+        ],
+        "count": 8
+      },
+      {
+        "stage_key": "manufacturing",
+        "title": "Manufacturing & Workshop Execution",
+        "dir_name": "MANUFACTURING",
+        "images": [
+          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.55 AM (1).jpeg",
+          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.55 AM.jpeg",
+          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.56 AM (1).jpeg",
+          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.56 AM.jpeg",
+          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.57 AM (1).jpeg",
+          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.57 AM.jpeg",
+          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Video 2026-09-29 at 11.36.54 AM.mp4",
+          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Video 2026-09-29 at 11.36.55 AM.mp4"
+        ],
+        "count": 8
       }
     ]
   },
@@ -1561,74 +4213,6 @@
           "assets/clients/Ms.Gayatri Pal/Final/DSC06971.JPG"
         ],
         "count": 13
-      }
-    ]
-  },
-  {
-    "id": "atul-malhotra",
-    "name": "Mr. Athul Sanctum",
-    "folder": "Mr. Atul Mehotra",
-    "sizeLabel": "Grand",
-    "size": "14′0″ × 10′0″",
-    "material": "Burma Teak",
-    "location": "Delhi NCR",
-    "type": "Architectural Master Sanctum",
-    "desc": "Bespoke Burma Teak temple architecture and sanctum design.",
-    "status": "In Progress (Still in Manufacturing Phase)",
-    "statusCode": "in_progress_manufacturing",
-    "hasGreenDot": false,
-    "heroImg": "assets/clients/Mr. Atul Mehotra/3D MODEL/614a1c00-6e73-49dd-98ff-955533ebbac9.avif",
-    "stages": [
-      {
-        "stage_key": "concept",
-        "title": "Concept Sketches & Spatial Layout",
-        "dir_name": "CONCEPT",
-        "images": [
-          "assets/clients/Mr. Atul Mehotra/CONCEPT/3266c7d7-11f8-454e-8ce7-393015750330.avif"
-        ],
-        "count": 1
-      },
-      {
-        "stage_key": "cad_2d",
-        "title": "2D CAD Working Blueprints",
-        "dir_name": "2D CAD",
-        "images": [
-          "assets/clients/Mr. Atul Mehotra/2D CAD/48e8680f-9b24-4fe4-9f2f-1344cf8dd8a3.avif",
-          "assets/clients/Mr. Atul Mehotra/2D CAD/751784cb-c3fb-42b0-9ffe-8c3e6c1d9128.avif"
-        ],
-        "count": 2
-      },
-      {
-        "stage_key": "model_3d",
-        "title": "3D Photorealistic Design",
-        "dir_name": "3D MODEL",
-        "images": [
-          "assets/clients/Mr. Atul Mehotra/3D MODEL/614a1c00-6e73-49dd-98ff-955533ebbac9.avif",
-          "assets/clients/Mr. Atul Mehotra/3D MODEL/OverView.avif",
-          "assets/clients/Mr. Atul Mehotra/3D MODEL/Picture2.avif",
-          "assets/clients/Mr. Atul Mehotra/3D MODEL/Picture3.avif",
-          "assets/clients/Mr. Atul Mehotra/3D MODEL/Picture5.avif",
-          "assets/clients/Mr. Atul Mehotra/3D MODEL/Picture7.avif",
-          "assets/clients/Mr. Atul Mehotra/3D MODEL/Picture9.avif",
-          "assets/clients/Mr. Atul Mehotra/3D MODEL/d2a95f2a-49da-4dba-b7eb-13eefe76d2cb.avif"
-        ],
-        "count": 8
-      },
-      {
-        "stage_key": "manufacturing",
-        "title": "Manufacturing & Workshop Execution",
-        "dir_name": "MANUFACTURING",
-        "images": [
-          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.55 AM (1).jpeg",
-          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.55 AM.jpeg",
-          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.56 AM (1).jpeg",
-          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.56 AM.jpeg",
-          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.57 AM (1).jpeg",
-          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Image 2026-09-29 at 11.36.57 AM.jpeg",
-          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Video 2026-09-29 at 11.36.54 AM.mp4",
-          "assets/clients/Mr. Atul Mehotra/MANUFACTURING/WhatsApp Video 2026-09-29 at 11.36.55 AM.mp4"
-        ],
-        "count": 8
       }
     ]
   }
